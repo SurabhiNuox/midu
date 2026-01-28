@@ -337,9 +337,11 @@
 }
 
 
-.main_content{
+.main_content {
 	background-color: #1B273D;
 	position: relative;
 	z-index: 1;
-	top: -50px;
+	top: -120px;
+	padding-top: 20px;
+	overflow: hidden;
 }
