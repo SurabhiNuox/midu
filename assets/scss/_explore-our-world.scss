@@ -103,6 +103,8 @@
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 20px;
+		align-items: start; // Default to top alignment
+		min-height: 780px;
 
 		@media #{$media-1024} {
 			gap: 25px;
@@ -116,6 +118,18 @@
 		@media #{$media-600} {
 			gap: 20px;
 		}
+
+		// First and third cards: top-aligned (default)
+		.explore-card:nth-child(1),
+		.explore-card:nth-child(3) {
+			align-self: start;
+		}
+
+		// Second and fourth cards: center-aligned
+		.explore-card:nth-child(2),
+		.explore-card:nth-child(4) {
+			align-self: center;
+		}
 	}
 
 	// Individual Card
@@ -123,15 +137,19 @@
 		background-color: $white;
 		border-radius: 15px;
 		overflow: hidden;
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		transition: all 0.3s ease-in-out;
 		display: flex;
 		flex-direction: column;
 		padding: 30px 20px;
+		position: relative;
 
 
 		&:hover {
 			transform: translateY(-5px);
 			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+			.card-cta-button{
+				transform: translateY(-5px);
+			}
 		}
 
 
@@ -181,6 +199,14 @@
 			height: 280px;
 			overflow: hidden;
 			margin-top: auto;
+			webkit-mask-image: url('../images/card_mask.svg');
+			mask-image: url('../images/card_mask.svg');
+			-webkit-mask-size: 100%;
+			mask-size: 100%;
+			-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+			-webkit-mask-position: top;
+			mask-position: top;
 
 			@media #{$media-1024} {
 				height: 250px;
@@ -205,39 +231,38 @@
 
 
 
-			.card-cta-button {
-				position: absolute;
-				bottom: 20px;
-				right: 20px;
-				width: 48px;
-				height: 48px;
-				background-color: #2D3E5E;
-				border-radius: 8px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				color: $white;
-				text-decoration: none;
-				transition: all 0.3s ease;
-				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+			
+		}
+		.card-cta-button {
+			position: absolute;
+			bottom: 27px;
+			right: 20px;
+			width: 32px;
+			height: 32px;
+			background-color: #1A273D;
+			border-radius: 5px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $white;
+			text-decoration: none;
+			transition: all 0.3s ease-in-out;
+			clip-path: polygon(0 0, 100% 0, 100% calc(100% - .46rem), calc(100% - .46rem) 100%, 0 100%);
 
-				@media #{$media-600} {
-					width: 44px;
-					height: 44px;
-					bottom: 15px;
-					right: 15px;
-				}
+			@media #{$media-600} {
+				width: 44px;
+				height: 44px;
+				bottom: 15px;
+				right: 15px;
+			}
 
-				svg {
-					width: 20px;
-					height: 20px;
-				}
+			svg {
+				width: 20px;
+				height: 20px;
+			}
 
-				&:hover {
-					background-color: #1a9b94;
-					transform: translateY(-2px);
-					box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-				}
+			&:hover {
+				background-color: #F47B47;
 			}
 		}
 	}
