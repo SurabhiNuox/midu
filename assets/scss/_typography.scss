@@ -1,0 +1,601 @@
+// Typography Mixins
+// Reusable typography patterns for consistent styling across the theme
+// Each mixin includes all responsive breakpoints
+
+// Main Banner Title Typography
+@mixin main-banner-title-large {
+	font-family: "REM", sans-serif;
+	font-size: 150px;
+	line-height: 1;
+	@media #{$media-1060} {
+		font-size: 100px;
+	}
+	@media #{$media-995} {
+		font-size: 80px;
+	}
+	@media #{$media-700} {
+		font-size: 60px;
+	}
+}
+
+// Main Banner Subtitle Typography
+@mixin para-text {
+	font-family: "REM", sans-serif;
+	font-size: 18px;
+	line-height: 1.5;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
+}
+
+// Banner Title Typography (for regular banner component)
+@mixin banner-title {
+	font-family: "REM", sans-serif;
+	font-size: 70px;
+	line-height: 86px;
+	font-weight: 600;
+	letter-spacing: 0px;
+	@media #{$media-1060} {
+		font-size: 50px;
+	}
+	@media #{$media-995} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
+}
+
+// Form Input Label Typography
+@mixin form-label {
+	font-family: "REM", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	color: $gold;
+	@media #{$media-700} {
+		font-size: 15px;
+	}
+}
+
+// Form Input Placeholder Typography
+@mixin form-placeholder {
+	font-family: "REM", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	color: #ABAFB1;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
+}
+
+// Book Visit Button Typography
+@mixin book-visit-button {
+	font-family: "REM", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 30px;
+	letter-spacing: 0%;
+	text-align: center;
+	@media #{$media-700} {
+		font-size: 15px;
+	}
+}
+
+// Where Ever Title Typography
+@mixin where-ever-title {
+	font-family: "REM", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 60px;
+	line-height: 100%;
+	letter-spacing: 0px;
+	@media #{$media-1060} {
+		font-size: 45px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
+}
+
+// Statistics Title Typography
+@mixin stat-title {
+	font-family: "REM", sans-serif;
+	font-size: 24px;
+	line-height: 1;
+	@media #{$media-1060} {
+		font-size: 20px;
+	}
+	@media #{$media-700} {
+		font-size: 18px;
+	}
+}
+
+// Statistics Value Typography
+@mixin stat-value {
+	font-family: "REM", sans-serif;
+	font-size: 80px;
+	line-height: 1;
+	@media #{$media-1060} {
+		font-size: 60px;
+	}
+	@media #{$media-700} {
+		font-size: 50px;
+	}
+}
+
+// Partners Sub Title Typography
+@mixin partners-sub-title {
+	font-family: "REM", sans-serif;
+	font-size: 20px;
+	line-height: 100%;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
+}
+
+// Services Stack Tag Typography
+@mixin services-stack-tag {
+	font-family: "REM", sans-serif;
+	font-size: 20px;
+	line-height: 60px;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
+}
+
+// Services Stack Title Typography
+@mixin services-stack-title {
+	font-family: "REM", sans-serif;
+	font-size: 60px;
+	line-height: 100%;
+	@media #{$media-1060} {
+		font-size: 50px;
+	}
+	@media #{$media-995} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
+}
+
+// Services Stack Description Typography
+@mixin services-stack-description {
+	font-family: "REM", sans-serif;
+	font-size: 20px;
+	line-height: 140%;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
+}
+
+// Testimonials Tag Typography
+@mixin testimonials-tag {
+	font-family: "REM", sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 100%;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
+}
+
+// Testimonials Title Typography
+@mixin testimonials-title {
+	font-family: "REM", sans-serif;
+	font-weight: 600;
+	font-size: 70px;
+	line-height: 86px;
+	@media #{$media-1060} {
+		font-size: 50px;
+	}
+	@media #{$media-995} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
+}
+
+// Testimonial Review Text Typography
+@mixin testimonial-review {
+	font-family: "REM", sans-serif;
+	font-weight: 400;
+	font-size: 18.06px;
+	line-height: 150%;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
+}
+
+
+ 
+
+// Testimonial Name Typography
+@mixin testimonial-name {
+	font-family: "REM", sans-serif;
+	font-weight: 600;
+	font-size: 18.06px;
+	line-height: 150%;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
+}
+
+// Full Screen Nav Menu Grid Heading Typography
+@mixin fullscreen-nav-grid-heading {
+	font-family: "REM", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 20px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	text-transform: uppercase;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
+}
+
+// Full Screen Nav Menu Grid Sub-point Typography
+@mixin fullscreen-nav-grid-sub {
+	font-family: "REM", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 110%;
+	letter-spacing: 0%;
+	@media #{$media-700} {
+		font-size: 15px;
+	}
+}
+
+// Full Screen Nav Menu Item Typography
+@mixin fullscreen-nav-menu-item {
+	font-family: "REM", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 50px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	@media #{$media-1060} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
+}
+
+// Full Screen Nav Submenu Heading Typography
+@mixin fullscreen-nav-submenu-heading {
+	font-family: "REM", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 36px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	@media #{$media-1060} {
+		font-size: 30px;
+	}
+	@media #{$media-700} {
+		font-size: 24px;
+	}
+}
+
+// Full Screen Nav Submenu Item Typography
+@mixin fullscreen-nav-submenu-item {
+	font-family: "REM", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1.2;
+	letter-spacing: 0%;
+	@media #{$media-1060} {
+		font-size: 20px;
+	}
+	@media #{$media-700} {
+		font-size: 18px;
+	}
+}
+
+// Perfect Day Section Heading Typography
+@mixin perfect-day-heading {
+	font-family: "REM", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 60px;
+	line-height: 130%;
+	letter-spacing: 0px;
+	@media #{$media-1060} {
+		font-size: 50px;
+	}
+	@media #{$media-995} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
+}
+
+// Perfect Day Section Paragraph Typography
+@mixin perfect-day-paragraph {
+	font-family: "REM", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 1.5;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
+}
+
+// Perfect Day Card Heading Typography
+@mixin perfect-day-card-heading {
+	font-family: "REM", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 28px;
+	line-height: 120%;
+	letter-spacing: 0%;
+	@media #{$media-1060} {
+		font-size: 24px;
+	}
+	@media #{$media-995} {
+		font-size: 20px;
+	}
+	@media #{$media-700} {
+		font-size: 18px;
+	}
+}
+
+// Perfect Day Card Paragraph Typography
+@mixin perfect-day-card-paragraph {
+	font-family: "REM", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 120%;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
+}
+
+// Packages Section Main Heading Typography
+@mixin packages-section-heading {
+	font-family: "REM", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 60px;
+	line-height: 1.2;
+	letter-spacing: 0px;
+	text-align: center;
+	@media #{$media-1060} {
+		font-size: 50px;
+	}
+	@media #{$media-995} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
+}
+
+// Packages Section Main Paragraph Typography
+@mixin packages-section-paragraph {
+	font-family: "REM", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 1.3;
+	letter-spacing: 5%;
+	text-align: center;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
+}
+
+// Packages Card Paragraph Typography
+@mixin packages-card-paragraph {
+	font-family: "REM", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 1.2;
+	letter-spacing: 5%;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
+}
+
+// Weddings Detail Heading Typography
+@mixin weddings-detail-heading {
+	font-family: "REM", sans-serif;
+	font-weight: 500;
+	font-size: 40px;
+	color: #C5B17F;
+	@media #{$media-1060} {
+		font-size: 35px;
+	}
+	@media #{$media-995} {
+		font-size: 30px;
+	}
+	@media #{$media-700} {
+		font-size: 32px;
+	}
+}
+
+// Weddings Detail Paragraph Typography
+@mixin weddings-detail-paragraph {
+	font-family: "REM", sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	color: #282828;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
+}
+
+// Dual Slider Heading Typography
+@mixin dual-slider-heading {
+	font-family: "REM", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 60px;
+	color: #C5B17F;
+	line-height: 1.2;
+	@media #{$media-1060} {
+		font-size: 50px;
+	}
+	@media #{$media-995} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
+}
+
+// Dual Slider Subheading Typography
+@mixin dual-slider-subheading {
+	font-family: "REM", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+	font-size: 36px;
+	color: #282828;
+	line-height: 1.3;
+	@media #{$media-1060} {
+		font-size: 30px;
+	}
+	@media #{$media-995} {
+		font-size: 25px;
+	}
+	@media #{$media-700} {
+		font-size: 20px;
+	}
+}
+
+// Dual Slider Description Typography
+@mixin dual-slider-description {
+	font-family: "REM", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 18px;
+	color: #282828;
+	line-height: 1.6;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
+}
+
+// Sustainability Tag Typography
+@mixin sustainability-tag {
+	font-family: "REM", sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+	color: #B64910;
+	text-transform: uppercase;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
+}
+
+// Sustainability Heading Typography
+@mixin sustainability-heading {
+	font-family: "REM", sans-serif;
+	font-weight: 600;
+	font-size: 60px;
+	color: #C5B17F;
+	line-height: 1.2;
+	@media #{$media-1060} {
+		font-size: 45px;
+	}
+	@media #{$media-995} {
+		font-size: 40px;
+	}
+	@media #{$media-700} {
+		font-size: 30px;
+	}
+}
+
+// Sustainability Paragraph Typography
+@mixin sustainability-paragraph {
+	font-family: "REM", sans-serif;
+	font-weight: 500;
+	font-size: 18px;
+	color: #282828;
+	line-height: 1.6;
+	@media #{$media-1060} {
+		font-size: 16px;
+	}
+	@media #{$media-700} {
+		font-size: 15px;
+	}
+}
+
+// Sustainability Card Text Typography
+@mixin sustainability-card-text {
+	font-family: "REM", sans-serif;
+	font-weight: 500;
+	font-size: 20px;
+	color: #282828;
+	line-height: 1.4;
+	@media #{$media-1060} {
+		font-size: 18px;
+	}
+	@media #{$media-700} {
+		font-size: 16px;
+	}
+}

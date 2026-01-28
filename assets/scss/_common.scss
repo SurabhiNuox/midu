@@ -1,0 +1,348 @@
+// Common Elements Styles
+// This file contains reusable components like buttons, main titles, etc.
+@import "./variable";
+@import "./mixins";
+
+// ============================================
+// BUTTONS
+// ============================================
+
+// Primary Button
+.btn-primary {
+	width: fit-content;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background-color: #15868A; // Teal/turquoise color
+	color: $white;
+	text-decoration: none;
+	letter-spacing: .5px;
+	font-size: size(14px);
+	font-weight: 300;
+	padding: 13px 14px;
+	// Use SVG mask for button shape - stretch to fit button dimensions
+	mask-image: url('../images/button_mask.svg');
+	-webkit-mask-image: url('../images/button_mask.svg');
+	mask-size: 100% 100%; // Stretch mask to fill button completely
+	-webkit-mask-size: 100% 100%;
+	mask-repeat: no-repeat;
+	-webkit-mask-repeat: no-repeat;
+	mask-position: center;
+	-webkit-mask-position: center;
+	transition: all 0.3s ease;
+	position: relative;
+	overflow: hidden;
+
+	@media #{$media-768} {
+		padding: 12px 26px;
+		font-size: 15px;
+		border-radius: 0 0 0 12px;
+		clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+	}
+
+	@media #{$media-600} {
+		padding: 10px 22px;
+		font-size: 14px;
+		border-radius: 0 0 0 10px;
+		clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+	}
+
+	&:hover {
+		background-color: #F47B47;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(32, 178, 170, 0.3);
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+
+	// Icon inside button
+	.btn-icon {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 16px;
+		height: 16px;
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+// Secondary Button
+.btn-secondary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	background-color: transparent;
+	color: $white;
+	text-decoration: none;
+	font-family: "REM", sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	padding: 14px 32px;
+	border: 2px solid $white;
+	border-radius: 0 0 0 15px;
+	clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+	cursor: pointer;
+	transition: all 0.3s ease;
+
+	@media #{$media-768} {
+		padding: 12px 26px;
+		font-size: 15px;
+		border-radius: 0 0 0 12px;
+		clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+	}
+
+	@media #{$media-600} {
+		padding: 10px 22px;
+		font-size: 14px;
+		border-radius: 0 0 0 10px;
+		clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+	}
+
+	&:hover {
+		background-color: $white;
+		color: #2d2d2d;
+		transform: translateY(-2px);
+	}
+}
+
+// Outline Button
+.btn-outline {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	background-color: transparent;
+	color: #20b2aa;
+	text-decoration: none;
+	font-family: "REM", sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	padding: 14px 32px;
+	border: 2px solid #20b2aa;
+	border-radius: 0 0 0 15px;
+	clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+	cursor: pointer;
+	transition: all 0.3s ease;
+
+	@media #{$media-768} {
+		padding: 12px 26px;
+		font-size: 15px;
+		border-radius: 0 0 0 12px;
+		clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+	}
+
+	@media #{$media-600} {
+		padding: 10px 22px;
+		font-size: 14px;
+		border-radius: 0 0 0 10px;
+		clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+	}
+
+	&:hover {
+		background-color: #20b2aa;
+		color: $white;
+		transform: translateY(-2px);
+	}
+}
+
+// ============================================
+// MAIN TITLES
+// ============================================
+
+// Main Page Title
+.main-title {
+	font-family: "REM", sans-serif;
+	font-size: 72px;
+	font-weight: 700;
+	line-height: 1.2;
+	color: $white;
+	margin: 0 0 20px 0;
+
+	@media #{$media-1060} {
+		font-size: 56px;
+	}
+
+	@media #{$media-768} {
+		font-size: 42px;
+	}
+
+	@media #{$media-600} {
+		font-size: 32px;
+	}
+}
+
+// Section Title
+.section-title {
+	font-family: "REM", sans-serif;
+	font-size: 48px;
+	font-weight: 600;
+	line-height: 1.3;
+	color: $white;
+	margin: 0 0 16px 0;
+
+	@media #{$media-1060} {
+		font-size: 40px;
+	}
+
+	@media #{$media-768} {
+		font-size: 32px;
+	}
+
+	@media #{$media-600} {
+		font-size: 28px;
+	}
+}
+
+// Subsection Title
+.subsection-title {
+	font-family: "REM", sans-serif;
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 1.4;
+	color: $white;
+	margin: 0 0 12px 0;
+
+	@media #{$media-1060} {
+		font-size: 28px;
+	}
+
+	@media #{$media-768} {
+		font-size: 24px;
+	}
+
+	@media #{$media-600} {
+		font-size: 20px;
+	}
+}
+
+// ============================================
+// TEXT ELEMENTS
+// ============================================
+
+// Large Paragraph
+.text-large {
+	font-family: "REM", sans-serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.6;
+	color: $white;
+
+	@media #{$media-768} {
+		font-size: 18px;
+	}
+
+	@media #{$media-600} {
+		font-size: 16px;
+	}
+}
+
+// Regular Paragraph
+.text-regular {
+	font-family: "REM", sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.6;
+	color: $white;
+
+	@media #{$media-768} {
+		font-size: 15px;
+	}
+
+	@media #{$media-600} {
+		font-size: 14px;
+	}
+}
+
+// Small Text
+.text-small {
+	font-family: "REM", sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: rgba(255, 255, 255, 0.8);
+
+	@media #{$media-600} {
+		font-size: 13px;
+	}
+}
+
+// ============================================
+// CONTAINERS
+// ============================================
+
+// Section Container
+.section-container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 80px 40px;
+
+	@media #{$media-1024} {
+		padding: 60px 30px;
+	}
+
+	@media #{$media-768} {
+		padding: 50px 20px;
+	}
+
+	@media #{$media-600} {
+		padding: 40px 15px;
+	}
+}
+
+
+// ============================================
+// UTILITY CLASSES
+// ============================================
+
+// Text Alignment
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+// Spacing
+.mt-large {
+	margin-top: 60px;
+
+	@media #{$media-768} {
+		margin-top: 40px;
+	}
+}
+
+.mb-large {
+	margin-bottom: 60px;
+
+	@media #{$media-768} {
+		margin-bottom: 40px;
+	}
+}
+
+.mt-medium {
+	margin-top: 40px;
+
+	@media #{$media-768} {
+		margin-top: 30px;
+	}
+}
+
+.mb-medium {
+	margin-bottom: 40px;
+
+	@media #{$media-768} {
+		margin-bottom: 30px;
+	}
+}

@@ -1,0 +1,14 @@
+// Main SCSS file
+// Note: To import CSS files (not SCSS), use the .css extension:
+// @import "path/to/file.css";
+// Example: @import "../fonts/stylesheet.css";
+
+@import "fonts";
+@import "mixins";
+@import "base";
+@import "variable";
+@import "typography";
+@import "common";
+@import "header";
+@import "banner";
+

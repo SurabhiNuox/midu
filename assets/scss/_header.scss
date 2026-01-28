@@ -1,0 +1,343 @@
+// Header Styles
+@import "./variable";
+@import "./mixins";
+
+.site-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	padding: 50px 0 0 0;
+	width: 100%;
+
+	.header-container {
+		max-width: 1600px;
+		margin: 0 auto;
+		padding: 0 40px;
+		overflow: hidden; // Contain backdrop-filter effect
+
+		@media #{$media-1024} {
+			padding: 0 30px;
+		}
+
+		@media #{$media-768} {
+			padding: 0 20px;
+		}
+	}
+
+	.header-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 30px;
+		background-image: url(../images/header_bg.svg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		padding: 20px 45px 20px 55px;
+		position: relative;
+		overflow: hidden; 
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: transparent; // No background, just for backdrop-filter
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
+			z-index: -1; // Behind content
+			// Match exact shape - critical for containing backdrop-filter
+			border-bottom-left-radius: 120px;
+            border-top-right-radius: 120px;
+
+			clip-path: polygon(
+				0% 0%,
+				100% 0%,
+				calc(100% - 50px) 0%,
+				100% 50px,
+				100% 100%,
+				0% 100%
+			);
+			// Ensure backdrop-filter is contained within shape
+			overflow: hidden;
+		}
+
+		@media #{$media-1060} {
+			padding: 12px 30px;
+			gap: 20px;
+			border-top-left-radius: 18px;
+			border-bottom-left-radius: 18px;
+			border-bottom-right-radius: 18px;
+			clip-path: polygon(
+				0% 0%,
+				100% 0%,
+				calc(100% - 45px) 0%,
+				100% 45px,
+				100% 100%,
+				0% 100%
+			);
+
+			&::before {
+				border-top-left-radius: 18px;
+				border-bottom-left-radius: 18px;
+				border-bottom-right-radius: 18px;
+				clip-path: polygon(
+					0% 0%,
+					100% 0%,
+					calc(100% - 45px) 0%,
+					100% 45px,
+					100% 100%,
+					0% 100%
+				);
+			}
+		}
+
+		@media #{$media-768} {
+			padding: 10px 20px;
+			gap: 15px;
+			border-top-left-radius: 15px;
+			border-bottom-left-radius: 15px;
+			border-bottom-right-radius: 15px;
+			clip-path: polygon(
+				0% 0%,
+				100% 0%,
+				calc(100% - 40px) 0%,
+				100% 40px,
+				100% 100%,
+				0% 100%
+			);
+
+			&::before {
+				border-top-left-radius: 15px;
+				border-bottom-left-radius: 15px;
+				border-bottom-right-radius: 15px;
+				clip-path: polygon(
+					0% 0%,
+					100% 0%,
+					calc(100% - 40px) 0%,
+					100% 40px,
+					100% 100%,
+					0% 100%
+				);
+			}
+		}
+
+		@media #{$media-600} {
+			padding: 8px 15px;
+			gap: 10px;
+			border-top-left-radius: 12px;
+			border-bottom-left-radius: 12px;
+			border-bottom-right-radius: 12px;
+			clip-path: polygon(
+				0% 0%,
+				100% 0%,
+				calc(100% - 35px) 0%,
+				100% 35px,
+				100% 100%,
+				0% 100%
+			);
+
+			&::before {
+				border-top-left-radius: 12px;
+				border-bottom-left-radius: 12px;
+				border-bottom-right-radius: 12px;
+				clip-path: polygon(
+					0% 0%,
+					100% 0%,
+					calc(100% - 35px) 0%,
+					100% 35px,
+					100% 100%,
+					0% 100%
+				);
+			}
+		}
+	}
+
+	// Logo
+	.site-logo {
+		flex-shrink: 0;
+        max-width: 141px;
+		a {
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+		}
+
+		.logo-image {
+			height: 40px;
+			width: auto;
+			object-fit: contain;
+
+			@media #{$media-768} {
+				height: 35px;
+			}
+
+			@media #{$media-600} {
+				height: 30px;
+			}
+		}
+	}
+
+	// Navigation Menu
+	.main-navigation {
+		flex: 1;
+		display: flex;
+		justify-content: center;
+
+		@media #{$media-1024} {
+			display: none; // Hide on mobile, can add hamburger menu later
+		}
+
+		.nav-menu {
+			display: flex;
+			align-items: center;
+			gap: 35px;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			@media #{$media-1200} {
+				gap: 25px;
+			}
+
+			li {
+				margin: 0;
+			}
+
+			a {
+				color: $white;
+				text-decoration: none;
+				font-family: "REM", sans-serif;
+				font-size: size(16px);
+				font-weight: 300;
+				transition: color 0.3s ease-in-out;
+				position: relative;
+
+				&:hover {
+					color: #15868A;
+				}
+			}
+		}
+	}
+
+	// Language Selector
+	.language-selector {
+		flex-shrink: 0;
+
+		@media #{$media-1024} {
+			display: none; // Hide on mobile
+		}
+
+		.lang-link {
+			color: $white;
+			text-decoration: none;
+			font-family: "REM", sans-serif;
+			font-size: 16px;
+			font-weight: 400;
+			transition: color 0.3s ease;
+
+			&:hover {
+				color: #15868A;
+			}
+		}
+	}
+
+	// Contact Button
+	.header-contact {
+		flex-shrink: 0;
+
+		.contact-button {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			background-color: #15868A; // Teal/turquoise color
+			color: $white;
+			text-decoration: none;
+            letter-spacing: .5px;
+			font-size: size(14px);
+			font-weight: 300;
+			padding: 13px 20px;
+			// Use SVG mask for button shape - stretch to fit button dimensions
+			mask-image: url('../images/button_mask.svg');
+			-webkit-mask-image: url('../images/button_mask.svg');
+			mask-size: 100% 100%; // Stretch mask to fill button completely
+			-webkit-mask-size: 100% 100%;
+			mask-repeat: no-repeat;
+			-webkit-mask-repeat: no-repeat;
+			mask-position: center;
+			-webkit-mask-position: center;
+			transition: all 0.3s ease;
+			position: relative;
+			overflow: hidden;
+            .button-icon{
+                transition: transform 0.3s ease-in-out;
+            }
+			@media #{$media-768} {
+				padding: 10px 22px;
+				font-size: 14px;
+				// SVG mask scales automatically with mask-size: contain
+			}
+
+			@media #{$media-600} {
+				padding: 8px 18px;
+				font-size: 13px;
+				gap: 6px;
+				// SVG mask scales automatically with mask-size: contain
+			}
+
+			&:hover {
+				background-color: #F47B47;
+                .button-icon{
+                    transform: translateX(4px);
+                }
+			}
+
+			.button-text {
+				display: inline-block;
+			}
+
+			.button-icon {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 12px;
+				height: 12px;
+
+				svg {
+					width: 100%;
+					height: 100%;
+				}
+			}
+		}
+	}
+}
+
+// Add padding to content to account for fixed header
+.site-content {
+
+	@media #{$media-768} {
+		padding-top: 90px;
+	}
+
+	@media #{$media-600} {
+		padding-top: 80px;
+	}
+}
+
+// Mobile Menu Toggle (for future implementation)
+.mobile-menu-toggle {
+	display: none;
+
+	@media #{$media-1024} {
+		display: block;
+		background: transparent;
+		border: none;
+		color: $white;
+		font-size: 24px;
+		cursor: pointer;
+		padding: 5px;
+	}
+}
