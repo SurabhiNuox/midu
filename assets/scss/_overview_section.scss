@@ -20,7 +20,20 @@
     position: relative;
     overflow: hidden;
 
+	&::after{
+		content: "";
+		width: 500px;
+    height: 500px;
+		background-image: url(../images/blue-bg-left-service.svg);
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		
 	
+ }
 
 	.overview-content {
 		display: flex;
@@ -49,6 +62,12 @@
 		background-color: #1B273D;
 		display: block;
 		overflow: hidden;
+
+		&::after{
+			   width: 473px;
+			   height: 473px;
+			   background-image: url();
+		}
 
 		@media #{$media-768} {
 			flex: 1 1 100%;

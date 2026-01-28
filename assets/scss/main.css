@@ -2716,7 +2716,7 @@ a,
   font-family: "REM", sans-serif;
   font-size: 3.125rem;
   line-height: 3.4375rem;
-  font-weight: 600;
+  font-weight: 400;
   color: #fff;
   letter-spacing: 0px;
   margin-bottom: 20px;
@@ -3980,6 +3980,18 @@ a,
   position: relative;
   overflow: hidden;
 }
+.overview-section::after {
+  content: "";
+  width: 500px;
+  height: 500px;
+  background-image: url(../images/blue-bg-left-service.svg);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .overview-section .overview-content {
   display: flex;
   flex-wrap: wrap;
@@ -4008,6 +4020,11 @@ a,
   background-color: #1B273D;
   display: block;
   overflow: hidden;
+}
+.overview-section .overview-image::after {
+  width: 473px;
+  height: 473px;
+  background-image: url();
 }
 @media only screen and (max-width: 768px) {
   .overview-section .overview-image {
