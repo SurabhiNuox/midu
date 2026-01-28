@@ -5,25 +5,25 @@
 .explore-our-world {
 	background-color: #1B273D;
 	position: relative;
-	padding: 100px 0;
-	overflow: hidden;
-	// &::after{
-	// 	content: '';
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 0;
-	// 	width: 100%;
-	// 	height: 100%;
-	// 	background-color: #1B273D;
-	// 	webkit-mask-image: url('../images/sec_1_mask_top.svg');
-	// 	mask-image: url('../images/sec_1_mask_top.svg');
-	// 	-webkit-mask-size: 100%;
-	// 	mask-size: 100%;
-	// 	-webkit-mask-repeat: no-repeat;
-	// 	mask-repeat: no-repeat;
-	// 	-webkit-mask-position: top;
-	// 	mask-position: top;
-	// }
+	padding: 100px 0 150px 0;
+	z-index: 9;
+	&::after{
+		content: "";
+		position: absolute;
+		top: -96px;
+		left: 0;
+		width: 100%;
+		height: 150px;
+		background-color: #1B273D;
+		webkit-mask-image: url('../images/sec_1_mask_top.svg');
+		mask-image: url('../images/sec_1_mask_top.svg');
+		-webkit-mask-size: 100%;
+		mask-size: 100%;
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-position: top;
+		mask-position: top;
+	}
 
 	@media #{$media-1024} {
 		padding: 80px 0;
@@ -58,7 +58,10 @@
 	// Header Section (Title & Description)
 	.explore-header {
 		margin-bottom: 60px;
-		max-width: 600px;
+		max-width: 1190px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 
 		@media #{$media-768} {
 			margin-bottom: 40px;
@@ -69,36 +72,17 @@
 			margin-bottom: 30px;
 		}
 
-		.explore-title {
-			font-family: "REM", sans-serif;
-			font-size: 72px;
-			font-weight: 700;
-			line-height: 1.2;
-			color: $white;
-			margin: 0 0 24px 0;
-
-			@media #{$media-1060} {
-				font-size: 56px;
-			}
-
-			@media #{$media-768} {
-				font-size: 42px;
-				margin-bottom: 20px;
-			}
-
-			@media #{$media-600} {
-				font-size: 32px;
-				margin-bottom: 16px;
-			}
-		}
-
-		.explore-description {
-			font-family: "REM", sans-serif;
-			font-size: 20px;
-			font-weight: 400;
-			line-height: 1.6;
-			color: rgba(255, 255, 255, 0.8);
+		h2{
 			margin: 0;
+		}
+		p{
+			font-family: "REM", sans-serif;
+			font-size: size(18px);
+			font-weight: 100;
+			line-height: 1.6;
+			color: #fff;
+			margin: 0;
+			max-width: 500px;
 
 			@media #{$media-1060} {
 				font-size: 18px;
@@ -118,7 +102,7 @@
 	.explore-cards-grid {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
-		gap: 30px;
+		gap: 20px;
 
 		@media #{$media-1024} {
 			gap: 25px;
@@ -139,35 +123,25 @@
 		background-color: $white;
 		border-radius: 15px;
 		overflow: hidden;
-		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 		transition: transform 0.3s ease, box-shadow 0.3s ease;
 		display: flex;
 		flex-direction: column;
+		padding: 30px 20px;
+
 
 		&:hover {
 			transform: translateY(-5px);
 			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 		}
 
-		.card-content {
-			padding: 30px;
-
-			@media #{$media-768} {
-				padding: 25px;
-			}
-
-			@media #{$media-600} {
-				padding: 20px;
-			}
-		}
 
 		.card-title {
 			font-family: "REM", sans-serif;
-			font-size: 28px;
-			font-weight: 600;
-			line-height: 1.3;
+			font-size: size(30px);
+			font-weight: 500;
+			line-height: size(33px);
 			color: #333;
-			margin: 0 0 12px 0;
+			margin: 0 0 10px 0;
 
 			@media #{$media-1060} {
 				font-size: 24px;
@@ -184,13 +158,13 @@
 			}
 		}
 
-		.card-description {
+		p {
 			font-family: "REM", sans-serif;
-			font-size: 16px;
-			font-weight: 400;
-			line-height: 1.5;
-			color: #666;
-			margin: 0;
+			font-size: size(16px);
+			font-weight: 300;
+			line-height: size(18px);
+			color: rgba(26, 39, 61,.5);
+			margin: 0 0 10px 0;
 
 			@media #{$media-768} {
 				font-size: 15px;
@@ -204,7 +178,7 @@
 		.card-image-wrapper {
 			position: relative;
 			width: 100%;
-			height: 300px;
+			height: 280px;
 			overflow: hidden;
 			margin-top: auto;
 
@@ -225,13 +199,11 @@
 				height: 100%;
 				object-fit: cover;
 				display: block;
-				border-radius: 0 0 15px 15px;
+				border-radius:20px;
 				transition: transform 0.3s ease;
 			}
 
-			&:hover .card-image {
-				transform: scale(1.05);
-			}
+
 
 			.card-cta-button {
 				position: absolute;

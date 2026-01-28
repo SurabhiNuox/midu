@@ -43,11 +43,11 @@ $cards = array(
 		<!-- Heading and Description -->
 		<div class="explore-header">
 			<?php if ($section_title): ?>
-				<h2 class="explore-title"><?php echo esc_html($section_title); ?></h2>
+				<h2 class="second_title"><?php echo esc_html($section_title); ?></h2>
 			<?php endif; ?>
 
 			<?php if ($section_description): ?>
-				<p class="explore-description"><?php echo esc_html($section_description); ?></p>
+				<p><?php echo esc_html($section_description); ?></p>
 			<?php endif; ?>
 		</div>
 
@@ -57,7 +57,7 @@ $cards = array(
 				<div class="explore-card">
 					<div class="card-content">
 						<h3 class="card-title"><?php echo esc_html($card['title']); ?></h3>
-						<p class="card-description"><?php echo esc_html($card['description']); ?></p>
+						<p><?php echo esc_html($card['description']); ?></p>
 					</div>
 					
 					<div class="card-image-wrapper">
