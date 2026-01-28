@@ -3,27 +3,27 @@
 @import "./mixins";
 
 .explore-our-world {
-	// background-color: #1B273D;
+	background-color: #1B273D;
 	position: relative;
 	padding: 100px 0;
 	overflow: hidden;
-	&::after{
-		content: '';
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #1B273D;
-		webkit-mask-image: url('../images/sec_1_mask_top.svg');
-		mask-image: url('../images/sec_1_mask_top.svg');
-		-webkit-mask-size: 100%;
-		mask-size: 100%;
-		-webkit-mask-repeat: no-repeat;
-		mask-repeat: no-repeat;
-		-webkit-mask-position: top;
-		mask-position: top;
-	}
+	// &::after{
+	// 	content: '';
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	background-color: #1B273D;
+	// 	webkit-mask-image: url('../images/sec_1_mask_top.svg');
+	// 	mask-image: url('../images/sec_1_mask_top.svg');
+	// 	-webkit-mask-size: 100%;
+	// 	mask-size: 100%;
+	// 	-webkit-mask-repeat: no-repeat;
+	// 	mask-repeat: no-repeat;
+	// 	-webkit-mask-position: top;
+	// 	mask-position: top;
+	// }
 
 	@media #{$media-1024} {
 		padding: 80px 0;
@@ -117,7 +117,7 @@
 	// Cards Grid
 	.explore-cards-grid {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(4, 1fr);
 		gap: 30px;
 
 		@media #{$media-1024} {

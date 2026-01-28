@@ -39,7 +39,7 @@ $cards = array(
 ?>
 
 <section class="explore-our-world">
-	<div class="explore-container">
+	<div class="container">
 		<!-- Heading and Description -->
 		<div class="explore-header">
 			<?php if ($section_title): ?>
