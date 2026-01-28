@@ -2703,6 +2703,13 @@ a,
   }
 }
 
+.main_content {
+  background-color: #1B273D;
+  position: relative;
+  z-index: 1;
+  top: 180px;
+}
+
 .site-header {
   position: fixed;
   top: 0;
@@ -2987,7 +2994,6 @@ a,
   position: relative;
   width: 100%;
   height: 100vh;
-  min-height: 600px;
   overflow: hidden;
 }
 @media only screen and (max-width: 768px) {
