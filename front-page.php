@@ -12,7 +12,7 @@ get_header();
 
 <?php get_template_part('template-parts/main-banner'); ?>
 <main class="main_content">
-
+	<?php get_template_part('template-parts/explore-our-world'); ?>
 </main>
 
 <?php
