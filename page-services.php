@@ -17,7 +17,7 @@ get_header();
 	?>
 
 	   <div class="main_content">
-		  <div class="container"></div>
+		  <?php get_template_part('template-parts/overview-section'); ?>
 	   </div>
 </main><!-- #main -->
 

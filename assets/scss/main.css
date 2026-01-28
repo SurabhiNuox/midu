@@ -2705,7 +2705,6 @@ a,
 }
 
 .main_content {
-  background-color: #1B273D;
   position: relative;
   z-index: 1;
   top: -120px;
@@ -3292,5 +3291,140 @@ a,
   .inner-banner .inner-banner-title {
     font-size: 30px;
     line-height: 30px;
+  }
+}
+
+.overview-section {
+  width: 100%;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  mask-image: url(../images/blue_section.svg);
+  -webkit-mask-image: url(../images/blue_section.svg);
+  mask-size: 100% auto;
+  background-color: #1B273D;
+  -webkit-mask-size: 100% auto;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: top;
+  -webkit-mask-position: top;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.overview-section .overview-content {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+@media only screen and (max-width: 1024px) {
+  .overview-section .overview-content {
+    gap: 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .overview-section .overview-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+.overview-section .overview-image {
+  flex: 0 0 50%;
+  position: relative;
+  z-index: 1;
+}
+@media only screen and (max-width: 768px) {
+  .overview-section .overview-image {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+.overview-section .overview-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.overview-section .overview-text {
+  flex: 0 0 50%;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+@media only screen and (max-width: 768px) {
+  .overview-section .overview-text {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+.overview-section .overview-title {
+  font-family: "proxima_novaregular", "Almarai", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  margin: 0 0 30px 0;
+  letter-spacing: -0.5px;
+}
+@media only screen and (max-width: 1200px) {
+  .overview-section .overview-title {
+    font-size: 2.625rem;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .overview-section .overview-title {
+    font-size: 2.375rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .overview-section .overview-title {
+    font-size: 2.25rem;
+    margin-bottom: 25px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .overview-section .overview-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+}
+.overview-section .overview-paragraph {
+  font-family: "proxima_novaregular", "Almarai", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #fff;
+  margin: 0 0 20px 0;
+}
+.overview-section .overview-paragraph:last-child {
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 1200px) {
+  .overview-section .overview-paragraph {
+    font-size: 1.0625rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .overview-section .overview-paragraph {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .overview-section .overview-paragraph {
+    font-size: 0.9375rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .overview-section {
+    padding: 60px 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .overview-section {
+    padding: 40px 0;
   }
 }/*# sourceMappingURL=main.css.map */
