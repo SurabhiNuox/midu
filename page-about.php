@@ -20,6 +20,11 @@ get_header();
 		?>
 
 		<?php
+		// Overview Section
+		get_template_part('template-parts/overview-section');
+		?>
+
+		<?php
 		$image_text_image = get_template_directory_uri() . '/assets/images/about_pic.jpg';
 		$image_text_headline_1 = 'Discover the Story Behind';
 		$image_text_headline_2 = 'AD-DARAH';
