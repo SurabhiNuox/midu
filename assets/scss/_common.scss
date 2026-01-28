@@ -337,10 +337,43 @@
 }
 
 
+.second_title {
+	font-family: "REM", sans-serif;
+	font-size: size(50px);
+	line-height:size(55px);
+	font-weight: 600;
+	color: $white;
+	letter-spacing: 0px;
+	margin-bottom: 20px;
+
+	@media #{$media-1200} {
+		font-size: size(42px);
+		line-height: size(48px);
+	}
+
+	@media #{$media-1024} {
+		font-size: size(38px);
+		line-height: size(44px);
+	}
+
+	@media #{$media-768} {
+		font-size: size(36px);
+		line-height: size(42px);
+		margin-bottom: 25px;
+	}
+
+	@media #{$media-600} {
+		font-size: size(32px);
+		line-height: size(38px);
+		margin-bottom: 20px;
+	}
+}
+
+
 .main_content {
 	position: relative;
 	z-index: 1;
-	top: -120px;
+	top: -150px;
 	padding-top: 20px;
 	overflow: hidden;
 }
