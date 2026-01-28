@@ -2409,22 +2409,15 @@ a,
 }
 .btn-primary:hover {
   background-color: #F47B47;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(32, 178, 170, 0.3);
+}
+.btn-primary:hover .button-icon {
+  transform: translateX(4px);
 }
 .btn-primary:active {
   transform: translateY(0);
 }
-.btn-primary .btn-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 16px;
-  height: 16px;
-}
-.btn-primary .btn-icon svg {
-  width: 100%;
-  height: 100%;
+.btn-primary .button-icon {
+  transition: transform 0.3s ease-in-out;
 }
 
 .btn-secondary {
@@ -2483,7 +2476,6 @@ a,
   font-weight: 500;
   padding: 14px 32px;
   border: 2px solid #20b2aa;
-  border-radius: 0 0 0 15px;
   -webkit-clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
           clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
   cursor: pointer;
@@ -2510,7 +2502,6 @@ a,
 .btn-outline:hover {
   background-color: #20b2aa;
   color: #fff;
-  transform: translateY(-2px);
 }
 
 .main-title {
@@ -2908,24 +2899,22 @@ a,
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  padding: 13px 20px;
   background-color: #15868A;
   color: #fff;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 300;
-  padding: 13px 20px;
-  mask-image: url("../images/button_mask.svg");
+  letter-spacing: 0.2px;
+  text-decoration: none;
   -webkit-mask-image: url("../images/button_mask.svg");
-  mask-size: 100% 100%;
+  mask-image: url("../images/button_mask.svg");
   -webkit-mask-size: 100% 100%;
-  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
-  mask-position: center;
+  mask-repeat: no-repeat;
   -webkit-mask-position: center;
+  mask-position: center;
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
 .site-header .header-contact .contact-button .button-icon {
   transition: transform 0.3s ease-in-out;
@@ -3066,6 +3055,7 @@ a,
   display: flex;
   flex-direction: column;
   max-width: 730px;
+  padding-top: 4%;
 }
 @media only screen and (max-width: 1024px) {
   .main-banner .banner-content {
@@ -3172,7 +3162,6 @@ a,
 }
 .main-banner .banner-content .banner-button:hover {
   background-color: #1a9b94;
-  transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(32, 178, 170, 0.4);
 }
 .main-banner .banner-content .banner-button .button-text {
