@@ -83,6 +83,7 @@ img {
   max-width: 1400px;
   padding: 0 20px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .trans,
@@ -2698,7 +2699,9 @@ a,
   background-color: #1B273D;
   position: relative;
   z-index: 1;
-  top: 180px;
+  top: -120px;
+  padding-top: 20px;
+  overflow: hidden;
 }
 
 .site-header {
@@ -3181,4 +3184,102 @@ a,
 }
 .main-banner .banner-content .banner-button:hover .button-icon {
   transform: translateX(4px);
+}
+
+.inner-banner {
+  position: relative;
+  width: 100%;
+  height: 660px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+@media only screen and (max-width: 768px) {
+  .inner-banner {
+    height: 50vh;
+    min-height: 350px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .inner-banner {
+    height: 45vh;
+    min-height: 300px;
+  }
+}
+.inner-banner .inner-banner-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.inner-banner .inner-banner-media .inner-banner-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.inner-banner .inner-banner-media .inner-banner-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.inner-banner .inner-banner-media .inner-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.4) 100%);
+  z-index: 2;
+}
+.inner-banner .inner-banner-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 60px 0;
+}
+@media only screen and (max-width: 768px) {
+  .inner-banner .inner-banner-content {
+    padding: 50px 0;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .inner-banner .inner-banner-content {
+    padding: 40px 0;
+  }
+}
+.inner-banner .inner-banner-title {
+  font-family: "REM", sans-serif;
+  font-size: 3.4375rem;
+  font-weight: 700;
+  line-height: 60px;
+  color: #fff;
+  margin: 0;
+}
+@media only screen and (max-width: 1060px) {
+  .inner-banner .inner-banner-title {
+    font-size: 45px;
+    line-height: 45px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .inner-banner .inner-banner-title {
+    font-size: 35px;
+    line-height: 35px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .inner-banner .inner-banner-title {
+    font-size: 30px;
+    line-height: 30px;
+  }
 }/*# sourceMappingURL=main.css.map */
