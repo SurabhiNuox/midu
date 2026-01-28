@@ -89,6 +89,7 @@ if (!$banner_video_thumb) {
 									</span>
 								</a>
 							<?php endif; ?>
+							
 						</div>
 					</div>
 				</div>

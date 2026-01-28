@@ -251,27 +251,24 @@
 
 		.contact-button {
 			display: inline-flex;
-			align-items: center;
-			gap: 8px;
-			background-color: #15868A; // Teal/turquoise color
-			color: $white;
-			text-decoration: none;
-            letter-spacing: .5px;
-			font-size: size(14px);
-			font-weight: 300;
-			padding: 13px 20px;
-			// Use SVG mask for button shape - stretch to fit button dimensions
-			mask-image: url('../images/button_mask.svg');
-			-webkit-mask-image: url('../images/button_mask.svg');
-			mask-size: 100% 100%; // Stretch mask to fill button completely
-			-webkit-mask-size: 100% 100%;
-			mask-repeat: no-repeat;
-			-webkit-mask-repeat: no-repeat;
-			mask-position: center;
-			-webkit-mask-position: center;
-			transition: all 0.3s ease;
-			position: relative;
-			overflow: hidden;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 20px;
+            background-color: #15868A;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: .2px;
+            text-decoration: none;
+            -webkit-mask-image: url('../images/button_mask.svg');
+            mask-image: url('../images/button_mask.svg');
+            -webkit-mask-size: 100% 100%;
+            mask-size: 100% 100%;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+            transition: all .3s ease;
             .button-icon{
                 transition: transform 0.3s ease-in-out;
             }
