@@ -3,11 +3,29 @@
 @import "./mixins";
 
 .explore-our-world {
-	background-color: #1B273D;
+    background:
+    radial-gradient(
+      600px 500px at 12% 50%,
+      rgba(70, 105, 160, 0.45) 0%,
+      rgba(70, 105, 160, 0.25) 30%,
+      rgba(27, 39, 61, 0) 65%
+    ),
+    radial-gradient(
+      500px 600px at 88% 50%,
+      rgba(180, 80, 60, 0.45) 0%,
+      rgba(180, 80, 60, 0.25) 35%,
+      rgba(27, 39, 61, 0) 70%
+    ),
+    linear-gradient(
+      180deg,
+      #1B273D 0%,
+      #1B273D 100%
+    );
+    // animation: bg-animation 15s infinite;
 	position: relative;
-	padding: 100px 0 150px 0;
+	padding: 100px 0 0px 0;
 	z-index: 9;
-	&::after{
+	&::before{
 		content: "";
 		position: absolute;
 		top: -96px;
@@ -24,7 +42,17 @@
 		-webkit-mask-position: top;
 		mask-position: top;
 	}
-
+   
+    .frame{
+        position: absolute;
+        top: -96px;
+        left: 0;
+        z-index: 9;
+	}
+    .container{
+        position: relative;
+        z-index: 10;
+    }
 	@media #{$media-1024} {
 		padding: 80px 0;
 	}
@@ -105,6 +133,7 @@
 		gap: 20px;
 		align-items: start; // Default to top alignment
 		min-height: 780px;
+		overflow: visible; // allow odd cards to slide down from above without clipping
 
 		@media #{$media-1024} {
 			gap: 25px;
@@ -247,7 +276,7 @@
 			color: $white;
 			text-decoration: none;
 			transition: all 0.3s ease-in-out;
-			clip-path: polygon(0 0, 100% 0, 100% calc(100% - .46rem), calc(100% - .46rem) 100%, 0 100%);
+			clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.6rem), calc(100% - 0.6rem) 100%, 0 100%);
 
 			@media #{$media-600} {
 				width: 44px;
@@ -267,3 +296,14 @@
 		}
 	}
 }
+@keyframes bg-animation {
+    0% {
+      background-position: left;
+    }
+    50% {
+      background-position: right;
+    }
+    100% {
+      background-position: left;
+    }
+  }

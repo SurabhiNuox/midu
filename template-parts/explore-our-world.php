@@ -38,10 +38,8 @@ $cards = array(
 );
 ?>
 
-<section class="explore-our-world">
-	<div>
-		
-	</div>
+
+
 	<div class="container">
 		<!-- Heading and Description -->
 		<div class="explore-header">
@@ -73,4 +71,4 @@ $cards = array(
 			<?php endforeach; ?>
 		</div>
 	</div>
-</section>
+
