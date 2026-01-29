@@ -4,7 +4,7 @@
 
 .overview-section {
 	width: 100%;
-	padding: 100px 0;
+	padding: 100px 0 230px;
 	position: relative;
 	overflow: hidden;
     mask-image: url(../images/blue_section.svg);
@@ -20,12 +20,26 @@
     position: relative;
     overflow: hidden;
 
+	&::after{
+		content: "";
+		width: 500px;
+    height: 500px;
+		background-image: url(../images/blue-bg-left-service.svg);
+		position: absolute;
+		
+		left: 0;
+		top: 0;
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		
 	
+ }
 
 	.overview-content {
 		display: flex;
-		align-items: center;
-		gap: 60px;
+		flex-wrap: wrap;
+		
 
 		@media #{$media-1024} {
 			gap: 40px;
@@ -38,9 +52,24 @@
 	}
 
 	.overview-image {
-		flex: 0 0 50%;
+		width: 50%;
 		position: relative;
 		z-index: 1;
+		mask-image: url(../images/overview_img_bg.svg);
+		-webkit-mask-image: url(../images/overview_img_bg.svg);
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-size: 100% auto;
+		mask-size: 100% auto;
+		background-color: #1B273D;
+		display: block;
+		overflow: hidden;
+
+		&::after{
+			   width: 473px;
+			   height: 473px;
+			   background-image: url();
+		}
 
 		@media #{$media-768} {
 			flex: 1 1 100%;
@@ -49,19 +78,22 @@
 
 		img {
 			width: 100%;
+			max-width: 100%;
 			height: auto;
-			border-radius: 25px;
-			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 			display: block;
 			object-fit: cover;
+			margin: 0;
+			padding: 0;
 		}
 	}
 
 	.overview-text {
-		flex: 0 0 50%;
+		width: 50%;
+		padding-left: 55px;
 		color: $white;
 		position: relative;
 		z-index: 1;
+		padding-top: 30px;
 
 		@media #{$media-768} {
 			flex: 1 1 100%;
@@ -97,33 +129,15 @@
 		}
 	}
 
-	
-
-	.overview-paragraph {
-		font-family: $proxima-regular, sans-serif;
-		font-size: size(18px);
-		font-weight: 400;
-		line-height: 1.7;
-		color: $white;
-		margin: 0 0 20px 0;
-
-		&:last-child {
-			margin-bottom: 0;
-		}
-
-		@media #{$media-1200} {
-			font-size: size(17px);
-		}
-
-		@media #{$media-768} {
-			font-size: size(16px);
-			line-height: 1.6;
-		}
-
-		@media #{$media-600} {
-			font-size: size(15px);
-		}
+	p{
+		  font-size: size(16px);
+		  line-height: size(25px);
+		  color: $white;
+		  margin-bottom: 20px;
+		  font-weight: 200;
+		  font-family: "REM", sans-serif;
 	}
+	
 
 	@media #{$media-768} {
 		padding: 60px 0;

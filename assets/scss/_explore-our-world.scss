@@ -3,13 +3,27 @@
 @import "./mixins";
 
 .explore-our-world {
-	background-color: #1A243F; // Deep dark blue background
-	background-image: 
-		radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
-		radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+	background-color: #1B273D;
 	position: relative;
-	padding: 100px 0;
-	overflow: hidden;
+	padding: 100px 0 150px 0;
+	z-index: 9;
+	&::after{
+		content: "";
+		position: absolute;
+		top: -96px;
+		left: 0;
+		width: 100%;
+		height: 150px;
+		background-color: #1B273D;
+		webkit-mask-image: url('../images/sec_1_mask_top.svg');
+		mask-image: url('../images/sec_1_mask_top.svg');
+		-webkit-mask-size: 100%;
+		mask-size: 100%;
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-position: top;
+		mask-position: top;
+	}
 
 	@media #{$media-1024} {
 		padding: 80px 0;
@@ -44,7 +58,10 @@
 	// Header Section (Title & Description)
 	.explore-header {
 		margin-bottom: 60px;
-		max-width: 600px;
+		max-width: 1190px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 
 		@media #{$media-768} {
 			margin-bottom: 40px;
@@ -55,36 +72,17 @@
 			margin-bottom: 30px;
 		}
 
-		.explore-title {
-			font-family: "REM", sans-serif;
-			font-size: 72px;
-			font-weight: 700;
-			line-height: 1.2;
-			color: $white;
-			margin: 0 0 24px 0;
-
-			@media #{$media-1060} {
-				font-size: 56px;
-			}
-
-			@media #{$media-768} {
-				font-size: 42px;
-				margin-bottom: 20px;
-			}
-
-			@media #{$media-600} {
-				font-size: 32px;
-				margin-bottom: 16px;
-			}
-		}
-
-		.explore-description {
-			font-family: "REM", sans-serif;
-			font-size: 20px;
-			font-weight: 400;
-			line-height: 1.6;
-			color: rgba(255, 255, 255, 0.8);
+		h2{
 			margin: 0;
+		}
+		p{
+			font-family: "REM", sans-serif;
+			font-size: size(18px);
+			font-weight: 100;
+			line-height: 1.6;
+			color: #fff;
+			margin: 0;
+			max-width: 500px;
 
 			@media #{$media-1060} {
 				font-size: 18px;
@@ -103,8 +101,10 @@
 	// Cards Grid
 	.explore-cards-grid {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 30px;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 20px;
+		align-items: start; // Default to top alignment
+		min-height: 780px;
 
 		@media #{$media-1024} {
 			gap: 25px;
@@ -118,6 +118,18 @@
 		@media #{$media-600} {
 			gap: 20px;
 		}
+
+		// First and third cards: top-aligned (default)
+		.explore-card:nth-child(1),
+		.explore-card:nth-child(3) {
+			align-self: start;
+		}
+
+		// Second and fourth cards: center-aligned
+		.explore-card:nth-child(2),
+		.explore-card:nth-child(4) {
+			align-self: center;
+		}
 	}
 
 	// Individual Card
@@ -125,35 +137,29 @@
 		background-color: $white;
 		border-radius: 15px;
 		overflow: hidden;
-		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		transition: all 0.3s ease-in-out;
 		display: flex;
 		flex-direction: column;
+		padding: 30px 20px;
+		position: relative;
+
 
 		&:hover {
 			transform: translateY(-5px);
 			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-		}
-
-		.card-content {
-			padding: 30px;
-
-			@media #{$media-768} {
-				padding: 25px;
-			}
-
-			@media #{$media-600} {
-				padding: 20px;
+			.card-cta-button{
+				transform: translateY(-5px);
 			}
 		}
+
 
 		.card-title {
 			font-family: "REM", sans-serif;
-			font-size: 28px;
-			font-weight: 600;
-			line-height: 1.3;
+			font-size: size(30px);
+			font-weight: 500;
+			line-height: size(33px);
 			color: #333;
-			margin: 0 0 12px 0;
+			margin: 0 0 10px 0;
 
 			@media #{$media-1060} {
 				font-size: 24px;
@@ -170,13 +176,13 @@
 			}
 		}
 
-		.card-description {
+		p {
 			font-family: "REM", sans-serif;
-			font-size: 16px;
-			font-weight: 400;
-			line-height: 1.5;
-			color: #666;
-			margin: 0;
+			font-size: size(16px);
+			font-weight: 300;
+			line-height: size(18px);
+			color: rgba(26, 39, 61,.5);
+			margin: 0 0 10px 0;
 
 			@media #{$media-768} {
 				font-size: 15px;
@@ -190,9 +196,17 @@
 		.card-image-wrapper {
 			position: relative;
 			width: 100%;
-			height: 300px;
+			height: 280px;
 			overflow: hidden;
 			margin-top: auto;
+			webkit-mask-image: url('../images/card_mask.svg');
+			mask-image: url('../images/card_mask.svg');
+			-webkit-mask-size: 100%;
+			mask-size: 100%;
+			-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+			-webkit-mask-position: top;
+			mask-position: top;
 
 			@media #{$media-1024} {
 				height: 250px;
@@ -211,47 +225,44 @@
 				height: 100%;
 				object-fit: cover;
 				display: block;
-				border-radius: 0 0 15px 15px;
+				border-radius:20px;
 				transition: transform 0.3s ease;
 			}
 
-			&:hover .card-image {
-				transform: scale(1.05);
+
+
+			
+		}
+		.card-cta-button {
+			position: absolute;
+			bottom: 27px;
+			right: 20px;
+			width: 32px;
+			height: 32px;
+			background-color: #1A273D;
+			border-radius: 5px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $white;
+			text-decoration: none;
+			transition: all 0.3s ease-in-out;
+			clip-path: polygon(0 0, 100% 0, 100% calc(100% - .46rem), calc(100% - .46rem) 100%, 0 100%);
+
+			@media #{$media-600} {
+				width: 44px;
+				height: 44px;
+				bottom: 15px;
+				right: 15px;
 			}
 
-			.card-cta-button {
-				position: absolute;
-				bottom: 20px;
-				right: 20px;
-				width: 48px;
-				height: 48px;
-				background-color: #2D3E5E;
-				border-radius: 8px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				color: $white;
-				text-decoration: none;
-				transition: all 0.3s ease;
-				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+			svg {
+				width: 20px;
+				height: 20px;
+			}
 
-				@media #{$media-600} {
-					width: 44px;
-					height: 44px;
-					bottom: 15px;
-					right: 15px;
-				}
-
-				svg {
-					width: 20px;
-					height: 20px;
-				}
-
-				&:hover {
-					background-color: #1a9b94;
-					transform: translateY(-2px);
-					box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-				}
+			&:hover {
+				background-color: #F47B47;
 			}
 		}
 	}

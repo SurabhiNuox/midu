@@ -39,15 +39,18 @@ $cards = array(
 ?>
 
 <section class="explore-our-world">
-	<div class="explore-container">
+	<div>
+		
+	</div>
+	<div class="container">
 		<!-- Heading and Description -->
 		<div class="explore-header">
 			<?php if ($section_title): ?>
-				<h2 class="explore-title"><?php echo esc_html($section_title); ?></h2>
+				<h2 class="second_title"><?php echo esc_html($section_title); ?></h2>
 			<?php endif; ?>
 
 			<?php if ($section_description): ?>
-				<p class="explore-description"><?php echo esc_html($section_description); ?></p>
+				<p><?php echo esc_html($section_description); ?></p>
 			<?php endif; ?>
 		</div>
 
@@ -57,17 +60,15 @@ $cards = array(
 				<div class="explore-card">
 					<div class="card-content">
 						<h3 class="card-title"><?php echo esc_html($card['title']); ?></h3>
-						<p class="card-description"><?php echo esc_html($card['description']); ?></p>
+						<p><?php echo esc_html($card['description']); ?></p>
 					</div>
 					
 					<div class="card-image-wrapper">
 						<img src="<?php echo esc_url($card['image']); ?>" alt="<?php echo esc_attr($card['title']); ?>" class="card-image">
-						<a href="<?php echo esc_url($card['link']); ?>" class="card-cta-button" aria-label="Explore <?php echo esc_attr($card['title']); ?>">
-							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							</svg>
-						</a>
 					</div>
+					<a href="<?php echo esc_url($card['link']); ?>" class="card-cta-button" aria-label="Explore <?php echo esc_attr($card['title']); ?>">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg" alt="Explore <?php echo esc_attr($card['title']); ?>">
+					</a>
 				</div>
 			<?php endforeach; ?>
 		</div>
