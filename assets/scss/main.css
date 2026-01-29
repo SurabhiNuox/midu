@@ -4441,7 +4441,6 @@ p {
   }
 }
 
-<<<<<<< HEAD
 .light-blue-list-section {
   width: 100%;
   position: relative;
@@ -4704,7 +4703,8 @@ p {
   top: 0;
   -o-object-fit: cover;
      object-fit: cover;
-=======
+}
+
 .projects_section {
   background-color: #1B273D;
   position: relative;
@@ -4744,5 +4744,4 @@ p {
   margin-bottom: 0;
   color: #fff;
   font-weight: 100;
->>>>>>> b05ee98b5b404acac6d84d78dee4a1651942f11f
 }/*# sourceMappingURL=main.css.map */
