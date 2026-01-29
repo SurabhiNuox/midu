@@ -203,7 +203,7 @@ function addarah_scripts()
 		wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0');
 	}
 	if (!wp_script_is('swiper-js', 'enqueued')) {
-		wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
+		wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), '11.0.0', true);
 	}
 
 	// Enqueue component styles for front page
@@ -211,6 +211,18 @@ function addarah_scripts()
 		// Enqueue main banner script (depends on Swiper)
 		// Swiper is already loaded globally above, so this will load after it
 		wp_enqueue_script('main-banner-script', get_template_directory_uri() . '/assets/js/main-banner.js', array('swiper-js'), _S_VERSION, true);
+
+		// GSAP for Explore Our World section (IntersectionObserver, no ScrollTrigger)
+		if (!wp_script_is('gsap', 'enqueued')) {
+			wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), '3.12.5', false);
+		}
+		wp_enqueue_script('explore-our-world-script', get_template_directory_uri() . '/assets/js/explore-our-world.js', array('gsap'), _S_VERSION, true);
+
+		// GSAP ScrollTrigger for Projects Slider (pinned scroll)
+		if (!wp_script_is('gsap-scrolltrigger', 'enqueued')) {
+			wp_enqueue_script('gsap-scrolltrigger', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap'), '3.12.5', false);
+		}
+		wp_enqueue_script('projects-slider-script', get_template_directory_uri() . '/assets/js/projects-slider.js', array('smooth-scroll'), _S_VERSION, true);
 	}
 
 
@@ -219,7 +231,7 @@ function addarah_scripts()
 	if ($is_company_detail_page) {
 		// Enqueue Swiper JS (CDN) - only if not already loaded on front page
 		if (!wp_script_is('swiper-js', 'enqueued')) {
-			wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
+			wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), '11.0.0', true);
 		}
 	}
 
@@ -227,7 +239,7 @@ function addarah_scripts()
 	if ($is_news_and_media_page) {
 		// Enqueue Swiper JS (CDN) - only if not already loaded
 		if (!wp_script_is('swiper-js', 'enqueued')) {
-			wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
+			wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), '11.0.0', true);
 		}
 
 		// Enqueue PressReleases script (depends on Swiper)
@@ -238,7 +250,7 @@ function addarah_scripts()
 	if ($is_gallery_page) {
 		// Enqueue Swiper JS (CDN) - only if not already loaded
 		if (!wp_script_is('swiper-js', 'enqueued')) {
-			wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
+			wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), '11.0.0', true);
 		}
 
 		// Enqueue VideoGallery script (depends on Swiper)
@@ -280,7 +292,7 @@ function addarah_scripts()
 	if ($is_news_detail_page) {
 		// Enqueue Swiper if not already loaded
 		if (!wp_script_is('swiper-js', 'enqueued')) {
-			wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
+			wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), '11.0.0', true);
 		}
 		wp_enqueue_script('news-sidebar-script', get_template_directory_uri() . '/assets/js/NewsSidebar.js', array(), _S_VERSION, true);
 		wp_enqueue_script('related-press-releases-script', get_template_directory_uri() . '/assets/js/RelatedPressReleases.js', array('swiper-js'), _S_VERSION, true);
@@ -313,145 +325,24 @@ function addarah_scripts()
 
 		if (!wp_script_is('swiper-js', 'enqueued')) {
 
-			wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
+			wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), '11.0.0', true);
 
 		}
 
-		// Enqueue VenueAtAGlance script (depends on Swiper)
-
-		wp_enqueue_script('venue-at-a-glance-script', get_template_directory_uri() . '/assets/js/VenueAtAGlance.js', array('swiper-js'), _S_VERSION, true);
-		wp_enqueue_script('timeline-slider-script', get_template_directory_uri() . '/assets/js/TimelineSlider.js', array('swiper-js'), _S_VERSION, true);
-		
-		// Enqueue ServicesStack script (depends on GSAP and ScrollTrigger)
-		wp_enqueue_script('services-stack-script', get_template_directory_uri() . '/assets/js/ServicesStack.js', array('gsap', 'gsap-scrolltrigger'), _S_VERSION, true);
-		
-		// Enqueue DualSlider script (depends on Swiper)
-		wp_enqueue_script('dual-slider-script', get_template_directory_uri() . '/assets/js/DualSlider.js', array('swiper-js'), _S_VERSION, true);
-		
-		// Enqueue Statistics script for number animation
-		wp_enqueue_script('statistics-script', get_template_directory_uri() . '/assets/js/Statistics.js', array(), _S_VERSION, true);
-
-	}
-
-	// Load scripts for Landing 2 page
-	$is_landing_2_page = is_page_template('page-landing-2.php');
-	
-	if ($is_landing_2_page) {
-		wp_enqueue_script('infinite-slider-script', get_template_directory_uri() . '/assets/js/InfiniteSlider.js', array(), _S_VERSION, true);
-		wp_enqueue_script('video-form-script', get_template_directory_uri() . '/assets/js/VideoForm.js', array('choices-js', 'flatpickr-js'), _S_VERSION, true);
-		// Load SingleTestimonial script with Swiper dependency
-		wp_enqueue_script('single-testimonial-script', get_template_directory_uri() . '/assets/js/SingleTestimonial.js', array('swiper-js'), _S_VERSION, true);
-	}
-
-	// Load page-specific scripts
-	$is_weddings_page = is_page_template('page-weddings-social-services.php');
-
-	if ($is_weddings_page) {
-		wp_enqueue_script('perfect-day-slider-script', get_template_directory_uri() . '/assets/js/PerfectDaySlider.js', array('swiper-js'), _S_VERSION, true);
-		wp_enqueue_script('single-testimonial-script', get_template_directory_uri() . '/assets/js/SingleTestimonial.js', array('swiper-js'), _S_VERSION, true);
-
-		// Debug: Add inline script to verify page detection
-		wp_add_inline_script('single-testimonial-script', 'console.log("Weddings page detected - SingleTestimonial script should be loaded");', 'before');
-	}
-
-	// Load Swiper for Corporate Services page
-	$is_corporate_services_page = is_page_template('page-corporate-services.php');
-
-	if ($is_corporate_services_page) {
-		wp_enqueue_script('overflow-slider-script', get_template_directory_uri() . '/assets/js/OverflowSlider.js', array('swiper-js'), _S_VERSION, true);
-		wp_enqueue_script('single-testimonial-script', get_template_directory_uri() . '/assets/js/SingleTestimonial.js', array('swiper-js'), _S_VERSION, true);
-	}
-
-	// Load Swiper for Catering Services page
-	$is_catering_services_page = is_page_template('page-catering-services.php');
-
-	if ($is_catering_services_page) {
-		wp_enqueue_script('container-slider-script', get_template_directory_uri() . '/assets/js/ContainerSlider.js', array('swiper-js'), _S_VERSION, true);
-		wp_enqueue_script('single-testimonial-script', get_template_directory_uri() . '/assets/js/SingleTestimonial.js', array('swiper-js'), _S_VERSION, true);
-	}
-
-	// Load scripts for Weddings & Social Services Detail page
-	$is_weddings_detail_page = is_page_template('page-weddings-social-services-detail.php');
-
-	if ($is_weddings_detail_page) {
-		wp_enqueue_script('full-video-section-script', get_template_directory_uri() . '/assets/js/FullVideoSection.js', array(), _S_VERSION, true);
-	}
-
-	// Load scripts for Corporate Services Detail page
-	$is_corporate_services_detail_page = is_page_template('page-corporate-services-detail.php');
-
-	if ($is_corporate_services_detail_page) {
-		wp_enqueue_script('full-video-section-script', get_template_directory_uri() . '/assets/js/FullVideoSection.js', array(), _S_VERSION, true);
-		wp_enqueue_script('container-slider-script', get_template_directory_uri() . '/assets/js/ContainerSlider.js', array('swiper-js'), _S_VERSION, true);
-	}
-
-	// Load scripts for Catering Services Detail page
-	$is_catering_services_detail_page = is_page_template('page-catering-services-detail.php');
-
-	if ($is_catering_services_detail_page) {
-		wp_enqueue_script('full-video-section-script', get_template_directory_uri() . '/assets/js/FullVideoSection.js', array(), _S_VERSION, true);
 	}
 
 
-	// Load Contact Map script for Contact page
-	if ($is_contact_page) {
-		wp_enqueue_script('contact-map-script', get_template_directory_uri() . '/assets/js/ContactMap.js', array(), _S_VERSION, true);
-	}
 
-	// Load scripts for Press Release Detail page
-	if ($is_press_release_detail_page) {
-		// Enqueue Swiper if not already loaded
-		if (!wp_script_is('swiper-js', 'enqueued')) {
-			wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
-		}
-		// Enqueue Swiper CSS if not already loaded
-		if (!wp_style_is('swiper-css', 'enqueued')) {
-			wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0');
-		}
-		wp_enqueue_script('related-press-releases-script', get_template_directory_uri() . '/assets/js/RelatedPressReleases.js', array('swiper-js'), _S_VERSION, true);
-		wp_enqueue_script('related-news-script', get_template_directory_uri() . '/assets/js/RelatedNews.js', array('swiper-js'), _S_VERSION, true);
-	}
 
-	// Load scripts for All News page
-	if ($is_all_news_page) {
-		// Enqueue Swiper if not already loaded
-		if (!wp_script_is('swiper-js', 'enqueued')) {
-			wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
-		}
-		// Enqueue Swiper CSS if not already loaded
-		if (!wp_style_is('swiper-css', 'enqueued')) {
-			wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0');
-		}
-		wp_enqueue_script('all-news-swiper-script', get_template_directory_uri() . '/assets/js/AllNewsSwiper.js', array('swiper-js'), _S_VERSION, true);
-		// Also enqueue RelatedNews script since RelatedNews component is used on this page
-		wp_enqueue_script('related-news-script', get_template_directory_uri() . '/assets/js/RelatedNews.js', array('swiper-js'), _S_VERSION, true);
-	}
 
-	// Load scripts for Weddings & Social Services page
-	if ($is_weddings_social_services_page) {
-		// Enqueue Swiper if not already loaded
-		if (!wp_script_is('swiper-js', 'enqueued')) {
-			wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
-		}
-		// Enqueue Swiper CSS if not already loaded
-		if (!wp_style_is('swiper-css', 'enqueued')) {
-			wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0');
-		}
-		wp_enqueue_script('single-testimonial-script', get_template_directory_uri() . '/assets/js/SingleTestimonial.js', array('swiper-js'), _S_VERSION, true);
-	}
 
-	// Load scripts for Landing Page 2
-	if ($is_landing_2_page) {
-		// Enqueue Swiper if not already loaded
-		if (!wp_script_is('swiper-js', 'enqueued')) {
-			wp_enqueue_script('swiper-js', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
-		}
-		// Enqueue Swiper CSS if not already loaded
-		if (!wp_style_is('swiper-css', 'enqueued')) {
-			wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0');
-		}
-		wp_enqueue_script('single-testimonial-script', get_template_directory_uri() . '/assets/js/SingleTestimonial.js', array('swiper-js'), _S_VERSION, true);
-	}
+
+
+
+
+
+
+
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
