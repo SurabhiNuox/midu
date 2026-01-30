@@ -7,7 +7,46 @@
 	box-sizing: border-box;
 }
 
-html,
+html {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-size: 100%;
+	// Lenis smooth scroll requirements (clip allows position:sticky to work)
+	overflow-x: hidden;
+	overflow-x: clip;
+	// Hide scrollbar
+	scrollbar-width: none; // Firefox
+	-ms-overflow-style: none; // IE and Edge
+	
+	// Hide scrollbar for Webkit browsers (Chrome, Safari, Opera)
+	&::-webkit-scrollbar {
+		display: none;
+		width: 0;
+		height: 0;
+	}
+}
+
+html.lenis {
+	height: auto;
+}
+
+.lenis.lenis-smooth {
+	scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+	pointer-events: none;
+}
+
 body {
 	box-sizing: border-box;
 	padding: 0;
@@ -16,9 +55,24 @@ body {
 	font-style: normal;
 	font-family: "REM", sans-serif;
 	font-weight: 500;
-	/* overflow-x: hidden; */
-	scrollbar-width: none;
-	font-size: 100%;
+	// Hide scrollbar (clip allows position:sticky to work)
+	scrollbar-width: none; // Firefox
+	-ms-overflow-style: none; // IE and Edge
+	overflow-x: hidden;
+	overflow-x: clip;
+	
+	// Hide scrollbar for Webkit browsers (Chrome, Safari, Opera)
+	&::-webkit-scrollbar {
+		display: none;
+		width: 0;
+		height: 0;
+	}
+}
+
+ul, ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
 
 @media screen and (max-width: 1060px) {
@@ -26,6 +80,7 @@ body {
 	body {
 		font-size: 100%;
 		overflow-x: hidden;
+		overflow-x: clip;
 	}
 }
 
@@ -45,6 +100,8 @@ body {
 
 p {
 	font-size: 16px;
+	margin: 0;
+	margin-bottom: 15px;
 
 	@media screen and (max-width: 1024px) {
 		font-size: 14px;

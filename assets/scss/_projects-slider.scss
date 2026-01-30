@@ -1,0 +1,256 @@
+// Projects Slider — CEER "Inspired by a nation" (pinned scroll, one slide at a time, image + text change together)
+@import "./variable";
+@import "./mixins";
+
+// Section height: N × 50vh so one scroll advances one slide (image + text together)
+.projects-slider-section {
+	position: relative;
+	width: 100%;
+	height: calc(var(--projects-slides, 4) * var(--projects-slide-vh, 50) * 1vh);
+	background: #0a0a0a;
+}
+
+.projects-slider-section__filler {
+	height: calc((var(--projects-slides, 4) - 1) * var(--projects-slide-vh, 50) * 1vh);
+	background: #0a0a0a;
+	pointer-events: none;
+}
+
+// Viewport: 100vh block; when .is-pinned (JS) it becomes fixed = CEER-style pin
+.projects-slider-section__sticky {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background: #0a0a0a;
+
+	&.is-pinned {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100vh;
+		max-height: 100vh;
+		z-index: 10;
+		pointer-events: auto;
+	}
+}
+
+.projects-slider__inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+// One image at a time: only media + overlay in flow; content in its own layer
+.projects-slider__slide {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition: opacity 0.5s ease, visibility 0.5s ease;
+
+	&.is-active {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+		z-index: 2;
+	}
+
+	@media #{$media-768} {
+		justify-content: center;
+	}
+}
+
+// Content column: right side, 3 blocks visible (prev + active + next), active full opacity, others faded
+.projects-slider__content-column {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	max-width: 980px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding-right: calc((100% - (1400px - 1.5rem))/2);
+	z-index: 3;
+	overflow: hidden;
+	pointer-events: none;
+
+	@media #{$media-768} {
+		justify-content: center;
+		padding-left: 24px;
+		padding-right: 24px;
+		max-width: 100%;
+	}
+}
+
+.projects-slider__content-strip {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	/* No transition: position follows scroll 1:1 for smooth feel */
+	pointer-events: auto;
+}
+
+.projects-slider__content-block {
+	min-height: 33vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 24px 0 24px 20px;
+	opacity: 0.1;
+	transition: opacity 0.4s ease;
+	color: #fff;
+	text-align: left;
+
+	&.is-near {
+		opacity: 0.1;
+	}
+
+	&.is-active {
+		opacity: 1;
+	}
+
+	@media #{$media-768} {
+		min-height: 28vh;
+		padding: 16px 24px;
+		text-align: center;
+	}
+	p{
+		font-size: size(14px);
+		font-weight: 300;
+		line-height: size(25px);
+		margin: 0 0 20px 0;
+		color: #fff;
+		max-width: 500px;
+	}
+}
+
+.projects-slider__media {
+	position: absolute;
+	inset: 0;
+	overflow: hidden;
+}
+
+.projects-slider__img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.projects-slider__overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.65) 100%);
+	z-index: 1;
+	pointer-events: none;
+}
+
+// Content block typography (number, title, desc, cta) used inside .projects-slider__content-block
+.projects-slider__content-block .projects-slider__number {
+	margin-bottom: 8px;
+}
+
+.projects-slider__content-block .projects-slider__title {
+	margin-bottom: 10px;
+
+	@media #{$media-768} {
+		margin-bottom: 10px;
+	}
+}
+
+.projects-slider__content-block .projects-slider__desc {
+	margin-bottom: 16px;
+
+	@media #{$media-768} {
+		margin-bottom: 12px;
+	}
+}
+
+.projects-slider__number {
+	display: block;
+	font-family: "REM", sans-serif;
+	font-size: size(14px);
+	font-weight: 400;
+	letter-spacing: 0.05em;
+	color: rgba(255, 255, 255, 0.8);
+	margin-bottom: 10px;
+}
+
+.projects-slider__title {
+	font-family: "REM", sans-serif;
+	font-size: size(65px);
+	font-weight: 300;
+	line-height: 1.1;
+	margin: 0 0 18px 0;
+	color: #fff;
+
+	@media #{$media-1024} {
+		font-size: size(42px);
+		margin-bottom: 16px;
+	}
+	@media #{$media-768} {
+		font-size: size(36px);
+		margin-bottom: 14px;
+	}
+	@media #{$media-600} {
+		font-size: size(28px);
+		margin-bottom: 12px;
+	}
+}
+
+.projects-slider__desc {
+	font-family: "REM", sans-serif;
+	font-size: size(18px);
+	font-weight: 300;
+	line-height: 1.65;
+	margin: 0 0 26px 0;
+	color: rgba(255, 255, 255, 0.9);
+
+	@media #{$media-1024} {
+		font-size: size(17px);
+		margin-bottom: 22px;
+	}
+	@media #{$media-768} {
+		font-size: size(16px);
+		margin-bottom: 20px;
+	}
+	@media #{$media-600} {
+		font-size: size(15px);
+		margin-bottom: 18px;
+	}
+}
+
+.projects-slider__cta {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	color: #fff;
+	font-family: "REM", sans-serif;
+	font-size: size(14px);
+	font-weight: 300;
+	text-decoration: none;
+	transition: opacity 0.25s ease, gap 0.25s ease;
+
+	&:hover {
+		opacity: 0.9;
+		gap: 12px;
+	}
+}
+
+.projects-slider__cta-icon {
+	width: 32px;
+}
