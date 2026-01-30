@@ -10,7 +10,6 @@
 get_header();
 ?>
 
-<?php get_template_part('template-parts/intro-vision'); ?>
 <?php get_template_part('template-parts/main-banner'); ?>
 
 <section class="explore-our-world">
@@ -21,6 +20,7 @@ get_header();
 	
 </section>
 
+<?php get_template_part('template-parts/intro-vision'); ?>
 <?php get_template_part('template-parts/projects-slider'); ?>
 
 

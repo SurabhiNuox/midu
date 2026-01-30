@@ -11,11 +11,12 @@
 	function init() {
 		var section = document.getElementById('intro-vision');
 		var maskPhase = document.getElementById('intro-mask-phase');
+		var maskBg = section ? section.querySelector('.intro-vision__mask-bg') : null;
 		var content = document.getElementById('intro-vision-content');
 		var fullVideo = section ? section.querySelector('.intro-vision__full-video') : null;
 		var maskWrap = section ? section.querySelector('.intro-vision__mask-wrap') : null;
 
-		if (!section || !maskPhase || !content || !fullVideo || !maskWrap) return;
+		if (!section || !maskPhase || !content || !fullVideo || !maskWrap || !maskBg) return;
 
 		// Loader mode: section fixed, lock body scroll
 		section.classList.add('intro-vision--active');
@@ -49,15 +50,17 @@
 			}
 		});
 
-		// 1) First: video shows ONLY inside the mask (hold ~3s)
+		// 1) First: show mask-bg (hold ~3s)
 		tl.to({}, { duration: 3 });
 
-		// 2) Then: mask zooms larger and disappears
-		tl.to(maskWrap, {
+		// 2) Then: intro-vision__mask-bg zooms larger and disappears
+		tl.to(maskBg, {
 			scale: 4,
+			opacity: 0,
 			duration: 1.4,
 			ease: 'power2.in',
-			overwrite: true
+			overwrite: true,
+			transformOrigin: 'center center'
 		}, 0);
 		tl.to(maskPhase, {
 			opacity: 0,
@@ -67,6 +70,7 @@
 
 		// After mask is gone: hide mask phase, show full-width video and text
 		tl.set(maskPhase, { visibility: 'hidden', pointerEvents: 'none' }, 1.4);
+		tl.set(maskBg, { scale: 1, opacity: 1 }, 1.4); // reset for any reuse
 		tl.set(fullVideo, { visibility: 'visible' }, 1.4);
 		tl.to(fullVideo, {
 			opacity: 1,
