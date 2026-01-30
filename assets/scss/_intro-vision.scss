@@ -1,0 +1,168 @@
+// Intro Vision 2030 section — video in mask, then full width + text
+@import "./variable";
+@import "./mixins";
+
+// Full-page loader style (AlUla Peregrina–like): covers viewport until intro completes
+body.has-intro-active {
+	overflow: hidden;
+	height: 100vh;
+}
+
+.intro-vision {
+	position: relative;
+	width: 100%;
+	min-height: 100vh;
+	overflow: hidden;
+	background: #0f1729;
+
+	// During loader: section is fixed and covers full viewport
+	&.intro-vision--active {
+		position: fixed;
+		inset: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: 9999;
+	}
+
+	// After intro completes: section stays in flow, user can scroll
+	&.intro-vision--complete {
+		position: relative;
+	}
+
+	// Full-width video (fully hidden until mask disappears)
+	.intro-vision__full-video {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		z-index: 1;
+
+		.intro-vision__video {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+		}
+
+		.intro-vision__full-overlay {
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(
+				to bottom,
+				rgba(15, 23, 41, 0.3) 0%,
+				rgba(15, 23, 41, 0.5) 50%,
+				rgba(15, 23, 41, 0.7) 100%
+			);
+			pointer-events: none;
+		}
+	}
+
+	// Dark background (visible during mask phase)
+	.intro-vision__bg {
+		position: absolute;
+		inset: 0;
+		background: #0f1729;
+		z-index: 0;
+	}
+
+	// Phase 1: only video inside mask is visible; rest is dark bg
+	.intro-vision__mask-phase {
+		position: absolute;
+		inset: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 2;
+		pointer-events: none;
+	}
+
+	.intro-vision__mask-wrap {
+		position: relative;
+		width: 85%;
+		max-width: 1200px;
+		aspect-ratio: 16 / 9;
+		will-change: transform;
+		transform-origin: center center;
+
+		@media #{$media-768} {
+			width: 92%;
+		}
+	}
+
+	// Video is visible ONLY where the mask allows (clip to mask shape)
+	.intro-vision__mask-bg {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		mask-size: 100% 100%;
+		mask-repeat: no-repeat;
+		mask-position: center;
+		mask-origin: border-box;
+		-webkit-mask-size: 100% 100%;
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-position: center;
+		-webkit-mask-origin: border-box;
+		overflow: hidden;
+		border-radius: 24px;
+		// Isolate so only this element shows video through mask; nothing leaks
+		isolation: isolate;
+
+		.intro-vision__video--masked {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			display: block;
+		}
+	}
+
+	// Text content (hidden initially, animates from bottom)
+	.intro-vision__content {
+		position: relative;
+		z-index: 3;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 2rem 1.5rem;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(60px);
+
+		.container {
+			text-align: center;
+			max-width: 900px;
+		}
+	}
+
+	.intro-vision__above {
+		font-size: clamp(12px, 2vw, 16px);
+		font-weight: 500;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.9);
+		margin: 0 0 0.75rem 0;
+	}
+
+	.intro-vision__title {
+		font-size: clamp(36px, 8vw, 72px);
+		font-weight: 700;
+		line-height: 1.1;
+		letter-spacing: 0.02em;
+		color: #fff;
+		margin: 0 0 1rem 0;
+		text-transform: uppercase;
+	}
+
+	.intro-vision__tagline {
+		font-size: clamp(14px, 1.8vw, 18px);
+		font-weight: 400;
+		line-height: 1.5;
+		color: rgba(255, 255, 255, 0.85);
+		margin: 0;
+	}
+}

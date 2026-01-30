@@ -4744,4 +4744,124 @@ p {
   margin-bottom: 0;
   color: #fff;
   font-weight: 100;
+}
+
+.intro-vision {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #0f1729;
+}
+.intro-vision .intro-vision__full-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.intro-vision .intro-vision__full-video .intro-vision__video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.intro-vision .intro-vision__full-video .intro-vision__full-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(15, 23, 41, 0.3) 0%, rgba(15, 23, 41, 0.5) 50%, rgba(15, 23, 41, 0.7) 100%);
+  pointer-events: none;
+}
+.intro-vision .intro-vision__bg {
+  position: absolute;
+  inset: 0;
+  background: #0f1729;
+  z-index: 0;
+}
+.intro-vision .intro-vision__mask-phase {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+}
+.intro-vision .intro-vision__mask-wrap {
+  position: relative;
+  width: 85%;
+  max-width: 1200px;
+  aspect-ratio: 16/9;
+  will-change: transform;
+}
+@media only screen and (max-width: 768px) {
+  .intro-vision .intro-vision__mask-wrap {
+    width: 92%;
+  }
+}
+.intro-vision .intro-vision__mask-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  overflow: hidden;
+  border-radius: 24px;
+}
+.intro-vision .intro-vision__mask-bg .intro-vision__video--masked {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.intro-vision .intro-vision__content {
+  position: relative;
+  z-index: 3;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(60px);
+}
+.intro-vision .intro-vision__content .container {
+  text-align: center;
+  max-width: 900px;
+}
+.intro-vision .intro-vision__above {
+  font-size: clamp(12px, 2vw, 16px);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 0.75rem 0;
+}
+.intro-vision .intro-vision__title {
+  font-size: clamp(36px, 8vw, 72px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+}
+.intro-vision .intro-vision__tagline {
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
 }/*# sourceMappingURL=main.css.map */
