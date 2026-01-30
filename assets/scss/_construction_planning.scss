@@ -1,0 +1,171 @@
+// Investment & Development section – left/right content only (no outer blue background)
+@import "./variable";
+@import "./mixins";
+
+.construction-section{
+	width: 100%;
+	position: relative;
+	padding: 100px 0 250px;
+	margin-top: -130px;
+	margin-bottom: -150px;
+	position: relative;
+    overflow: hidden;
+    mask-image: url(../images/bg-mid-blue.svg);
+    -webkit-mask-image: url(../images/bg-mid-blue.svg);
+    mask-size: 100% auto;
+	background-color: #35435A;
+    -webkit-mask-size: 100% auto;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: top;
+    -webkit-mask-position: top;
+	overflow: hidden;
+
+	.construction-section_inner{
+		   width: 100%;
+		   margin-top: 35px;
+		   display: flex;
+		   flex-wrap: wrap;
+
+
+
+
+.construction-section-list{
+	width: 50%;
+	padding-right: 50px;
+
+	 p {
+		color: #fff;
+		font-weight: 200;
+	  }
+	  .invest-development_heading {
+		color: #fff;
+		font-size: 25px;
+		font-weight: 400;
+		margin: 0 0 10px 0;
+	  }
+	  
+	  .invest-development_list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		margin-bottom: 15px;
+		transition: all 0.3s ease;
+	  }
+	  .invest-development_list .invest-development_item {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		border-radius: 10px;
+		min-height: 60px;
+		padding: 5px 25px;
+		position: relative;
+		z-index: 1;
+		background: #384C63;
+background: linear-gradient(123deg, rgba(56, 76, 99, 1) 0%, rgba(53, 67, 90, 1) 100%);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: top;
+		overflow: hidden;
+
+		 &::before{
+			   content: "";
+			   width: 100%;
+			   height: 100%;
+			   border-radius: 10px;
+			   background: #83BCC8;
+background: linear-gradient(123deg, rgba(131, 188, 200, 1) 0%, rgba(53, 67, 90, 1) 77%);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+		 }
+
+		 &::after{
+			content: "";
+			width: calc(100% - 2px);
+			height: calc(100% - 2px);
+			border-radius: 10px;
+			background: #384C63;
+			background: linear-gradient(123deg, rgba(56, 76, 99, 1) 0%, rgba(53, 67, 90, 1) 100%);
+position: absolute;
+left: 1px;
+top: 1px;
+z-index: 0;
+	  }
+
+	  &:hover{
+		&::after{
+			background: #83BCC8;
+			background: linear-gradient(123deg, rgba(131, 188, 200, 1) 0%, rgba(53, 67, 90, 1) 77%);
+		}
+	  }
+		/* Mask only the background so inner content stays full opacity */
+	  }
+	 
+	  .invest-development_list .invest-development_item .invest-development_item_icon {
+		flex-shrink: 0;
+		width: 30px;
+		height: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		z-index: 1;
+	  }
+	  .invest-development_list .invest-development_item .invest-development_item_icon img {
+		width: 100%;
+		height: auto;
+		max-height: 100%;
+	  }
+	  .invest-development_list .invest-development_item .invest-development_item_title {
+		color: #fff;
+		font-size: 20px;
+		font-weight: 300;
+		margin: 0;
+		line-height: 1.4;
+		position: relative;
+		z-index: 1;
+	  }
+
+
+  }
+
+  .construction-img{
+	width: 50%;
+	height: 605px;
+	position: relative;
+	z-index: 1;
+	mask-image: url(../images/overview_img_bg.svg);
+	-webkit-mask-image: url(../images/overview_img_bg.svg);
+	mask-repeat: no-repeat;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-size: 100% auto;
+	mask-size: 100% auto;
+	background-color: #1B273D;
+	display: block;
+	overflow: hidden;
+  }
+
+  .construction-img img {
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	display: block;
+	-o-object-fit: cover;
+	object-fit: cover;
+	margin: 0;
+	padding: 0;
+}
+ 
+
+  
+
+}
+
+}
+	
+ 

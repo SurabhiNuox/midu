@@ -37,6 +37,64 @@
 .invest-development_right {
 	width: 55%;
 
+	.invest-development_list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		margin-bottom: 15px;
+		transition: all 0.3s ease;
+	
+		.invest-development_item {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			min-height: 80px;
+			padding: 6px 40px;
+			position: relative;
+			z-index: 1;
+			background-image: url(../images/invest-list-bg.svg);
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			background-position: bottom;
+			overflow: hidden;
+	
+			/* Mask only the background so inner content stays full opacity */
+			  &:hover{
+				background-image: url(../images/invest-list-bg-hover.svg);
+			  }
+	
+			.invest-development_item_icon {
+				flex-shrink: 0;
+				width: 35px;
+				height: 35px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: relative;
+				z-index: 1;
+	
+				img {
+					width: 100%;
+					height: auto;
+					max-height: 100%;
+				}
+			}
+	
+			.invest-development_item_title {
+				color: #fff;
+				font-size: 22px;
+				font-weight: 300;
+				margin: 0;
+				line-height: 1.4;
+				position: relative;
+				z-index: 1;
+			}
+		}
+	}
+
 	p{
 		color: #fff;
 		font-weight: 200;
@@ -50,60 +108,7 @@
 	}
 }
 
-.invest-development_list {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
-	margin-bottom: 15px;
-	transition: all 0.3s ease;
 
-	.invest-development_item {
-		display: flex;
-		align-items: center;
-		gap: 20px;
-		min-height: 80px;
-		padding: 6px 40px;
-		position: relative;
-		z-index: 1;
-		background-image: url(../images/invest-list-bg.svg);
-		background-size: 100% auto;
-		background-repeat: no-repeat;
-		background-position: bottom;
-		overflow: hidden;
-
-		/* Mask only the background so inner content stays full opacity */
-		  &:hover{
-			background-image: url(../images/invest-list-bg-hover.svg);
-		  }
-
-		.invest-development_item_icon {
-			flex-shrink: 0;
-			width: 35px;
-			height: 35px;
-			position: relative;
-			z-index: 1;
-
-			img {
-				width: 100%;
-				height: auto;
-				max-height: 100%;
-			}
-		}
-
-		.invest-development_item_title {
-			color: #fff;
-			font-size: 22px;
-			font-weight: 300;
-			margin: 0;
-			line-height: 1.4;
-			position: relative;
-			z-index: 1;
-		}
-	}
-}
 
 	
  

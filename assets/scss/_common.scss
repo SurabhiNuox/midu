@@ -383,3 +383,23 @@ p{
 
 }
 
+.title_main{
+	   width: 100%;
+
+	   h2{
+		margin-bottom: 6px;
+	}
+	p{
+		margin-bottom: 10px;
+		color: #fff;
+		font-weight: 300;
+	}
+	   h5{
+		   font-size: 20px;
+		   margin: 0;
+		   line-height: 1.2;
+		   font-weight: bold;
+		   color: $white;
+	   }
+}
+
