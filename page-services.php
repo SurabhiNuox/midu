@@ -64,6 +64,28 @@ get_header();
 <?php
 		  get_template_part('template-parts/project-management');
 		  ?>
+
+<?php
+		  // Master Planning: all content from page (h2, p, h5, list items); title_main text-center true/false
+		  set_query_var('master_planning_title_center', true);
+		  set_query_var('master_planning_h2', 'Master Planning & Design');
+		  set_query_var('master_planning_p', 'We create master plans and design frameworks that shape distinctive, sustainable, and future-ready developments.');
+		  set_query_var('master_planning_h5', 'Our expertise covers');
+		  set_query_var('master_planning_items', array(
+			  array( 'icon' => 'mas-icon1.svg', 'title' => 'Master plan concepts and zoning strategies' ),
+			  array( 'icon' => 'mas-icon2.svg', 'title' => 'Urban design guidelines and spatial planning' ),
+			  array( 'icon' => 'mas-icon3.svg', 'title' => 'Infrastructure coordination' ),
+			  array( 'icon' => 'mas-icon4.svg', 'title' => 'Architectural design direction' ),
+			  array( 'icon' => 'mas-icon5.svg', 'title' => 'Sustainable design principles' ),
+			  array( 'icon' => 'mas-icon6.svg', 'title' => 'Integration of landscape, mobility, and community needs' ),
+		  ));
+		  get_template_part('template-parts/master-planning');
+		  ?>
+
+<?php
+		  get_template_part('template-parts/construction-oversight');
+		  ?>
+
 	   </div>
 </main><!-- #main -->
 

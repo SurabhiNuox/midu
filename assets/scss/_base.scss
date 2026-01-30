@@ -69,6 +69,12 @@ body {
 	}
 }
 
+ul, ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
 @media screen and (max-width: 1060px) {
 	html,
 	body {
