@@ -1,0 +1,150 @@
+@import "./variable";
+@import "./mixins";
+
+// Our Sectors — central hub with four sector cards (diamond layout)
+.careers_top_section {
+	position: relative;
+	padding: 100px 0 230px;
+    position: relative;
+    overflow: hidden;
+    mask-image: url(../images/blue_section.svg);
+    -webkit-mask-image: url(../images/blue_section.svg);
+    mask-size: 100% auto;
+    background-color: #1B273D;
+    -webkit-mask-size: 100% auto;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: top;
+    -webkit-mask-position: top;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+	&::after{
+		content: "";
+		 width: 311px;
+         height: 311px;
+         background-image: url(../images/careers-bg.svg);
+         position: absolute;
+         left: 40px;
+         top: 40px;
+         background-size: 100% 100%;
+         background-repeat: no-repeat;
+         background-position: center;
+		 z-index: 1;
+	}
+
+	.container{
+		  position: relative;
+		  z-index: 2;
+
+		  
+	.careers_top_left{
+		width: 50%;
+		padding-right: 10%;
+ }
+
+ .careers_top_right{
+		width: 50%;
+
+		p{
+			color: #fff;
+			font-size: size(18px);
+			line-height: size(27px);
+			font-weight: 300;
+			margin-bottom: 20px;
+		}
+ }
+	}
+
+
+
+	
+}
+
+
+.careers_list_section{
+    width: 100%;
+    position: relative;
+    margin-top: -130px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    padding: 130px 0;
+
+	&::before {
+		content: "";
+		width: 100%;
+		height: 180px;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		mask-image: url(../images/light-blue-bottom.svg);
+		-webkit-mask-image: url(../images/light-blue-bottom.svg);
+		mask-size: 100% auto;
+		background-color: #35435A;
+		-webkit-mask-size: 100% auto;
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
+		mask-position: bottom;
+		-webkit-mask-position: bottom;
+		z-index: 1;
+	}
+
+	&::after {
+		content: "";
+		width: 100%;
+		height: 180px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		mask-image: url(../images/light-blue-top.svg);
+		-webkit-mask-image: url(../images/light-blue-top.svg);
+		mask-size: 100% auto;
+		background-color: #35435A;
+		-webkit-mask-size: 100% auto;
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
+		mask-position: top;
+		-webkit-mask-position: top;
+		z-index: 1;
+	}
+
+	.career-list_main{
+		   width: 100%;
+		   position: relative;
+		   z-index: 2;
+		   background-color:#35435A;
+
+		.career-card-list{
+			list-style: none;
+			padding: 0;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 35px;
+			margin-top: 30px;
+
+			@media #{$media-1024}{
+				grid-template-columns: repeat(2, 1fr);
+			}
+			@media #{$media-600}{
+				grid-template-columns: 1fr;
+			}
+
+			> li{
+				margin: 0;
+				padding: 0;
+			}
+		}
+	}
+
+	.career_btn_main{
+		   width: 100%;
+		   display: flex;
+		   justify-content: center;
+		   margin-top: 50px;
+	}
+}
+
+

@@ -98,7 +98,7 @@ get_header();
                                 <div class="news-social">
                                     <label for="">Share:</label>
 						<a href="#" class="social-icon" aria-label="LinkedIn">
-							<span class="icon-linkedin"></span>
+							<span class="icon-facebook"></span>
 						</a>
 						<a href="#" class="social-icon" aria-label="Twitter/X">
 							<span class="icon-twitter"></span>
@@ -107,7 +107,7 @@ get_header();
 							<span class="icon-Instagram"></span>
 						</a>
 						<a href="#" class="social-icon" aria-label="YouTube">
-							<span class="icon-YouTube"></span>
+							<span class="icon-linkedin"></span>
 						</a>
 					</div>
                    </div> 
