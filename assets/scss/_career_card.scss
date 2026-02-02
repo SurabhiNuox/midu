@@ -1,0 +1,92 @@
+// Career card – white card, diagonal cut bottom-right, title, date, location, time, button
+@import "./variable";
+@import "./mixins";
+
+$career-card-accent: #79B2BE;
+$career-card-icon: #e67e22;
+
+.career-card {
+	width: 100%;
+	position: relative;
+	mask-image: url(../images/career-list-bg.svg);
+	-webkit-mask-image: url(../images/career-list-bg.svg);
+	mask-size: 100% auto;
+	min-height: 295px;
+	background-color: #fff;
+	-webkit-mask-size: 100% auto;
+	mask-repeat: no-repeat;
+	-webkit-mask-repeat: no-repeat;
+	mask-position: top;
+	-webkit-mask-position: top;
+	overflow: hidden;
+	display: flex;
+	flex-wrap: wrap;
+
+	&:hover {
+		box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+	}
+
+	&__inner {
+		position: relative;
+		padding: 50px 45px;
+		background: $white;
+		z-index: 1;
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__title {
+		margin: 0 0 0;
+		font-size: size(30px);
+		line-height: 1.25;
+		font-weight: 400;
+		color: #000000;
+	}
+
+	&__date {
+		margin: 0 0 16px;
+		font-size: 16px;
+		line-height: 1.35;
+		color: #353535;
+		font-weight: 400;
+	}
+
+	&__location,
+	&__time {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		margin: 0 0 10px;
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 1.35;
+		color: #353535;
+	}
+
+	&__icon {
+		flex-shrink: 0;
+		color: #FA4B00;
+
+	}
+
+	.btn-primary{
+		position: absolute;
+		right: 50px;
+		bottom: 50px;
+	}
+
+	.career-card__title_main{
+		    width: 100%;
+	}
+
+	.career-card__location_main{
+		   margin-top: auto;
+		   width: 100%;
+	}
+
+	
+
+
+
+}
