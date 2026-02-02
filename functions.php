@@ -138,6 +138,34 @@ function addarah_widgets_init()
 add_action('widgets_init', 'addarah_widgets_init');
 
 /**
+ * Add detail page classes to the body tag only (not to the header).
+ * Output: <body class="... detail-page news-detail-page"> via body_class() in header.php.
+ */
+function midu_detail_page_body_class($classes) {
+	$template = is_page() ? get_page_template_slug() : '';
+
+	$is_news_detail  = ($template === 'page-news-details.php') || (is_single() && get_post_type() === 'post');
+	$is_event_detail = ($template === 'page-event-details.php');
+	$is_career_detail = ($template === 'page-career-details.php');
+
+	if ($is_news_detail || $is_event_detail || $is_career_detail) {
+		$classes[] = 'detail-page';
+	}
+	if ($is_news_detail) {
+		$classes[] = 'news-detail-page';
+	}
+	if ($is_event_detail) {
+		$classes[] = 'event-detail-page';
+	}
+	if ($is_career_detail) {
+		$classes[] = 'career-detail-page';
+	}
+
+	return $classes;
+}
+add_filter('body_class', 'midu_detail_page_body_class');
+
+/**
  * Enqueue scripts and styles.
  */
 function addarah_scripts()
@@ -226,6 +254,8 @@ function addarah_scripts()
 			wp_enqueue_script('gsap-scrolltrigger', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap'), '3.12.5', false);
 		}
 		wp_enqueue_script('projects-slider-script', get_template_directory_uri() . '/assets/js/projects-slider.js', array('smooth-scroll'), _S_VERSION, true);
+
+		wp_enqueue_script('sustainability-commitment-script', get_template_directory_uri() . '/assets/js/sustainability-commitment.js', array(), _S_VERSION, true);
 
 		wp_enqueue_script('intro-vision-script', get_template_directory_uri() . '/assets/js/intro-vision.js', array('gsap'), _S_VERSION, true);
 	}

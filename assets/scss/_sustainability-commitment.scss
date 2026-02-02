@@ -1,0 +1,227 @@
+@import "./variable";
+@import "./mixins";
+
+// Wrapper: wave shape above section
+.sustainability-commitment {
+	position: relative;
+	overflow: hidden;
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: -60px;
+		left: 0;
+		width: 100%;
+		height: 150px;
+		background-color: #1B273D;
+		webkit-mask-image: url("../images/sus_shape.svg");
+		-webkit-mask-image: url(../images/sus_shape.svg);
+		mask-image: url(../images/sus_shape.svg);
+		-webkit-mask-size: 100%;
+		mask-size: 100%;
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-position: top;
+		mask-position: top;
+		z-index: 99;
+	}
+}
+
+// Section height: N × 50vh so scroll advances slides
+.sustainability-commitment-section {
+	position: relative;
+	width: 100%;
+	height: calc(var(--sus-slides, 3) * var(--sus-slide-vh, 50) * 1vh);
+	background: #1B273D;
+}
+
+.sustainability-commitment-section__filler {
+	height: calc((var(--sus-slides, 3) - 1) * var(--sus-slide-vh, 50) * 1vh);
+	background: #1B273D;
+	pointer-events: none;
+}
+
+// When .is-pinned (JS) this becomes fixed = sticky viewport
+.sustainability-commitment-section__sticky {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background: #1B273D;
+
+	&.is-pinned {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100vh;
+		max-height: 100vh;
+		z-index: 10;
+		pointer-events: auto;
+	}
+}
+
+.sustainability-commitment__view {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+// Background slides: vertical clip-path wipe (scroll 1:1, no transition)
+.sustainability-commitment__bg-slide {
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.sustainability-commitment__overlay {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 2;
+	pointer-events: none;
+}
+
+.sustainability-commitment__inner {
+	position: relative;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+	width: 100%;
+
+	@media #{$media-1024} {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+}
+
+.sustainability-commitment__left {
+	max-width: 520px;
+
+	@media #{$media-768} {
+		max-width: 100%;
+	}
+
+	p {
+		color: $white;
+		font-weight: 100;
+		line-height: 1.6;
+		margin: 0 0 20px 0;
+		max-width: 300px;
+	}
+}
+
+.sustainability-commitment__title {
+	color: $white;
+	margin-bottom: 16px;
+	line-height: 1.2;
+	font-size: size(44px);
+	font-weight: 600;
+	line-height: size(46px);
+
+	@media #{$media-768} {
+		margin-bottom: 12px;
+	}
+}
+
+// Card wrapper: contains multiple card blocks (one active); min-height so it doesn't collapse when blocks are absolute
+.sustainability-commitment__card {
+	background: #F47B47;
+	border-radius: 16px;
+	padding: 30px;
+	max-width: 420px;
+	width: 100%;
+	min-height: 420px;
+	box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+	position: relative;
+
+	@media #{$media-1024} {
+		max-width: 100%;
+	}
+
+	@media #{$media-768} {
+		padding: 22px;
+		border-radius: 12px;
+	}
+}
+
+// Card blocks: stacked, same vertical clip-path wipe as bg (scroll 1:1)
+.sustainability-commitment__card-block {
+	position: absolute;
+	inset: 30px;
+	display: flex;
+	flex-direction: column;
+	pointer-events: none;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	&.is-active {
+		pointer-events: auto;
+	}
+
+	@media #{$media-768} {
+		inset: 22px;
+	}
+}
+
+.sustainability-commitment__card-title {
+	color: $white;
+	font-size: size(30px);
+	font-weight: 100;
+	margin: 0 0 5px 0;
+}
+
+.sustainability-commitment__card-desc {
+	color: $white;
+	font-weight: 100;
+	line-height: 1.4;
+	margin: 0 0 20px 0;
+	max-width: 345px;
+}
+
+.sustainability-commitment__card-link {
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	transition: all 0.3s ease-in-out;
+	z-index: 99;
+
+	.sustainability-commitment__card-block:hover & {
+		transform: translate(10px, -10px);
+	}
+}
+
+.sustainability-commitment__card-image {
+	position: relative;
+	border-radius: 10px;
+	overflow: hidden;
+	aspect-ratio: 363/324;
+	mask-image: url("../images/sus_mask.svg");
+	mask-size: 100%;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	-webkit-mask-image: url("../images/sus_mask.svg");
+	-webkit-mask-size: 100%;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+}
