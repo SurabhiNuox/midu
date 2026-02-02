@@ -20,9 +20,10 @@ get_header();
 	
 </section>
 
-<?php get_template_part('template-parts/intro-vision'); ?>
 <?php get_template_part('template-parts/projects-slider'); ?>
-
+<?php get_template_part('template-parts/intro-vision'); ?>
+<?php get_template_part('template-parts/sustainability-commitment'); ?>
+<?php get_template_part('template-parts/our-sectors'); ?>
 
 <?php
 get_footer();

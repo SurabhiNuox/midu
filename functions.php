@@ -255,6 +255,8 @@ function addarah_scripts()
 		}
 		wp_enqueue_script('projects-slider-script', get_template_directory_uri() . '/assets/js/projects-slider.js', array('smooth-scroll'), _S_VERSION, true);
 
+		wp_enqueue_script('sustainability-commitment-script', get_template_directory_uri() . '/assets/js/sustainability-commitment.js', array(), _S_VERSION, true);
+
 		wp_enqueue_script('intro-vision-script', get_template_directory_uri() . '/assets/js/intro-vision.js', array('gsap'), _S_VERSION, true);
 	}
 

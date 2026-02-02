@@ -81,7 +81,7 @@ $slides = array(
 								</span>
 							</a>
 						<?php endif; ?>
-					</div>
+					</div>						
 					<?php endforeach; ?>
 				</div>
 			</div>

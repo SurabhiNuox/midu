@@ -1,0 +1,282 @@
+@import "./variable";
+@import "./mixins";
+
+// Our Sectors — central hub with four sector cards (diamond layout)
+.our-sectors {
+	position: relative;
+	padding: 80px 0 100px;
+	overflow: hidden;
+	background-color: #0f1419;
+
+	@media #{$media-768} {
+		padding: 60px 0 80px;
+	}
+}
+
+// Dark background with subtle dot grid and soft gradients
+.our-sectors__bg {
+	position: absolute;
+	inset: 0;
+	background-color: #0f1419;
+	background-image:
+		radial-gradient(circle at 20% 50%, rgba(244, 123, 71, 0.08) 0%, transparent 45%),
+		radial-gradient(circle at 80% 50%, rgba(21, 134, 138, 0.12) 0%, transparent 45%),
+		radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 1px);
+	background-size: 100% 100%, 100% 100%, 24px 24px;
+	background-position: 0 0, 0 0, 0 0;
+	z-index: 0;
+	pointer-events: none;
+}
+
+.our-sectors__inner {
+	position: relative;
+	z-index: 1;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+.our-sectors__title {
+	text-align: center;
+	margin-bottom: 60px;
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media #{$media-768} {
+		margin-bottom: 40px;
+	}
+}
+
+// Hub: center circle + radiating lines + four cards (diamond)
+.our-sectors__hub {
+	position: relative;
+	width: 100%;
+	min-height: 520px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 50px;
+
+	@media #{$media-1024} {
+		min-height: 480px;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 24px;
+		padding-top: 120px;
+	}
+
+	@media #{$media-768} {
+		min-height: auto;
+		padding-top: 80px;
+		margin-bottom: 40px;
+	}
+}
+
+// Central "Our Sectors" circle
+.our-sectors__center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 180px;
+	height: 180px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #1B273D;
+	border-radius: 50%;
+	z-index: 3;
+	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+
+	@media #{$media-768} {
+		width: 140px;
+		height: 140px;
+		top: 60px;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+}
+
+.our-sectors__center-ring {
+	position: absolute;
+	inset: -12px;
+	border: 2px dashed rgba(21, 134, 138, 0.4);
+	border-radius: 50%;
+	pointer-events: none;
+}
+
+.our-sectors__center-label {
+	font-family: "REM", sans-serif;
+	font-size: size(18px);
+	font-weight: 600;
+	color: $white;
+	text-align: center;
+	letter-spacing: 0.02em;
+	z-index: 1;
+
+	@media #{$media-768} {
+		font-size: size(16px);
+	}
+}
+
+// Radiating lines from center to cards
+.our-sectors__line {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 1px;
+	height: 120px;
+	background: linear-gradient(to bottom, rgba(21, 134, 138, 0.5), rgba(21, 134, 138, 0.15));
+	transform-origin: center top;
+	z-index: 1;
+	pointer-events: none;
+
+	&--top-left {
+		transform: translate(-50%, -50%) rotate(-135deg);
+	}
+	&--top-right {
+		transform: translate(-50%, -50%) rotate(-45deg);
+	}
+	&--bottom-left {
+		transform: translate(-50%, -50%) rotate(135deg);
+	}
+	&--bottom-right {
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+
+	@media #{$media-1024} {
+		display: none;
+	}
+}
+
+// Sector cards — diamond positions
+.our-sectors__card {
+	position: absolute;
+	width: 280px;
+	padding: 28px 24px;
+	background: rgba(27, 39, 61, 0.85);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 16px;
+	text-decoration: none;
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	&:hover {
+		border-color: rgba(21, 134, 138, 0.4);
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+	}
+
+	&--top-left {
+		left: 50%;
+		top: 50%;
+		transform: translate(calc(-50% - 220px), calc(-50% - 140px));
+	}
+	&--top-right {
+		left: 50%;
+		top: 50%;
+		transform: translate(calc(-50% + 220px), calc(-50% - 140px));
+	}
+	&--bottom-left {
+		left: 50%;
+		top: 50%;
+		transform: translate(calc(-50% - 220px), calc(-50% + 140px));
+	}
+	&--bottom-right {
+		left: 50%;
+		top: 50%;
+		transform: translate(calc(-50% + 220px), calc(-50% + 140px));
+	}
+
+	@media #{$media-1200} {
+		width: 260px;
+		&--top-left { transform: translate(calc(-50% - 180px), calc(-50% - 120px)); }
+		&--top-right { transform: translate(calc(-50% + 180px), calc(-50% - 120px)); }
+		&--bottom-left { transform: translate(calc(-50% - 180px), calc(-50% + 120px)); }
+		&--bottom-right { transform: translate(calc(-50% + 180px), calc(-50% + 120px)); }
+	}
+
+	@media #{$media-1024} {
+		position: relative;
+		left: auto;
+		top: auto;
+		transform: none;
+		width: calc(50% - 12px);
+		min-width: 240px;
+		max-width: 320px;
+	}
+	@media #{$media-768} {
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+		padding: 22px 20px;
+	}
+}
+
+.our-sectors__card-icon {
+	width: 48px;
+	height: 48px;
+	margin-bottom: 16px;
+	border-radius: 12px;
+	background-color: rgba(244, 123, 71, 0.15);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+
+	// Placeholder icons — replace with SVG background-image when assets exist
+	&--industrial {
+		background-image: url("../images/ser-icon1.svg");
+		background-size: 28px;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	&--mining {
+		background-image: url("../images/ser-icon2.svg");
+		background-size: 28px;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	&--contracting {
+		background-image: url("../images/ser-icon3.svg");
+		background-size: 28px;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	&--water {
+		background-image: url("../images/ser-icon4.svg");
+		background-size: 28px;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
+
+.our-sectors__card-title {
+	font-family: "REM", sans-serif;
+	font-size: size(22px);
+	font-weight: 600;
+	color: $white;
+	margin: 0 0 8px 0;
+	line-height: 1.2;
+}
+
+.our-sectors__card-desc {
+	font-size: size(14px);
+	font-weight: 300;
+	color: rgba(255, 255, 255, 0.75);
+	line-height: 1.5;
+	margin: 0;
+}
+
+.our-sectors__cta-wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.our-sectors__cta {
+	// Teal/cyan primary button already styled in common
+}
