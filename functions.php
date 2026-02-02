@@ -223,6 +223,8 @@ function addarah_scripts()
 			wp_enqueue_script('gsap-scrolltrigger', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap'), '3.12.5', false);
 		}
 		wp_enqueue_script('projects-slider-script', get_template_directory_uri() . '/assets/js/projects-slider.js', array('smooth-scroll'), _S_VERSION, true);
+
+		wp_enqueue_script('intro-vision-script', get_template_directory_uri() . '/assets/js/intro-vision.js', array('gsap'), _S_VERSION, true);
 	}
 
 
