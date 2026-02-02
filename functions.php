@@ -145,6 +145,7 @@ function addarah_scripts()
 	// Enqueue main.css (Footer component styles)
 	wp_enqueue_style('footer-style', get_template_directory_uri() . '/assets/scss/main.css', array(), _S_VERSION);
 	
+	wp_enqueue_style('nice', get_template_directory_uri() . '/assets/css/nice-select.css', array(), _S_VERSION);
 	// Enqueue WhatsApp button styles (separate file until SCSS is compiled)
 	wp_enqueue_style('whatsapp-button-style', get_template_directory_uri() . '/assets/css/whatsapp-button.css', array(), _S_VERSION);
 
@@ -153,7 +154,9 @@ function addarah_scripts()
 
 	// Enqueue smooth scroll initialization (loaded on all pages)
 	wp_enqueue_script('smooth-scroll', get_template_directory_uri() . '/assets/js/smooth-scroll.js', array('lenis'), _S_VERSION, true);
-
+	
+	wp_enqueue_script('nice-select', get_template_directory_uri() . '/assets/js/nice-select.min.js', array('lenis'), _S_VERSION, true);
+	wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', array('lenis'), _S_VERSION, true);
 	// Header script removed - not needed for current header implementation
 
 	// Enqueue Footer component script (loaded on all pages)
