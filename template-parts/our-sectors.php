@@ -11,28 +11,28 @@ $sectors = array(
 		'title'       => 'Industrial',
 		'description' => 'Enhancing manufacturing and logistics ecosystems.',
 		'link'        => home_url( '/sectors#industrial' ),
-		'icon'        => 'industrial',
+		'icon'        => get_template_directory_uri() . '/assets/images/sector_icon_1.svg',
 		'position'    => 'top-left',
 	),
 	array(
 		'title'       => 'Mining',
 		'description' => 'Developing strategic natural resource opportunities.',
 		'link'        => home_url( '/sectors#mining' ),
-		'icon'        => 'mining',
+		'icon'        => get_template_directory_uri() . '/assets/images/sector_icon_2.svg',
 		'position'    => 'top-right',
 	),
 	array(
 		'title'       => 'Contracting',
-		'description' => 'Delivering critical infrastructure and built environment solutions.',
+		'description' => 'Delivering critical infrastructure and..',
 		'link'        => home_url( '/sectors#contracting' ),
-		'icon'        => 'contracting',
+		'icon'        => get_template_directory_uri() . '/assets/images/sector_icon_1.svg',
 		'position'    => 'bottom-left',
 	),
 	array(
 		'title'       => 'Water Solutions',
-		'description' => 'Supporting sustainable water management and treatment.',
+		'description' => 'Supporting sustainable water management..',
 		'link'        => home_url( '/sectors#water-solutions' ),
-		'icon'        => 'water',
+		'icon'        => get_template_directory_uri() . '/assets/images/sector_icon_2.svg',
 		'position'    => 'bottom-right',
 	),
 );
@@ -46,18 +46,27 @@ $sectors = array(
 		<div class="our-sectors__hub">
 			<div class="our-sectors__center">
 				<span class="our-sectors__center-ring" aria-hidden="true"></span>
+				<span class="our-sectors__center-ring-two" aria-hidden="true"></span>
 				<span class="our-sectors__center-label">Our Sectors</span>
 			</div>
-			<?php foreach ( $sectors as $sector ) : ?>
-			<div class="our-sectors__line our-sectors__line--<?php echo esc_attr( $sector['position'] ); ?>" aria-hidden="true"></div>
+			<?php foreach ( $sectors as $i => $sector ) : ?>
+			<div class="our-sectors__line our-sectors__line--<?php echo esc_attr( $sector['position'] ); ?>" aria-hidden="true">
+				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/line_' . ( $i + 1 ) . '.png' ); ?>" alt="">
+			</div>
 			<?php endforeach; ?>
 
 			<?php foreach ( $sectors as $sector ) : ?>
-			<a href="<?php echo esc_url( $sector['link'] ); ?>" class="our-sectors__card our-sectors__card--<?php echo esc_attr( $sector['position'] ); ?>" aria-label="<?php echo esc_attr( $sector['title'] ); ?>">
-				<span class="our-sectors__card-icon our-sectors__card-icon--<?php echo esc_attr( $sector['icon'] ); ?>" aria-hidden="true"></span>
-				<h3 class="our-sectors__card-title"><?php echo esc_html( $sector['title'] ); ?></h3>
-				<p class="our-sectors__card-desc"><?php echo esc_html( $sector['description'] ); ?></p>
-			</a>
+			<div class="our-sectors__card-wrap our-sectors__card-wrap--<?php echo esc_attr( $sector['position'] ); ?>">
+				<div class="our-sectors__card-inner">
+				<a href="<?php echo esc_url( $sector['link'] ); ?>" class="our-sectors__card our-sectors__card--<?php echo esc_attr( $sector['position'] ); ?>" aria-label="<?php echo esc_attr( $sector['title'] ); ?>">
+					<span class="our-sectors__card-icon">
+						<img src="<?php echo esc_url( $sector['icon'] ); ?>" alt="<?php echo esc_attr( $sector['title'] ); ?>" width="32" height="32">
+					</span>
+					<h3 class="our-sectors__card-title"><?php echo esc_html( $sector['title'] ); ?></h3>
+					<p><?php echo esc_html( $sector['description'] ); ?></p>
+				</a>
+				</div>
+			</div>
 			<?php endforeach; ?>
 		</div>
 

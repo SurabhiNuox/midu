@@ -159,6 +159,9 @@ function addarah_scripts()
 	wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', array('lenis'), _S_VERSION, true);
 	// Header script removed - not needed for current header implementation
 
+	// Show sticky header when user scrolls (up or down)
+	wp_enqueue_script('header-show-on-scroll', get_template_directory_uri() . '/assets/js/header-show-on-scroll.js', array(), _S_VERSION, true);
+
 	// Enqueue Footer component script (loaded on all pages)
 	wp_enqueue_script('footer-script', get_template_directory_uri() . '/assets/js/Footer.js', array(), _S_VERSION, true);
 
@@ -230,6 +233,12 @@ function addarah_scripts()
 		wp_enqueue_script('sustainability-commitment-script', get_template_directory_uri() . '/assets/js/sustainability-commitment.js', array(), _S_VERSION, true);
 
 		wp_enqueue_script('intro-vision-script', get_template_directory_uri() . '/assets/js/intro-vision.js', array('gsap'), _S_VERSION, true);
+
+		wp_enqueue_script('our-sectors-script', get_template_directory_uri() . '/assets/js/our-sectors.js', array('gsap'), _S_VERSION, true);
+
+		wp_enqueue_script('journey-legacy-script', get_template_directory_uri() . '/assets/js/journey-legacy.js', array('swiper-js'), _S_VERSION, true);
+
+		wp_enqueue_script('latest-news-script', get_template_directory_uri() . '/assets/js/latest-news.js', array('swiper-js'), _S_VERSION, true);
 	}
 
 
