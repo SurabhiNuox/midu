@@ -134,6 +134,17 @@ get_header();
             </div>
            </div>
 
+
+		   <?php get_template_part('template-parts/career-life'); ?>
+
+		   <?php get_template_part('template-parts/career-story'); ?>
+
+		   <section class="career_intenship_section">
+                     <div class="container">
+						   <?php get_template_part('template-parts/image-text'); ?>
+					 </div>
+		   </section>
+
 	   </div>
 </main><!-- #main -->
 

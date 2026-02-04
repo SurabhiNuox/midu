@@ -1,0 +1,86 @@
+// Career card – white card, diagonal cut bottom-right, title, date, location, time, button
+@import "./variable";
+@import "./mixins";
+
+.right_text_image{
+	   width: 100%;
+	   height: auto;
+	   position: relative;
+	   display: flex;
+	   flex-wrap: wrap;
+
+	   .right_text_main{
+		     width: 55%;
+			 padding-right: 5%;
+
+			 h2{
+				  color: #1B273D;
+				  font-weight: 400;
+			 }
+
+			 p{
+				  font-weight: 200;
+				  color: #1B273D;
+			 }
+
+			 ul{
+				  margin: 15px 0;
+				  display: flex;
+				  flex-wrap: wrap;
+				  row-gap: 10px;
+
+				  li{
+					font-size: size(20px);
+					line-height: size(30px);
+					font-weight: 200;
+					color: #1B273D;
+					padding-left: 25px;
+					position: relative;
+					width: 100%;
+
+					 &::after{
+						  content: "";
+						  width: 16px;
+						  height: 16px;
+						  background-image: url(../images/list_icon.svg);
+						  background-size: contain;
+						  background-repeat: no-repeat;
+						  background-position: center;
+						  position: absolute;
+						  left: 0;
+						  top: 50%;
+						  transform: translateY(-50%);
+					 }
+				  }
+			 }
+
+
+	   }
+
+	   .right_text_img{
+		    width: 45%;
+			height: 560px;
+    position: relative;
+    z-index: 1;
+    mask-image: url(../images/overview_img_bg.svg);
+    -webkit-mask-image: url(../images/overview_img_bg.svg);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% auto;
+    mask-size: 100% auto;
+    background-color: #1B273D;
+    display: block;
+    overflow: hidden;
+
+	img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+		object-position: center;
+		position: absolute;
+	}
+	   }
+}
+
+

@@ -230,6 +230,7 @@ function addarah_scripts()
 		$is_press_release_detail_page = ($template === 'page-press-release-detail.php' || is_page_template('page-press-release-detail.php'));
 		$is_all_news_page = ($template === 'page-all-news.php' || is_page_template('page-all-news.php'));
 		$is_weddings_social_services_page = ($template === 'page-weddings-social-services.php' || is_page_template('page-weddings-social-services.php'));
+		$is_careers_page = ($template === 'page-careers.php');
 	}
 
 	// Enqueue Swiper CSS and JS globally (available on all pages)
@@ -277,6 +278,14 @@ function addarah_scripts()
 		if (!wp_script_is('swiper-js', 'enqueued')) {
 			wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), '11.0.0', true);
 		}
+	}
+
+	// Careers page: Fancybox for career life YouTube video popup
+	if ($is_careers_page) {
+		wp_enqueue_style('fancybox', get_template_directory_uri() . '/assets/css/fancybox.min.css', array(), _S_VERSION);
+		wp_enqueue_script('fancybox', get_template_directory_uri() . '/assets/js/fancybox.min.js', array(), _S_VERSION, true);
+		wp_enqueue_script('career-life-script', get_template_directory_uri() . '/assets/js/career-life.js', array('fancybox'), _S_VERSION, true);
+		wp_enqueue_script('career-story-script', get_template_directory_uri() . '/assets/js/career-story.js', array('swiper-js'), _S_VERSION, true);
 	}
 
 	// Load Swiper for News and Media page
