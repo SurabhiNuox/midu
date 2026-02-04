@@ -424,3 +424,50 @@ p{
 	background-image: url(../images/select-open.svg);
 }
 
+
+.detail-page .site-header .header-content{
+	  background-image: url(../images/header-blue.svg);
+}
+
+.detail-page  .main_content{
+	   top: 0;
+}
+
+.breadcrumb{
+	   width: 100%;
+	   ul{
+		    display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 25px;
+			li{
+				a{
+					font-size: 14px;
+					line-height: 26px;
+					font-weight: 400;
+					color: #3C3C3C;
+					position: relative;
+
+					&::after{
+						content: "";
+						position: absolute;
+						top: 4px;
+						right: -15px;
+						width: 6px;
+						height: 10px;
+						background-image: url(../images/bread-arrow.svg);
+						background-repeat: no-repeat;
+						background-position: center;
+						background-size: 100% 100%;
+					}
+				}
+
+				span{
+					font-size: 14px;
+					line-height: 26px;
+					font-weight: 500;
+					color: #15868A;
+				}
+			}
+	   }
+}
