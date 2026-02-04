@@ -2,12 +2,14 @@
 @import "./mixins";
 
 // Our Sectors — central hub with four sector cards (diamond layout)
+// z-index below sustainability sticky (10) so sectors appear only after sustainability is fully shown
 .our-sectors {
 	position: relative;
-	padding: 80px 0 100px;
-	overflow: hidden;
-	background-color: #0f1419;
-
+    padding: 80px 0 100px;
+    overflow: hidden;
+    background-color: #1B273D;
+    height: 120vh;
+	z-index: 1;
 	@media #{$media-768} {
 		padding: 60px 0 80px;
 	}
@@ -17,15 +19,11 @@
 .our-sectors__bg {
 	position: absolute;
 	inset: 0;
-	background-color: #0f1419;
-	background-image:
-		radial-gradient(circle at 20% 50%, rgba(244, 123, 71, 0.08) 0%, transparent 45%),
-		radial-gradient(circle at 80% 50%, rgba(21, 134, 138, 0.12) 0%, transparent 45%),
-		radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 1px);
-	background-size: 100% 100%, 100% 100%, 24px 24px;
-	background-position: 0 0, 0 0, 0 0;
+	background-image: url("../images/sectore_bg.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 	z-index: 0;
-	pointer-events: none;
 }
 
 .our-sectors__inner {
@@ -37,8 +35,10 @@
 }
 
 .our-sectors__title {
+	font-size: size(35px);
+	line-height: size(45px);
 	text-align: center;
-	margin-bottom: 60px;
+	margin-bottom: 100px;
 	max-width: 900px;
 	margin-left: auto;
 	margin-right: auto;
@@ -79,15 +79,18 @@
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	width: 180px;
-	height: 180px;
+	width: 250px;
+	height:250px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background-color: #1B273D;
+	// background-color: rgba(117, 159, 219, 0.1);
 	border-radius: 50%;
 	z-index: 3;
-	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06);
+	background-image: url("../images/sec_round_main.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 
 	@media #{$media-768} {
 		width: 140px;
@@ -98,21 +101,47 @@
 	}
 }
 
-.our-sectors__center-ring {
-	position: absolute;
-	inset: -12px;
-	border: 2px dashed rgba(21, 134, 138, 0.4);
-	border-radius: 50%;
-	pointer-events: none;
+// Expanding ripple — one circle at a time (ring 1, then ring 2, then repeat)
+@keyframes our-sectors-ring-ripple {
+	0% {
+		transform: scale(0.85);
+		opacity: 0.8;
+	}
+	50% {
+		transform: scale(1.25);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(0.85);
+		opacity: 0.8;
+	}
 }
 
+.our-sectors__center-ring {
+	position: absolute;
+	inset: -75px;
+	border: 2px solid #A6D3D8;
+	border-radius: 50%;
+	pointer-events: none;
+	transform-origin: center center;
+	animation: our-sectors-ring-ripple 5s ease-out infinite;
+}
+
+.our-sectors__center-ring-two {
+	position: absolute;
+	inset: -35px;
+	border: 2px solid #A6D3D8;
+	border-radius: 50%;
+	pointer-events: none;
+	transform-origin: center center;
+	animation: our-sectors-ring-ripple 5s ease-out infinite 2.5s;
+}
 .our-sectors__center-label {
 	font-family: "REM", sans-serif;
-	font-size: size(18px);
-	font-weight: 600;
+	font-size: size(30px);
+	font-weight: 300;
 	color: $white;
 	text-align: center;
-	letter-spacing: 0.02em;
 	z-index: 1;
 
 	@media #{$media-768} {
@@ -125,24 +154,30 @@
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	width: 1px;
-	height: 120px;
-	background: linear-gradient(to bottom, rgba(21, 134, 138, 0.5), rgba(21, 134, 138, 0.15));
-	transform-origin: center top;
+	width: 117px;
 	z-index: 1;
 	pointer-events: none;
+	margin: 0 auto;
 
 	&--top-left {
-		transform: translate(-50%, -50%) rotate(-135deg);
+		top: 44px;
+		left: 0;
+		right: 20%;
 	}
 	&--top-right {
-		transform: translate(-50%, -50%) rotate(-45deg);
+		top: 45px;
+		right: 30%;
 	}
 	&--bottom-left {
-		transform: translate(-50%, -50%) rotate(135deg);
+		left: 0;
+		right: 20%;
+		top: auto;
+		bottom: 9%;
 	}
 	&--bottom-right {
-		transform: translate(-50%, -50%) rotate(45deg);
+		top: auto;
+		bottom: 9%;
+		right: 30%;
 	}
 
 	@media #{$media-1024} {
@@ -150,44 +185,31 @@
 	}
 }
 
-// Sector cards — diamond positions
-.our-sectors__card {
+// Card wrapper — holds position for animation (scale/opacity on wrapper)
+.our-sectors__card-wrap {
 	position: absolute;
 	width: 280px;
-	padding: 28px 24px;
-	background: rgba(27, 39, 61, 0.85);
-	border: 1px solid rgba(255, 255, 255, 0.08);
-	border-radius: 16px;
-	text-decoration: none;
-	transition: border-color 0.25s ease, box-shadow 0.25s ease;
 	z-index: 2;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-
-	&:hover {
-		border-color: rgba(21, 134, 138, 0.4);
-		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-	}
+	transform-origin: center center;
 
 	&--top-left {
-		left: 50%;
-		top: 50%;
+		left: 40%;
+		top: 40%;
 		transform: translate(calc(-50% - 220px), calc(-50% - 140px));
 	}
 	&--top-right {
-		left: 50%;
-		top: 50%;
+		left: 60%;
+		top: 40%;
 		transform: translate(calc(-50% + 220px), calc(-50% - 140px));
 	}
 	&--bottom-left {
-		left: 50%;
-		top: 50%;
+		left: 40%;
+		top: 60%;
 		transform: translate(calc(-50% - 220px), calc(-50% + 140px));
 	}
 	&--bottom-right {
-		left: 50%;
-		top: 50%;
+		left: 60%;
+		top: 60%;
 		transform: translate(calc(-50% + 220px), calc(-50% + 140px));
 	}
 
@@ -203,7 +225,7 @@
 		position: relative;
 		left: auto;
 		top: auto;
-		transform: none;
+		transform: none !important;
 		width: calc(50% - 12px);
 		min-width: 240px;
 		max-width: 320px;
@@ -212,52 +234,58 @@
 		width: 100%;
 		max-width: 100%;
 		min-width: 0;
+	}
+}
+
+.our-sectors__card-inner {
+	display: block;
+	width: 100%;
+	transform-origin: center center;
+}
+
+// Sector cards — diamond positions (layout inside wrapper)
+.our-sectors__card {
+	position: relative;
+	width: 100%;
+	padding: 30px;
+	min-height: 227px;
+	text-decoration: none;
+	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	background-image: url("../images/sc_mask.svg");
+	background-position: top;
+	background-repeat: no-repeat;
+	&:hover {
+		border-color: rgba(21, 134, 138, 0.4);
+		box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+	}
+
+	@media #{$media-768} {
 		padding: 22px 20px;
+	}
+	p{
+		color: #fff;
+		line-height: 1.3;
+		font-weight: 100;
 	}
 }
 
 .our-sectors__card-icon {
-	width: 48px;
-	height: 48px;
-	margin-bottom: 16px;
-	border-radius: 12px;
-	background-color: rgba(244, 123, 71, 0.15);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-shrink: 0;
-
-	// Placeholder icons — replace with SVG background-image when assets exist
-	&--industrial {
-		background-image: url("../images/ser-icon1.svg");
-		background-size: 28px;
-		background-repeat: no-repeat;
-		background-position: center;
-	}
-	&--mining {
-		background-image: url("../images/ser-icon2.svg");
-		background-size: 28px;
-		background-repeat: no-repeat;
-		background-position: center;
-	}
-	&--contracting {
-		background-image: url("../images/ser-icon3.svg");
-		background-size: 28px;
-		background-repeat: no-repeat;
-		background-position: center;
-	}
-	&--water {
-		background-image: url("../images/ser-icon4.svg");
-		background-size: 28px;
-		background-repeat: no-repeat;
-		background-position: center;
+	margin-bottom: 35px;
+	img {
+		width: 28px;
+		height: 28px;
+		object-fit: contain;
+		display: block;
 	}
 }
 
 .our-sectors__card-title {
 	font-family: "REM", sans-serif;
-	font-size: size(22px);
-	font-weight: 600;
+	font-size: size(28px);
+	font-weight: 100;
 	color: $white;
 	margin: 0 0 8px 0;
 	line-height: 1.2;

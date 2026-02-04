@@ -1,0 +1,138 @@
+@import "./variable";
+@import "./mixins";
+
+// Latest News — light grey section, teal shape, Swiper of news cards
+$latest-news-bg: #D9D9D9;
+$latest-news-teal: #2F9A9E;
+$latest-news-title-clr: #1a1a1a;
+
+.latest-news {
+	position: relative;
+    padding: 120px 0 100px;
+    overflow: hidden;
+    background-color: #E9E9E9;
+    height: 100vh;
+    display: flex;
+	@media #{$media-768} {
+		padding: 60px 0 80px;
+	}
+}
+
+// Decorative teal shape top-left
+.latest-news__shape {
+	position: absolute;
+	top: -80px;
+	left:0;
+	width: 100%;
+	height: 180px;
+	background-image: url(../images/news_mask.svg.svg);
+	pointer-events: none;
+	z-index: 0;
+
+	@media #{$media-768} {
+
+	}
+}
+
+.latest-news__inner {
+	position: relative;
+	z-index: 1;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+
+.latest-news__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 25px;
+	gap: 1rem;
+	flex-wrap: wrap;
+
+	@media #{$media-768} {
+		margin-bottom: 32px;
+	}
+}
+
+.latest-news__title {
+	margin: 0;
+	font-size: size(44px);
+	line-height: size(50px);
+	font-weight: 600;
+	color:#1B273D;
+	text-align: left;
+
+	@media #{$media-768} {
+		font-size: size(26px);
+	}
+}
+
+
+.latest-news__view-all-icon {
+	font-size: 1em;
+	line-height: 1;
+}
+
+// Swiper wrapper + custom nav arrows (light grey square, centered with cards)
+.latest-news__slider-wrap {
+	position: relative;
+
+	@media #{$media-768} {
+	}
+}
+
+.latest-news-swiper {
+	overflow: hidden;
+	width: 100%;
+}
+
+.latest-news-swiper .swiper-slide {
+	height: auto;
+	box-sizing: border-box;
+}
+
+// Nav arrows — square, light grey bg, teal/dark icon (per reference: light grey bg, white arrow — use teal for contrast on grey)
+.latest-news__nav {
+	position: absolute;
+	top: 30%;
+	transform: translateY(-50%);
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	z-index: 2;
+
+	// &:hover {
+	// 	background-color: $white;
+	// 	color: darken($latest-news-teal, 8%);
+	// }
+	img{
+		width: 100%;
+		height: 100%;
+	}
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
+	&--prev {
+		left: -50px;
+	}
+
+	&--next {
+		right: -50px;
+	}
+
+	@media #{$media-768} {
+		width: 44px;
+		height: 44px;
+		&--prev { left: 4px; }
+		&--next { right: 4px; }
+	}
+}
