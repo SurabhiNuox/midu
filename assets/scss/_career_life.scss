@@ -1,0 +1,143 @@
+// News card component – asymmetric card with diagonal image, date badge, headline, Learn More
+@import "./variable";
+@import "./mixins";
+
+.career_life_section {
+	width: 100%;
+  position: relative;
+  background-color: #1B273D;
+  padding: 230px 0;
+  margin-top: -130px;
+
+  .career_life_title{
+	    width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		.career_life_title_left{
+			width: 50%;
+			padding-right: 10%;
+		}
+
+		.career_life_title_right{
+			width: 50%;
+
+			p{
+				color: #fff;
+				font-size: size(18px);
+		line-height: size(27px);
+		font-weight: 200;
+			}
+		}
+  }
+
+
+  .career_life_video{
+	   width: 100%;
+	   position: relative;
+	   z-index: 1;
+	   min-height: 510px;
+	   mask-image: url(../images/career-video-bg.svg);
+	   -webkit-mask-image: url(../images/career-video-bg.svg);
+	   mask-repeat: no-repeat;
+	   -webkit-mask-repeat: no-repeat;
+	   -webkit-mask-size: 100% auto;
+	   mask-size: 100% auto;
+	   background-color: #1B273D;
+	   display: block;
+	   overflow: hidden;
+	   position: relative;
+	   margin-top: 30px;
+
+	   .play_icon{
+		     width:64px;
+			 height: 64px;
+			 background-color: #F47B47;
+			 border-radius: 100%;
+			 position: absolute;
+			 top: 50%;
+			 left: 50%;
+			 transform: translate(-50%, -50%);
+			 z-index: 3;
+			 background-image: url(../images/play.svg);
+			 background-repeat: no-repeat;
+			 background-position: center;
+	   }
+
+	   &::after{
+		    content: "";
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.1);
+			z-index: 2;
+	   }
+
+	   img{
+		    width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			object-position: top center;
+			z-index: 1;
+	   }
+  }
+
+  .career_life_list{
+	   width: 100%;
+	   margin-top: 50px;
+	   
+	   ul{
+		    display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 50px;
+
+			li{
+				   width: 100%;
+				   border-top: 2px solid #fff;
+				   padding: 35px 0;
+
+				   .career_life_item{
+					   width: 100%;
+
+					   .career_life_icon{
+						    width: auto;
+							height: 44px;
+							margin-bottom: 20px;
+
+							img{
+								  width: auto;
+								  max-height: 44px;
+							}
+					   }
+
+					   h3{
+						  font-size: size(30px);
+						  line-height: size(35px);
+						  font-weight: 400;
+						  color: #fff;
+						  margin-bottom: 15px;
+					   }
+
+					   p{
+						  font-weight: 200;
+						  color: #fff;
+					   }
+				   }
+			}
+	   }
+  }
+}
+
+
+
+// Remove white dotted focus border from Fancybox video popup
+.fancybox__content,
+.fancybox__content:focus,
+.fancybox__content :focus {
+  outline: none !important;
+  box-shadow: none !important;
+}

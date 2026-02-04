@@ -10,6 +10,8 @@
 	z-index: 1000;
 	padding: 50px 0 0 0;
 	width: 100%;
+	transform: translateY(-100%);
+	transition: transform 0.35s ease;
 
 	.header-container {
 		max-width: 1600px;
@@ -313,15 +315,21 @@
 }
 
 // Add padding to content to account for fixed header
-.site-content {
+// .site-content {
 
-	@media #{$media-768} {
-		padding-top: 90px;
-	}
+// 	@media #{$media-768} {
+// 		padding-top: 90px;
+// 	}
 
-	@media #{$media-600} {
-		padding-top: 80px;
-	}
+// 	@media #{$media-600} {
+// 		padding-top: 80px;
+// 	}
+// }
+
+// Show header when user scrolls; hidden by default (class added by header-show-on-scroll.js)
+.site-header.is-visible {
+	transform: translateY(0);
+	z-index: 10001;
 }
 
 // Mobile Menu Toggle (for future implementation)

@@ -27,16 +27,20 @@
 	}
 }
 
-// Section height: N × 50vh so scroll advances slides
+// Section height: N × 50vh so scroll advances slides (no extra empty space after last slide)
 .sustainability-commitment-section {
 	position: relative;
 	width: 100%;
 	height: calc(var(--sus-slides, 3) * var(--sus-slide-vh, 50) * 1vh);
+	min-height: calc(var(--sus-slides, 3) * var(--sus-slide-vh, 50) * 1vh);
+	max-height: calc(var(--sus-slides, 3) * var(--sus-slide-vh, 50) * 1vh);
+	overflow: hidden;
 	background: #1B273D;
 }
 
 .sustainability-commitment-section__filler {
-	height: calc((var(--sus-slides, 3) - 1) * var(--sus-slide-vh, 50) * 1vh);
+	/* Sticky is 100vh; filler = (N*50 - 100)vh so total = N*50vh — scroll ends when last slide is full */
+	height: calc((var(--sus-slides, 3) - 2) * var(--sus-slide-vh, 50) * 1vh);
 	background: #1B273D;
 	pointer-events: none;
 }

@@ -60,7 +60,9 @@
 		var scrollY = getScrollTop();
 		var rect = section.getBoundingClientRect();
 		var sectionTop = scrollY + rect.top;
-		var sectionHeight = section.offsetHeight;
+		// Use intended scroll distance (N × 50vh) so progress and unpin match last slide; avoids empty space
+		var intendedHeight = totalSlides * 0.5 * window.innerHeight;
+		var sectionHeight = Math.min(section.offsetHeight, Math.round(intendedHeight));
 		var scrollInto = scrollY - sectionTop;
 		var progress = Math.max(0, Math.min(1, scrollInto / sectionHeight));
 		var index = Math.min(totalSlides - 1, Math.max(0, Math.floor(progress * totalSlides)));
@@ -76,8 +78,9 @@
 
 		if (rect.bottom <= 0 || scrollInto >= sectionHeight) {
 			sticky.classList.remove('is-pinned');
-			setVerticalWipe(bgSlides, totalSlides - 1, 1);
-			setVerticalWipe(cardBlocks, totalSlides - 1, 1);
+			// Last slide fully visible (subProgress 0 = no clip), not subProgress 1 which would hide it
+			setVerticalWipe(bgSlides, totalSlides - 1, 0);
+			setVerticalWipe(cardBlocks, totalSlides - 1, 0);
 			return;
 		}
 
