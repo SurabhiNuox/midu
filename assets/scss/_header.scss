@@ -315,16 +315,16 @@
 }
 
 // Add padding to content to account for fixed header
-.site-content {
+// .site-content {
 
-	@media #{$media-768} {
-		padding-top: 90px;
-	}
+// 	@media #{$media-768} {
+// 		padding-top: 90px;
+// 	}
 
-	@media #{$media-600} {
-		padding-top: 80px;
-	}
-}
+// 	@media #{$media-600} {
+// 		padding-top: 80px;
+// 	}
+// }
 
 // Show header when user scrolls; hidden by default (class added by header-show-on-scroll.js)
 .site-header.is-visible {
