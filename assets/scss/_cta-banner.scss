@@ -1,0 +1,106 @@
+@import "./variable";
+@import "./mixins";
+
+// CTA Banner — teal shape with angled top-right cut, two-line text + Contact button
+$cta-banner-bg: #d9d9d9;
+$cta-banner-teal: #0A6A74;
+$cta-banner-btn: #1F2E3E;
+
+.cta-banner {
+	padding: 0 0 170px;
+	background-color: $cta-banner-bg;
+	@include max(1060) {
+		padding: 0 0 150px;
+	}
+	@include max(992) {
+		padding: 25px 0 100px;
+	}
+	.btn-primary{
+		padding: 13px 30px;
+		background-color: #1B273D;
+		gap: 10px;
+		&:hover{
+			background-color: #F47B47;
+		}
+	}
+	p{
+		font-size: size(35px);
+		line-height: 1.3;
+		font-weight: 100;
+		color: $white;
+		font-weight: 100;
+		margin: 0;
+		strong{
+			font-weight: 600;
+			display: block;
+		}
+		@include max(1060) {
+			font-size: size(28px);
+		}
+		@include max(767) {
+			font-size: 19px;
+			line-height: 24px;
+		}
+	}
+}
+
+
+// Teal shape: rounded corners + angled cut top-right (clip-path)
+.cta-banner__shape {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 32px;
+	padding: 45px 115px 45px 80px;
+	background-image: url(../images/cta_banner_mask.png);
+    min-height: 185px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+	@include max(1060) {
+		padding: 30px 80px 30px 50px;
+	}
+	@include max(992) {
+		min-height: 150px;
+	}
+	@include max(767) {
+		padding: 20px;
+        background-size: cover;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+		gap: 20px;
+
+	}
+}
+
+.cta-banner__text {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	color: $white;
+	font-size: size(35px);
+	line-height: 1.3;
+	font-weight: 100;
+
+	@media #{$media-768} {
+		font-size: size(22px);
+	}
+}
+
+.cta-banner__line1 {
+	font-weight: 700;
+}
+
+.cta-banner__line2 {
+	font-weight: 400;
+}
+
+
+.cta-banner__btn-icon {
+	font-size: 1em;
+	line-height: 1;
+}

@@ -1,6 +1,6 @@
 <?php
 /**
- * The about template file
+ * Template Name: about
  *
  * 
  *
@@ -33,7 +33,11 @@ get_header();
 			'AD-DARAH is a world-class events venue located in the heart of Riyadh, designed to host corporate, cultural, and social gatherings of all scales. Combining architectural excellence with modern amenities, we provide an unmatched setting for experiences that leave a lasting impression.'
 		);
 
-		include locate_template('template-parts/ImageTextSection.php'); ?>
+		$image_text_template = locate_template('template-parts/ImageTextSection.php');
+		if ($image_text_template !== '') {
+			include $image_text_template;
+		}
+		?>
 		<?php
 		// Statistics Section
 		?>
@@ -89,7 +93,11 @@ get_header();
 				'button_url' => '#'
 			)
 		);
-		include locate_template('template-parts/VenueAtAGlance.php'); ?>
+		$venue_template = locate_template('template-parts/VenueAtAGlance.php');
+		if ($venue_template !== '') {
+			include $venue_template;
+		}
+		?>
 		<?php
 		// Timeline Slider Section
 		$timeline_headline = 'Rooted in Saudi Identity';
@@ -122,7 +130,11 @@ get_header();
 			),
 
 		);
-		include locate_template('template-parts/TimelineSlider.php'); ?>
+		$timeline_template = locate_template('template-parts/TimelineSlider.php');
+		if ($timeline_template !== '') {
+			include $timeline_template;
+		}
+		?>
 		<div class="about-page-services-stack-wrapper">
 			<?php
 			// Vision Mission Stack Section

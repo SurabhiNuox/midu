@@ -67,18 +67,40 @@
 		gsap.set(lines, { opacity: 0 });
 		gsap.set(cardInners, { opacity: 0, scale: 0.88 });
 
-		// Trigger as soon as any part of section is visible (threshold 0 = first pixel)
+		// Only run when section is actually visible (not covered by sustainability sticky)
+		function isSustainabilityPinned() {
+			var sticky = document.querySelector('.sustainability-commitment-section__sticky.is-pinned');
+			return !!sticky;
+		}
+
+		function isSectionInView() {
+			var r = section.getBoundingClientRect();
+			return r.top < window.innerHeight && r.bottom > 0;
+		}
+
+		function tryRunAnimation() {
+			if (hasRun) return;
+			if (!isSectionInView()) return;
+			if (isSustainabilityPinned()) return;
+			observer.unobserve(section);
+			runAnimation();
+		}
+
 		var observer = new IntersectionObserver(
 			function (entries) {
 				entries.forEach(function (entry) {
-					if (!entry.isIntersecting || hasRun) return;
-					observer.unobserve(entry.target);
-					runAnimation();
+					if (!entry.isIntersecting) return;
+					tryRunAnimation();
 				});
 			},
 			{ rootMargin: '0px', threshold: 0 }
 		);
 		observer.observe(section);
+
+		// When coming from sustainability: animation runs after sticky unpins so it is visible
+		window.addEventListener('sustainability-unpinned', function () {
+			tryRunAnimation();
+		});
 
 		// Fallback: always show elements after 2.5s so they are never stuck hidden (e.g. if observer never fires with Lenis/smooth scroll)
 		setTimeout(function () {
