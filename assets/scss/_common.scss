@@ -33,19 +33,6 @@
 	position: relative;
 	overflow: hidden;
 
-	@media #{$media-768} {
-		padding: 12px 26px;
-		font-size: 15px;
-		border-radius: 0 0 0 12px;
-		clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
-	}
-
-	@media #{$media-600} {
-		padding: 10px 22px;
-		font-size: 14px;
-		border-radius: 0 0 0 10px;
-		clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
-	}
 
 	&:hover {
 		background-color: #F47B47;
@@ -57,10 +44,14 @@
 	&:active {
 		transform: translateY(0);
 	}
-.button-icon{
-	transition: transform 0.3s ease-in-out;
-	width: 10px
-}
+	.button-icon{
+		transition: transform 0.3s ease-in-out;
+		width: 10px
+	}
+	.button-text{
+		font-size: 13px;
+	}
+	
 }	
 
 // Secondary Button
@@ -356,21 +347,18 @@
 	}
 
 	@media #{$media-1024} {
-		font-size: size(38px);
-		line-height: size(44px);
+		font-size:38px;
+		line-height: 44px;
+	}
+	@include max(992) {
+		font-size: 35px;
+		line-height: 40px;
+	}
+	@include max(767) {
+		font-size: 30px;
+		line-height: 35px;
 	}
 
-	@media #{$media-768} {
-		font-size: size(36px);
-		line-height: size(42px);
-		margin-bottom: 25px;
-	}
-
-	@media #{$media-600} {
-		font-size: size(32px);
-		line-height: size(38px);
-		margin-bottom: 20px;
-	}
 }
 
 p{

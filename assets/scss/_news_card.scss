@@ -29,6 +29,12 @@
 		background-color: #1B273D;
 		display: block;
 		overflow: hidden;
+		@include max(1060) {
+			height: 175px;
+		}
+		@include max(767) {
+			height: 195px;
+		}
 	}
 
 	&__image {
@@ -71,6 +77,7 @@
 		font-weight: 400;
 		line-height: 24px;
 		letter-spacing: 0;
+		text-align: center;
 	}
 
 	&__title {
@@ -79,6 +86,11 @@
 		line-height: 1.5;
 		font-weight: 400;
 		color: #101922;
+		@include max(767) {
+			font-size: 14px;
+			line-height: 20px;
+			margin: 10px 0 15px;
+		}
 	}
 
 	&__cta {

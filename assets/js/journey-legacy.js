@@ -19,8 +19,8 @@
 		if (!swiperEl || !yearBtns.length) return;
 
 		var swiper = new Swiper('.journey-legacy-swiper', {
-			slidesPerView: 1.2,
-			spaceBetween: 50,
+			slidesPerView: 1,
+			spaceBetween: 24,
 			loop: false,
 			speed: 600,
 			effect: 'slide',
@@ -28,6 +28,20 @@
 			navigation: {
 				nextEl: nextBtn,
 				prevEl: prevBtn,
+			},
+			breakpoints: {
+				1300: {
+					slidesPerView: 1.2,
+					spaceBetween: 50
+				},
+				1060: {
+					slidesPerView: 1,
+					spaceBetween: 32
+				},
+				767: {
+					slidesPerView: 1,
+					spaceBetween: 24
+				}
 			},
 			on: {
 				init: function () {

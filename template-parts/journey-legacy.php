@@ -39,7 +39,7 @@ $events = array(
 ?>
 
 <section class="journey-legacy" aria-label="Our Journey & Legacy">
-	<div class="journey-legacy__bg" aria-hidden="true"></div>
+	<!-- <div class="journey-legacy__bg" aria-hidden="true"></div> -->
 	<div class="journey-legacy__inner">
 		<div class="container">
 			<div class="journey-legacy__header">
