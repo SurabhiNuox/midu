@@ -1,0 +1,298 @@
+// News card component – asymmetric card with diagonal image, date badge, headline, Learn More
+@import "./variable";
+@import "./mixins";
+
+.career_details_section {
+	width: 100%;
+  position: relative;
+  padding: 190px 0 100px;
+
+  .career_details_wrap{
+	    width: 100%;
+		padding: 100px 0;
+		display: flex;
+		flex-wrap: wrap;
+
+		.career_details_left{
+			   width: 50%;
+			   padding-right: 5%;
+
+			   label{
+				   font-size: size(16px);
+				   line-height: size(25px);
+				   font-weight: 200;
+				   color: #1B273D;
+				   
+			   }
+
+			   h2{
+				 margin-top: 20px;
+				 color: #1B273D;
+			   }
+
+			   .career_tag{
+				  width: auto;
+				  padding: 0 20px;
+				  border-radius: 5px;
+				  line-height: 31px;
+				  font-size: 14px;
+				  font-weight: 500;
+				  color: #fff;
+				  background-color: #15868A;
+				  display: inline-block;
+			   }
+
+			   .career_details_content{
+				   width: 100%;
+				   margin-top: 30px;
+				   display: flex;
+				   flex-wrap: wrap;
+				   gap: 40px;
+
+				   .career_details_box{
+					    width: 100%;
+
+						h4{
+							font-size: size(22px);
+							line-height: size(24px);
+							font-weight: 400;
+							color: #1B273D;
+							margin-bottom: 10px;
+						}
+
+						ul{
+							  li{
+								   width: 100%;
+								   font-size: size(16px);
+								   line-height: size(25px);
+								   font-weight: 400;
+								   color: #353535;
+								   padding-left: 25px;
+								   position: relative;
+								   
+								   &::before{
+									content: "";
+									width: 6px;
+									height: 6px;
+									background-color: #353535;
+									border-radius: 100%;
+									position: absolute;
+									left: 8px;
+									top: 50%;
+									transform: translateY(-50%);
+
+								   }
+								   
+							  }
+						}
+				   }
+			   }
+		}
+
+		.career_details_right{
+			width: 50%;
+			min-height: 500px;
+			padding: 55px 45px;
+			border-radius: 20px;
+			overflow: hidden;
+			position: relative;
+
+
+			&::before{
+				content: "";
+				   width: 100%;
+				   height: 70%;
+				   position: absolute;
+				   top: 0;
+				   left: 0;
+				   background-color: #D9E8F4;
+				   border-radius: 20px;
+				   z-index: 1;
+			}
+
+			&::after{
+				content: "";
+				   width: 100%;
+				   height: 100%;
+				   position: absolute;
+				   bottom: 0;
+				   left: 0;
+				   mask-image: url(../images/career-form.svg);
+				   -webkit-mask-image: url(../images/career-form.svg);
+				   mask-size: 100% auto;
+				   background-color: #D9E8F4;
+				   -webkit-mask-size: 100% auto;
+				   mask-repeat: no-repeat;
+				   -webkit-mask-repeat: no-repeat;
+				   mask-position: bottom;
+				   -webkit-mask-position: bottom;
+				   background-size: 100% 100%;
+				   background-repeat: no-repeat;
+				   background-position: center;
+				   z-index: 1;
+			}
+			
+            .career_details_right_inner{
+				  position: relative;
+				  z-index: 2;
+
+				  h3{
+					   font-size: size(40px);
+					   line-height: size(40px);
+					   font-weight: 400;
+					   color: #000000;
+					   margin: 0;
+					  
+				  }
+
+				  .career_details_form{
+					   width: 100%;
+					   margin-top: 30px;
+
+					   .career_form_group{
+						    width: 100%;
+							margin-bottom: 10px;
+							display: inline-block;
+
+							input,
+							select{
+								 width: 100%;
+								 height: 60px;
+								 border-radius: 10px;
+								 border: 1px solid #fff;
+								 background-color: #FFFFFF;
+								 padding: 0 16px;
+								 font-size: size(16px);
+								 font-family: "REM", sans-serif;
+								 line-height: size(24px);
+								 color: #7C7C7C;
+								 font-weight: 200;
+								 outline: none;
+
+								 &::placeholder{
+									color: #7C7C7C;
+								 }
+
+								 &:focus{
+									  border-color: #fff;
+								  }
+
+								 
+							}
+
+
+					   }
+
+					   // Nice-select dropdown styled same as inputs
+					   .nice-select{
+						    width: 100%;
+							height: 60px;
+							border-radius: 10px;
+							border: 1px solid #fff;
+							background-color: #FFFFFF;
+							padding: 0 16px;
+							display: flex;
+							align-items: center;
+							font-size: size(16px);
+							line-height: size(24px);
+							color: #7C7C7C;
+							font-weight: 200;
+
+							.current{
+								line-height: 1;
+							}
+
+							.list{
+								width: 100%;
+								border-radius: 10px;
+								border: 1px solid #D9E2EC;
+								box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+							}
+
+							.option{
+								font-size: size(16px);
+								line-height: size(24px);
+								padding: 8px 16px;
+							}
+					   }
+
+					
+
+					   .career_form_group--file{
+							 .career_form_file{
+								  display: flex;
+								  align-items: center;
+								  gap: 12px;
+
+								  .career_form_file_input{
+									   position: relative;
+									   flex: 1;
+									   height: 60px;
+									   font-family: "REM", sans-serif;
+									   border-radius: 10px;
+									   border: 1px solid #fff;
+									   background-color: #FFFFFF;
+
+									   input[type="file"]{
+											position: absolute;
+											top: 0;
+											left: 0;
+											right: 0;
+											bottom: 0;
+											opacity: 0;
+											cursor: pointer;
+											z-index: 4;
+									   }
+
+									   .career_form_file_label{
+											position: absolute;
+											left: 16px;
+											right: 12px;
+											top: 50%;
+											font-family: "REM", sans-serif;
+											font-weight: 200;
+											transform: translateY(-50%);
+											font-size: size(16px);
+											line-height: size(24px);
+											color: #7C7C7C;
+											white-space: nowrap;
+											overflow: hidden;
+											text-overflow: ellipsis;
+									   }
+								  }
+
+								  .career_form_file_button{
+									    height: 54px;
+										border-radius: 10px;
+										border: none;
+										padding: 0 20px;
+										background-color: #15868A;
+										color: #FFFFFF;
+										font-size: size(16px);
+										line-height: size(24px);
+										font-weight: 400;
+										cursor: pointer;
+										position: absolute;
+										right: 3px;
+										z-index: 1;
+								  }
+							 }
+					   }
+
+					   .career_form_actions{
+							margin-top: 24px;
+					   }
+				  }
+			}
+			
+		}
+
+		.nice-select{
+			width: 100%;
+			height: 60px;
+			max-width: inherit;
+	   }
+
+  }
+	
+}

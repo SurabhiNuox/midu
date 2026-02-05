@@ -25,7 +25,7 @@
 			speed: 500,
 			effect: 'cards',
 			cardsEffect: {
-				perSlideOffset: 14,
+				perSlideOffset: 12,
 				perSlideRotate: 0,
 				rotate: false,
 				slideShadows: false,
