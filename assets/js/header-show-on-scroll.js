@@ -29,8 +29,18 @@
 		return rect.bottom > 0 && rect.top < viewHeight;
 	}
 
+	function isInOurSectorsSection() {
+		var section = document.querySelector('.our-sectors');
+		if (!section) return false;
+		var rect = section.getBoundingClientRect();
+		var viewHeight = window.innerHeight;
+		return rect.bottom > 0 && rect.top < viewHeight;
+	}
+
 	function showHeader() {
 		if (!header) return;
+		// Don't show header on mousemove when in our-sectors to avoid sudden jump to sustainability
+		if (isInOurSectorsSection()) return;
 		header.classList.add('is-visible');
 		clearTimeout(timeoutId);
 		if (isInFirstSection()) {

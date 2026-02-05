@@ -1,13 +1,41 @@
 /**
- * Main Banner Swiper Initialization
- * Handles the Swiper slider for the main banner section
+ * Main Banner — Swiper + smooth entrance animation for banner elements
  */
 
 document.addEventListener('DOMContentLoaded', function() {
 	const bannerSwiper = document.querySelector('.main-banner-swiper');
-	
+	const mainBanner = document.querySelector('.main-banner');
+
 	if (!bannerSwiper) {
 		return;
+	}
+
+	// Smooth entrance animation for banner content (title, description, button)
+	function runBannerEntranceAnimation() {
+		if (typeof gsap === 'undefined') return;
+		var content = mainBanner ? mainBanner.querySelector('.banner-content') : null;
+		if (!content) return;
+
+		var title = content.querySelector('.banner-title');
+		var desc = content.querySelector('p');
+		var btn = content.querySelector('.btn-primary');
+		var elements = [title, desc, btn].filter(Boolean);
+		if (elements.length === 0) return;
+
+		var ease = 'power3.out';
+		var yStart = 28;
+		var duration = 0.75;
+		var stagger = 0.12;
+
+		gsap.set(elements, { opacity: 0, y: yStart });
+		gsap.to(elements, {
+			opacity: 1,
+			y: 0,
+			duration: duration,
+			ease: ease,
+			stagger: stagger,
+			overwrite: true
+		});
 	}
 
 	// Check if Swiper is loaded
@@ -75,6 +103,8 @@ document.addEventListener('DOMContentLoaded', function() {
 						console.log('Video autoplay prevented:', error);
 					});
 				}
+				// Smooth entrance animation for banner elements
+				runBannerEntranceAnimation();
 			},
 			slideChange: function() {
 				// Pause all videos

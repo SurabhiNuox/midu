@@ -2934,6 +2934,8 @@ p {
   padding: 20px 45px 20px 55px;
   position: relative;
   overflow: hidden;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 .site-header .site-logo {
   flex-shrink: 0;

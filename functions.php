@@ -242,9 +242,11 @@ function addarah_scripts()
 
 	// Enqueue component styles for front page
 	if (is_front_page()) {
-		// Enqueue main banner script (depends on Swiper)
-		// Swiper is already loaded globally above, so this will load after it
-		wp_enqueue_script('main-banner-script', get_template_directory_uri() . '/assets/js/main-banner.js', array('swiper-js'), _S_VERSION, true);
+		// Enqueue main banner script (depends on Swiper + GSAP for entrance animation)
+		if (!wp_script_is('gsap', 'enqueued')) {
+			wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), '3.12.5', false);
+		}
+		wp_enqueue_script('main-banner-script', get_template_directory_uri() . '/assets/js/main-banner.js', array('swiper-js', 'gsap'), _S_VERSION, true);
 
 		// GSAP for Explore Our World section (IntersectionObserver, no ScrollTrigger)
 		if (!wp_script_is('gsap', 'enqueued')) {
@@ -256,17 +258,19 @@ function addarah_scripts()
 		if (!wp_script_is('gsap-scrolltrigger', 'enqueued')) {
 			wp_enqueue_script('gsap-scrolltrigger', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap'), '3.12.5', false);
 		}
-		wp_enqueue_script('projects-slider-script', get_template_directory_uri() . '/assets/js/projects-slider.js', array('smooth-scroll'), _S_VERSION, true);
+		wp_enqueue_script('projects-slider-script', get_template_directory_uri() . '/assets/js/projects-slider.js', array('smooth-scroll', 'gsap'), _S_VERSION, true);
 
-		wp_enqueue_script('sustainability-commitment-script', get_template_directory_uri() . '/assets/js/sustainability-commitment.js', array(), _S_VERSION, true);
+		wp_enqueue_script('sustainability-commitment-script', get_template_directory_uri() . '/assets/js/sustainability-commitment.js', array('gsap'), _S_VERSION, true);
 
 		wp_enqueue_script('intro-vision-script', get_template_directory_uri() . '/assets/js/intro-vision.js', array('gsap'), _S_VERSION, true);
 
 		wp_enqueue_script('our-sectors-script', get_template_directory_uri() . '/assets/js/our-sectors.js', array('gsap'), _S_VERSION, true);
 
-		wp_enqueue_script('journey-legacy-script', get_template_directory_uri() . '/assets/js/journey-legacy.js', array('swiper-js'), _S_VERSION, true);
+		wp_enqueue_script('journey-legacy-script', get_template_directory_uri() . '/assets/js/journey-legacy.js', array('swiper-js', 'gsap'), _S_VERSION, true);
 
-		wp_enqueue_script('latest-news-script', get_template_directory_uri() . '/assets/js/latest-news.js', array('swiper-js'), _S_VERSION, true);
+		wp_enqueue_script('latest-news-script', get_template_directory_uri() . '/assets/js/latest-news.js', array('swiper-js', 'gsap'), _S_VERSION, true);
+
+		wp_enqueue_script('cta-banner-script', get_template_directory_uri() . '/assets/js/cta-banner.js', array('gsap'), _S_VERSION, true);
 	}
 
 

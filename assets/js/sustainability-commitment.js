@@ -7,6 +7,9 @@
 (function () {
 	'use strict';
 
+	var hasRunInnerAnimation = false;
+	var runInnerAnimation = function () {};
+
 	function getScrollTop() {
 		if (window.lenis && typeof window.lenis.scroll === 'number') {
 			return window.lenis.scroll;
@@ -76,23 +79,88 @@
 			return;
 		}
 
-		if (rect.bottom <= 0 || scrollInto >= sectionHeight) {
+		// Unpin only when section has left viewport for smooth transition (no sudden change)
+		if (rect.bottom <= 0) {
+			var wasPinned = sticky.classList.contains('is-pinned');
 			sticky.classList.remove('is-pinned');
-			// Last slide fully visible (subProgress 0 = no clip), not subProgress 1 which would hide it
+			setVerticalWipe(bgSlides, totalSlides - 1, 0);
+			setVerticalWipe(cardBlocks, totalSlides - 1, 0);
+			if (wasPinned) {
+				try { window.dispatchEvent(new CustomEvent('sustainability-unpinned')); } catch (e) {}
+			}
+			return;
+		}
+
+		// At end of scroll but section still visible: keep pinned, show last slide
+		if (scrollInto >= sectionHeight) {
+			if (shouldPin) {
+				sticky.classList.add('is-pinned');
+				if (!hasRunInnerAnimation) runInnerAnimation();
+			} else {
+				sticky.classList.remove('is-pinned');
+			}
 			setVerticalWipe(bgSlides, totalSlides - 1, 0);
 			setVerticalWipe(cardBlocks, totalSlides - 1, 0);
 			return;
 		}
 
-		if (shouldPin) sticky.classList.add('is-pinned');
-		else sticky.classList.remove('is-pinned');
+		if (shouldPin) {
+			sticky.classList.add('is-pinned');
+			if (!hasRunInnerAnimation) runInnerAnimation();
+		} else {
+			sticky.classList.remove('is-pinned');
+		}
 		setVerticalWipe(bgSlides, index, subProgress);
 		setVerticalWipe(cardBlocks, index, subProgress);
+	}
+
+	function initInnerAnimation() {
+		if (typeof gsap === 'undefined') return;
+		var section = document.querySelector('.sustainability-commitment-section');
+		if (!section) return;
+		var inner = section.querySelector('.sustainability-commitment__inner');
+		if (!inner) return;
+
+		var left = inner.querySelector('.sustainability-commitment__left');
+		var title = inner.querySelector('.sustainability-commitment__title');
+		var desc = left ? left.querySelector('p') : null;
+		var btn = left ? left.querySelector('.btn-primary') : null;
+		var card = inner.querySelector('.sustainability-commitment__card');
+		var elements = [title, desc, btn, card].filter(Boolean);
+		if (elements.length === 0) return;
+
+		var ease = 'power3.out';
+		var yStart = 26;
+		var duration = 0.7;
+		var stagger = 0.12;
+
+		gsap.set(elements, { opacity: 0, y: yStart });
+
+		runInnerAnimation = function () {
+			if (hasRunInnerAnimation) return;
+			hasRunInnerAnimation = true;
+			gsap.to(elements, {
+				opacity: 1,
+				y: 0,
+				duration: duration,
+				ease: ease,
+				stagger: stagger,
+				overwrite: true
+			});
+		};
+
+		// If section is already pinned on load (e.g. refresh on this section), run immediately
+		var sticky = section.querySelector('.sustainability-commitment-section__sticky');
+		if (sticky && sticky.classList.contains('is-pinned')) {
+			runInnerAnimation();
+		}
 	}
 
 	function init() {
 		var section = document.querySelector('.sustainability-commitment-section');
 		if (!section) return;
+
+		initInnerAnimation();
 
 		var bgSlides = section.querySelectorAll('.sustainability-commitment__bg-slide');
 		var cardBlocks = section.querySelectorAll('.sustainability-commitment__card-block');
