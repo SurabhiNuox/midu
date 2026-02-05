@@ -131,6 +131,12 @@ img {
 	padding: 0 20px;
 	margin: 0 auto;
 	width: 100%;
+	@include max(1500) {
+		max-width: 1240px;
+	}
+	@include max(1060) {
+		padding: 0 4%;
+	}
 }
 
 .trans,

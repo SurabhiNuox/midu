@@ -111,25 +111,27 @@
 			return;
 		}
 
-		// After section has completely scrolled past: no pin, show last slide
-		// Unpin only when last content (Quba Mosque) reaches the top
+		// Unpin only when section has left the viewport to avoid jump when entering next section
+		if (rect.bottom <= 0) {
+			sticky.classList.remove('is-pinned');
+			setActiveSlide(slides, totalSlides - 1);
+			if (blocks.length) setContentColumn(column, strip, blocks, totalSlides - 1, 1);
+			return;
+		}
+
+		// At end of scroll but section still visible: keep pinned, show last slide
 		var isCurrentlyPinned = sticky.classList.contains('is-pinned');
-		if (isCurrentlyPinned) {
-			// When pinned, unpin only when last content's top reaches viewport top
-			if (adjustedProgress >= progressForLastAtTop || scrollInto >= sectionHeight * progressForLastAtTop) {
-				sticky.classList.remove('is-pinned');
-				setActiveSlide(slides, totalSlides - 1);
-				if (blocks.length) setContentColumn(column, strip, blocks, totalSlides - 1, 1);
-				return;
-			}
-		} else {
-			// When not pinned, use normal check
-			if (rect.bottom <= 0 || scrollInto >= sectionHeight) {
-				sticky.classList.remove('is-pinned');
-				setActiveSlide(slides, totalSlides - 1);
-				if (blocks.length) setContentColumn(column, strip, blocks, totalSlides - 1, 1);
-				return;
-			}
+		if (isCurrentlyPinned && (adjustedProgress >= progressForLastAtTop || scrollInto >= sectionHeight * progressForLastAtTop)) {
+			sticky.classList.add('is-pinned');
+			setActiveSlide(slides, totalSlides - 1);
+			if (blocks.length) setContentColumn(column, strip, blocks, totalSlides - 1, 1);
+			return;
+		}
+		if (!isCurrentlyPinned && scrollInto >= sectionHeight) {
+			sticky.classList.add('is-pinned');
+			setActiveSlide(slides, totalSlides - 1);
+			if (blocks.length) setContentColumn(column, strip, blocks, totalSlides - 1, 1);
+			return;
 		}
 
 		// Section is in viewport: pin the slider
@@ -143,12 +145,55 @@
 		if (blocks.length) setContentColumn(column, strip, blocks, index, adjustedProgress);
 	}
 
+	function initProjectHeaderAnimation() {
+		if (typeof gsap === 'undefined') return;
+		var projectsSection = document.querySelector('.projects_section');
+		if (!projectsSection) return;
+		var headerContent = projectsSection.querySelector('.project-header-content');
+		if (!headerContent) return;
+
+		var title = headerContent.querySelector('h2');
+		var desc = headerContent.querySelector('p');
+		var btn = projectsSection.querySelector('.project-header .btn-primary');
+		var elements = [title, desc, btn].filter(Boolean);
+		if (elements.length === 0) return;
+
+		var ease = 'power3.out';
+		var yStart = 24;
+		var duration = 0.65;
+		var stagger = 0.1;
+
+		gsap.set(elements, { opacity: 0, y: yStart });
+		var hasAnimated = false;
+		var observer = new IntersectionObserver(
+			function (entries) {
+				entries.forEach(function (entry) {
+					if (!entry.isIntersecting || hasAnimated) return;
+					hasAnimated = true;
+					observer.unobserve(entry.target);
+					gsap.to(elements, {
+						opacity: 1,
+						y: 0,
+						duration: duration,
+						ease: ease,
+						stagger: stagger,
+						overwrite: true
+					});
+				});
+			},
+			{ rootMargin: '0px', threshold: 0.15 }
+		);
+		observer.observe(projectsSection);
+	}
+
 	function init() {
 		var section = document.querySelector('.projects-slider-section');
 		if (!section) return;
 
 		var slides = section.querySelectorAll('.projects-slider__slide');
 		if (slides.length === 0) return;
+
+		initProjectHeaderAnimation();
 
 		var strip = section.querySelector('.projects-slider__content-strip');
 		var blocks = section.querySelectorAll('.projects-slider__content-block');

@@ -12,7 +12,9 @@
 	width: 100%;
 	transform: translateY(-100%);
 	transition: transform 0.35s ease;
-
+	@include max(767) {
+		padding: 25px 0 0 0;
+	}
 	.header-container {
 		max-width: 1600px;
 		margin: 0 auto;
@@ -40,122 +42,7 @@
 		padding: 20px 45px 20px 55px;
 		position: relative;
 		overflow: hidden; 
-		&::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: transparent; // No background, just for backdrop-filter
-			backdrop-filter: blur(10px);
-			-webkit-backdrop-filter: blur(10px);
-			z-index: -1; // Behind content
-			// Match exact shape - critical for containing backdrop-filter
-			border-bottom-left-radius: 120px;
-            border-top-right-radius: 120px;
-
-			clip-path: polygon(
-				0% 0%,
-				100% 0%,
-				calc(100% - 50px) 0%,
-				100% 50px,
-				100% 100%,
-				0% 100%
-			);
-			// Ensure backdrop-filter is contained within shape
-			overflow: hidden;
-		}
-
-		@media #{$media-1060} {
-			padding: 12px 30px;
-			gap: 20px;
-			border-top-left-radius: 18px;
-			border-bottom-left-radius: 18px;
-			border-bottom-right-radius: 18px;
-			clip-path: polygon(
-				0% 0%,
-				100% 0%,
-				calc(100% - 45px) 0%,
-				100% 45px,
-				100% 100%,
-				0% 100%
-			);
-
-			&::before {
-				border-top-left-radius: 18px;
-				border-bottom-left-radius: 18px;
-				border-bottom-right-radius: 18px;
-				clip-path: polygon(
-					0% 0%,
-					100% 0%,
-					calc(100% - 45px) 0%,
-					100% 45px,
-					100% 100%,
-					0% 100%
-				);
-			}
-		}
-
-		@media #{$media-768} {
-			padding: 10px 20px;
-			gap: 15px;
-			border-top-left-radius: 15px;
-			border-bottom-left-radius: 15px;
-			border-bottom-right-radius: 15px;
-			clip-path: polygon(
-				0% 0%,
-				100% 0%,
-				calc(100% - 40px) 0%,
-				100% 40px,
-				100% 100%,
-				0% 100%
-			);
-
-			&::before {
-				border-top-left-radius: 15px;
-				border-bottom-left-radius: 15px;
-				border-bottom-right-radius: 15px;
-				clip-path: polygon(
-					0% 0%,
-					100% 0%,
-					calc(100% - 40px) 0%,
-					100% 40px,
-					100% 100%,
-					0% 100%
-				);
-			}
-		}
-
-		@media #{$media-600} {
-			padding: 8px 15px;
-			gap: 10px;
-			border-top-left-radius: 12px;
-			border-bottom-left-radius: 12px;
-			border-bottom-right-radius: 12px;
-			clip-path: polygon(
-				0% 0%,
-				100% 0%,
-				calc(100% - 35px) 0%,
-				100% 35px,
-				100% 100%,
-				0% 100%
-			);
-
-			&::before {
-				border-top-left-radius: 12px;
-				border-bottom-left-radius: 12px;
-				border-bottom-right-radius: 12px;
-				clip-path: polygon(
-					0% 0%,
-					100% 0%,
-					calc(100% - 35px) 0%,
-					100% 35px,
-					100% 100%,
-					0% 100%
-				);
-			}
-		}
+		backdrop-filter:blur(10px);
 	}
 
 	// Logo

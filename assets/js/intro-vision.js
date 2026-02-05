@@ -16,6 +16,16 @@
 
 		if (!section || !container || !mask || !content) return;
 
+		// Below 1060px: simple non-sticky layout, text visible by default (no ScrollTrigger)
+		if (window.innerWidth <= 1060) {
+			if (content) {
+				content.style.visibility = '';
+				content.style.top = '';
+				content.style.transform = '';
+			}
+			return;
+		}
+
 		if (typeof gsap === 'undefined') return;
 
 		if (typeof gsap.registerPlugin === 'function') {

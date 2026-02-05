@@ -38,12 +38,11 @@ $view_all_url = home_url( '/news' );
 ?>
 
 <section class="latest-news" aria-label="Latest News">
-	<div class="latest-news__shape" aria-hidden="true"></div>
 	<div class="container latest-news__inner">
 		<header class="latest-news__header">
 			<h2 class="latest-news__title">Latest News</h2>
 			<a href="<?php echo esc_url( $view_all_url ); ?>" class="btn btn-primary">
-				<span class="latest-news__view-all-text">View all news</span>
+				<span class="button-text">View all news</span>
 				<span class="button-icon">
 					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/arrow.svg' ); ?>" alt="" width="16" height="16" aria-hidden="true">
 				</span>

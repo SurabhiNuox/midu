@@ -7,7 +7,9 @@
 	width: 100%;
 	height: 105vh;
 	overflow: hidden;
-
+	@include max(1060) {
+		height: 75vh;
+	}
 	@media #{$media-768} {
 		height: 80vh;
 		min-height: 500px;
@@ -91,22 +93,11 @@
 		max-width: 730px;
 		padding-top:2%;
 		
-		@media #{$media-1024} {
-			padding: 100px 30px 60px;
-		}
-
-		@media #{$media-768} {
-			padding: 90px 20px 50px;
-		}
-
-		@media #{$media-600} {
-			padding: 80px 15px 40px;
-		}
 
 		.banner-title {
 			font-family: "REM", sans-serif;
 			font-size: size(55px);
-			font-weight: 700;
+			font-weight: 600;
 			line-height: size(61px);
 			color: $white;
 			margin: 0 0 10px 0;
@@ -115,13 +106,13 @@
 				font-size: 56px;
 			}
 
-			@media #{$media-768} {
+			@include max(992) {
 				font-size: 42px;
 				margin-bottom: 20px;
 			}
 
-			@media #{$media-600} {
-				font-size: 32px;
+			@include max(767) {
+				font-size: 30px;
 				margin-bottom: 16px;
 			}
 		}
@@ -147,8 +138,9 @@
 				max-width: 100%;
 			}
 
-			@media #{$media-600} {
-				font-size: 15px;
+			@include max(767) {
+				font-size: 14px;
+				line-height: 1.2;
 				margin-bottom: 24px;
 			}
 		}

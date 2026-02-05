@@ -23,6 +23,15 @@
         -webkit-mask-position: bottom;
         mask-position: bottom;
         z-index: 9;
+		@include max(1060) {
+			height: 110px;
+		}
+		@include max(992) {
+			height: 85px;
+		}
+        @include max(767) {
+			height: 170px;
+		}
 	}
 
 }
@@ -43,4 +52,11 @@
             font-weight: 100;
         }
     }
+    
+	@include max(767) {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 15px;
+        margin-bottom: 20px;
+	}
 }
