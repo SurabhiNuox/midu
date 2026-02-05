@@ -1,0 +1,229 @@
+// News card component – asymmetric card with diagonal image, date badge, headline, Learn More
+@import "./variable";
+@import "./mixins";
+
+.career_story_section{
+	width: 100%;
+  position: relative;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  padding: 130px 0;
+  margin-top: -130px;
+            &::before {
+    content: "";
+    width: 100%;
+    height: 180px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    mask-image: url(../images/light-blue-bottom.svg);
+    -webkit-mask-image: url(../images/light-blue-bottom.svg);
+    mask-size: 100% auto;
+	background-color: #16888C;
+    -webkit-mask-size: 100% auto;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: bottom;
+    -webkit-mask-position: bottom;
+    z-index: 1;
+}
+
+&::after{
+content: "";
+width: 100%;
+height: 180px;
+position: absolute;
+right: 0;
+top: 0;
+mask-image: url(../images/light-blue-top.svg);
+-webkit-mask-image: url(../images/light-blue-top.svg);
+mask-size: 100% auto;
+background-color: #16888C;
+-webkit-mask-size: 100% auto;
+mask-repeat: no-repeat;
+-webkit-mask-repeat: no-repeat;
+mask-position: top;
+-webkit-mask-position: top;
+z-index: 1;
+}
+
+.career_story_inner{
+	   width: 100%;
+	   background-color: #16888C;
+	   min-height: 510px;
+	   position: relative;
+
+	   .container{
+		position: relative;
+		z-index: 5;
+	   }
+
+	   &::after{
+		   content: "";
+		   width: 100%;
+		   height: 100%;
+		   position: absolute;
+		   top: 0;
+		   background-color: #16888C;
+	   }
+}
+
+.career_bg{
+	   width: 100%;
+	   height: 100%;
+	   background-image: url(../images/careers-bg.svg);
+	   background-size: 100% 100%;
+	   background-repeat: no-repeat;
+	   background-position: center;
+	   position: absolute;
+	   top: 0;
+	   left: 0;
+	   z-index: 5;
+	   opacity: 0.1;
+	}
+}
+
+// Employee Stories swiper – white cards, quote icon, author, pagination
+.career_story_title {
+	margin-bottom: 0px;
+	.second_title { color: #fff; }
+	p { color: rgba(255, 255, 255, 0.9); }
+}
+
+.career_story_swiper_wrap {
+	position: relative;
+	z-index: 5;
+	padding: 60px 0 20px;
+	max-width: 660px;
+	margin: 0 auto;
+	height: 450px;
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+// Pagination at top (light teal dots)
+.career_story_pagination {
+	position: absolute;
+	top: inherit !important;
+	bottom: 10px !important;
+	gap: 5px;
+    width: 100%;
+	left: 0;
+	right: 0;
+	margin: 0;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+	.swiper-pagination-bullet {
+		width: 10px;
+		height: 10px;
+		background: #D9D9D9;
+		opacity: 1;
+		transition: width 0.25s ease, height 0.25s ease, background 0.25s ease;
+	}
+	.swiper-pagination-bullet-active {
+		width: 10px;
+		height: 10px;
+		background: #fff;
+	}
+}
+
+.career_story_swiper {
+	height: calc(100% - 48px);
+	overflow: hidden;
+	.swiper-wrapper {
+		align-items: center;
+	}
+	.swiper-slide {
+		height: auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: opacity 0.35s ease, transform 0.35s ease;
+	}
+
+
+}
+
+// Card: rounded top/left/bottom-left; angled cut bottom-right (speech-bubble style)
+.career_story_card {
+	mask-image: url(../images/story-box-bg.svg);
+    -webkit-mask-image: url(../images/story-box-bg.svg);
+    mask-size: 100% auto;
+    -webkit-mask-size: 100% auto;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: bottom;
+    -webkit-mask-position: bottom;
+    background: #fff;
+	padding: 80px 65px 10px;
+    min-height: 300px;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    border-radius: 0;
+
+
+}
+
+.career_story_quote_icon {
+	display: block;
+	font-size: 44px;
+	height: 37px;
+	position: absolute;
+	left: 65px;
+	top: 30px;
+}
+
+.career_story_quote_text {
+	font-size: size(16px);
+	line-height: size(25px);
+	color: #1B273D;
+    margin: 0;
+	padding-bottom: 20px;
+	font-weight: 300;
+}
+
+.career_story_author {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+.career_story_avatar {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	object-fit: cover;
+	flex-shrink: 0;
+}
+
+.career_story_author_info {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.career_story_name {
+	display: block;
+	font-size: size(18px);
+	line-height: size(24px);
+	color: #344463;
+	font-weight: 600;
+}
+
+.career_story_role {
+	font-size: size(16px);
+	line-height: size(24px);
+	color: #BFBFBF;
+	font-weight: 400;
+}
+
+.swiper-3d .swiper-slide-shadow {
+     background: transparent !important;
+}
+
+
