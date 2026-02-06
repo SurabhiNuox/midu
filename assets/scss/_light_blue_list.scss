@@ -12,6 +12,24 @@
     overflow: hidden;
 	padding: 130px 0;
 
+	h2{
+		color: #fff !important;
+	}
+
+	&.sustainability_orange_bg{
+		&::after{
+           background-color: #F47C48;
+		}
+
+		&::before{
+			background-color: #F47C48;
+		}
+
+		.light-blue-list-inner{
+			background-color: #F47C48;
+		}
+	}
+
 
 	&::after{
 		content: "";
