@@ -17,9 +17,7 @@
 		right: 0;
 		z-index: 1;
 	}
-	h2{
-		color: #fff !important;
-	}
+
 
 	&.sustainability_orange_bg{
 		&::after{
@@ -32,6 +30,9 @@
 
 		.light-blue-list-inner{
 			background-color: #F47C48;
+		}
+		h2{
+			color: #fff !important;
 		}
 	}
 
@@ -86,8 +87,7 @@
 	   p{
 		   font-weight: 200;
 		   color: #1B273D;
-		   margin-bottom: 0px;
-			min-height: 60px;
+		   margin-bottom: 10px;
 		   b{
 			   font-size: bold;
 		   }
@@ -185,7 +185,8 @@
 			  p{
 				color: #1B273D;
 				transition: all 0.3s ease;
-
+				min-height: 60px;
+				margin-bottom: 0;
 			  }
 		   }
 		}
