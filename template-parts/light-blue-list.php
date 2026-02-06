@@ -11,11 +11,16 @@ $light_blue_list_intro    = get_query_var('light_blue_list_intro');
 $light_blue_list_subtitle = get_query_var('light_blue_list_subtitle');
 $light_blue_list_center   = get_query_var('light_blue_list_center');
 $light_blue_list_items    = get_query_var('light_blue_list_items');
+<<<<<<< HEAD
 $light_blue_list_description = get_query_var('light_blue_list_description');
 $light_blue_list_bg_image    = get_query_var('light_blue_list_bg_image') ?: '';
+=======
+$light_blue_list_section_class = get_query_var('light_blue_list_section_class');
+>>>>>>> 4e83d31c00ffa7cc96e6eff9f6d52ba6f7e6fe9c
 
 $title_class = 'light-blue-list-title' . ( $light_blue_list_center ? ' text-center' : '' );
 $has_header  = ( $light_blue_list_title !== '' && $light_blue_list_title !== false ) || ( $light_blue_list_intro !== '' && $light_blue_list_intro !== false ) || ( $light_blue_list_subtitle !== '' && $light_blue_list_subtitle !== false );
+$section_class = 'light-blue-list-section' . ( ! empty( $light_blue_list_section_class ) ? ' ' . esc_attr( $light_blue_list_section_class ) : '' );
 
 if ( ! is_array( $light_blue_list_items ) ) {
 	$light_blue_list_items = array();
@@ -29,7 +34,7 @@ foreach ( $light_blue_list_items as $i => $item ) {
 }
 ?>
 
-<section class="light-blue-list-section">
+<section class="<?php echo esc_attr( $section_class ); ?>">
 
 	  <div class="light-blue-list-inner">
 			<?php if ( $light_blue_list_bg_image !== '' ) : ?>

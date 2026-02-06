@@ -10,12 +10,31 @@
     overflow: hidden;
 	padding: 130px 0;
 
-	.light-blue-list-inner-bg{		height: 100%;
+	.light-blue-list-inner-bg{		
+		height: 100%;
 		position: absolute;
 		bottom:-75px;
 		right: 0;
 		z-index: 1;
 	}
+	h2{
+		color: #fff !important;
+	}
+
+	&.sustainability_orange_bg{
+		&::after{
+           background-color: #F47C48;
+		}
+
+		&::before{
+			background-color: #F47C48;
+		}
+
+		.light-blue-list-inner{
+			background-color: #F47C48;
+		}
+	}
+
 
 	&::after{
 		content: "";

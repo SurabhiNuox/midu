@@ -122,5 +122,29 @@ get_header();
 	</div>
 </main><!-- #main -->
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+	var fileInput = document.getElementById('career_resume');
+	var labelEl = document.querySelector('.career_form_file_label');
+	var btn = document.querySelector('.career_form_file_button');
+
+	if (!fileInput || !labelEl || !btn) return;
+
+	// Click on Attach Resume button opens file dialog
+	btn.addEventListener('click', function () {
+		fileInput.click();
+	});
+
+	// After selecting a file, show its name instead of placeholder
+	fileInput.addEventListener('change', function () {
+		if (fileInput.files && fileInput.files.length > 0) {
+			labelEl.textContent = fileInput.files[0].name;
+		} else {
+			labelEl.textContent = 'Attach Resume*';
+		}
+	});
+});
+</script>
+
 <?php
 get_footer();
