@@ -16,8 +16,8 @@
 		min-height: 350px;
 	}
 
-	@media #{$media-600} {
-		height: 45vh;
+	@include max(767) {
+		height: 60vh;
 		min-height: 300px;
 	}
 
@@ -29,18 +29,26 @@
 		height: 100%;
 		z-index: 1;
 
-		.inner-banner-image {
+		.inner-banner-image,
+		.inner-banner-video {
+			position: absolute;
+			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
 			display: block;
+		}
 
-			img{
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				display: block;
-			}
+		.inner-banner-video {
+			pointer-events: none;
+		}
+
+		.inner-banner-image img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
 		}
 
 		.inner-banner-overlay {
@@ -102,4 +110,10 @@
 			line-height: 30px;
 		}
 	}
+}
+
+// Projects page — banner only
+.projects_page {
+	background: #1b273d;
+	min-height: 100vh;
 }

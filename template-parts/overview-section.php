@@ -8,6 +8,7 @@
 // Get overview section variables from query var or use defaults
 $overview_title = get_query_var('overview_title') ?: 'Overview';
 $overview_image = get_query_var('overview_image') ?: get_template_directory_uri() . '/assets/images/service-banner.jpg';
+$overview_graphic = get_query_var('overview_graphic') ?: get_template_directory_uri() . '/assets/images/blue-bg-left-service.svg';
 $overview_content = get_query_var('overview_content');
 
 // If overview_content is not an array, use default content
@@ -21,6 +22,9 @@ if (!is_array($overview_content) || empty($overview_content)) {
 ?>
 
 <section class="overview-section">
+	<div class="overview_ghraphic">
+		<img src="<?php echo esc_url($overview_graphic); ?>" alt="image">
+	</div>
 	<div class="container">
 		<div class="overview-content">
 			<div class="overview-image">
