@@ -1,6 +1,6 @@
 /**
- * Show sticky header on mouse movement (not scroll).
- * Header stays visible when viewing the first banner section; elsewhere it shows on mousemove and hides after delay.
+ * Header visibility: show when scrolling (up or down), hide only when user stops (viewing sections).
+ * In the first banner section the header stays visible; elsewhere it shows on scroll and hides after idle delay.
  */
 (function () {
 	'use strict';
@@ -25,7 +25,6 @@
 		if (!section) return false;
 		var rect = section.getBoundingClientRect();
 		var viewHeight = window.innerHeight;
-		// In view when any part of the first section overlaps the viewport
 		return rect.bottom > 0 && rect.top < viewHeight;
 	}
 
@@ -39,13 +38,10 @@
 
 	function showHeader() {
 		if (!header) return;
-		// Don't show header on mousemove when in our-sectors to avoid sudden jump to sustainability
 		if (isInOurSectorsSection()) return;
 		header.classList.add('is-visible');
 		clearTimeout(timeoutId);
-		if (isInFirstSection()) {
-			return;
-		}
+		if (isInFirstSection()) return;
 		timeoutId = setTimeout(function () {
 			header.classList.remove('is-visible');
 		}, delay);
@@ -53,13 +49,12 @@
 
 	function updateHeaderForScroll() {
 		if (!header) return;
-		if (isInFirstSection()) {
-			header.classList.add('is-visible');
-			clearTimeout(timeoutId);
-		} else {
+		header.classList.add('is-visible');
+		clearTimeout(timeoutId);
+		if (isInFirstSection()) return;
+		timeoutId = setTimeout(function () {
 			header.classList.remove('is-visible');
-			clearTimeout(timeoutId);
-		}
+		}, delay);
 	}
 
 	function init() {
