@@ -94,6 +94,11 @@
 
 			li {
 				margin: 0;
+				&.current_page_item{
+					a{
+						color: #15868A;
+					}
+				}
 			}
 
 			a {

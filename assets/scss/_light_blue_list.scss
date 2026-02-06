@@ -4,13 +4,29 @@
 
 .light-blue-list-section {
 	width: 100%;
-	position: relative;
 	margin-top: -130px;
-	overflow: hidden;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 	padding: 130px 0;
+
+	h2{
+		color: #fff !important;
+	}
+
+	&.sustainability_orange_bg{
+		&::after{
+           background-color: #F47C48;
+		}
+
+		&::before{
+			background-color: #F47C48;
+		}
+
+		.light-blue-list-inner{
+			background-color: #F47C48;
+		}
+	}
 
 
 	&::after{
