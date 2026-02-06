@@ -284,13 +284,12 @@ function addarah_scripts()
 		}
 	}
 
-	// Careers page: Fancybox for career life YouTube video popup
-	if ($is_careers_page) {
+	
 		wp_enqueue_style('fancybox', get_template_directory_uri() . '/assets/css/fancybox.min.css', array(), _S_VERSION);
 		wp_enqueue_script('fancybox', get_template_directory_uri() . '/assets/js/fancybox.min.js', array(), _S_VERSION, true);
 		wp_enqueue_script('career-life-script', get_template_directory_uri() . '/assets/js/career-life.js', array('fancybox'), _S_VERSION, true);
 		wp_enqueue_script('career-story-script', get_template_directory_uri() . '/assets/js/career-story.js', array('swiper-js'), _S_VERSION, true);
-	}
+	
 
 	// Load Swiper for News and Media page
 	if ($is_news_and_media_page) {
