@@ -29,26 +29,28 @@ $image_text_list_second = array(
 	'Contribute to national sustainability targets',
 	'Support a greener, more resilient economy',
 );
-set_query_var( 'image_text_list', $image_text_list_second );
+set_query_var( 'image_text_list_second', $image_text_list_second );
 
 // Paragraphs for second image-text block (one per list item), override from ACF "image_text_list_paragraph_second" when set
 $image_text_list_paragraph_second = array();
 set_query_var( 'image_text_list_paragraph_second', $image_text_list_paragraph_second );
-
 
 $image_text_list_third = array(
 	'Governance & Compliance',
 	'Design & Development Strategy',
 	'Performance Monitoring',
 	'Stakeholder Engagement',
-
 );
-set_query_var( 'image_text_list', $image_text_list_third);
+set_query_var( 'image_text_list_third', $image_text_list_third );
 
-// Image-text list paragraphs (repeater): optional paragraphs in first list item, override from ACF "image_text_list_paragraph" when set
-$image_text_list_paragraph_third = array( 'Ensuring all projects align with national regulations and leading sustainability standards.', 
-'Applying sustainable design principles from concept to construction.', 'Tracking environmental impact and continuously improving efficiency.', 'Collaborating with partners, consultants, and communities to drive positive impact.' );
-set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_third );
+// Paragraphs for third image-text block (one per list item), override from ACF "image_text_list_paragraph_third" when set
+$image_text_list_paragraph_third = array(
+	'Ensuring all projects align with national regulations and leading sustainability standards.',
+	'Applying sustainable design principles from concept to construction.',
+	'Tracking environmental impact and continuously improving efficiency.',
+	'Collaborating with partners, consultants, and communities to drive positive impact.',
+);
+set_query_var( 'image_text_list_paragraph_third', $image_text_list_paragraph_third );
 
 
 
@@ -119,7 +121,15 @@ set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_third );
 
 		   </div>
 
-
+		   <section class="dark_blue_section_without_curve">
+		   <div class="container">
+		   <div class="title_main">
+			<h2 class="second_title">Social Responsibility</h2>
+			<p>MIDU’s projects are designed to uplift communities and enhance quality of life:</p>
+			
+			</div>
+						</div>
+						</section>
 
 		   <section class="dark_blue_section_without_curve">
                      <div class="container">
@@ -128,9 +138,9 @@ set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_third );
 						   set_query_var( 'image_text_paragraphs', array(
 							   'MIDU follows a structured, measurable framework that integrates global best practices:',
 						   ) );
-						   $image_text_list_paragraph_third = get_query_var( 'image_text_list_paragraph' );
-						   if ( function_exists( 'get_field' ) && get_field( 'image_text_list_paragraph' ) ) {
-							   $acf_paras = get_field( 'image_text_list_paragraph' );
+						   $image_text_list_paragraph_third = get_query_var( 'image_text_list_paragraph_third' );
+						   if ( function_exists( 'get_field' ) && get_field( 'image_text_list_paragraph_third' ) ) {
+							   $acf_paras = get_field( 'image_text_list_paragraph_third' );
 							   if ( is_array( $acf_paras ) ) {
 								   $image_text_list_paragraph_third = array();
 								   foreach ( $acf_paras as $row ) {
@@ -139,13 +149,13 @@ set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_third );
 							   }
 						   }
 						   set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_third );
-						   $image_text_list = get_query_var( 'image_text_list' );
-						   if ( function_exists( 'get_field' ) && get_field( 'image_text_list' ) ) {
-							   $acf_list = get_field( 'image_text_list' );
+						   $image_text_list_third = get_query_var( 'image_text_list_third' );
+						   if ( function_exists( 'get_field' ) && get_field( 'image_text_list_third' ) ) {
+							   $acf_list = get_field( 'image_text_list_third' );
 							   if ( is_array( $acf_list ) ) {
-								   $image_text_list = array();
+								   $image_text_list_third = array();
 								   foreach ( $acf_list as $row ) {
-									   $image_text_list[] = is_array( $row ) ? ( isset( $row['item'] ) ? $row['item'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
+									   $image_text_list_third[] = is_array( $row ) ? ( isset( $row['item'] ) ? $row['item'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
 								   }
 							   }
 						   }
@@ -196,6 +206,7 @@ set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_third );
 							   }
 						   }
 						   set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_second );
+						   $image_text_list_second = get_query_var( 'image_text_list_second' );
 						   if ( function_exists( 'get_field' ) && get_field( 'image_text_list_second' ) ) {
 							   $acf_list = get_field( 'image_text_list_second' );
 							   if ( is_array( $acf_list ) ) {
