@@ -11,6 +11,8 @@ $light_blue_list_intro    = get_query_var('light_blue_list_intro');
 $light_blue_list_subtitle = get_query_var('light_blue_list_subtitle');
 $light_blue_list_center   = get_query_var('light_blue_list_center');
 $light_blue_list_items    = get_query_var('light_blue_list_items');
+$light_blue_list_description = get_query_var('light_blue_list_description');
+$light_blue_list_bg_image    = get_query_var('light_blue_list_bg_image') ?: '';
 
 $title_class = 'light-blue-list-title' . ( $light_blue_list_center ? ' text-center' : '' );
 $has_header  = ( $light_blue_list_title !== '' && $light_blue_list_title !== false ) || ( $light_blue_list_intro !== '' && $light_blue_list_intro !== false ) || ( $light_blue_list_subtitle !== '' && $light_blue_list_subtitle !== false );
@@ -30,7 +32,12 @@ foreach ( $light_blue_list_items as $i => $item ) {
 <section class="light-blue-list-section">
 
 	  <div class="light-blue-list-inner">
-	  <div class="container">
+			<?php if ( $light_blue_list_bg_image !== '' ) : ?>
+				<div class="light-blue-list-inner-bg">
+					<img src="<?php echo esc_url( $light_blue_list_bg_image ); ?>" alt="">
+				</div>
+			<?php endif; ?>
+	  		<div class="container">
 		          <?php if ( $has_header ) : ?>
 		          <div class="<?php echo esc_attr( $title_class ); ?>">
 					<?php if ( $light_blue_list_title !== '' && $light_blue_list_title !== false ) : ?>
@@ -51,6 +58,7 @@ foreach ( $light_blue_list_items as $i => $item ) {
 							<?php foreach ( $light_blue_list_items as $item ) :
 								$icon_url = isset( $item['icon'] ) ? $item['icon'] : '';
 								$item_title = isset( $item['title'] ) ? $item['title'] : '';
+								$item_description = isset( $item['description'] ) ? $item['description'] : '';
 								if ( $icon_url === '' && $item_title === '' ) { continue; }
 							?>
 							<li>
@@ -61,7 +69,10 @@ foreach ( $light_blue_list_items as $i => $item ) {
 									</div>
 									<?php endif; ?>
 									<?php if ( $item_title !== '' ) : ?>
-									<h3><?php echo $item_title; ?></h3>
+										<h3><?php echo $item_title; ?></h3>
+										<?php if ( $item_description !== '' ) : ?>
+											<p><?php echo $item_description; ?></p>
+										<?php endif; ?>
 									<?php endif; ?>
 								</div>
 							</li>
