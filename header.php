@@ -56,7 +56,7 @@
 
 				<!-- Contact Button -->
 				<div class="header-contact">
-					<a href="#contact" class="contact-button">
+					<a href="/contact" class="contact-button">
 						<span class="button-text">Contact</span>
 						<span class="button-icon">
 							<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/arrow.svg'); ?>" alt="Arrow Right">

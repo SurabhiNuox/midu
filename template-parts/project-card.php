@@ -26,12 +26,17 @@ $card_show_button  = get_query_var( 'project_card_show_button' ) ?: false;
 			<?php if ( $card_title ) : ?>
 				<h3 class="project-card__title"><?php echo esc_html( $card_title ); ?></h3>
 			<?php endif; ?>
+			<div class="project-card__content-bottom">
 			<?php if ( $card_description ) : ?>
-				<p class="project-card__description"><?php echo esc_html( $card_description ); ?></p>
+				<p><?php echo esc_html( $card_description ); ?></p>
 			<?php endif; ?>
-			<?php if ( $card_show_button ) : ?>
-				<span class="project-card__btn">Explore &#8599;</span>
-			<?php endif; ?>
+				<div class="btn-primary">
+					<span class="button-text">Explore</span>
+					<span class="button-icon">
+						<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/arrow.svg'); ?>" alt="Arrow Right">
+					</span>
+				</div>
+			</div>
 		</div>
 	</a>
 </article>

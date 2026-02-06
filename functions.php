@@ -218,6 +218,7 @@ function addarah_scripts()
 	$is_press_release_detail_page = false;
 	$is_all_news_page = false;
 	$is_weddings_social_services_page = false;
+	$is_projects_page = false;
 	if (is_page()) {
 		$template = get_page_template_slug();
 		$is_company_detail_page = ($template === 'page-company-detail.php' || $template === 'page-investments-detail.php' || $template === 'page-addarah-modern-support-services.php');
@@ -231,6 +232,7 @@ function addarah_scripts()
 		$is_all_news_page = ($template === 'page-all-news.php' || is_page_template('page-all-news.php'));
 		$is_weddings_social_services_page = ($template === 'page-weddings-social-services.php' || is_page_template('page-weddings-social-services.php'));
 		$is_careers_page = ($template === 'page-careers.php');
+		$is_projects_page = ($template === 'page-projects.php');
 	}
 
 	// Enqueue Swiper CSS and JS globally (available on all pages)
@@ -301,6 +303,9 @@ function addarah_scripts()
 		// Enqueue PressReleases script (depends on Swiper)
 		wp_enqueue_script('press-releases-script', get_template_directory_uri() . '/assets/js/PressReleases.js', array('swiper-js'), _S_VERSION, true);
 	}
+
+	// Project cards Load more (runs on any page that has the section; no-op otherwise)
+	wp_enqueue_script( 'project-cards-load-more', get_template_directory_uri() . '/assets/js/project-cards-load-more.js', array(), _S_VERSION, true );
 
 	// Load Swiper for Gallery page
 	if ($is_gallery_page) {

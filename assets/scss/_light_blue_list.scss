@@ -9,13 +9,23 @@
     position: relative;
     overflow: hidden;
 	padding: 130px 0;
-
+	@include max(1060) {
+		padding: 75px 0;
+	}
+	@include max(992) {
+		padding: 60px 0;
+	}
+	@include max(767) {
+		padding: 40px 0;
+	}
 	.light-blue-list-inner-bg{		
-		height: 100%;
 		position: absolute;
 		bottom:-75px;
 		right: 0;
 		z-index: 1;
+		@include max(1060) {
+			width: 40%;
+		}
 	}
 
 
@@ -110,7 +120,14 @@
 		gap: 35px;
 		padding: 0;
 		
+		@include max(1060) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include max(767) {
+			grid-template-columns: repeat(1, 1fr);
+			gap: 20px;
 
+		}
 		li{
 			   width: 100%;
 			   border-radius: 20px;
@@ -162,6 +179,12 @@
 				position: relative;
 				z-index: 2;
 				transition: all 0.3s ease;
+				@include max(1060) {
+					padding: 30px;
+				}
+				@include max(992) {
+					min-height: 208px;
+				}
 
 		 .light-blue-list_icon{
 			    width: 100%;
