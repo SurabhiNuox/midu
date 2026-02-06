@@ -52,7 +52,28 @@ $image_text_list_paragraph_third = array(
 );
 set_query_var( 'image_text_list_paragraph_third', $image_text_list_paragraph_third );
 
-
+// Social cards: 3 default items, override from ACF repeater "social_card_list" when set (image, link, title, description per row)
+$social_card_list = array(
+	array(
+		'image'       => 'social1.png',
+		'link'        => '#',
+		'title'       => 'Human-centered development',
+		'description' => 'Creating inclusive environments that support wellbeing, safety, and social connection.',
+	),
+	array(
+		'image'       => 'social2.png',
+		'link'        => '#',
+		'title'       => 'Community enhancement initiatives',
+		'description' => 'Supporting local employment, skills development, and shared prosperity.',
+	),
+	array(
+		'image'       => 'social3.png',
+		'link'        => '#',
+		'title'       => 'Accessible and inclusive spaces',
+		'description' => 'Ensuring safe mobility, universal access, and community-focused amenities.',
+	),
+);
+set_query_var( 'social_card_list', $social_card_list );
 
 ?>
 
@@ -126,10 +147,40 @@ set_query_var( 'image_text_list_paragraph_third', $image_text_list_paragraph_thi
 		   <div class="title_main">
 			<h2 class="second_title">Social Responsibility</h2>
 			<p>MIDU’s projects are designed to uplift communities and enhance quality of life:</p>
+
+			<div class="social_card_list">
+				  <ul>
+					<?php
+					$social_card_list = get_query_var( 'social_card_list' );
+					if ( function_exists( 'get_field' ) && get_field( 'social_card_list' ) ) {
+						$social_card_list = get_field( 'social_card_list' );
+					}
+					if ( ! empty( $social_card_list ) && is_array( $social_card_list ) ) :
+						foreach ( $social_card_list as $item ) :
+							$img  = isset( $item['image'] ) ? $item['image'] : ( isset( $item['image']['url'] ) ? $item['image']['url'] : '' );
+							$link = isset( $item['link'] ) ? $item['link'] : ( isset( $item['link']['url'] ) ? $item['link']['url'] : '#' );
+							$title = isset( $item['title'] ) ? $item['title'] : '';
+							$desc  = isset( $item['description'] ) ? $item['description'] : '';
+							echo '<li>';
+							set_query_var( 'social_card_link', $link );
+							set_query_var( 'social_card_image', $img );
+							set_query_var( 'social_card_title', $title );
+							set_query_var( 'social_card_description', $desc );
+							get_template_part( 'template-parts/social_card' );
+							echo '</li>';
+						endforeach;
+					endif;
+					?>
+				  </ul>
+			</div>
 			
 			</div>
 						</div>
 						</section>
+
+						<?php
+		  get_template_part('template-parts/economic-section');
+		  ?>
 
 		   <section class="dark_blue_section_without_curve">
                      <div class="container">
