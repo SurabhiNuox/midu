@@ -1,0 +1,182 @@
+// Our Philosophy section — light blue bg, two columns (text + list | image with diagonal cut)
+@import "./variable";
+@import "./mixins";
+
+$philosophy-bg: #96B7E3;
+
+.philosophy-section {
+	width: 100%;
+	padding: 30px 0 120px;
+	background-color: $philosophy-bg;
+	position: relative;
+	@include max(992) {
+		padding: 60px 0 80px;
+	}
+	@include max(767) {
+		padding: 40px 0 60px;
+	}
+	.ph_bg_graphic{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		z-index: 1;
+	}
+}
+
+.philosophy-section__inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 60px;
+
+	@include max(992) {
+		flex-direction: column;
+		gap: 40px;
+	}
+	@include max(767) {
+		gap: 32px;
+	}
+}
+
+.philosophy-section__content {
+	flex: 0 1 49%;
+	padding-right: 50px;
+
+	@include max(992) {
+		flex: 1 1 100%;
+	}
+	p{
+		color: #1B273D;
+		line-height: size(25px);
+		font-weight:300;
+	}
+}
+
+.philosophy-section__title {
+	font-size: size(50px);
+	font-weight:400;
+	line-height: size(55px);
+	color: #1B273D;
+	margin: 0 0 20px 0;
+
+	@include max(992) {
+		text-align: left;
+		font-size: size(32px);
+		margin-bottom: 16px;
+	}
+	@include max(767) {
+		font-size: size(28px);
+		margin-bottom: 14px;
+	}
+}
+
+.philosophy-section__intro {
+	font-family: "REM", sans-serif;
+	font-size: size(16px);
+	font-weight: 400;
+	line-height: 1.65;
+	color: #444;
+	margin: 0 0 28px 0;
+
+	@include max(767) {
+		font-size: size(15px);
+		margin-bottom: 22px;
+	}
+}
+
+.philosophy-section__list {
+	list-style: none;
+	margin: 0 0 24px 0;
+	padding: 0;
+}
+
+.philosophy-section__item {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding:18px 0;
+	position: relative;
+	
+	min-height: 52px;
+
+	&:last-child {
+		border-bottom: none;
+	}
+	&::before{
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-image: url(../images/line.png);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: top;
+	  opacity: 0.8;
+	  backdrop-filter: blur(40px);
+	}
+	@include max(767) {
+		padding: 12px 0;
+		gap: 12px;
+	}
+}
+
+.philosophy-section__icon {
+	flex-shrink: 0;
+	width: 36px;
+	height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		display: block;
+	}
+
+	@include max(767) {
+		width: 32px;
+		height: 32px;
+	}
+}
+
+.philosophy-section__item-text {
+	font-family: "REM", sans-serif;
+	font-size: size(20px);
+	font-weight: 300;
+	line-height:size(37px);
+	color: #1B273D;
+
+	@include max(767) {
+		font-size: size(15px);
+	}
+}
+
+.philosophy-section__outro {
+	margin: 0;
+
+	@include max(767) {
+		font-size: size(15px);
+	}
+}
+
+.philosophy-section__image-wrap {
+	flex: 1 1 45%;
+	min-width: 0;
+	position: relative;
+	mask-image: url(../images/philo_mask_img.svg);
+	mask-size: 100%;
+	mask-repeat: no-repeat;
+	mask-position: top;
+	z-index: 2;
+}
+
+.philosophy-section__image {
+	width: 100%;
+	height: auto;
+	display: block;
+	vertical-align: middle;
+}

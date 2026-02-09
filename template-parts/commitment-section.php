@@ -25,7 +25,7 @@ if ( ! is_array( $content ) || empty( $content ) ) {
 		<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/peoject_graphics.png' ); ?>" alt="img" class="commitment-section__bg-image" loading="lazy">
 	</div>
 	<div class="commitment-section__inner">
-		<div class="commitment-section__content">
+		<div class="commitment-section__content" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
 				<h2 class="commitment-section__title"><?php echo esc_html( $title ); ?></h2>
 				<?php foreach ( $content as $paragraph ) : ?>
 					<p><?php echo esc_html( $paragraph ); ?></p>
