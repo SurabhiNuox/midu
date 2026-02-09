@@ -461,6 +461,22 @@ p{
 				}
 			}
 	   }
+	   &.breadcrumb-white{
+		ul{
+			li{
+				a{
+					color: #fff;
+					&::after{
+						filter: brightness(0) invert(1);
+					}
+				}
+				img{
+					filter: brightness(0) invert(1);
+				}
+				
+			}
+		}
+	   }
 }
 
 
@@ -554,4 +570,59 @@ p{
 	   margin: -130px 0;
 }
 
-
+.sector_detail_page{
+	background: #1b273d;
+	.container{
+		position: relative;
+		z-index: 1;
+	}
+	.breadcrumb{
+		position: absolute;
+		top: 25px;
+		left:25px;
+		width: 100%;
+		z-index: 1;
+	}
+}
+.sector_detail_overview{
+	background: #96B7E3;
+	position: relative;
+	padding: 100px 0;
+	&::before {
+		content: "";
+		position: absolute;
+		top: -2px;
+    	right: -1px;
+		width: 128px;
+		height: 111px;
+		background-image: url(../images/top_mask.svg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: top right;
+		z-index: 3;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: -2px;
+		left: -6px;
+		width: 128px;
+		height: 111px;
+		background-image: url(../images/bottom_mask.svg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: bottom left;
+		z-index: 3;
+	}
+	.right_text_image .right_text_main{
+		padding-right:11%;
+	}
+	.bg_img{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+.impact_value_section{
+	padding: 100px 0;
+}

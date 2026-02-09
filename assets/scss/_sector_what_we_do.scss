@@ -1,0 +1,175 @@
+// What We Do in This Sector — dark theme, grid of cards (icon + title + description)
+@import "./variable";
+@import "./mixins";
+
+$sector-wwd-bg: #1a2332;
+$sector-wwd-border: rgba(255, 255, 255, 0.25);
+$sector-wwd-desc: #b0b8c4;
+
+.sector-what-we-do {
+	width: 100%;
+	padding:100px 0;
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: 100% 100%;
+
+	@include max(992) {
+		padding: 60px 0 80px;
+	}
+	@include max(767) {
+		padding: 40px 0 60px;
+	}
+}
+
+.sector-what-we-do__title {
+	font-family: "REM", sans-serif;
+	font-size: size(50px);
+	font-weight: 300;
+	line-height: size(56px);
+	color: $white;
+	text-align: left;
+	margin: 0 0 30px 0;
+
+	@include max(992) {
+		font-size: size(28px);
+		margin-bottom: 32px;
+	}
+	@include max(767) {
+		font-size: size(24px);
+		margin-bottom: 28px;
+	}
+}
+
+.sector-what-we-do__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 37px;
+
+	// 5 cards: 3 on first row, 2 centered on second (max 3 cols, last 2 centered)
+	@include max(1200) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
+	@include max(600) {
+		grid-template-columns: 1fr;
+		gap: 18px;
+	}
+}
+
+.sector-what-we-do-card {
+	border-radius: 10px;
+	padding:40px;
+	background: transparent;
+	transition: border-color 0.25s ease, background 0.25s ease;
+	min-height: 290px;
+	display: flex;
+	flex-direction: column;
+	&::before{
+		content: "";
+		position: absolute;
+		inset: 0;
+		border-radius: 10px;
+		background: #79B2BE;
+		background: linear-gradient(142deg, rgb(121, 178, 190) 0%, rgb(176, 97, 67) 100%);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		opacity: 0.8;
+		z-index: 0;
+	}
+	&:after{
+		content: "";
+		width: calc(100% - 2px);
+		height: calc(100% - 2px);
+		position: absolute;
+		left: 1px;
+		top: 1px;
+		background-color: #1b273d;
+		background-image: url(../images/bg-master.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+		z-index: 1;
+		border-radius: 10px;
+	}
+
+	@include max(767) {
+		padding: 24px 20px;
+		min-height: auto;
+	}
+	&:hover{
+		&::after{
+			background-image: url(../images/master-hover.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		.sector-what-we-do-card__icon{
+			filter: brightness(0) invert(1);
+		}
+	}
+}
+
+.sector-what-we-do-card__inner {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	position: relative;
+    z-index: 5;
+}
+
+.sector-what-we-do-card__icon-wrap {
+	margin-bottom: 60px;
+	display: flex;
+	align-items: center;
+	width: 60px;
+
+	@include max(767) {
+		margin-bottom: 12px;
+	}
+}
+
+.sector-what-we-do-card__icon {
+	height: 48px;
+	object-fit: contain;
+	display: block;
+	max-width: 100%;
+
+	@include max(767) {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+.sector-what-we-do-card__title {
+	font-family: "REM", sans-serif;
+	font-size: size(28px);
+	font-weight: 300;
+	line-height: size(26px);
+	color: $white;
+	margin: 0 0 15px 0;
+	padding-right: 100px;
+
+	@include max(992) {
+		font-size: size(18px);
+		line-height: size(24px);
+	}
+	@include max(767) {
+		font-size: size(16px);
+		line-height: size(22px);
+		margin-bottom: 8px;
+	}
+}
+
+.sector-what-we-do-card__description {
+	font-family: "REM", sans-serif;
+	font-size: size(16px);
+	font-weight: 100;
+	line-height: size(19px);
+	color: #fff;
+	margin: 0;
+
+	@include max(767) {
+		font-size: size(14px);
+		line-height: size(20px);
+	}
+}

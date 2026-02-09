@@ -48,14 +48,16 @@
 
 			 h2{
 				  color: #1B273D;
-				  font-weight:bold;
 			 }
 
 			 p{
 				  font-weight: 200;
 				  line-height: 24px;
 				  color: #1B273D;
-				  margin-bottom: 0;
+				  margin-bottom: 30px;
+				  &:last-child{
+					margin-bottom: 0;
+				  }
 			 }
 
 			 ul{

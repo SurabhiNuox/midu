@@ -183,7 +183,7 @@ set_query_var( 'social_card_list', $social_card_list );
 		  ?>
 
 		   <section class="dark_blue_section_without_curve">
-                     <div class="container">
+                <div class="container">
 					 <?php
 						   set_query_var( 'image_text_title', 'Our Sustainability Framework' );
 						   set_query_var( 'image_text_paragraphs', array(
@@ -219,7 +219,7 @@ set_query_var( 'social_card_list', $social_card_list );
 						   get_template_part( 'template-parts/image-text' );
 						   ?>
 					 </div>
-						</section>
+				</section>
 
 		  <?php
 		  // Light-blue-list: all content from page (title, intro, optional subtitle, list with icons)

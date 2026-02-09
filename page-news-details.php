@@ -138,7 +138,7 @@ get_header();
                          <h2>Related News</h2>
 
                          
-                         <div class="swiper relatedSwiper">
+                         <div class="swiper latest-news-swiper ">
                             <div class="swiper-wrapper news-card-list">
                             <?php
                             // Repeater: array of items with image, link, title, date (from ACF or set here)

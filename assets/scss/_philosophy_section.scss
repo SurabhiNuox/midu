@@ -21,6 +21,19 @@ $philosophy-bg: #96B7E3;
 		right: 0;
 		z-index: 1;
 	}
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: -2px;
+		left: -4px;
+		width: 128px;
+		height: 111px;
+		background-image: url(../images/bottom_mask.svg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: top right;
+		z-index: 3;
+	}
 }
 
 .philosophy-section__inner {
