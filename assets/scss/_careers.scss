@@ -18,7 +18,17 @@
     -webkit-mask-position: top;
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; 
+	
+	@media screen and (max-width: 1440px) {
+		padding: 80px 0 200px;
+	}
+	@media screen and (max-width: 992px) {
+		padding: 60px 0 180px;
+	}
+	@media screen and (max-width: 768px) {
+		padding: 50px 0 160px;
+	}
 
 	&::after{
 		content: "";
@@ -43,10 +53,21 @@
 	.careers_top_left{
 		width: 50%;
 		padding-right: 10%;
+
+		@media screen and (max-width: 992px) {
+			width: 100%;
+			padding-right: 0;
+		}
  }
 
  .careers_top_right{
 		width: 50%;
+
+		@media screen and (max-width: 992px) {
+			width: 100%;
+			padding-right: 0;
+			margin-top: 10px;
+		}
 
 		p{
 			color: #fff;
@@ -54,6 +75,12 @@
 			line-height: size(27px);
 			font-weight: 300;
 			margin-bottom: 20px;
+
+			@media screen and (max-width: 992px) {
+				font-size: size(16px);
+				line-height: size(24px);
+				margin-bottom: 10px;
+			}
 		}
  }
 	}
@@ -73,6 +100,18 @@
     position: relative;
     overflow: hidden;
     padding: 130px 0;
+
+	@media screen and (max-width: 1440px) {
+		padding: 100px 0;
+	}
+
+	@media screen and (max-width: 992px) {
+		padding: 70px 0;
+	}
+
+	@media screen and (max-width: 768px) {
+		padding: 40px 0;
+	}
 
 	&::before {
 		content: "";
@@ -128,6 +167,7 @@
 
 			@media #{$media-1024}{
 				grid-template-columns: repeat(2, 1fr);
+				gap: 20px;
 			}
 			@media #{$media-600}{
 				grid-template-columns: 1fr;

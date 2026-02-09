@@ -180,11 +180,20 @@ function addarah_scripts()
 	// Enqueue Lenis Smooth Scroll library (CDN) - loaded on all pages
 	wp_enqueue_script('lenis', 'https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js', array(), '1.0.42', false);
 
+	// Enqueue Swiper before main so relatedSwiper init has Swiper available
+	if (!wp_style_is('swiper-css', 'enqueued')) {
+		wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0');
+	}
+	if (!wp_script_is('swiper-js', 'enqueued')) {
+		wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), '11.0.0', true);
+	}
+
 	// Enqueue smooth scroll initialization (loaded on all pages)
 	wp_enqueue_script('smooth-scroll', get_template_directory_uri() . '/assets/js/smooth-scroll.js', array('lenis'), _S_VERSION, true);
 	
 	wp_enqueue_script('nice-select', get_template_directory_uri() . '/assets/js/nice-select.min.js', array('lenis'), _S_VERSION, true);
-	wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', array('lenis'), _S_VERSION, true);
+	wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array('swiper-js'), _S_VERSION, true);
+	wp_enqueue_script('related-swiper', get_template_directory_uri() . '/assets/js/related-swiper.js', array('jquery', 'swiper-js'), _S_VERSION, true);
 	// Header script removed - not needed for current header implementation
 
 	// Show sticky header when user scrolls (up or down)
@@ -235,14 +244,7 @@ function addarah_scripts()
 		$is_projects_page = ($template === 'page-projects.php');
 	}
 
-	// Enqueue Swiper CSS and JS globally (available on all pages)
-	if (!wp_style_is('swiper-css', 'enqueued')) {
-		wp_enqueue_style('swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0');
-	}
-	if (!wp_script_is('swiper-js', 'enqueued')) {
-		wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/js/swiper-bundle.min.js', array(), '11.0.0', true);
-	}
-
+	// Swiper already enqueued above before main; skip duplicate
 	// Enqueue component styles for front page
 	if (is_front_page()) {
 		// Enqueue main banner script (depends on Swiper + GSAP for entrance animation)

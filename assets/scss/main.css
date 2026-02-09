@@ -2791,6 +2791,11 @@ p {
   top: -150px;
   padding-top: 20px;
 }
+@media screen and (max-width: 900px) {
+  .main_content {
+    top: -80px;
+  }
+}
 
 .title_main {
   width: 100%;
@@ -4864,7 +4869,7 @@ p {
   color: #fff;
 }
 .light-blue-list-section .light-blue-list ul li .light-blue-list-item {
-  min-height: 230px;
+  min-height: 235px;
   padding: 50px 70px 50px 30px;
   mask-image: url(../images/white-list-bg.svg);
   -webkit-mask-image: url(../images/white-list-bg.svg);
@@ -7022,6 +7027,17 @@ p {
   padding: 90px 0 230px;
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.news_listing::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   mask-image: url(../images/blue_section.svg);
   -webkit-mask-image: url(../images/blue_section.svg);
   mask-size: 100% auto;
@@ -7031,9 +7047,34 @@ p {
   -webkit-mask-repeat: no-repeat;
   mask-position: top;
   -webkit-mask-position: top;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  background-color: #CECECE;
+  z-index: -1;
+}
+.news_listing::before {
+  content: "";
+  position: absolute;
+  top: unset;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: #CECECE;
+  z-index: -1;
+}
+@media screen and (max-width: 1440px) {
+  .news_listing {
+    padding: 75px 0 200px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .news_listing {
+    padding: 60px 0 150px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .news_listing {
+    padding: 40px 0 130px;
+  }
 }
 .news_listing .news_list_inner {
   width: 100%;
@@ -7051,8 +7092,18 @@ p {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+@media screen and (max-width: 900px) {
+  .news_listing .news_list_inner .news_filter .news-filter-main {
+    row-gap: 10px;
+  }
+}
 .news_listing .news_list_inner .news_filter .news-filter-main .news-filter-serch {
   width: 79%;
+}
+@media screen and (max-width: 900px) {
+  .news_listing .news_list_inner .news_filter .news-filter-main .news-filter-serch {
+    width: 100%;
+  }
 }
 .news_listing .news_list_inner .news_filter .news-filter-main .news-filter-serch .filter-form-control {
   padding-left: 50px;
@@ -7062,6 +7113,11 @@ p {
 }
 .news_listing .news_list_inner .news_filter .news-filter-main .news-filter-select {
   width: 20%;
+}
+@media screen and (max-width: 900px) {
+  .news_listing .news_list_inner .news_filter .news-filter-main .news-filter-select {
+    width: 100%;
+  }
 }
 .news_listing .news_list_inner .news_filter .news-filter-main .filter-form-control {
   width: 100%;
@@ -7108,6 +7164,7 @@ p {
 @media only screen and (max-width: 1024px) {
   .news_listing .news_listing-main .news-card-list {
     grid-template-columns: repeat(2, 1fr);
+    gap: 25px 20px;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -7125,6 +7182,19 @@ p {
   padding: 90px 0 110px;
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: -130px;
+}
+.events_listing::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #CECECE;
   mask-image: url(../images/blue_section.svg);
   -webkit-mask-image: url(../images/blue_section.svg);
   mask-size: 100% auto;
@@ -7134,10 +7204,36 @@ p {
   -webkit-mask-repeat: no-repeat;
   mask-position: top;
   -webkit-mask-position: top;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  margin-top: -130px;
+  z-index: -1;
+}
+.events_listing::before {
+  content: "";
+  position: absolute;
+  top: unset;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color: #fff;
+  z-index: -1;
+}
+@media screen and (max-width: 1440px) {
+  .events_listing {
+    margin-top: -100px;
+    padding: 70px 0 90px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .events_listing {
+    margin-top: -80px;
+    padding: 60px 0 80px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .events_listing {
+    margin-top: -60px;
+    padding: 40px 0 30px;
+  }
 }
 .events_listing h2 {
   color: #1B273D;
@@ -7157,6 +7253,7 @@ p {
 @media only screen and (max-width: 1024px) {
   .events_listing .events_listing_wrap .event-card-list {
     grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
   }
 }
 @media only screen and (max-width: 600px) {
@@ -7295,6 +7392,41 @@ p {
   transition: box-shadow 0.25s ease;
   display: flex;
   flex-wrap: wrap;
+}
+@media screen and (max-width: 1440px) {
+  .event-card {
+    min-height: 440px;
+  }
+}
+@media screen and (max-width: 1060px) {
+  .event-card {
+    min-height: 350px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .event-card {
+    min-height: 530px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .event-card {
+    min-height: 400px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .event-card {
+    min-height: 365px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .event-card {
+    min-height: 520px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .event-card {
+    min-height: 410px;
+  }
 }
 .event-card__link {
   display: block;
@@ -7487,6 +7619,11 @@ p {
   -webkit-mask-position: top;
   margin-top: 20px;
 }
+@media screen and (max-width: 1440px) {
+  .news_detail_main .news_detil_img {
+    height: auto;
+  }
+}
 .news_detail_main .news_detil_img img {
   width: 100%;
   height: 100%;
@@ -7630,19 +7767,39 @@ p {
 .career-card {
   width: 100%;
   position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 20px;
+}
+.career-card::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: -1;
+  border-radius: 20px;
   mask-image: url(../images/career-list-bg.svg);
   -webkit-mask-image: url(../images/career-list-bg.svg);
+  mask-position: bottom;
+  -webkit-mask-position: bottom;
   mask-size: 100% auto;
-  min-height: 295px;
   background-color: #fff;
   -webkit-mask-size: 100% auto;
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
-  mask-position: top;
-  -webkit-mask-position: top;
-  overflow: hidden;
-  display: flex;
-  flex-wrap: wrap;
+}
+.career-card::before {
+  content: "";
+  width: 100%;
+  height: 70%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
 }
 .career-card:hover {
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
@@ -7655,6 +7812,14 @@ p {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  min-height: 290px;
+  background-color: transparent;
+}
+@media screen and (max-width: 992px) {
+  .career-card__inner {
+    padding: 30px 20px;
+    min-height: 190px;
+  }
 }
 .career-card__title {
   margin: 0 0 0;
@@ -7689,6 +7854,12 @@ p {
   right: 50px;
   bottom: 50px;
 }
+@media screen and (max-width: 992px) {
+  .career-card .btn-primary {
+    position: static;
+    margin-top: 15px;
+  }
+}
 .career-card .career-card__title_main {
   width: 100%;
 }
@@ -7715,6 +7886,21 @@ p {
   position: relative;
   overflow: hidden;
 }
+@media screen and (max-width: 1440px) {
+  .careers_top_section {
+    padding: 80px 0 200px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .careers_top_section {
+    padding: 60px 0 180px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .careers_top_section {
+    padding: 50px 0 160px;
+  }
+}
 .careers_top_section::after {
   content: "";
   width: 311px;
@@ -7737,8 +7923,21 @@ p {
   width: 50%;
   padding-right: 10%;
 }
+@media screen and (max-width: 992px) {
+  .careers_top_section .container .careers_top_left {
+    width: 100%;
+    padding-right: 0;
+  }
+}
 .careers_top_section .container .careers_top_right {
   width: 50%;
+}
+@media screen and (max-width: 992px) {
+  .careers_top_section .container .careers_top_right {
+    width: 100%;
+    padding-right: 0;
+    margin-top: 10px;
+  }
 }
 .careers_top_section .container .careers_top_right p {
   color: #fff;
@@ -7746,6 +7945,13 @@ p {
   line-height: 1.6875rem;
   font-weight: 300;
   margin-bottom: 20px;
+}
+@media screen and (max-width: 992px) {
+  .careers_top_section .container .careers_top_right p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 10px;
+  }
 }
 
 .careers_list_section {
@@ -7757,6 +7963,21 @@ p {
   position: relative;
   overflow: hidden;
   padding: 130px 0;
+}
+@media screen and (max-width: 1440px) {
+  .careers_list_section {
+    padding: 100px 0;
+  }
+}
+@media screen and (max-width: 992px) {
+  .careers_list_section {
+    padding: 70px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .careers_list_section {
+    padding: 40px 0;
+  }
 }
 .careers_list_section::before {
   content: "";
@@ -7811,6 +8032,7 @@ p {
 @media only screen and (max-width: 1024px) {
   .careers_list_section .career-list_main .career-card-list {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 @media only screen and (max-width: 600px) {
