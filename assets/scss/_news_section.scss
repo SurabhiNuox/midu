@@ -7,18 +7,51 @@
 	padding: 90px 0 230px;
 	position: relative;
 	overflow: hidden;
-    mask-image: url(../images/blue_section.svg);
-    -webkit-mask-image: url(../images/blue_section.svg);
-    mask-size: 100% auto;
-	background-color: #CECECE;
-    -webkit-mask-size: 100% auto;
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    mask-position: top;
-    -webkit-mask-position: top;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        mask-image: url(../images/blue_section.svg);
+        -webkit-mask-image: url(../images/blue_section.svg);
+        mask-size: 100% auto;
+        background-color: #CECECE;
+        -webkit-mask-size: 100% auto;
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+        mask-position: top;
+        -webkit-mask-position: top;
+        background-color: #CECECE;
+        z-index: -1;
+    }
+
+    &::before{
+        content: "";
+        position: absolute;
+        top:unset;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 80%;
+        background-color: #CECECE;
+        z-index: -1;
+    }
+
+    @include max(1440) {
+        padding: 75px 0 200px;
+    }
+    @include max(992) {
+        padding: 60px 0 150px;
+    }
+    @include max(767) {
+        padding: 40px 0 130px;
+    }
 
 	
       
@@ -37,8 +70,17 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+              
+            @include max(900) {
+                row-gap: 10px;
+            }
+
             .news-filter-serch{
                 width: 79%;
+
+                @include max(900) {
+                    width: 100%;
+                }
 
                 .filter-form-control{
                        padding-left: 50px;
@@ -50,6 +92,10 @@
 
             .news-filter-select{
                 width: 20%;
+                @include max(900) {
+                    width: 100%;
+                }
+                
             }
                 
                 .filter-form-control{
@@ -106,6 +152,7 @@
 
             @media #{$media-1024}{
                 grid-template-columns: repeat(2, 1fr);
+                gap: 25px 20px;
             }
             @media #{$media-600}{
                 grid-template-columns: 1fr;
@@ -127,19 +174,60 @@
 	padding: 90px 0 110px;
 	position: relative;
 	overflow: hidden;
-    mask-image: url(../images/blue_section.svg);
-    -webkit-mask-image: url(../images/blue_section.svg);
-    mask-size: 100% auto;
-	background-color: #fff;
-    -webkit-mask-size: 100% auto;
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    mask-position: top;
-    -webkit-mask-position: top;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
     margin-top: -130px;
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #CECECE;
+        mask-image: url(../images/blue_section.svg);
+        -webkit-mask-image: url(../images/blue_section.svg);
+        mask-size: 100% auto;
+        background-color: #fff;
+        -webkit-mask-size: 100% auto;
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+        mask-position: top;
+        -webkit-mask-position: top;
+        z-index: -1;
+    }
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: unset;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 80%;
+        background-color: #fff;
+        z-index: -1;
+    }
+
+    @include max(1440) {
+        margin-top: -100px;
+        padding: 70px 0 90px;
+    }
+
+    @include max(1200) {
+   
+    }
+
+    @include max(992) {
+        margin-top: -80px;
+        padding: 60px 0 80px;
+    }
+    @include max(767) {
+        margin-top: -60px;
+        padding: 40px 0 30px;
+    }
 
     h2{
          color: #1B273D;
@@ -159,6 +247,7 @@
 
                 @media #{$media-1024}{
                     grid-template-columns: repeat(2, 1fr);
+                    gap: 25px;
                 }
                 @media #{$media-600}{
                     grid-template-columns: 1fr;

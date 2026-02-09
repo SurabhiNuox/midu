@@ -93,25 +93,6 @@
 		}
 	}
 
-	// Sector page: smooth staggered entrance
-	.sectors_page & .overview-image {
-		opacity: 0;
-		animation: overviewReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
-	}
-
-	.sectors_page & .overview-text {
-		opacity: 0;
-		animation: overviewReveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
-	}
-
-	.sectors_page & .overview-image,
-	.sectors_page & .overview-text {
-		@media (prefers-reduced-motion: reduce) {
-			animation: none;
-			opacity: 1;
-		}
-	}
-
 	.overview-image {
 		width: 50%;
 		height: 610px;
@@ -133,10 +114,17 @@
 			   height: 473px;
 			   background-image: url();
 		}
+		@include max(1060) {
+			height: 420px;
+		}
 
-		@media #{$media-768} {
-			flex: 1 1 100%;
+		@include max(992) {
 			width: 100%;
+			height: 555px;
+			border-radius: 20px;
+		}
+		@include max(767) {
+			height: 310px;
 		}
 
 		img {
@@ -216,10 +204,10 @@
 	
 
 	@include max(992) {
-		padding: 60px 0 100px 0;
+		padding:60px 0 175px 0;
 	}
 
 	@include max(767) {
-		padding: 40px 0 90px;
+		padding: 40px 0 170px;
 	}
 }

@@ -9,10 +9,25 @@
     position: relative;
     overflow: hidden;
 	padding: 130px 0;
-
-	h2{
-		color: #fff !important;
+	@include max(1060) {
+		padding: 75px 0;
 	}
+	@include max(992) {
+		padding: 60px 0;
+	}
+	@include max(767) {
+		padding: 40px 0;
+	}
+	.light-blue-list-inner-bg{		
+		position: absolute;
+		bottom:-135px;
+		right: 0;
+		z-index: 1;
+		@include max(1060) {
+			width: 40%;
+		}
+	}
+
 
 	&.sustainability_orange_bg{
 		&::after{
@@ -25,6 +40,9 @@
 
 		.light-blue-list-inner{
 			background-color: #F47C48;
+		}
+		h2{
+			color: #fff !important;
 		}
 	}
 
@@ -80,7 +98,6 @@
 		   font-weight: 200;
 		   color: #1B273D;
 		   margin-bottom: 10px;
-
 		   b{
 			   font-size: bold;
 		   }
@@ -100,14 +117,19 @@
 .light-blue-list ul{
 	    display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 20px 35px;
+		gap: 35px;
 		padding: 0;
 		
+		@include max(1060) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@include max(767) {
+			grid-template-columns: repeat(1, 1fr);
+			gap: 20px;
 
+		}
 		li{
 			   width: 100%;
-			  
-			   
 			   border-radius: 20px;
 			   position: relative;
 
@@ -128,10 +150,14 @@
 
 				&::after{
 					background-color: #1B273E;
+
 				}
 				.light-blue-list-item{
                    background-color: #1B273E;
 				   h3{
+					color: #fff;
+				   }
+				   p{
 					color: #fff;
 				   }
 				}
@@ -139,20 +165,26 @@
 
 			  
 			   .light-blue-list-item{
-				min-height: 230px;
-				padding: 50px 80px 50px 30px;
+				min-height: 235px;
+				padding: 50px 70px 50px 30px;
 				mask-image: url(../images/white-list-bg.svg);
-		 -webkit-mask-image: url(../images/white-list-bg.svg);
-		 mask-size: 100% auto;
-		 -webkit-mask-size: 100% auto;
-		 background-color: #fff;
-		 mask-repeat: no-repeat;
-		 -webkit-mask-repeat: no-repeat;
-		 mask-position: bottom;
-		 -webkit-mask-position: bottom;
-		 position: relative;
-		 z-index: 2;
-		 transition: all 0.3s ease;
+				-webkit-mask-image: url(../images/white-list-bg.svg);
+				mask-size: 100% auto;
+				-webkit-mask-size: 100% auto;
+				background-color: #fff;
+				mask-repeat: no-repeat;
+				-webkit-mask-repeat: no-repeat;
+				mask-position: bottom;
+				-webkit-mask-position: bottom;
+				position: relative;
+				z-index: 2;
+				transition: all 0.3s ease;
+				@include max(1060) {
+					padding: 30px;
+				}
+				@include max(992) {
+					min-height: 208px;
+				}
 
 		 .light-blue-list_icon{
 			    width: 100%;
@@ -167,13 +199,19 @@
 
 		      h3{
 				color: #1B273D;
-				font-size: 20px;
+				font-size: 22px;
 				font-weight: 400;
 				line-height: 1.2;
 				margin-bottom: 10px;
 				transition: all 0.3s ease;
 			  }
-			   }
+			  p{
+				color: #1B273D;
+				transition: all 0.3s ease;
+				min-height: 60px;
+				margin-bottom: 0;
+			  }
+		   }
 		}
 }
 

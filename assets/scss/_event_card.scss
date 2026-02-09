@@ -23,7 +23,32 @@ $event-card-date-bg: #FF8C42;
 	display: flex;
 	flex-wrap: wrap;
 
+@include max(1440) {
+	min-height: 440px;
+}
+@include max(1060) {
+	min-height: 350px;
+}
 
+@include max(1024) {
+	min-height: 530px;
+}
+
+@include max(900) {
+	min-height: 400px;
+}
+
+@include max(767) {
+	min-height: 365px;
+}
+
+@include max(500) {
+	min-height: 520px;
+}
+
+@include max(400) {
+	min-height: 410px;
+}
 
 	
 

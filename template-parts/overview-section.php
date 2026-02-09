@@ -27,10 +27,10 @@ if (!is_array($overview_content) || empty($overview_content)) {
 	</div>
 	<div class="container">
 		<div class="overview-content">
-			<div class="overview-image">
+			<div class="overview-image" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
 				<img src="<?php echo esc_url($overview_image); ?>" alt="<?php echo esc_attr($overview_title); ?>">
 			</div>
-			<div class="overview-text">
+			<div class="overview-text" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
 				<h2 class="second_title"><?php echo esc_html($overview_title); ?></h2>
 				<?php foreach ($overview_content as $paragraph) : ?>
 					<p class="overview-paragraph"><?php echo esc_html($paragraph); ?></p>

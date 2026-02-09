@@ -1,0 +1,48 @@
+// Project page — entrance animations only (no style changes)
+@import "./variable";
+@import "./mixins";
+
+$ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+@keyframes projectPageReveal {
+	from {
+		opacity: 0;
+		transform: translateY(28px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+// Staggered section entrance on project page (opacity 0 so no flash before animation)
+.projects_page .overview-section {
+	opacity: 0;
+	animation: projectPageReveal 0.65s $ease-out 0.1s forwards;
+}
+
+.projects_page .light-blue-list-section {
+	opacity: 0;
+	animation: projectPageReveal 0.65s $ease-out 0.2s forwards;
+}
+
+.projects_page .project-cards-section {
+	opacity: 0;
+	animation: projectPageReveal 0.65s $ease-out 0.3s forwards;
+}
+
+.projects_page .commitment-section {
+	opacity: 0;
+	animation: projectPageReveal 0.65s $ease-out 0.4s forwards;
+}
+
+// Respect reduced motion
+@media (prefers-reduced-motion: reduce) {
+	.projects_page .overview-section,
+	.projects_page .light-blue-list-section,
+	.projects_page .project-cards-section,
+	.projects_page .commitment-section {
+		animation: none;
+		opacity: 1;
+	}
+}

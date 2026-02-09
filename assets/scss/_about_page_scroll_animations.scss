@@ -1,0 +1,33 @@
+// About page — scroll-triggered reveal (no other style changes)
+@import "./variable";
+@import "./mixins";
+
+$about-reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+.about_page .main_content .overview-section,
+.about_page .main_content .mission-vision-section,
+.about_page .main_content .philosophy-section,
+.about_page .main_content .what-we-do-section {
+	opacity: 0;
+	transform: translateY(28px);
+	transition: opacity 0.65s $about-reveal-ease, transform 0.65s $about-reveal-ease;
+}
+
+.about_page .main_content .overview-section.in-view,
+.about_page .main_content .mission-vision-section.in-view,
+.about_page .main_content .philosophy-section.in-view,
+.about_page .main_content .what-we-do-section.in-view {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.about_page .main_content .overview-section,
+	.about_page .main_content .mission-vision-section,
+	.about_page .main_content .philosophy-section,
+	.about_page .main_content .what-we-do-section {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
