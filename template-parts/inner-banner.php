@@ -2,13 +2,26 @@
 /**
  * Template part for displaying the inner banner
  * Supports video or image: set banner_bg_video for video, otherwise banner_bg_image is used.
+ * Banner title: use query var if set; else page title if set; else page slug.
  *
  * @package midu
  */
 
-$banner_title   = get_query_var('banner_title') ?: get_the_title();
-$banner_bg_image = get_query_var('banner_bg_image') ?: get_template_directory_uri() . '/assets/images/default-banner.jpg';
-$banner_bg_video = get_query_var('banner_bg_video') ?: '';
+$banner_title = get_query_var( 'banner_title' );
+if ( $banner_title === '' || $banner_title === false ) {
+	$page_id = get_queried_object_id();
+	if ( $page_id ) {
+		$banner_title = get_the_title( $page_id );
+		if ( trim( $banner_title ) === '' || $banner_title === __( 'Auto Draft', 'midu' ) ) {
+			$banner_title = get_post_field( 'post_name', $page_id );
+		}
+	} else {
+		$banner_title = get_the_title();
+	}
+}
+$banner_title   = $banner_title ?: get_the_title();
+$banner_bg_image = get_query_var( 'banner_bg_image' ) ?: get_template_directory_uri() . '/assets/images/default-banner.jpg';
+$banner_bg_video = get_query_var( 'banner_bg_video' ) ?: '';
 $use_video      = ! empty( $banner_bg_video );
 ?>
 

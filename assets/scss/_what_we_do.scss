@@ -1,0 +1,144 @@
+// What We Do section — dark gradient bg, centered heading/intro/outro, row of service cards
+@import "./variable";
+@import "./mixins";
+
+.what-we-do-section {
+	width: 100%;
+	padding:100px 0;
+	position: relative;
+
+	@include max(992) {
+		padding: 60px 0 80px;
+	}
+	@include max(767) {
+		padding: 40px 0 60px;
+	}
+}
+
+.what-we-do-section__title {
+	font-family: "REM", sans-serif;
+	font-size: size(50px);
+	font-weight: 300;
+	line-height: size(55px);
+	color: $white;
+	text-align: center;
+	margin: 0 0 10px 0;
+
+	@include max(992) {
+		font-size: size(34px);
+		margin-bottom: 16px;
+	}
+	@include max(767) {
+		font-size: size(28px);
+		margin-bottom: 14px;
+	}
+}
+
+.what-we-do-section__intro {
+	font-family: "REM", sans-serif;
+	font-size: size(16px);
+	font-weight: 200;
+	line-height:size(21px);
+	color: #fff;
+	text-align: center;
+	max-width: 590px;
+	margin:0 auto 25px;
+
+	@include max(767) {
+		font-size: size(15px);
+		margin-bottom: 32px;
+	}
+}
+
+.what-we-do-section__grid {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 20px;
+	margin-bottom: 30px;
+
+	@include max(1200) {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 18px;
+	}
+	@include max(992) {
+		grid-template-columns: repeat(2, 1fr);
+		margin-bottom: 36px;
+	}
+	@include max(600) {
+		grid-template-columns: 1fr;
+		gap: 16px;
+		margin-bottom: 32px;
+	}
+}
+
+.what-we-do-card {
+	 background-image: url(../images/what_bg_mask.svg);
+	 background-size: 100%;
+	 background-repeat: no-repeat;
+	 background-position: top;
+	 padding: 25px 40px 35px;
+	 transition: background 0.25s ease, border-color 0.25s ease;
+	 min-height: 216px;
+	 display: flex;
+	 align-items: center;
+
+	@include max(767) {
+		padding: 28px 18px 24px;
+		border-radius: 14px;
+	}
+}
+
+.what-we-do-card__icon-wrap {
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	width: 40px;
+
+	@include max(767) {
+		margin-bottom: 14px;
+		min-height: 48px;
+	}
+}
+
+.what-we-do-card__icon {
+	width: 56px;
+	height: 56px;
+	object-fit: contain;
+	display: block;
+	max-width: 100%;
+
+	@include max(767) {
+		width: 48px;
+		height: 48px;
+	}
+}
+
+.what-we-do-card__title {
+	font-family: "REM", sans-serif;
+	font-size: size(20px);
+	font-weight: 300;
+	line-height: size(24px);
+	color: $white;
+	margin: 0;
+	letter-spacing: 0.01em;
+
+	@include max(1200) {
+		font-size: size(14px);
+	}
+	@include max(767) {
+		font-size: size(14px);
+	}
+}
+
+.what-we-do-section__outro {
+	font-weight: 100;
+	line-height:size(26px);
+	color: #fff;
+	text-align: center;
+	max-width: 670px;
+	margin: 0 auto;
+
+	@include max(767) {
+		font-size: size(15px);
+	}
+}
