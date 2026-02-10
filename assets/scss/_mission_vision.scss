@@ -14,11 +14,11 @@ $mv-body-bg: #fff;
 	&::before {
 		content: "";
 		position: absolute;
-		top: 0;
-		right: 0;
+		top: -2px;
+    	right: -1px;
 		width: 128px;
 		height: 111px;
-		background-image: url(../images/pr_img_small.svg);
+		background-image: url(../images/top_mask.svg);
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
 		background-position: top right;

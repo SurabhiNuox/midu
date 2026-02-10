@@ -309,6 +309,9 @@ function addarah_scripts()
 	// Project cards Load more (runs on any page that has the section; no-op otherwise)
 	wp_enqueue_script( 'project-cards-load-more', get_template_directory_uri() . '/assets/js/project-cards-load-more.js', array(), _S_VERSION, true );
 
+	// Featured Projects Swiper (runs when .featured-projects-section exists)
+	wp_enqueue_script( 'featured-projects-script', get_template_directory_uri() . '/assets/js/featured-projects.js', array( 'swiper-js' ), _S_VERSION, true );
+
 	// Load Swiper for Gallery page
 	if ($is_gallery_page) {
 		// Enqueue Swiper JS (CDN) - only if not already loaded

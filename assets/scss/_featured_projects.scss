@@ -1,0 +1,129 @@
+// Featured Projects — dark section, title + subtitle, Swiper of project cards, nav arrows
+@import "./variable";
+@import "./mixins";
+
+$featured-projects-bg: #2e3a4b;
+$featured-projects-subtitle: #a3aeb9;
+
+.featured-projects-section {
+	width: 100%;
+	padding: 80px 0 100px;
+	background-color: $featured-projects-bg;
+	position: relative;
+	overflow: hidden;
+
+	@include max(992) {
+		padding: 60px 0 80px;
+	}
+	@include max(767) {
+		padding: 40px 0 60px;
+	}
+}
+
+.featured-projects-section__header {
+	margin-bottom: 32px;
+
+	@include max(767) {
+		margin-bottom: 24px;
+	}
+}
+
+.featured-projects-section__title {
+	font-family: "REM", sans-serif;
+	font-size: size(50px);
+	font-weight: 400;
+	line-height: size(56px);
+	color: $white;
+	text-align: left;
+	margin: 0 0 12px 0;
+
+	@include max(992) {
+		font-size: size(32px);
+	}
+	@include max(767) {
+		font-size: size(28px);
+		margin-bottom: 8px;
+	}
+}
+
+.featured-projects-section__subtitle {
+	font-family: "REM", sans-serif;
+	font-size: size(16px);
+	font-weight: 200;
+	line-height: 1.5;
+	color:#fff;
+	margin: 0;
+
+	@include max(767) {
+		font-size: size(14px);
+	}
+}
+
+.featured-projects-section__slider-wrap {
+	position: relative;
+
+	@include max(992) {
+		padding: 0 44px;
+	}
+	@include max(767) {
+		padding: 0 40px;
+	}
+}
+
+.featured-projects-swiper {
+	overflow: hidden;
+	width: 100%;
+}
+
+.featured-projects-swiper .swiper-slide {
+	height: auto;
+	box-sizing: border-box;
+}
+
+.featured-projects-section__nav {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: none;
+	background-color: $white;
+	color: $featured-projects-bg;
+	border-radius: 10px;
+	cursor: pointer;
+	z-index: 2;
+	transition: opacity 0.2s ease, background-color 0.2s ease;
+
+	&:hover:not(:disabled) {
+		opacity: 0.9;
+	}
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+	svg {
+		width: 24px;
+		height: 24px;
+	}
+	&--prev {
+		left: 0;
+	}
+	&--next {
+		right: 0;
+	}
+
+	@include max(767) {
+		width: 40px;
+		height: 40px;
+		&--prev { left: 0; }
+		&--next { right: 0; }
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}

@@ -71,6 +71,7 @@
 	position: absolute;
 	left: 0;
 	top: 0;
+	pointer-events: none;
 	@include max(992) {	
 		width: 50%;
 	}
