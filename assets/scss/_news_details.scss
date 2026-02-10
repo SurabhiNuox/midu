@@ -18,7 +18,7 @@
 	   }
 
          @media #{$media-768}{
-  padding: 120px 0 60px;
+  padding: 120px 0 40px;
 
 	   }
 }
@@ -40,6 +40,37 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+
+       .event-card{
+            &::before{
+              background-color: #CECECE;  
+            }
+       }
+
+        @media #{$media-1440}{
+padding: 80px 0 200px;
+
+        }
+
+          @media #{$media-1024}{
+    padding: 60px 0 170px;
+
+        }
+
+           @media #{$media-1024}{
+    padding: 50px 0 120px;
+
+        }
+
+           @media #{$media-1024}{
+    padding: 50px 0 120px;
+
+        }
+
+           @media #{$media-768}{
+    padding: 40px 0 80px;
+
+        }
   
 
     h2{
@@ -49,11 +80,40 @@
         color: #1B273D;
         margin: 0;
         letter-spacing: 0px;
+
+          @media #{$media-1440}{
+font-size: size(40px);
+            line-height: size(42px);
+            }
+
+              @media #{$media-1024}{
+font-size: size(35px);
+            line-height: size(35px);
+            }
+
+            @media #{$media-768}{
+font-size: size(30px);
+            line-height: size(30px);
+            }
+
+            @media #{$media-480}{
+font-size: size(26px);
+            line-height: size(28px);
+            }
+
     }
 
 
     .relatedSwiper{
           margin-top: 30px;
+
+             @media #{$media-1024}{
+ margin-top: 20px;
+             }
+
+              @media #{$media-768}{
+ margin-top: 15px;
+             }
     }
 
       
@@ -94,16 +154,45 @@
            width: 100%;
            height: 710px;
            overflow: hidden;
-           mask-image: url(../images/news-detail-bg.svg);
-           -webkit-mask-image: url(../images/news-detail-bg.svg);
-           mask-size: 100% auto;
-           background-color: #CECECE;
-           -webkit-mask-size: 100% auto;
-           mask-repeat: no-repeat;
-           -webkit-mask-repeat: no-repeat;
-           mask-position: top;
-           -webkit-mask-position: top;
+           border-radius: 20px;
+           border-bottom-right-radius: 0;
            margin-top: 20px;
+           position: relative;
+
+           @media #{$media-1024}{
+border-radius: 10px;
+           border-bottom-right-radius: 0;
+           }
+
+         &::before{
+                  content: "";
+    position: absolute;
+    bottom: 5px;
+    right: -6px;
+    width: 122px;
+    height: 111px;
+background-color: #ffffff;
+    mask-image: url(../images/top_mask.svg);
+    -webkit-mask-image: url(../images/top_mask.svg);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% auto;
+    mask-size: 100% auto;
+    z-index: 3;
+    transform: rotate(90deg);
+
+	  @media #{$media-1024}{
+    width: 100px;
+    height: 88px;
+	  }
+
+	  @media #{$media-768}{
+    width: 54px;
+    height: 44px;
+	  }
+    }
+
+
 
            @include max(1440) {
                height: auto;
@@ -111,7 +200,7 @@
 
            img{
                 width: 100%;
-                height: 100%;
+                height: auto;
                 object-fit: cover;
                 object-position: center;
            }
@@ -127,18 +216,29 @@
     justify-content: space-between;
     padding-top: 50px;
 
+      @media #{$media-1024}{
+              padding-top: 30px;
+      }
+
     .news_details_left{
         width: 28%;
 
-        
+        @media #{$media-1024}{
+              width: 100%;
+        }
 
         h5{
               font-size: size(22px);
-              line-height: 22px;
+              line-height: 24px;
               font-weight: 500;
               color: #2C2C2C;
               margin-top: 15px;
               margin-bottom: 25px;
+
+              @media #{$media-1024}{
+ font-size: size(20px);
+ margin-bottom: 15px;
+              }
         }
 
         .news-social{
@@ -152,6 +252,14 @@
                  font-weight: 400;
                  color: #2C2C2C;
                  margin-right: 10px;
+
+                  @media #{$media-1024}{
+ font-size: size(18px);
+                  }
+
+                   @media #{$media-768}{
+ font-size: size(16px);
+                  }
             }
 
             .social-icon{
@@ -167,6 +275,12 @@
                  border-radius: 100%;
                  transition: all 0.3s ease;
 
+                   @media #{$media-768}{
+                width: 35px;
+                 height: 35px;
+                 font-size: size(14px);
+                   }
+
                  &:hover{
                      background-color: #000;
                      color: #fff;
@@ -178,6 +292,11 @@
     .news_details_right{
         width: 67%;
 
+         @media #{$media-1024}{
+    width: 100%;
+    margin-top: 30px;
+                  }
+
         h3{
          font-size: size(22px);
          line-height: 1.2;
@@ -185,6 +304,10 @@
          color: #2C2C2C;
          margin-top: 0;
          margin-bottom: 25px;
+
+           @media #{$media-1024}{
+ margin-bottom: 10px;
+           }
 
         }
 
@@ -202,6 +325,10 @@
       border: 1px solid #D3D3D3;
       padding: 25px;
 
+        @media #{$media-1024}{
+ padding: 20px;
+        }
+
       h3{
            font-size: size(24px);
            line-height: 1.2;
@@ -209,6 +336,18 @@
            color: #2C2C2C;
            margin-top: 0;
            margin-bottom: 20px;
+
+            @media #{$media-1440}{
+font-size: size(20px);
+             }
+
+             @media #{$media-1024}{
+font-size: size(18px);
+             }
+
+               @media #{$media-768}{
+font-size: size(16px);
+             }
       }
 
       .event_details_badges{
@@ -216,6 +355,10 @@
            flex-wrap: wrap;
            gap: 15px;
            margin-bottom: 24px;
+
+            @media #{$media-1024}{
+margin-bottom: 14px;
+            }
       }
 
       .event_details_badge{
@@ -229,12 +372,20 @@
            font-weight: 300;
            border-radius: 12px;
            line-height: 1.3;
+
+           @media #{$media-1024}{
+  font-size: 14px;
+           }
       }
 
       .event_details_icon{
         font-size: 20px;
            flex-shrink: 0;
            color: #15868A;
+
+            @media #{$media-1024}{
+  font-size: 16px;
+            }
       }
 
       .event_details_map{

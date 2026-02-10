@@ -104,6 +104,7 @@ width: 100px;
 
 .career_bg{
 	   width: 100%;
+	   max-width: 500px;
 	   height: 100%;
 	   background-image: url(../images/careers-bg.svg);
 	   background-size: 100% 100%;
@@ -112,6 +113,8 @@ width: 100px;
 	   position: absolute;
 	   top: 0;
 	   left: 0;
+	   right: 0;
+	   margin: 0 auto;
 	   z-index: 5;
 	   opacity: 0.1;
 	}
@@ -135,7 +138,7 @@ width: 100px;
 	box-sizing: border-box;
 
 		 @media #{$media-768}{
-padding: 20px 0 20px;
+padding: 45px 0 20px;
 		 }
 }
 
@@ -187,21 +190,66 @@ padding: 20px 0 20px;
 
 // Card: rounded top/left/bottom-left; angled cut bottom-right (speech-bubble style)
 .career_story_card {
-	mask-image: url(../images/story-box-bg.svg);
-    -webkit-mask-image: url(../images/story-box-bg.svg);
-    mask-size: 100% auto;
-    -webkit-mask-size: 100% auto;
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    mask-position: bottom;
-    -webkit-mask-position: bottom;
-    background: #fff;
+	
 	padding: 80px 65px 10px;
     min-height: 300px;
     position: relative;
     text-align: left;
     width: 100%;
-    border-radius: 0;
+    border-radius: 20px;
+	background-color: #fff;
+
+	@media #{$media-1024}{
+border-radius: 15px;
+padding: 80px 55px 10px;
+	}
+
+	@media #{$media-768}{
+border-radius: 15px;
+    padding: 50px 15px 10px;
+	}
+
+	*{
+       position: relative;
+	   z-index: 5;
+	}
+
+	&::after{
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    right: -6px;
+    width: 122px;
+    height: 111px;
+    background-color: #16888c;
+    mask-image: url(../images/top_mask.svg);
+    -webkit-mask-image: url(../images/top_mask.svg);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% auto;
+    mask-size: 100% auto;
+    z-index: 3;
+    transform: rotate(90deg);
+@media #{$media-1024}{
+    width: 95px;
+    height: 85px;
+}
+
+
+@media #{$media-768}{
+width: 76px;
+    height: 64px;
+	    right: -7px;
+}
+
+@media #{$media-480}{
+width: 76px;
+    height: 64px;
+}
+
+	}
+
+	
 
 
 }
@@ -213,6 +261,17 @@ padding: 20px 0 20px;
 	position: absolute;
 	left: 65px;
 	top: 30px;
+
+		@media #{$media-768}{
+height: 25px;
+left: 15px;
+	top: 20px;
+	        width: 28px;
+		}
+
+	img{
+		  width: 100%;
+	}
 }
 
 .career_story_quote_text {
@@ -222,6 +281,11 @@ padding: 20px 0 20px;
     margin: 0;
 	padding-bottom: 20px;
 	font-weight: 300;
+
+	@media #{$media-1024}{
+font-size: size(14px);
+	line-height: size(24px);
+	}
 }
 
 .career_story_author {
@@ -250,6 +314,10 @@ padding: 20px 0 20px;
 	line-height: size(24px);
 	color: #344463;
 	font-weight: 600;
+
+	@media #{$media-1024}{
+	font-size: size(16px);
+	}
 }
 
 .career_story_role {
@@ -257,6 +325,10 @@ padding: 20px 0 20px;
 	line-height: size(24px);
 	color: #BFBFBF;
 	font-weight: 400;
+
+	@media #{$media-1024}{
+	font-size: size(14px);
+	}
 }
 
 .swiper-3d .swiper-slide-shadow {

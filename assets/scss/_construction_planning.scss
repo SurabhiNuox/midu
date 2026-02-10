@@ -5,21 +5,57 @@
 .construction-section{
 	width: 100%;
 	position: relative;
-	padding: 100px 0 250px;
-	margin-top: -130px;
-	margin-bottom: -150px;
+    padding: 100px 0 220px;
+    margin-top: -20px;
+    margin-bottom: -160px;
+	border-radius: 20px;
 	position: relative;
     overflow: hidden;
-    mask-image: url(../images/bg-mid-blue.svg);
-    -webkit-mask-image: url(../images/bg-mid-blue.svg);
-    mask-size: 100% auto;
 	background-color: #35435A;
-    -webkit-mask-size: 100% auto;
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    mask-position: top;
-    -webkit-mask-position: top;
-	overflow: hidden;
+
+	
+			@media screen and (max-width: 1200px) {
+ padding: 80px 0 180px;
+
+			}
+
+			@media screen and (max-width: 768px) {
+ padding: 60px 0 170px;
+
+			}
+
+	&:before{
+		content: "";
+		position: absolute;
+		top: -2px;
+		right: -1px;
+		width: 128px;
+		height: 111px;
+		background-image: url(../images/top_mask.svg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: top right;
+		z-index: 3;
+
+			@media screen and (max-width: 1440px) {
+width: 100px;
+    height: 88px;
+		}
+
+
+@media screen and (max-width: 768px) {
+    width: 70px;
+    height: 60px;
+		}
+
+
+@media screen and (max-width: 768px) {
+    .career_story_section::after {
+        width: 70px;
+        height: 60px;
+    }
+}
+	}
 
 	.construction-section_inner{
 		   width: 100%;
@@ -27,12 +63,23 @@
 		   display: flex;
 		   flex-wrap: wrap;
 
+		   
+@media screen and (max-width: 768px) {
+                 flex-direction: column-reverse;
+				 gap: 30px;
+}
+
 
 
 
 .construction-section-list{
 	width: 50%;
 	padding-right: 50px;
+
+		  @media #{$media-768}{
+width: 100%;
+	padding-right: 0px;
+		  }
 
 	 p {
 		color: #fff;
@@ -43,6 +90,14 @@
 		font-size: 25px;
 		font-weight: 400;
 		margin: 0 0 10px 0;
+		
+		 @media #{$media-1024}{
+	font-size: 20px;
+		  }
+
+		  @media #{$media-768}{
+	font-size: 18px;
+		  }
 	  }
 	  
 	  .invest-development_list {
@@ -129,6 +184,15 @@ z-index: 0;
 		line-height: 1.4;
 		position: relative;
 		z-index: 1;
+
+		@media #{$media-1024}{
+	font-size: 18px;
+		  }
+
+		  @media #{$media-768}{
+	font-size: 16px;
+		  
+		  }
 	  }
 
 
@@ -139,15 +203,51 @@ z-index: 0;
 	height: 605px;
 	position: relative;
 	z-index: 1;
-	mask-image: url(../images/overview_img_bg.svg);
-	-webkit-mask-image: url(../images/overview_img_bg.svg);
-	mask-repeat: no-repeat;
-	-webkit-mask-repeat: no-repeat;
-	-webkit-mask-size: 100% auto;
-	mask-size: 100% auto;
+	border-radius: 20px;
+	border-bottom-right-radius: 0;
 	background-color: #1B273D;
 	display: block;
 	overflow: hidden;
+
+	 @media #{$media-1024}{
+border-radius: 10px;
+border-bottom-right-radius: 0;
+	height: 500px;
+	 }
+
+	  @media #{$media-768}{
+		width: 100%;
+	height: 400px;
+	 }
+
+	 &::after {
+    content: "";
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    right: -6px;
+    width: 122px;
+    height: 111px;
+    background-color: #35435A;
+    -webkit-mask-image: url(../images/top_mask.svg);
+    mask-image: url(../images/top_mask.svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    z-index: 3;
+    transform: rotate(90deg);
+
+	 @media #{$media-1024}{
+    width: 100px;
+    height: 88px;
+	  }
+
+	  @media #{$media-768}{
+    width: 54px;
+    height: 44px;
+	  }
+}
   }
 
   .construction-img img {

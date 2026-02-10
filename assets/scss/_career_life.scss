@@ -54,40 +54,49 @@ font-size: size(16px);
 	   width: 100%;
 	   position: relative;
 	   z-index: 1;
-	   min-height: 510px;
-	   mask-image: url(../images/career-video-bg.svg);
-	   -webkit-mask-image: url(../images/career-video-bg.svg);
-	   mask-repeat: no-repeat;
-	   -webkit-mask-repeat: no-repeat;
-	   -webkit-mask-size: 100% auto;
-	   mask-size: 100% auto;
+	   min-height: auto !important;
+	   max-height: 510px;
+	   overflow: hidden;
 	   background-color: #1B273D;
 	   display: block;
-	   overflow: hidden;
 	   position: relative;
 	   margin-top: 30px;
+	   border-radius: 20px;
 
-	   	@media #{$media-1200}{
- min-height: auto;
-     height: 420px;
+	   @media #{$media-1024}{
+ border-radius: 10px;
+    margin-top: 10px;
+	   }
 
-		}
+	   &::before{
+                  content: "";
+    position: absolute;
+    bottom: 5px;
+    right: -6px;
+    width: 122px;
+    height: 111px;
+background-color: #1b273d;
+    mask-image: url(../images/top_mask.svg);
+    -webkit-mask-image: url(../images/top_mask.svg);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% auto;
+    mask-size: 100% auto;
+    z-index: 3;
+    transform: rotate(90deg);
 
-		@media #{$media-1024}{
-height: 360px;
-		}
+	  @media #{$media-1024}{
+    width: 100px;
+    height: 88px;
+	  }
 
-		@media #{$media-768}{
-height: 260px;
-		}
+	  @media #{$media-768}{
+    width: 54px;
+    height: 44px;
+	  }
+	   }
 
-		@media screen and (max-width: 600px) {
-height: 200px;
-		}
-
-			@media screen and (max-width: 500px) {
-height: 150px;
-		}
+	   
 
 		
 		
@@ -130,8 +139,8 @@ height: 150px;
 
 	   img{
 		    width: 100%;
-			height: 100%;
-			position: absolute;
+			height: auto;
+			position: static;
 			top: 0;
 			left: 0;
 			object-fit: cover;
@@ -195,6 +204,11 @@ height: 150px;
 						  line-height: size(30px);
 						    margin-bottom: 10px;
 						  }
+
+						    @media screen and (max-width: 768px) {
+  font-size: size(20px);
+						  line-height: size(27px);
+							}
 					   }
 
 					   p{

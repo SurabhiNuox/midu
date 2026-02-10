@@ -9,46 +9,52 @@ $event-card-date-bg: #FF8C42;
 	min-height: 505px;
 	position: relative;
 	border-radius: 16px;
+	border-bottom-right-radius: 0;
 	overflow: hidden;
-	mask-image: url(../images/event-card.svg);
-	-webkit-mask-image: url(../images/event-card.svg);
-    mask-size: 100% auto;
-	background-color: #000;
-    -webkit-mask-size: 100% auto;
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    mask-position: top;
-    -webkit-mask-position: top;
 	transition: box-shadow 0.25s ease;
 	display: flex;
 	flex-wrap: wrap;
 
-@include max(1440) {
-	min-height: 440px;
-}
-@include max(1060) {
-	min-height: 350px;
-}
 
-@include max(1024) {
-	min-height: 530px;
-}
+   &::before{
+                  content: "";
+    position: absolute;
+    bottom: 5px;
+    right: -6px;
+    width: 122px;
+    height: 111px;
+background-color: #fff;
+    mask-image: url(../images/top_mask.svg);
+    -webkit-mask-image: url(../images/top_mask.svg);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% auto;
+    mask-size: 100% auto;
+    z-index: 3;
+    transform: rotate(90deg);
 
-@include max(900) {
+	  @media #{$media-1024}{
+    width: 100px;
+    height: 88px;
+	  }
+
+	  @media #{$media-768}{
+    width: 54px;
+    height: 44px;
+	  }
+	}
+
+
+	 @media #{$media-1024}{
+border-radius: 10px;
+	border-bottom-right-radius: 0;
+
 	min-height: 400px;
-}
+	 }
 
-@include max(767) {
-	min-height: 365px;
-}
-
-@include max(500) {
-	min-height: 520px;
-}
-
-@include max(400) {
-	min-height: 410px;
-}
+	 @media #{$media-768}{
+	min-height: 350px;
+	 }
 
 	
 
@@ -60,6 +66,10 @@ $event-card-date-bg: #FF8C42;
 		text-decoration: none;
 		color: $white;
 		position: relative;
+
+		    @media #{$media-1024}{
+padding: 15px 0 30px;
+			}
 
 		&::after{
 		    content: "";
@@ -133,6 +143,18 @@ background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%)
 		justify-content: center;
 		text-align: center;
 		z-index: 2;
+
+		@media #{$media-1024}{
+	left: 20px;
+		top: 20px;
+		   width: 60px;
+    height: 60px;
+		}
+
+		@media #{$media-768}{
+	left: 15px;
+		top: 15px;
+		}
 	}
 
 	&__date-day {
@@ -142,6 +164,13 @@ background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%)
 		color: #fff;
 		line-height: 94%;
 		margin-bottom: 0;
+		@media #{$media-1024}{
+font-size: size(35px);
+		}
+
+		@media #{$media-768}{
+font-size: size(28px);
+		}
 	}
 
 	&__date-month {
@@ -157,6 +186,10 @@ background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%)
 		padding: 25px 25px 35px;
 		color: $white;
 		z-index: 4;
+
+			@media #{$media-1024}{
+	padding: 25px 15px 30px;
+			}
 	}
 
 	&__location,
@@ -169,6 +202,14 @@ background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%)
 		font-weight: 400;
 		line-height: 26px;
 		color: #fff;
+
+		@media #{$media-1024}{
+font-size: 15px;
+		}
+
+		@media #{$media-768}{
+font-size: 14px;
+		}
 	}
 
 	&__time {
@@ -187,6 +228,14 @@ background: linear-gradient(180deg, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 1) 100%)
 		font-weight: 400;
 		color: $white;
 		max-width: 280px;
+
+		@media #{$media-1024}{
+font-size: size(18px);
+		}
+
+		@media #{$media-768}{
+font-size: size(17px);
+		}
 	}
 }
 
