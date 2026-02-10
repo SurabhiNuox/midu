@@ -27,8 +27,8 @@ $featured-projects-subtitle: #a3aeb9;
 	&:after{
 		content: "";
 		position: absolute;
-		bottom: 0px;
-		left:0px;
+		bottom: -2px;
+		left: -10px;
 		width: 140px;
 		height: 128px;
 		background-image: url(../images/blue_mask_bottom.svg);

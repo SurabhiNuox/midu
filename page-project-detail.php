@@ -121,7 +121,9 @@ get_header();
 			set_query_var( 'photo_gallery_images', array( 'gal_1.jpg', 'gal_2.jpg', 'gal_3.jpg' ) );
 			get_template_part( 'template-parts/photo-gallery-section' );
 			?>
-	<?php
+	
+		</div>
+		<?php
 		// Featured Projects — Swiper slider of project cards
 		$theme_images = get_template_directory_uri() . '/assets/images/';
 		set_query_var( 'featured_projects_title', 'Related Projects' );
@@ -154,8 +156,6 @@ get_header();
 		) );
 		get_template_part( 'template-parts/featured-projects-section' );
 		?>
-		</div>
-		
 	</div>
 </div>
 

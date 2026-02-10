@@ -2485,7 +2485,8 @@ a,
   padding: 14px 32px;
   border: 2px solid #fff;
   border-radius: 0 0 0 15px;
-  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -2494,7 +2495,8 @@ a,
     padding: 12px 26px;
     font-size: 15px;
     border-radius: 0 0 0 12px;
-    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
   }
 }
 @media only screen and (max-width: 600px) {
@@ -2502,7 +2504,8 @@ a,
     padding: 10px 22px;
     font-size: 14px;
     border-radius: 0 0 0 10px;
-    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
   }
 }
 .btn-secondary:hover {
@@ -2524,7 +2527,8 @@ a,
   font-weight: 500;
   padding: 14px 32px;
   border: 2px solid #20b2aa;
-  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -2533,7 +2537,8 @@ a,
     padding: 12px 26px;
     font-size: 15px;
     border-radius: 0 0 0 12px;
-    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
   }
 }
 @media only screen and (max-width: 600px) {
@@ -2541,7 +2546,8 @@ a,
     padding: 10px 22px;
     font-size: 14px;
     border-radius: 0 0 0 10px;
-    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
   }
 }
 .btn-outline:hover {
@@ -3424,7 +3430,8 @@ p {
   font-weight: 500;
   padding: 16px 36px;
   border-radius: 0 0 0 15px;
-  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(32, 178, 170, 0.3);
 }
@@ -3433,7 +3440,8 @@ p {
     padding: 14px 30px;
     font-size: 16px;
     border-radius: 0 0 0 12px;
-    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
   }
 }
 @media only screen and (max-width: 600px) {
@@ -3441,7 +3449,8 @@ p {
     padding: 12px 26px;
     font-size: 15px;
     border-radius: 0 0 0 10px;
-    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
   }
 }
 .main-banner .banner-content .banner-button:hover {
@@ -3774,7 +3783,8 @@ p {
   color: #fff;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.6rem), calc(100% - 0.6rem) 100%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.6rem), calc(100% - 0.6rem) 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.6rem), calc(100% - 0.6rem) 100%, 0 100%);
 }
 @media only screen and (max-width: 600px) {
   .explore-our-world .explore-card .card-cta-button {
@@ -10141,7 +10151,7 @@ p {
   transition: background-color 0.25s ease, transform 0.2s ease;
 }
 .project-card__link:hover .project-card__btn {
-  background-color: rgb(16.958490566, 108.2113207547, 111.441509434);
+  background-color: #116c6f;
   transform: translateX(2px);
 }
 @media screen and (max-width: 767px) {
@@ -10179,8 +10189,8 @@ p {
 .featured-projects-section:after {
   content: "";
   position: absolute;
-  bottom: 0px;
-  left: 0px;
+  bottom: -2px;
+  left: -10px;
   width: 140px;
   height: 128px;
   background-image: url(../images/blue_mask_bottom.svg);
@@ -11531,7 +11541,8 @@ p {
   display: flex;
   align-items: center;
   z-index: 4;
-  clip-path: polygon(0 0, calc(100% - 120px) 0, 100% 120px, 100% 100%, 120px 100%, 0 calc(100% - 120px), 0 0);
+  -webkit-clip-path: polygon(0 0, calc(100% - 120px) 0, 100% 120px, 100% 100%, 120px 100%, 0 calc(100% - 120px), 0 0);
+          clip-path: polygon(0 0, calc(100% - 120px) 0, 100% 120px, 100% 100%, 120px 100%, 0 calc(100% - 120px), 0 0);
   border-radius: 20px;
 }
 .ecnomic-section::after {
