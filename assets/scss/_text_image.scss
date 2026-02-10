@@ -10,6 +10,14 @@
 	   flex-wrap: wrap;
 	   align-items: center;
 
+	   @media #{$media-768}{
+        flex-direction: column-reverse;
+	gap: 30px;
+
+	   }
+
+
+
 	&.reverse_direction{
 		flex-direction: row-reverse;
 
@@ -44,6 +52,11 @@
 	   .right_text_main{
 		     width: 55%;
 			 padding-right: 5%;
+
+			@media screen and (max-width: 768px) {
+ width: 100%;
+			 padding-right: 0%;
+			}
 			
 
 			 h2{
@@ -54,7 +67,7 @@
 				  font-weight: 200;
 				  line-height: 24px;
 				  color: #1B273D;
-				  margin-bottom: 30px;
+				  margin-bottom: 15px;
 				  &:last-child{
 					margin-bottom: 0;
 				  }
@@ -74,6 +87,11 @@
 					padding-left: 25px;
 					position: relative;
 					width: 100%;
+
+				@media #{$media-768}{
+font-size: size(16px);
+					line-height: size(24px);
+				}
 
 					&.list_with_title{
 						font-weight: bold;
@@ -114,6 +132,31 @@
     background-color: #1B273D;
     display: block;
     overflow: hidden;
+
+
+		@media screen and (max-width: 768px) {
+ width: 100%;
+			 padding-right: 0%;
+			 height: 645px;
+			}
+
+			@media screen and (max-width: 600px) {
+
+    height: 410px;
+			}
+
+			@media screen and (max-width: 450px) {
+
+    height: 335px;
+
+			}
+
+			@media screen and (max-width: 400px) {
+
+        height: 320px;
+
+			}
+	
 
 	img{
 		width: 100%;

@@ -7,21 +7,60 @@
   position: relative;
   padding: 190px 0 100px;
 
+  	  @media #{$media-1024}{
+ padding: 160px 0 70px;
+	  }
+
+	   @media #{$media-768}{
+ padding: 150px 0 60px;
+	  }
+
+	   @media #{$media-480}{
+ padding: 120px 0 50px;
+	  }
+
+
   .career_details_wrap{
 	    width: 100%;
 		padding: 100px 0;
 		display: flex;
 		flex-wrap: wrap;
 
+		  @media #{$media-1600}{
+padding: 80px 0;
+
+	   }
+
+	     @media #{$media-1024}{
+padding: 60px 0;
+
+	   }
+
+	    @media #{$media-768}{
+padding: 30px 0 40px;
+
+	   }
+
 		.career_details_left{
 			   width: 50%;
 			   padding-right: 5%;
+
+			     @media #{$media-1024}{
+width: 100%;
+			   padding-right: 0;
+
+	   }
 
 			   label{
 				   font-size: size(16px);
 				   line-height: size(25px);
 				   font-weight: 200;
 				   color: #1B273D;
+
+				       @media #{$media-1024}{
+  font-size: size(14px);
+   line-height: size(24px);
+					   }
 				   
 			   }
 
@@ -49,6 +88,11 @@
 				   flex-wrap: wrap;
 				   gap: 40px;
 
+				    @media #{$media-1024}{
+						 margin-top: 20px;
+gap: 20px;
+					}
+
 				   .career_details_box{
 					    width: 100%;
 
@@ -58,6 +102,10 @@
 							font-weight: 400;
 							color: #1B273D;
 							margin-bottom: 10px;
+							  @media #{$media-1024}{
+                          font-size: size(18px);
+							line-height: size(24px);
+							  }
 						}
 
 						ul{
@@ -69,6 +117,11 @@
 								   color: #353535;
 								   padding-left: 25px;
 								   position: relative;
+
+								     @media #{$media-1024}{
+  font-size: size(15px);
+								   line-height: size(23px);
+									 }
 								   
 								   &::before{
 									content: "";
@@ -78,8 +131,8 @@
 									border-radius: 100%;
 									position: absolute;
 									left: 8px;
-									top: 50%;
-									transform: translateY(-50%);
+									top: 10px;
+								
 
 								   }
 								   
@@ -96,6 +149,12 @@
 			border-radius: 20px;
 			overflow: hidden;
 			position: relative;
+
+			@media #{$media-1024}{
+	width: 100%;
+	padding: 30px 25px;
+	margin-top: 30px;
+			}
 
 
 			&::before{
@@ -142,12 +201,26 @@
 					   font-weight: 400;
 					   color: #000000;
 					   margin: 0;
+
+					    @media #{$media-1024}{
+   font-size: size(30px);
+					   line-height: size(30px);
+						}
+
+					    @media #{$media-768}{
+   font-size: size(28px);
+					   line-height: size(28px);
+						}
 					  
 				  }
 
 				  .career_details_form{
 					   width: 100%;
 					   margin-top: 30px;
+
+					    @media #{$media-1024}{
+                            margin-top: 20px;
+						}
 
 					   .career_form_group{
 						    width: 100%;
@@ -168,6 +241,11 @@
 								 color: #7C7C7C;
 								 font-weight: 200;
 								 outline: none;
+
+								 @media #{$media-1024}{
+                                       height: 50px;
+									   font-size: 16px;
+								 }
 
 								 &::placeholder{
 									color: #7C7C7C;
@@ -197,6 +275,11 @@
 							line-height: size(24px);
 							color: #7C7C7C;
 							font-weight: 200;
+
+							 @media #{$media-1024}{
+                                       height: 50px;
+									   font-size: 16px;
+								 }
 
 							.current{
 								line-height: 1;
@@ -232,6 +315,11 @@
 									   border-radius: 10px;
 									   border: 1px solid #fff;
 									   background-color: #FFFFFF;
+
+									    @media #{$media-1024}{
+                                       height: 50px;
+									   font-size: 16px;
+								 }
 
 									   input[type="file"]{
 											position: absolute;
@@ -275,12 +363,21 @@
 										position: absolute;
 										right: 3px;
 										z-index: 1;
+
+										 @media #{$media-1024}{
+                                       height: 44px;
+									   font-size: 16px;
+								 }
 								  }
 							 }
 					   }
 
 					   .career_form_actions{
 							margin-top: 24px;
+
+							 @media #{$media-1024}{
+                                margin-top: 14px;
+							 }
 					   }
 				  }
 			}
