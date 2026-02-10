@@ -185,6 +185,10 @@
 		   display: flex;
 		   justify-content: center;
 		   margin-top: 50px;
+
+		@media #{$media-1024}{
+            margin-top: 30px;
+		}
 	}
 }
 

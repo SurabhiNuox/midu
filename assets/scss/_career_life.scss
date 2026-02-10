@@ -9,6 +9,11 @@
   padding: 230px 0;
   margin-top: -130px;
 
+  	@media #{$media-1440}{
+  padding: 180px 0;
+  margin-top: -100px;
+	}
+
   .career_life_title{
 	    width: 100%;
 		display: flex;
@@ -16,16 +21,31 @@
 		.career_life_title_left{
 			width: 50%;
 			padding-right: 10%;
+
+			@media #{$media-768}{
+                  width: 100%;
+				  padding-right: 0;
+
+			}
 		}
 
 		.career_life_title_right{
 			width: 50%;
+
+			@media #{$media-768}{
+                     width: 100%;
+			}
 
 			p{
 				color: #fff;
 				font-size: size(18px);
 		line-height: size(27px);
 		font-weight: 200;
+
+		@media #{$media-1024}{
+font-size: size(16px);
+		line-height: size(24px);
+		}
 			}
 		}
   }
@@ -47,6 +67,20 @@
 	   overflow: hidden;
 	   position: relative;
 	   margin-top: 30px;
+
+	   	@media #{$media-1200}{
+ min-height: auto;
+     height: 420px;
+
+		}
+
+		@media #{$media-1024}{
+height: 360px;
+		}
+
+		@media #{$media-768}{
+height: 280px;
+		}
 
 	   .play_icon{
 		     width:64px;
