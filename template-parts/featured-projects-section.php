@@ -46,10 +46,10 @@ if ( ! is_array( $items ) || empty( $items ) ) {
 				</div>
 			</div>
 			<button type="button" class="featured-projects-section__nav featured-projects-section__nav--prev" aria-label="<?php esc_attr_e( 'Previous projects', 'midu' ); ?>">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/left_arw.png'); ?>" alt="Arrow Left">
 			</button>
 			<button type="button" class="featured-projects-section__nav featured-projects-section__nav--next" aria-label="<?php esc_attr_e( 'Next projects', 'midu' ); ?>">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/right_arw.png'); ?>" alt="Arrow Right">
 			</button>
 		</div>
 	</div>

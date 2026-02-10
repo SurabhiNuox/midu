@@ -35,6 +35,9 @@
 			ul{
 				li{
 					color: #fff;
+					&::after{
+						filter:none;
+					}
 				}
 			}
 		}
@@ -92,7 +95,7 @@
 						  position: absolute;
 						  left: 0;
 						  top: 7px;
-						  
+						  filter: brightness(0) saturate(100%) invert(15%) sepia(16%) saturate(1302%) hue-rotate(176deg) brightness(98%) contrast(98%);
 					 }
 				  }
 			 }
@@ -103,17 +106,17 @@
 	   .right_text_img{
 		    width: 45%;
 			height: 555px;
-    position: relative;
-    z-index: 1;
-    mask-image: url(../images/overview_img_bg.svg);
-    -webkit-mask-image: url(../images/overview_img_bg.svg);
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 100% auto;
-    mask-size: 100% auto;
-    background-color: #1B273D;
-    display: block;
-    overflow: hidden;
+			position: relative;
+			z-index: 1;
+			mask-image: url(../images/overview_img_bg.svg);
+			-webkit-mask-image: url(../images/overview_img_bg.svg);
+			mask-repeat: no-repeat;
+			-webkit-mask-repeat: no-repeat;
+			-webkit-mask-size: 100% auto;
+			mask-size: 100% auto;
+			background-color: #1B273D;
+			display: block;
+			overflow: hidden;
 
 	img{
 		width: 100%;

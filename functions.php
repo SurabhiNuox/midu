@@ -309,6 +309,7 @@ function addarah_scripts()
 
 	// Featured Projects Swiper (runs when .featured-projects-section exists)
 	wp_enqueue_script( 'featured-projects-script', get_template_directory_uri() . '/assets/js/featured-projects.js', array( 'swiper-js' ), _S_VERSION, true );
+	wp_enqueue_script( 'photo-gallery-script', get_template_directory_uri() . '/assets/js/photo-gallery.js', array( 'swiper-js' ), _S_VERSION, true );
 
 	// Load Swiper for Gallery page
 	if ($is_gallery_page) {

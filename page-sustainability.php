@@ -101,43 +101,20 @@ set_query_var( 'social_card_list', $social_card_list );
 
 <div class="curve_top_bottom">
           <div class="curve_top_bottom_inner">
-            <div class="container">
 			<?php
-						   set_query_var( 'image_text_title', 'Environmental Stewardship' );
-						   set_query_var( 'image_text_paragraphs', array(
-							   'We prioritize responsible environmental practices across all stages of development:',
-						   ) );
-						   $image_text_list_paragraph = get_query_var( 'image_text_list_paragraph' );
-						   if ( function_exists( 'get_field' ) && get_field( 'image_text_list_paragraph' ) ) {
-							   $acf_paras = get_field( 'image_text_list_paragraph' );
-							   if ( is_array( $acf_paras ) ) {
-								   $image_text_list_paragraph = array();
-								   foreach ( $acf_paras as $row ) {
-									   $image_text_list_paragraph[] = is_array( $row ) ? ( isset( $row['paragraph'] ) ? $row['paragraph'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
-								   }
-							   }
-						   }
-						   set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph );
-						   $image_text_list = get_query_var( 'image_text_list' );
-						   if ( function_exists( 'get_field' ) && get_field( 'image_text_list' ) ) {
-							   $acf_list = get_field( 'image_text_list' );
-							   if ( is_array( $acf_list ) ) {
-								   $image_text_list = array();
-								   foreach ( $acf_list as $row ) {
-									   $image_text_list[] = is_array( $row ) ? ( isset( $row['item'] ) ? $row['item'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
-								   }
-							   }
-						   }
-						   set_query_var( 'image_text_list', $image_text_list );
-						   set_query_var( 'image_text_button_url', '#' );
-						   set_query_var( 'image_text_button_text', '' );
-						   set_query_var( 'image_text_image', 'sus2.png' );
-						   set_query_var( 'image_text_image_alt', '' );
-						   set_query_var( 'image_text_section_class', 'white_text' );
-						   get_template_part( 'template-parts/image-text' );
-						   ?>
-			
-           </div>
+			set_query_var( 'image_text_block_wrapper_class', '' );
+			set_query_var( 'image_text_title', 'Environmental Stewardship' );
+			set_query_var( 'image_text_paragraphs', array(
+				'We prioritize responsible environmental practices across all stages of development:',
+			) );
+			set_query_var( 'image_text_list', $image_text_list );
+			set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph );
+			set_query_var( 'image_text_acf_list_field', 'image_text_list' );
+			set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph' );
+			set_query_var( 'image_text_image', 'sus2.png' );
+			set_query_var( 'image_text_section_class', 'white_text' );
+			get_template_part( 'template-parts/image-text-block' );
+			?>
            </div>
 
 		   </div>
@@ -182,43 +159,20 @@ set_query_var( 'social_card_list', $social_card_list );
 		  get_template_part('template-parts/economic-section');
 		  ?>
 
-		   <section class="dark_blue_section_without_curve">
-                <div class="container">
-					 <?php
-						   set_query_var( 'image_text_title', 'Our Sustainability Framework' );
-						   set_query_var( 'image_text_paragraphs', array(
-							   'MIDU follows a structured, measurable framework that integrates global best practices:',
-						   ) );
-						   $image_text_list_paragraph_third = get_query_var( 'image_text_list_paragraph_third' );
-						   if ( function_exists( 'get_field' ) && get_field( 'image_text_list_paragraph_third' ) ) {
-							   $acf_paras = get_field( 'image_text_list_paragraph_third' );
-							   if ( is_array( $acf_paras ) ) {
-								   $image_text_list_paragraph_third = array();
-								   foreach ( $acf_paras as $row ) {
-									   $image_text_list_paragraph_third[] = is_array( $row ) ? ( isset( $row['paragraph'] ) ? $row['paragraph'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
-								   }
-							   }
-						   }
-						   set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_third );
-						   $image_text_list_third = get_query_var( 'image_text_list_third' );
-						   if ( function_exists( 'get_field' ) && get_field( 'image_text_list_third' ) ) {
-							   $acf_list = get_field( 'image_text_list_third' );
-							   if ( is_array( $acf_list ) ) {
-								   $image_text_list_third = array();
-								   foreach ( $acf_list as $row ) {
-									   $image_text_list_third[] = is_array( $row ) ? ( isset( $row['item'] ) ? $row['item'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
-								   }
-							   }
-						   }
-						   set_query_var( 'image_text_list', $image_text_list_third );
-						   set_query_var( 'image_text_button_url', '#' );
-						   set_query_var( 'image_text_button_text', '' );
-						   set_query_var( 'image_text_image', 'sustainability03.png' );
-						   set_query_var( 'image_text_image_alt', '' );
-						   set_query_var( 'image_text_section_class', 'white_text reverse_direction' );
-						   get_template_part( 'template-parts/image-text' );
-						   ?>
-					 </div>
+		   <?php
+		   set_query_var( 'image_text_block_wrapper_class', 'dark_blue_section_without_curve' );
+		   set_query_var( 'image_text_title', 'Our Sustainability Framework' );
+		   set_query_var( 'image_text_paragraphs', array(
+			   'MIDU follows a structured, measurable framework that integrates global best practices:',
+		   ) );
+		   set_query_var( 'image_text_list', $image_text_list_third );
+		   set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_third );
+		   set_query_var( 'image_text_acf_list_field', 'image_text_list_third' );
+		   set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph_third' );
+		   set_query_var( 'image_text_image', 'sustainability03.png' );
+		   set_query_var( 'image_text_section_class', 'white_text reverse_direction' );
+		   get_template_part( 'template-parts/image-text-block' );
+		   ?>
 				</section>
 
 		  <?php
@@ -240,42 +194,20 @@ set_query_var( 'social_card_list', $social_card_list );
 		  ?>
 
       <section class="light_blue_section">
-		          <div class="container">
-				  <?php
-						   set_query_var( 'image_text_title', 'Our Impact' );
-						   set_query_var( 'image_text_paragraphs', array(
-							   'Through sustainable thinking and execution, MIDU delivers developments that:',
-						   ) );
-						   $image_text_list_paragraph_second = get_query_var( 'image_text_list_paragraph_second' );
-						   if ( function_exists( 'get_field' ) && get_field( 'image_text_list_paragraph_second' ) ) {
-							   $acf_paras = get_field( 'image_text_list_paragraph_second' );
-							   if ( is_array( $acf_paras ) ) {
-								   $image_text_list_paragraph_second = array();
-								   foreach ( $acf_paras as $row ) {
-									   $image_text_list_paragraph_second[] = is_array( $row ) ? ( isset( $row['paragraph'] ) ? $row['paragraph'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
-								   }
-							   }
-						   }
-						   set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_second );
-						   $image_text_list_second = get_query_var( 'image_text_list_second' );
-						   if ( function_exists( 'get_field' ) && get_field( 'image_text_list_second' ) ) {
-							   $acf_list = get_field( 'image_text_list_second' );
-							   if ( is_array( $acf_list ) ) {
-								   $image_text_list_second = array();
-								   foreach ( $acf_list as $row ) {
-									   $image_text_list_second[] = is_array( $row ) ? ( isset( $row['item'] ) ? $row['item'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
-								   }
-							   }
-						   }
-						   set_query_var( 'image_text_list', $image_text_list_second );
-						   set_query_var( 'image_text_button_url', '#' );
-						   set_query_var( 'image_text_button_text', '' );
-						   set_query_var( 'image_text_image', 'impact.png' );
-						   set_query_var( 'image_text_image_alt', '' );
-						   set_query_var( 'image_text_section_class', '' );
-						   get_template_part( 'template-parts/image-text' );
-						   ?>
-				  </div>
+		          <?php
+		          set_query_var( 'image_text_block_wrapper_class', '' );
+		          set_query_var( 'image_text_title', 'Our Impact' );
+		          set_query_var( 'image_text_paragraphs', array(
+			          'Through sustainable thinking and execution, MIDU delivers developments that:',
+		          ) );
+		          set_query_var( 'image_text_list', $image_text_list_second );
+		          set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_second );
+		          set_query_var( 'image_text_acf_list_field', 'image_text_list_second' );
+		          set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph_second' );
+		          set_query_var( 'image_text_image', 'impact.png' );
+		          set_query_var( 'image_text_section_class', '' );
+		          get_template_part( 'template-parts/image-text-block' );
+		          ?>
 
 				  <div class="bg_img">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/light-blue-vector.svg" alt="Impact Background">

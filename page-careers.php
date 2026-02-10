@@ -153,46 +153,28 @@ get_header();
 
 		   <?php get_template_part('template-parts/career-story'); ?>
 
-		   <section class="career_intenship_section">
-                     <div class="container">
-						   <?php
-						   set_query_var( 'image_text_title', 'Internship & Graduate Programs' );
-						   set_query_var( 'image_text_paragraphs', array(
-							   'Nurturing the next generation of developers, engineers, planners, and innovators.',
-							   'MIDU\'s Internship & Graduate Programs provide hands-on experience, mentorship from industry experts, and exposure to real-world projects.',
-							   'We aim to support ambitious students and fresh graduates as they develop the skills needed to contribute to the Kingdom\'s growing development landscape.',
-						   ) );
-						   $image_text_list_paragraph = get_query_var( 'image_text_list_paragraph' );
-						   if ( function_exists( 'get_field' ) && get_field( 'image_text_list_paragraph' ) ) {
-							   $acf_paras = get_field( 'image_text_list_paragraph' );
-							   if ( is_array( $acf_paras ) ) {
-								   $image_text_list_paragraph = array();
-								   foreach ( $acf_paras as $row ) {
-									   $image_text_list_paragraph[] = is_array( $row ) ? ( isset( $row['paragraph'] ) ? $row['paragraph'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
-								   }
-							   }
-						   }
-						   set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph );
-						   $image_text_list = get_query_var( 'image_text_list' );
-						   if ( function_exists( 'get_field' ) && get_field( 'image_text_list' ) ) {
-							   $acf_list = get_field( 'image_text_list' );
-							   if ( is_array( $acf_list ) ) {
-								   $image_text_list = array();
-								   foreach ( $acf_list as $row ) {
-									   $image_text_list[] = is_array( $row ) ? ( isset( $row['item'] ) ? $row['item'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
-								   }
-							   }
-						   }
-						   set_query_var( 'image_text_list', $image_text_list );
-						   set_query_var( 'image_text_button_url', '#' );
-						   set_query_var( 'image_text_button_text', 'Apply for Internship' );
-						   set_query_var( 'image_text_image', 'career-bottom.png' );
-						   set_query_var( 'image_text_image_alt', '' );
-						   set_query_var( 'image_text_section_class', '' );
-						   get_template_part( 'template-parts/image-text' );
-						   ?>
-					 </div>
-		   </section>
+		   <?php
+		   set_query_var( 'image_text_block_wrapper_class', 'career_intenship_section' );
+		   set_query_var( 'image_text_title', 'Internship & Graduate Programs' );
+		   set_query_var( 'image_text_paragraphs', array(
+			   'Nurturing the next generation of developers, engineers, planners, and innovators.',
+			   'MIDU\'s Internship & Graduate Programs provide hands-on experience, mentorship from industry experts, and exposure to real-world projects.',
+			   'We aim to support ambitious students and fresh graduates as they develop the skills needed to contribute to the Kingdom\'s growing development landscape.',
+		   ) );
+		   set_query_var( 'image_text_list', array(
+			   'Hands-on experience across real projects',
+			   'Mentorship from industry experts',
+			   'Exposure to development and planning',
+			   'Pathway to full-time opportunities',
+		   ) );
+		   set_query_var( 'image_text_list_paragraph', array() );
+		   set_query_var( 'image_text_acf_list_field', 'image_text_list' );
+		   set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph' );
+		   set_query_var( 'image_text_button_text', 'Apply for Internship' );
+		   set_query_var( 'image_text_image', 'career-bottom.png' );
+		   set_query_var( 'image_text_section_class', '' );
+		   get_template_part( 'template-parts/image-text-block' );
+		   ?>
 
 	   </div>
 </main><!-- #main -->

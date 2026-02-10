@@ -47,11 +47,13 @@ $wrapper_class = 'right_text_image' . ( ! empty( $image_text_section_class ) ? '
 		<?php if ( $image_text_title ) : ?>
 			<h2 class="second_title"><?php echo esc_html( $image_text_title ); ?></h2>
 		<?php endif; ?>
+		<?php if ( ! empty( $image_text_paragraphs ) ) : ?>
 		<div>
 			<?php foreach ( $image_text_paragraphs as $p ) : ?>
 				<p><?php echo wp_kses_post( $p ); ?></p>
 			<?php endforeach; ?>
 		</div>
+		<?php endif; ?>
 		<?php if ( ! empty( $image_text_list ) ) : ?>
 			<ul>
 				<?php foreach ( $image_text_list as $index => $item ) : ?>
