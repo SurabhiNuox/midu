@@ -373,6 +373,10 @@ p{
 	top: -150px;
 	padding-top: 20px;
 
+	@include max(900) {
+		top: -80px;
+	}
+
 }
 
 .title_main{
