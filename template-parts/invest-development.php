@@ -29,7 +29,7 @@ $has_right = ( $invest_right_heading !== '' && $invest_right_heading !== false )
 	  <div class="container">
          <div class="invest-development_inner">
 		 <?php if ( $has_left ) : ?>
-		 <div class="invest-development_left">
+		 <div class="invest-development_left" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
 			 <?php if ( $invest_title_line1 !== '' && $invest_title_line1 !== false ) : ?>
 				<h2 class="second_title"><?php echo wp_kses( $invest_title_line1, array( 'br' => array() ) ); ?></h2>
 			 <?php endif; ?>
@@ -39,18 +39,19 @@ $has_right = ( $invest_right_heading !== '' && $invest_right_heading !== false )
 		 </div>
 		 <?php endif; ?>
 		 <?php if ( $has_right ) : ?>
-		 <div class="invest-development_right">
+		 <div class="invest-development_right" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150" data-aos-once="true">
 			 <?php if ( $invest_right_heading !== '' && $invest_right_heading !== false ) : ?>
 				<h3 class="invest-development_heading"><?php echo esc_html( $invest_right_heading ); ?></h3>
 			 <?php endif; ?>
 			 <?php if ( ! empty( $invest_items ) ) : ?>
 				<ul class="invest-development_list">
-					<?php foreach ( $invest_items as $item ) :
+					<?php foreach ( $invest_items as $idx => $item ) :
 						$icon_url = isset( $item['icon'] ) ? $item['icon'] : '';
 						$item_title = isset( $item['title'] ) ? $item['title'] : '';
 						if ( $icon_url === '' && $item_title === '' ) { continue; }
+						$item_delay = 100 + ( $idx * 80 );
 					?>
-					<li class="invest-development_item">
+					<li class="invest-development_item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="<?php echo esc_attr( $item_delay ); ?>" data-aos-once="true">
 					
 						<div class="invest-development_item_icon">
 							<img src="<?php echo esc_url( $icon_url ); ?>" alt="">
@@ -64,7 +65,7 @@ $has_right = ( $invest_right_heading !== '' && $invest_right_heading !== false )
 				</ul>
 			 <?php endif; ?>
 
-			 <p>We lead investments through a structured, disciplined approach <br/> that maximizes returns and minimizes risks.</p>
+			 <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="250" data-aos-once="true">We lead investments through a structured, disciplined approach <br/> that maximizes returns and minimizes risks.</p>
 		 </div>
 		 <?php endif; ?>
 		 </div>

@@ -245,5 +245,24 @@ padding: 70px 0 100px;
 	   }
 }
 
+// ---------------------------------------------------------------------------
+// AOS (Animate On Scroll) — careers page
+// ---------------------------------------------------------------------------
+.careers_top_section {
+	[data-aos] {
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+	}
+}
 
- 
+.careers_top_left[data-aos],
+.careers_top_right[data-aos],
+.career-list_main [data-aos],
+.career_life_section [data-aos],
+.career_story_section [data-aos] {
+	@media (prefers-reduced-motion: reduce) {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}

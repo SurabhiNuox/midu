@@ -49,7 +49,7 @@ if ( $image !== '' && strpos( $image, '://' ) === false ) {
 	<?php endif; ?>
 	<div class="container">
 		<div class="project-management_inner">
-			<div class="title_main">
+			<div class="title_main" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
 				<h2 class="second_title"><?php echo esc_html( $title ); ?></h2>
 				<?php if ( $intro ) : ?>
 					<p><?php echo esc_html( $intro ); ?></p>
@@ -58,7 +58,7 @@ if ( $image !== '' && strpos( $image, '://' ) === false ) {
 					<h5 class="project-management_heading"><?php echo esc_html( $heading ); ?></h5>
 				<?php endif; ?>
 			</div>
-			<ul>
+			<ul data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true">
 				<?php foreach ( $items as $item ) : ?>
 					<li>
 						<?php if ( ! empty( $item['icon'] ) ) : ?>
@@ -71,7 +71,7 @@ if ( $image !== '' && strpos( $image, '://' ) === false ) {
 				<?php endforeach; ?>
 			</ul>
 			<?php if ( $outro ) : ?>
-				<p class="text-center"><?php echo esc_html( $outro ); ?></p>
+				<p class="text-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once="true"><?php echo esc_html( $outro ); ?></p>
 			<?php endif; ?>
 		</div>
 	</div>

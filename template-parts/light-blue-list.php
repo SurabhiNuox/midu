@@ -41,7 +41,7 @@ foreach ( $light_blue_list_items as $i => $item ) {
 			<?php endif; ?>
 	  		<div class="container">
 		          <?php if ( $has_header ) : ?>
-		          <div class="<?php echo esc_attr( $title_class ); ?>">
+		          <div class="<?php echo esc_attr( $title_class ); ?>" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
 					<?php if ( $light_blue_list_title !== '' && $light_blue_list_title !== false ) : ?>
 						<h2 class="second_title"><?php echo esc_html( $light_blue_list_title ); ?></h2>
 					<?php endif; ?>
@@ -57,13 +57,13 @@ foreach ( $light_blue_list_items as $i => $item ) {
 				  <?php if ( ! empty( $light_blue_list_items ) ) : ?>
 				  <div class="light-blue-list">
                            <ul>
-							<?php foreach ( $light_blue_list_items as $item ) :
+							<?php foreach ( $light_blue_list_items as $li_index => $item ) :
 								$icon_url = isset( $item['icon'] ) ? $item['icon'] : '';
 								$item_title = isset( $item['title'] ) ? $item['title'] : '';
 								$item_description = isset( $item['description'] ) ? $item['description'] : '';
 								if ( $icon_url === '' && $item_title === '' ) { continue; }
 							?>
-							<li>
+							<li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="<?php echo esc_attr( 100 + ( $li_index * 80 ) ); ?>" data-aos-once="true">
 								<div class="light-blue-list-item">
 									<?php if ( $icon_url !== '' ) : ?>
 									<div class="light-blue-list_icon">

@@ -89,6 +89,9 @@ border-bottom-right-radius: 10px;
 			ul{
 				li{
 					color: #fff;
+					&::after{
+						filter:none;
+					}
 				}
 			}
 		}
@@ -161,7 +164,7 @@ font-size: size(16px);
 						  position: absolute;
 						  left: 0;
 						  top: 7px;
-						  
+						  filter: brightness(0) saturate(100%) invert(15%) sepia(16%) saturate(1302%) hue-rotate(176deg) brightness(98%) contrast(98%);
 					 }
 				  }
 			 }
@@ -171,14 +174,17 @@ font-size: size(16px);
 
 	   .right_text_img{
 		    width: 45%;
+			height: 555px;
+			position: relative;
+			z-index: 1;
+			overflow: hidden;
 			height: auto;
-    position: relative;
-	border-radius: 20px;
-	border-bottom-right-radius: 0;
-    z-index: 1;
-  overflow: hidden;
-    
-    display: block;
+			position: relative;
+			border-radius: 20px;
+			border-bottom-right-radius: 0;
+			z-index: 1;
+			overflow: hidden;
+    		display: block;
 
 	@media screen and (max-width: 1024px) {
 	border-radius: 10px;

@@ -43,43 +43,21 @@ set_query_var( 'image_text_list_third', $image_text_list_third );
 			get_template_part('template-parts/overview-section');
 			?>
 		<div class="sector_detail_overview">
-			<div class="container">
 				<?php
-					set_query_var( 'image_text_title', 'Mining Overview' );
+				set_query_var( 'image_text_block_wrapper_class', '' );
+				set_query_var( 'image_text_title', 'Mining Overview' );
 					set_query_var( 'image_text_paragraphs', array(
 						'MIDU’s involvement in the {Sector Name} sector is driven by a clear focus: delivering projects that are impactful, future-ready, and commercially viable. We leverage strategic insight, strong partnerships, and industry-leading standards to ensure each project contributes to economic growth and elevates the sector’s overall potential.',
 						'Our approach integrates market intelligence, operational excellence, and stakeholder value to create developments that stand the test of time.',
 					) );
-				$image_text_list_paragraph = get_query_var( 'image_text_list_paragraph' );
-				if ( function_exists( 'get_field' ) && get_field( 'image_text_list_paragraph' ) ) {
-					$acf_paras = get_field( 'image_text_list_paragraph' );
-					if ( is_array( $acf_paras ) ) {
-						$image_text_list_paragraph = array();
-						foreach ( $acf_paras as $row ) {
-							$image_text_list_paragraph[] = is_array( $row ) ? ( isset( $row['paragraph'] ) ? $row['paragraph'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
-						}
-					}
-				}
-				set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph );
-				$image_text_list = get_query_var( 'image_text_list' );
-				if ( function_exists( 'get_field' ) && get_field( 'image_text_list' ) ) {
-					$acf_list = get_field( 'image_text_list' );
-					if ( is_array( $acf_list ) ) {
-						$image_text_list = array();
-						foreach ( $acf_list as $row ) {
-							$image_text_list[] = is_array( $row ) ? ( isset( $row['item'] ) ? $row['item'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
-						}
-					}
-				}
-				set_query_var( 'image_text_list', $image_text_list );
-				set_query_var( 'image_text_button_url', '#' );
-				set_query_var( 'image_text_button_text', '' );
+				set_query_var( 'image_text_list', get_query_var( 'image_text_list_third' ) );
+				set_query_var( 'image_text_list_paragraph', array() );
+				set_query_var( 'image_text_acf_list_field', 'image_text_list' );
+				set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph' );
 				set_query_var( 'image_text_image', 'mining_pic.jpg' );
-				set_query_var( 'image_text_image_alt', '' );
 				set_query_var( 'image_text_section_class', '' );
-				get_template_part( 'template-parts/image-text' );
+				get_template_part( 'template-parts/image-text-block' );
 				?>
-			</div>
 			<div class="bg_img">
 				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/light-blue-vector.svg' ); ?>" alt="image"?>
 			</div>
@@ -133,44 +111,26 @@ set_query_var( 'image_text_list_third', $image_text_list_third );
 		get_template_part( 'template-parts/project-management' );
 		?>
 
-<div class="impact_value_section">
-	<div class="container">
 		<?php
+		set_query_var( 'image_text_block_wrapper_class', 'impact_value_section' );
 		set_query_var( 'image_text_title', 'Impact & Value' );
 		set_query_var( 'image_text_paragraphs', array(
 			'Our work within the {Sector Name} sector creates measurable impact through:',
 		) );
-		$image_text_list_paragraph_third = get_query_var( 'image_text_list_paragraph_third' );
-		if ( function_exists( 'get_field' ) && get_field( 'image_text_list_paragraph_third' ) ) {
-			$acf_paras = get_field( 'image_text_list_paragraph_third' );
-			if ( is_array( $acf_paras ) ) {
-				$image_text_list_paragraph_third = array();
-				foreach ( $acf_paras as $row ) {
-					$image_text_list_paragraph_third[] = is_array( $row ) ? ( isset( $row['paragraph'] ) ? $row['paragraph'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
-				}
-			}
-		}
-		set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_third );
-		$image_text_list_third = get_query_var( 'image_text_list_third' );
-		if ( function_exists( 'get_field' ) && get_field( 'image_text_list_third' ) ) {
-			$acf_list = get_field( 'image_text_list_third' );
-			if ( is_array( $acf_list ) ) {
-				$image_text_list_third = array();
-				foreach ( $acf_list as $row ) {
-					$image_text_list_third[] = is_array( $row ) ? ( isset( $row['item'] ) ? $row['item'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
-				}
-			}
-		}
-		set_query_var( 'image_text_list', $image_text_list_third );
-		set_query_var( 'image_text_button_url', '#' );
-		set_query_var( 'image_text_button_text', '' );
+		set_query_var( 'image_text_list', array(
+			'Strengthening economic diversification',
+			'Enhancing quality of life and community engagement',
+			'Driving innovation within the sector',
+			'Attracting investment and long-term partnerships',
+			'Supporting Vision 2030 goals',
+		) );
+		set_query_var( 'image_text_list_paragraph', array() );
+		set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph_third' );
+		set_query_var( 'image_text_acf_list_field', 'image_text_list_third' );
 		set_query_var( 'image_text_image', 'value_img.jpg' );
-		set_query_var( 'image_text_image_alt', '' );
 		set_query_var( 'image_text_section_class', 'white_text' );
-		get_template_part( 'template-parts/image-text' );
+		get_template_part( 'template-parts/image-text-block' );
 		?>
-	</div>
-</div>
 	<?php
 		// Featured Projects — Swiper slider of project cards
 		$theme_images = get_template_directory_uri() . '/assets/images/';
@@ -195,10 +155,34 @@ set_query_var( 'image_text_list_third', $image_text_list_third );
 				'description' => "Enhancing visitor experience at one of Islam's most historically significant mosques.",
 				'link'        => '#',
 			),
+			array(
+				'image'       => $theme_images . 'pp_1.jpg',
+				'title'       => 'Quba Mosque',
+				'description' => "Enhancing visitor experience at one of Islam's most historically significant mosques.",
+				'link'        => '#',
+			),
 		) );
 		get_template_part( 'template-parts/featured-projects-section' );
 		?>
+		
 	</div><!-- .main_content -->
+	<?php
+		set_query_var( 'image_text_block_wrapper_class', 'why_chosse_section' );
+		set_query_var( 'image_text_title', 'Why Choose MIDU for This Sector' );
+		set_query_var( 'image_text_paragraphs', array() );
+		set_query_var( 'image_text_list_paragraph', array() );
+		// Why Choose list — change the text below; no paragraphs for this section
+		set_query_var( 'image_text_list', array(
+			'Proven expertise in sector-specific development',
+			'Strong alignment with national priorities',
+			'Robust partnerships with leading industry players',
+			'Comprehensive understanding of market trends',
+			'Commitment to sustainability and long-term value creation',
+		) );
+		set_query_var( 'image_text_image', 'why_choose_pic.jpg' );
+		set_query_var( 'image_text_section_class', ' reverse_direction' );
+		get_template_part( 'template-parts/image-text-block' );
+		?>
 </div>
 
 <?php

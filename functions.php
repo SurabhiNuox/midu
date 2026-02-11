@@ -279,7 +279,13 @@ function addarah_scripts()
 	}
 
 
-	// Contact page specific scripts
+	// Contact page — Leaflet map with dark theme
+	if ($is_contact_page) {
+		wp_enqueue_style('leaflet-css', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css', array(), '1.9.4');
+		wp_enqueue_script('leaflet-js', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', array(), '1.9.4', true);
+		wp_enqueue_script('contact-map-script', get_template_directory_uri() . '/assets/js/contact-map.js', array('leaflet-js'), _S_VERSION, true);
+	}
+
 	// Load Swiper and CompanyServices script on Company Detail pages
 	if ($is_company_detail_page) {
 		// Enqueue Swiper JS (CDN) - only if not already loaded on front page
@@ -311,6 +317,7 @@ function addarah_scripts()
 
 	// Featured Projects Swiper (runs when .featured-projects-section exists)
 	wp_enqueue_script( 'featured-projects-script', get_template_directory_uri() . '/assets/js/featured-projects.js', array( 'swiper-js' ), _S_VERSION, true );
+	wp_enqueue_script( 'photo-gallery-script', get_template_directory_uri() . '/assets/js/photo-gallery.js', array( 'swiper-js' ), _S_VERSION, true );
 
 	// Load Swiper for Gallery page
 	if ($is_gallery_page) {

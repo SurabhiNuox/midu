@@ -83,10 +83,10 @@ get_header();
 	   <div class="main_content">
 		   <div class="careers_top_section">
               <div class="container flex d_flex_wrap">
-              <div class="careers_top_left">
+              <div class="careers_top_left" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                 <h2 class="second_title">Explore Our <br/> World</h2>
               </div>
-              <div class="careers_top_right">
+              <div class="careers_top_right" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true">
                 <p>At MIDU, we believe people are the foundation of every successful development.</p>
                 <p>We are committed to nurturing talent, empowering future leaders, and creating an environment where individuals can grow, innovate, and make a meaningful impact.</p>
                 <p>Whether you're an experienced professional or an aspiring graduate, MIDU offers opportunities to contribute to transformative projects shaping the future of Saudi Arabia.</p>
@@ -98,7 +98,7 @@ get_header();
            <div class="career-list_main">
             <div class="career-list_main_inner">
             <div class="container">
-           <div class="title_main">
+           <div class="title_main" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
            
 			<h2 class="second_title">Current Openings</h2>
 			<p>Explore available roles across our departments and sectors.</p>
@@ -113,13 +113,16 @@ get_header();
 					$career_card_items = get_field( 'career_cards' );
 				}
 				if ( ! empty( $career_card_items ) && is_array( $career_card_items ) ) :
+					$card_index = 0;
 					foreach ( $career_card_items as $item ) :
 						$title    = isset( $item['title'] ) ? $item['title'] : '';
 						$date     = isset( $item['date'] ) ? $item['date'] : '';
 						$location = isset( $item['location'] ) ? $item['location'] : '';
 						$time     = isset( $item['time'] ) ? $item['time'] : '';
 						$link     = isset( $item['link'] ) ? $item['link'] : ( isset( $item['link']['url'] ) ? $item['link']['url'] : '#' );
-						echo '<li>';
+						$delay    = 100 + ( $card_index * 80 );
+						echo '<li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="' . esc_attr( $delay ) . '" data-aos-once="true">';
+						$card_index++;
 						set_query_var( 'career_card_title', $title );
 						set_query_var( 'career_card_date', $date );
 						set_query_var( 'career_card_location', $location );
@@ -132,8 +135,8 @@ get_header();
 				?>
 			</ul>
              
-            <div class="career_btn_main">
-            <a href="<?php echo esc_url( $career_link ); ?>" class="btn-primary">
+            <div class="career_btn_main" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+            <a href="<?php echo esc_url( isset( $career_link ) ? $career_link : '#' ); ?>" class="btn-primary">
 			<span class="button-text">Load more</span>
 			<span class="button-icon">
 										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg" alt="Arrow Right">
@@ -153,46 +156,28 @@ get_header();
 
 		   <?php get_template_part('template-parts/career-story'); ?>
 
-		   <section class="career_intenship_section">
-                     <div class="container">
-						   <?php
-						   set_query_var( 'image_text_title', 'Internship & Graduate Programs' );
-						   set_query_var( 'image_text_paragraphs', array(
-							   'Nurturing the next generation of developers, engineers, planners, and innovators.',
-							   'MIDU\'s Internship & Graduate Programs provide hands-on experience, mentorship from industry experts, and exposure to real-world projects.',
-							   'We aim to support ambitious students and fresh graduates as they develop the skills needed to contribute to the Kingdom\'s growing development landscape.',
-						   ) );
-						   $image_text_list_paragraph = get_query_var( 'image_text_list_paragraph' );
-						   if ( function_exists( 'get_field' ) && get_field( 'image_text_list_paragraph' ) ) {
-							   $acf_paras = get_field( 'image_text_list_paragraph' );
-							   if ( is_array( $acf_paras ) ) {
-								   $image_text_list_paragraph = array();
-								   foreach ( $acf_paras as $row ) {
-									   $image_text_list_paragraph[] = is_array( $row ) ? ( isset( $row['paragraph'] ) ? $row['paragraph'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
-								   }
-							   }
-						   }
-						   set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph );
-						   $image_text_list = get_query_var( 'image_text_list' );
-						   if ( function_exists( 'get_field' ) && get_field( 'image_text_list' ) ) {
-							   $acf_list = get_field( 'image_text_list' );
-							   if ( is_array( $acf_list ) ) {
-								   $image_text_list = array();
-								   foreach ( $acf_list as $row ) {
-									   $image_text_list[] = is_array( $row ) ? ( isset( $row['item'] ) ? $row['item'] : ( isset( $row['text'] ) ? $row['text'] : reset( $row ) ) ) : $row;
-								   }
-							   }
-						   }
-						   set_query_var( 'image_text_list', $image_text_list );
-						   set_query_var( 'image_text_button_url', '#' );
-						   set_query_var( 'image_text_button_text', 'Apply for Internship' );
-						   set_query_var( 'image_text_image', 'career-bottom.png' );
-						   set_query_var( 'image_text_image_alt', '' );
-						   set_query_var( 'image_text_section_class', '' );
-						   get_template_part( 'template-parts/image-text' );
-						   ?>
-					 </div>
-		   </section>
+		   <?php
+		   set_query_var( 'image_text_block_wrapper_class', 'career_intenship_section' );
+		   set_query_var( 'image_text_title', 'Internship & Graduate Programs' );
+		   set_query_var( 'image_text_paragraphs', array(
+			   'Nurturing the next generation of developers, engineers, planners, and innovators.',
+			   'MIDU\'s Internship & Graduate Programs provide hands-on experience, mentorship from industry experts, and exposure to real-world projects.',
+			   'We aim to support ambitious students and fresh graduates as they develop the skills needed to contribute to the Kingdom\'s growing development landscape.',
+		   ) );
+		   set_query_var( 'image_text_list', array(
+			   'Hands-on experience across real projects',
+			   'Mentorship from industry experts',
+			   'Exposure to development and planning',
+			   'Pathway to full-time opportunities',
+		   ) );
+		   set_query_var( 'image_text_list_paragraph', array() );
+		   set_query_var( 'image_text_acf_list_field', 'image_text_list' );
+		   set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph' );
+		   set_query_var( 'image_text_button_text', 'Apply for Internship' );
+		   set_query_var( 'image_text_image', 'career-bottom.png' );
+		   set_query_var( 'image_text_section_class', '' );
+		   get_template_part( 'template-parts/image-text-block' );
+		   ?>
 
 	   </div>
 </main><!-- #main -->

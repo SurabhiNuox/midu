@@ -1,0 +1,102 @@
+// Project detail banner — full-width hero, background image, title + description lower-left
+@import "./variable";
+@import "./mixins";
+
+.project-detail-banner {
+	position: relative;
+	width: 100%;
+	height: 870px;
+	min-height: 500px;
+	overflow: hidden;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-start;
+
+	@include max(992) {
+		height: 55vh;
+		min-height: 400px;
+	}
+	@include max(767) {
+		height: 60vh;
+		min-height: 350px;
+	}
+}
+
+.project-detail-banner__media {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.project-detail-banner__image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+// .project-detail-banner__overlay {
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 100%;
+// 	background: linear-gradient(
+// 		to top,
+// 		rgba(0, 0, 0, 0.5) 0%,
+// 		rgba(0, 0, 0, 0.2) 40%,
+// 		rgba(0, 0, 0, 0) 70%
+// 	);
+// 	z-index: 2;
+// }
+
+.project-detail-banner .container {
+	position: relative;
+	z-index: 3;
+	width: 100%;
+}
+
+.project-detail-banner__content {
+	width: 100%;
+	max-width: 980px;
+	padding: 50px 0 190px;
+	text-align: left;
+
+	@include max(992) {
+		padding: 50px 0 60px;
+		max-width: 100%;
+	}
+	@include max(767) {
+		padding: 40px 0 50px;
+	}
+	p{
+		font-weight: 100;
+		color: #fff;
+		line-height: size(25px);
+	}
+}
+
+.project-detail-banner__title {
+	font-family: "REM", sans-serif;
+	font-size: size(55px);
+	font-weight: bold;
+	line-height: size(59px);
+	color: $white;
+	margin: 0 0 20px 0;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+	@include max(992) {
+		font-size: size(34px);
+		margin-bottom: 16px;
+	}
+	@include max(767) {
+		font-size: size(28px);
+		margin-bottom: 14px;
+	}
+}

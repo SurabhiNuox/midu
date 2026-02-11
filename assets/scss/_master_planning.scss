@@ -139,6 +139,21 @@ font-size: 18px;
 	}
 }
 
+// AOS — master-planning section (services page)
+.master-planning-section {
+	[data-aos] {
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		[data-aos] {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+	}
+}
+
   
 
 

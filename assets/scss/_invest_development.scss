@@ -163,7 +163,20 @@ min-height: 40px;
 	}
 }
 
-
+// AOS — invest-development section (services page)
+.invest-development-section {
+	[data-aos] {
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		[data-aos] {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+	}
+}
 
 	
  
