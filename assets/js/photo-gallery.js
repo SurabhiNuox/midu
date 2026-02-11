@@ -18,7 +18,6 @@
 		if (!swiperEl) return;
 
 		var swiper = new Swiper(swiperEl, {
-			slidesPerView: 1,
 			spaceBetween: 16,
 			loop: false,
 			speed: 500,
@@ -27,6 +26,10 @@
 				prevEl: prevEl,
 			},
 			breakpoints: {
+				0: {
+					slidesPerView: 1.5,
+					spaceBetween: 16,
+				},
 				640: {
 					slidesPerView: 2,
 					spaceBetween: 20,

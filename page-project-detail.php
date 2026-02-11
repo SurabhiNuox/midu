@@ -16,7 +16,7 @@ get_header();
 			set_query_var( 'project_banner_description', "This landmark development represents MIDU's commitment to delivering future-ready spaces that combine innovation, sustainability, and community value. Designed with a long-term vision, the project integrates residential, commercial, and lifestyle components to support modern living and economic growth." );
 			get_template_part( 'template-parts/project-detail-banner' );
 			?>
-	<div class="main_content">
+	<div class="">
 		<div class="container project_breadcrumb_sec">
 			<div class="breadcrumb breadcrumb-white">
 				<ul data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
@@ -58,6 +58,7 @@ get_header();
 		  ));
 		  get_template_part('template-parts/light-blue-list');
 		  ?>
+		  <div class="project_scope_list">
 			<?php
 			set_query_var( 'image_text_block_wrapper_class', 'project_scope_section' );
 			set_query_var( 'image_text_title', 'Project Scope' );
@@ -117,6 +118,7 @@ get_header();
 			set_query_var( 'image_text_section_class', ' white_text dark_blue' );
 			get_template_part( 'template-parts/image-text-block' );
 			?>
+			</div>
 			<?php
 			set_query_var( 'photo_gallery_title', 'Photo Gallery' );
 			set_query_var( 'photo_gallery_images', array( 'gal_1.jpg', 'gal_2.jpg', 'gal_3.jpg', 'gal_4.jpg' ) );
@@ -124,6 +126,7 @@ get_header();
 			?>
 	
 		</div>
+	
 		<?php
 		// Featured Projects — Swiper slider of project cards
 		$theme_images = get_template_directory_uri() . '/assets/images/';

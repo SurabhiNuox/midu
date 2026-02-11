@@ -23,6 +23,12 @@
 		@include max(1024){
 			top: -5px;
 		}
+		@include max(767) {
+			width: 43px;
+			height: 51px;
+			top: -8px;
+           right: 0px;
+		}
 	}
 	&::after{
 		content: "";
@@ -40,6 +46,12 @@
 		mask-size: 100% 100%;
 		z-index: 3;
 		transform: rotate(180deg);
+		@include max(767) {
+			bottom: -1px;
+			left: 0px;
+			width: 50px;
+			height: 43px;
+		}
 	}
 	@include max(992) {
 		padding: 50px 0 60px;
@@ -56,7 +68,14 @@
 	line-height: size(56px);
 	color: #1B273D;
 	margin: 0 0 30px 0;
-
+	@include max(1060) {
+		font-size: size(40px);
+		line-height: size(45px);
+	}
+	@include max(992) {
+		font-size: size(35px);
+		line-height: size(35px);
+	}
 	@include max(767) {
 		font-size: size(28px);
 		margin-bottom: 24px;
@@ -104,7 +123,6 @@
 	
 	@include max(767) {
 		border-radius: 12px;
-		aspect-ratio: 16 / 10;
 	}
 }
 
@@ -138,14 +156,20 @@
 	}
 	&--prev {
 		left: calc((100% - (1350px - 1.5rem)) / 2);
+		@include max(1350) {
+			left: 5%;
+		}
 	}
 	&--next {
 		right:calc((100% - (1350px - 1.5rem)) / 2);
+		@include max(1350) {
+			right: 5%;
+		}
 	}
 
 	@include max(767) {
-		width: 40px;
-		height: 40px;
+		width: 30px;
+        height: 30px;
 		svg {
 			width: 20px;
 			height: 20px;

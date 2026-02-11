@@ -44,11 +44,13 @@ $key-details-border-to: #7ec8e3;
 	color: $white;
 	margin: 0 0 10px 0;
 
-	@include max(992) {
-		font-size: size(32px);
+	@include max(1060) {
+		font-size: size(40px);
+		line-height: size(50px);
 	}
 	@include max(767) {
-		font-size: size(28px);
+		font-size: size(30px);
+		line-height: size(30px);
 		margin-bottom: 8px;
 	}
 }
@@ -77,11 +79,11 @@ $key-details-border-to: #7ec8e3;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 20px;
 	}
-	@include max(768) {
+	@include max(767) {
 		grid-template-columns: repeat(2, 1fr);
-		gap: 18px;
+		gap: 0 10px;
 	}
-	@include max(480) {
+	@include max(320) {
 		grid-template-columns: 1fr;
 	}
 }
@@ -133,7 +135,14 @@ $key-details-border-to: #7ec8e3;
 		mask-position: center;
 		-webkit-mask-position: center;
 	}
+	@include max(1060){
+		min-height:220px;
+	}
+	@include max(992) {
+		min-height: 170px;
+	}
 	@include max(767) {
+		min-height: 140px;
 		padding: 22px 18px;
 		border-radius: 10px;
 	}
@@ -167,11 +176,11 @@ $key-details-border-to: #7ec8e3;
 
 	@include max(767) {
 		margin-bottom: 10px;
-		width: 32px;
-		height: 32px;
+        width: 25px;
+        height: 25px;
 		img {
-			width: 30px;
-			height: 30px;
+			width: 25px;
+			height: 25px;
 		}
 	}
 }
@@ -184,8 +193,13 @@ $key-details-border-to: #7ec8e3;
 	color: $white;
 	margin: 0 0 6px 0;
 
+	@include max(992) {
+		font-size: size(18px);
+		line-height: size(22px);
+	}
 	@include max(767) {
 		font-size: size(13px);
+		line-height: size(18px);
 		margin-bottom: 4px;
 	}
 }
@@ -199,6 +213,7 @@ $key-details-border-to: #7ec8e3;
 	margin: 0;
 
 	@include max(767) {
-		font-size: size(15px);
+		font-size: size(13px);
+		line-height: size(14px);
 	}
 }

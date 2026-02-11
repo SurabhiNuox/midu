@@ -435,6 +435,19 @@ p{
 			flex-wrap: wrap;
 			align-items: center;
 			gap: 25px;
+			padding-right: 30px;
+			@include max(767) {
+				flex-wrap: nowrap;
+				overflow: hidden;
+				overflow-x: auto;
+				scrollbar-width: none;
+				-ms-overflow-style: none;
+				&::-webkit-scrollbar {
+					display: none;
+					width: 0;
+					height: 0;
+				}
+			}
 			li{
 				a{
 					font-size: 14px;
@@ -454,6 +467,13 @@ p{
 						background-repeat: no-repeat;
 						background-position: center;
 						background-size: 100% 100%;
+						@include max(767) {
+							top: 6px;
+						}
+					}
+					@include max(767) {
+						display: block;
+						line-height: 20px;
 					}
 				}
 
@@ -462,6 +482,20 @@ p{
 					line-height: 26px;
 					font-weight: 500;
 					color: #15868A;
+					@include max(767) {
+						line-height: 20px;
+					}
+				}
+				@include max(767) {
+					white-space: nowrap;
+				}
+				&:first-child{
+					
+						a{
+							@include max(767) {
+							width: 20px;
+						}
+					}
 				}
 			}
 	   }
@@ -697,39 +731,75 @@ width: 100px;
 .project_detail_top_sec{
 	background: #1B273D;
 	width: 100%;
-    padding: 100px 0 0px;
+    padding: 0px 0 0px;
     position: relative;
-    overflow: hidden;
-    mask-image: url(../images/blue_section.svg);
-    -webkit-mask-image: url(../images/blue_section.svg);
-    mask-size: 100% auto;
-    background-color: #1B273D;
-    -webkit-mask-size: 100% auto;
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    mask-position: top;
-    -webkit-mask-position: top;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+	top: -25px;
+	z-index: 9;
+	margin-bottom: -25px;
+	&::before{
+		content: "";
+		position: absolute;
+		top: -100px;
+		left: 0;
+		width: 100%;
+		height: 100px;
+		background-color: #1B273D;
+		webkit-mask-image: url("../images/sec_1_mask_top.svg");
+		-webkit-mask-image: url(../images/sec_1_mask_top.svg);
+		mask-image: url(../images/sec_1_mask_top.svg);
+		-webkit-mask-size: 100%;
+		mask-size: 100%;
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-position: top;
+		mask-position: top;
+		@include max(1060) {
+			top: -70px;
+			height: 70px;
+		}
+		@include max(992) {
+			top: -60px;
+		}
+		@include max(767) {
+			top: -30px;
+		}
+	}
 }
 .project_breadcrumb_sec{
 	position: relative;
 	.breadcrumb{
 		position: absolute;
-		top: 30px;
+		top: -90px;
 		left:25px;
-		z-index: 1;
+		z-index: 10;
+		@include max(1060) {
+			top: -55px;
+			left: 4%;
+		}
+		@include max(767) {
+			top: -35px;
+		}
 	}
 }
 .project_scope_section{
-	padding: 100px 0 50px 0;
+	padding:50px 0;
+	@include max(992) {
+		padding: 25px 0;
+	}
+	@include max(767) {
+		padding: 10px 0;
+	}
 	
+}
+.project_scope_list{
+	padding: 50px 0;
 }
 .project_detail_page{
 	.light-blue-list-section{
 		margin-top: 0;
 		border-radius: 15px;
+		border-bottom-left-radius: 0;
+		border-top-right-radius: 0;
 	}
 	.featured-projects-section::before{
 		display: none;
@@ -739,9 +809,17 @@ width: 100px;
 	}
 	.featured-projects-section{
 		padding: 80px 0 225px;
-		margin-bottom: -145px;
+		@include max(1060) {
+			padding: 80px 0 180px;
+		}
+		@include max(992) {
+			padding:60px 0 140px;
+		}
 	}
 	.photo-gallery-section{
 		margin-top: 50px;
+		@include max(767) {
+			margin-top: 0px;
+		}
 	}
 }

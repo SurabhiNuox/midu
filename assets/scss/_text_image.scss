@@ -10,10 +10,13 @@
 	   flex-wrap: wrap;
 	   align-items: center;
 
-	   @media #{$media-768}{
+	   @include max(992) {
         flex-direction: column-reverse;
-	gap: 30px;
+		gap: 30px;
 
+	   }
+	   @include max(767) {
+		 gap: 20px;
 	   }
 
 
@@ -46,7 +49,9 @@ background-color: #1B273D;
 	&.reverse_direction{
 		flex-direction: row-reverse;
 
-		
+		@include max(992) {
+			flex-direction: column-reverse;
+		}
 
 
       .right_text_img{
@@ -73,6 +78,9 @@ border-bottom-right-radius: 10px;
 		.right_text_main{
 			  padding-right: 0;
 			  padding-left: 5%;
+			  @include max(992) {
+				padding-left: 0;
+			  }
 		}
 
 		

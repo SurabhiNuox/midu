@@ -61,9 +61,15 @@ $featured-projects-subtitle: #a3aeb9;
 	color: $white;
 	text-align: left;
 	margin: 0 0 12px 0;
-
+	@include max(1060) {
+		font-size: size(40px);
+		line-height: size(45px);
+	}
 	@include max(992) {
 		font-size: size(32px);
+		line-height: size(35px);
+		margin: 0 0 5px 0;
+
 	}
 	@include max(767) {
 		font-size: size(28px);
@@ -87,12 +93,6 @@ $featured-projects-subtitle: #a3aeb9;
 .featured-projects-section__slider-wrap {
 	position: relative;
 
-	@include max(992) {
-		padding: 0 44px;
-	}
-	@include max(767) {
-		padding: 0 40px;
-	}
 }
 
 .featured-projects-swiper {
@@ -134,19 +134,35 @@ $featured-projects-subtitle: #a3aeb9;
 	}
 	&--prev {
 		left: -70px;
+		@include max(1060) {
+			left: -20px;
+		}
 	}
 	&--next {
 		right: -70px;
+		@include max(1060) {
+			right: -20px;
+		}
+	}
+
+	@include max(992) {
+		width: 35px;
+		height: 35px;
 	}
 
 	@include max(767) {
-		width: 40px;
-		height: 40px;
-		&--prev { left: 0; }
-		&--next { right: 0; }
+		width: 30px;
+		height: 30px;
+		&--prev { left: -45px; }
+		&--next { right:-45px; }
 		svg {
 			width: 20px;
 			height: 20px;
 		}
+		top: auto;
+		bottom: -70px;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
 	}
 }
