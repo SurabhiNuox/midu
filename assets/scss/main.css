@@ -6288,6 +6288,18 @@ body.menu-open {
   }
 }
 
+.invest-development-section [data-aos] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  .invest-development-section [data-aos] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .project-management-section {
   width: 100%;
   position: relative;
@@ -6451,6 +6463,18 @@ body.menu-open {
 @media only screen and (max-width: 768px) {
   .project-management-section .project-management_inner ul li h4 {
     font-size: 16px;
+  }
+}
+
+.project-management-section [data-aos] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-management-section [data-aos] {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
@@ -8287,6 +8311,18 @@ body.menu-open {
   max-height: 55px;
 }
 
+.master-planning-section [data-aos] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  .master-planning-section [data-aos] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .construction-section {
   width: 100%;
   position: relative;
@@ -8533,6 +8569,18 @@ body.menu-open {
   object-fit: cover;
   margin: 0;
   padding: 0;
+}
+
+.construction-section [data-aos] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  .construction-section [data-aos] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .news_listing {
@@ -8807,6 +8855,20 @@ body.menu-open {
 .events_listing .events_listing_wrap .event-card-list > li {
   margin: 0;
   padding: 0;
+}
+
+.news_listing [data-aos],
+.events_listing [data-aos] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  .news_listing [data-aos],
+  .events_listing [data-aos] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .news-card {
@@ -9590,6 +9652,20 @@ body.menu-open {
 .event_details_main .event_details_location .event_details_icon {
   font-size: 20px;
   color: #574547;
+}
+
+.news_details_section [data-aos],
+.related_news_listing [data-aos] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  .news_details_section [data-aos],
+  .related_news_listing [data-aos] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .career-card {
@@ -13085,6 +13161,18 @@ body.menu-open {
   width: 100%;
 }
 
+.dark_blue_section_without_curve [data-aos] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dark_blue_section_without_curve [data-aos] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .ecnomic-section {
   width: 100%;
   position: relative;
@@ -13232,6 +13320,18 @@ body.menu-open {
 }
 .ecnomic-section .ecnomic-section-inner ul li p {
   color: #fff;
+}
+
+.ecnomic-section [data-aos] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ecnomic-section [data-aos] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .key-details-section {
