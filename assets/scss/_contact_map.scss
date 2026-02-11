@@ -1,0 +1,87 @@
+// Contact Map — dark-themed map with white teardrop pin (Riyadh-style)
+@import "./variable";
+@import "./mixins";
+
+// Map default colour (section, canvas, tile tint, controls); overridable via JS --contact-map-color
+$contact-map-bg: #273445;
+$contact-map-label: rgba(255, 255, 255, 0.9);
+$contact-map-pin-white: #ffffff;
+$contact-map-pin-dot: #273445;
+
+.contact-map {
+	--contact-map-color: #{$contact-map-bg};
+	width: 100%;
+	background-color: var(--contact-map-color);
+	position: relative;
+	overflow: hidden;
+	z-index: 2;
+
+	&__container {
+		position: relative;
+		width: 100%;
+		height: 740px;
+		min-height: 320px;
+	}
+
+	&__canvas {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: var(--contact-map-color);
+
+		// Leaflet tile layer: default map colour #273445 via overlay
+		.leaflet-tile-pane {
+			filter: brightness(0.92) contrast(1.02);
+			&::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				background: var(--contact-map-color);
+				opacity: 0.82;
+				pointer-events: none;
+				z-index: 1;
+			}
+		}
+		.leaflet-control-zoom a,
+		.leaflet-control-attribution {
+			background-color: rgba($contact-map-bg, 0.9) !important;
+			color: $contact-map-label !important;
+			border-color: rgba(255, 255, 255, 0.15) !important;
+		}
+		.leaflet-control-attribution a {
+			color: $contact-map-label;
+		}
+	}
+
+	// Marker uses marker.svg image (via L.icon in JS)
+	.leaflet-marker-icon.contact-map-marker-icon {
+		width: 59px;
+		height: 76px;
+	}
+	.contact-map-tooltip {
+		background: rgba($contact-map-bg, 0.95) !important;
+		color: $contact-map-label !important;
+		border: none !important;
+		padding: 6px 10px !important;
+		font-size: 14px;
+	}
+	.leaflet-tooltip-top::before {
+		border-top-color: rgba($contact-map-bg, 0.95) !important;
+	}
+
+	@include max(768px) {
+		&__container {
+			height: 320px;
+			min-height: 280px;
+		}
+		.leaflet-marker-icon.contact-map-marker-icon {
+			width: 40px;
+			height: 52px;
+		}
+	}
+}

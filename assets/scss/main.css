@@ -2459,6 +2459,21 @@ a,
   position: relative;
   overflow: hidden;
 }
+.btn-primary.white_btn {
+  background-color: #fff;
+  color: #15868A;
+}
+.btn-primary.white_btn .button-icon img {
+  filter: brightness(0) saturate(100%) invert(42%) sepia(62%) saturate(570%) hue-rotate(133deg) brightness(88%) contrast(90%);
+  transition: filter 0.3s ease;
+}
+.btn-primary.white_btn:hover {
+  background-color: #F47B47;
+  color: #fff;
+}
+.btn-primary.white_btn:hover .button-icon img {
+  filter: brightness(0) invert(1);
+}
 .btn-primary:hover {
   background-color: #F47B47;
 }
@@ -9954,6 +9969,23 @@ body.menu-open {
   }
 }
 
+.careers_top_section [data-aos] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .careers_top_left[data-aos],
+  .careers_top_right[data-aos],
+  .career-list_main [data-aos],
+  .career_life_section [data-aos],
+  .career_story_section [data-aos] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .career_life_section {
   width: 100%;
   position: relative;
@@ -12540,18 +12572,18 @@ body.menu-open {
 }
 .career_details_section .career_details_wrap {
   width: 100%;
-  padding: 100px 0;
+  padding: 60px 0 100px;
   display: flex;
   flex-wrap: wrap;
 }
 @media only screen and (max-width: 1600px) {
   .career_details_section .career_details_wrap {
-    padding: 80px 0;
+    padding: 50px 0 80px;
   }
 }
 @media only screen and (max-width: 1024px) {
   .career_details_section .career_details_wrap {
-    padding: 60px 0;
+    padding: 40px 0 60px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -12731,7 +12763,7 @@ body.menu-open {
 }
 .career_details_section .career_details_wrap .career_details_right .career_details_right_inner .career_details_form .career_form_group {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   display: inline-block;
 }
 .career_details_section .career_details_wrap .career_details_right .career_details_right_inner .career_details_form .career_form_group input,
@@ -12879,6 +12911,22 @@ body.menu-open {
   width: 100%;
   height: 60px;
   max-width: inherit;
+}
+
+.career_details_section [data-aos] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .career_details_section .breadcrumb[data-aos],
+  .career_details_section .career_details_left [data-aos],
+  .career_details_section .career_details_box[data-aos],
+  .career_details_section .career_details_right[data-aos] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .social-card {
@@ -13415,5 +13463,347 @@ body.menu-open {
   .key-details-card__value {
     font-size: 0.8125rem;
     line-height: 0.875rem;
+  }
+}
+
+.contact_top_section {
+  position: relative;
+  padding: 110px 0px 130px;
+  position: relative;
+  overflow: hidden;
+  mask-image: url(../images/blue_section.svg);
+  -webkit-mask-image: url(../images/blue_section.svg);
+  mask-size: 100% auto;
+  background-color: #D9E8F4;
+  -webkit-mask-size: 100% auto;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: top;
+  -webkit-mask-position: top;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 1440px) {
+  .contact_top_section {
+    padding: 80px 0;
+  }
+}
+@media screen and (max-width: 992px) {
+  .contact_top_section {
+    padding: 60px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .contact_top_section {
+    padding: 50px 0;
+  }
+}
+.contact_top_section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.contact_top_section_inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px 60px;
+  position: relative;
+  z-index: 2;
+}
+@media screen and (min-width: 993px) {
+  .contact_top_section_inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px 80px;
+    align-items: start;
+  }
+}
+
+.contact_top_section_left {
+  flex: 1 1 100%;
+}
+@media screen and (min-width: 993px) {
+  .contact_top_section_left {
+    min-width: 0;
+  }
+}
+
+.contact_top_section_heading {
+  font-size: clamp(1.75rem, 4vw, 2.9rem);
+  font-weight: 400;
+  color: #1B273D;
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.contact_top_section_intro {
+  color: #011334;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0 0 32px;
+  max-width: 480px;
+}
+
+.contact_top_section_list {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact_top_section_item {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+@media screen and (max-width: 768px) {
+  .contact_top_section_item {
+    gap: 20px;
+  }
+}
+.contact_top_section_item .contact_top_section_icon {
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  background-color: #15868A;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.contact_top_section_item .contact_top_section_icon svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.contact_top_section_item .contact_top_section_item_text,
+.contact_top_section_item a.contact_top_section_item_text {
+  color: #011334;
+  font-size: 16px;
+  font-weight: 200;
+  line-height: 1.45;
+  text-decoration: none;
+  margin: 0;
+}
+
+a.contact_top_section_item_text:hover {
+  text-decoration: underline;
+}
+
+.contact_top_section_social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.contact_top_section_social_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background-color: #1B273D;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  mask-image: url(../images/social_mask.svg);
+  -webkit-mask-image: url(../images/social_mask.svg);
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: top;
+  -webkit-mask-position: center;
+  transition: opacity 0.3s ease;
+}
+.contact_top_section_social_icon span {
+  font-size: 14px;
+}
+.contact_top_section_social_icon:hover {
+  background-color: #F47B47;
+  color: #fff;
+}
+
+.contact_top_section_right {
+  flex: 1 1 100%;
+  min-width: 0;
+}
+@media screen and (min-width: 993px) {
+  .contact_top_section_right {
+    max-width: 100%;
+  }
+}
+
+.contact_top_section_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact_top_section_form_row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.contact_top_section_form_row.contact_top_section_form_submit {
+  margin-top: 4px;
+}
+.contact_top_section_form_row input,
+.contact_top_section_form_row textarea {
+  flex: 1 1 100%;
+  min-width: 0;
+  background: #fff;
+  border-radius: 7px;
+  padding: 0 20px;
+  border: none;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  font-weight: 200;
+  font-family: inherit;
+  color: #1a1a1a;
+  transition: border-color 0.2s ease;
+}
+.contact_top_section_form_row input::-moz-placeholder, .contact_top_section_form_row textarea::-moz-placeholder {
+  color: #ABAFB1;
+}
+.contact_top_section_form_row input::placeholder,
+.contact_top_section_form_row textarea::placeholder {
+  color: #ABAFB1;
+}
+.contact_top_section_form_row input:focus,
+.contact_top_section_form_row textarea:focus {
+  outline: none;
+  border-color: #15868A;
+}
+.contact_top_section_form_row textarea {
+  resize: vertical;
+  min-height: 120px;
+  height: auto;
+  line-height: 20px;
+  padding: 10px 20px;
+}
+@media screen and (min-width: 600px) {
+  .contact_top_section_form_row:first-child input {
+    flex: 1 1 calc(50% - 10px);
+  }
+}
+
+.contact_top_submit_btn .button-icon img {
+  filter: brightness(0) invert(1);
+}
+
+.contact_page .commitment-section {
+  position: relative;
+  z-index: 3;
+  margin-top: -25px;
+}
+
+.contact_top_section [data-aos] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact_top_section_heading[data-aos],
+  .contact_top_section_intro[data-aos],
+  .contact_top_section_item[data-aos],
+  .contact_top_section_social[data-aos],
+  .contact_top_section_right[data-aos] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.contact-map[data-aos] {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-map[data-aos] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.contact-map {
+  --contact-map-color: #273445;
+  width: 100%;
+  background-color: var(--contact-map-color);
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+.contact-map__container {
+  position: relative;
+  width: 100%;
+  height: 740px;
+  min-height: 320px;
+}
+.contact-map__canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--contact-map-color);
+}
+.contact-map__canvas .leaflet-tile-pane {
+  filter: brightness(0.92) contrast(1.02);
+}
+.contact-map__canvas .leaflet-tile-pane::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--contact-map-color);
+  opacity: 0.82;
+  pointer-events: none;
+  z-index: 1;
+}
+.contact-map__canvas .leaflet-control-zoom a,
+.contact-map__canvas .leaflet-control-attribution {
+  background-color: rgba(39, 52, 69, 0.9) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+.contact-map__canvas .leaflet-control-attribution a {
+  color: rgba(255, 255, 255, 0.9);
+}
+.contact-map .leaflet-marker-icon.contact-map-marker-icon {
+  width: 59px;
+  height: 76px;
+}
+.contact-map .contact-map-tooltip {
+  background: rgba(39, 52, 69, 0.95) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+  border: none !important;
+  padding: 6px 10px !important;
+  font-size: 14px;
+}
+.contact-map .leaflet-tooltip-top::before {
+  border-top-color: rgba(39, 52, 69, 0.95) !important;
+}
+@media screen and (max-width: 768pxpx) {
+  .contact-map__container {
+    height: 320px;
+    min-height: 280px;
+  }
+  .contact-map .leaflet-marker-icon.contact-map-marker-icon {
+    width: 40px;
+    height: 52px;
   }
 }/*# sourceMappingURL=main.css.map */

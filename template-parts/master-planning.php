@@ -29,7 +29,7 @@ foreach ( $master_planning_items as $i => $item ) {
 <section class="master-planning-section">
 
 	<div class="container">
-		<div class="<?php echo esc_attr( $title_main_class ); ?>">
+		<div class="<?php echo esc_attr( $title_main_class ); ?>" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
 			<?php if ( $master_planning_h2 !== '' && $master_planning_h2 !== false ) : ?>
 				<h2 class="second_title"><?php echo esc_html( $master_planning_h2 ); ?></h2>
 			<?php endif; ?>
@@ -42,14 +42,15 @@ foreach ( $master_planning_items as $i => $item ) {
 		</div>
 
 		<?php if ( ! empty( $master_planning_items ) ) : ?>
-		<div class="master-planning-list">
+		<div class="master-planning-list" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true">
 			<ul>
-				<?php foreach ( $master_planning_items as $item ) :
+				<?php foreach ( $master_planning_items as $idx => $item ) :
 					$icon_url  = isset( $item['icon'] ) ? $item['icon'] : '';
 					$item_title = isset( $item['title'] ) ? $item['title'] : '';
 					if ( $item_title === '' ) { continue; }
+					$mp_delay = 150 + ( $idx * 80 );
 				?>
-				<li>
+				<li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="<?php echo esc_attr( $mp_delay ); ?>" data-aos-once="true">
 					<div class="master-planning-box">
 						<?php if ( $icon_url !== '' ) : ?>
 						<div class="master-planning-icon"><img src="<?php echo esc_url( $icon_url ); ?>" alt="Master Planning"></div>

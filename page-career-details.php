@@ -21,14 +21,14 @@ get_header();
             </div>
 
 			<div class="career_details_wrap">
-				       <div class="career_details_left">
+				       <div class="career_details_left"  data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
 						          <label>Posted 18 hours ago</label>
-								  <h2 class="second_title">Project Manager Development</h2>
+								  <h2 class="second_title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true">Project Manager Development</h2>
 
-								  <div class="career_tag">Job Description</div>
+								  <div class="career_tag" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once="true">Job Description</div>
 
 								  <div class="career_details_content">
-									    <div class="career_details_box">
+									    <div class="career_details_box" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="280" data-aos-once="true">
 											        <h4>Key Responsibilities</h4>
 													<ul>
 														<li>Oversee project planning and coordination</li>
@@ -38,7 +38,7 @@ get_header();
 													</ul>
 										</div>
 
-										<div class="career_details_box">
+										<div class="career_details_box" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="360" data-aos-once="true">
 											        <h4>Requirements & Qualifications</h4>
 													<ul>
 													<li>Relevant degree or certifications</li>
@@ -49,7 +49,7 @@ get_header();
 										</div>
 
 
-										<div class="career_details_box">
+										<div class="career_details_box" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="440" data-aos-once="true">
 											        <h4>What We Offer</h4>
 													<ul>
 													<li>Competitive salary and benefits</li>
@@ -61,7 +61,7 @@ get_header();
 								  </div>
 					   </div>
 
-					   <div class="career_details_right"> 
+					   <div class="career_details_right" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150" data-aos-once="true"> 
 						<div class="career_details_right_inner">
 						<h3>Apply Now</h3>
 						<div class="career_details_form">

@@ -267,5 +267,20 @@ border-bottom-right-radius: 0;
 }
 
 }
+
+// AOS — construction-section (services page)
+.construction-section {
+	[data-aos] {
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		[data-aos] {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+	}
+}
 	
  

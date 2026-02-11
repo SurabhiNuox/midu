@@ -35,6 +35,25 @@
 	position: relative;
 	overflow: hidden;
 
+	&.white_btn {
+		background-color: $white;
+		color: #15868A;
+
+		.button-icon img {
+			filter: brightness(0) saturate(100%) invert(42%) sepia(62%) saturate(570%) hue-rotate(133deg) brightness(88%) contrast(90%); 
+			transition: filter 0.3s ease;
+		}
+
+		&:hover {
+			background-color: #F47B47;
+			color: $white;
+
+			.button-icon img {
+				filter: brightness(0) invert(1); // white
+			}
+		}
+	}
+
 
 	&:hover {
 		background-color: #F47B47;

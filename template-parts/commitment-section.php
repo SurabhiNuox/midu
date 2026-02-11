@@ -11,6 +11,9 @@
 $title   = get_query_var( 'commitment_title' ) ?: 'Our Commitment';
 $content = get_query_var( 'commitment_content' );
 $image   = get_query_var( 'commitment_image' ) ?: get_template_directory_uri() . '/assets/images/commitment_pic.jpg';
+$btn_url   = get_query_var( 'commitment_button_url' ) ?: get_query_var( 'career_link' );
+$btn_text  = get_query_var( 'commitment_button_text' ) ?: 'Download Brochure';
+$btn_class = get_query_var( 'commitment_button_class' ) ?: '';
 
 if ( ! is_array( $content ) || empty( $content ) ) {
 	$content = array(
@@ -30,6 +33,14 @@ if ( ! is_array( $content ) || empty( $content ) ) {
 				<?php foreach ( $content as $paragraph ) : ?>
 					<p><?php echo esc_html( $paragraph ); ?></p>
 				<?php endforeach; ?>
+				<?php if ( ! empty( $btn_url ) ) : ?>
+				<a href="<?php echo esc_url( $btn_url ); ?>" class="btn-primary<?php echo $btn_class ? ' ' . esc_attr( $btn_class ) : ''; ?>">
+					<span class="button-text"><?php echo esc_html( $btn_text ); ?></span>
+					<span class="button-icon">
+						<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/arrow.svg' ); ?>" alt="">
+					</span>
+				</a>
+				<?php endif; ?>
 			</div>
 			<div class="commitment-section__image-wrap">
 				<img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $title ); ?>" class="commitment-section__image" loading="lazy">

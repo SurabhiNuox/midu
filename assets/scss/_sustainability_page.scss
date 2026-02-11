@@ -31,3 +31,18 @@
             }
        }
 }
+
+// AOS — sustainability page (Social Responsibility section)
+.dark_blue_section_without_curve {
+	[data-aos] {
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		[data-aos] {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+	}
+}

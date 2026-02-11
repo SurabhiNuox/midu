@@ -130,7 +130,7 @@ get_header();
        <section class="news_listing">
             <div class="container">
                 <div class="news_list_inner">
-                    <div class="news_filter">
+                    <div class="news_filter" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                           <form action="" method="get"  class="news-filter-main">
                             <div class="news-filter-serch">
                                 <input type="text" name="search" placeholder="Search" class="filter-form-control">
@@ -150,9 +150,9 @@ get_header();
                 </div>
 
                 <div class="news_listing-main">
-                         <h2>Latest News</h2>
+                         <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Latest News</h2>
 
-                         <div class="news_listing-cards">
+                         <div class="news_listing-cards" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true">
                          <ul class="news-card-list">
                             <?php
                             // Repeater: array of items with image, link, title, date (from ACF or set here)
@@ -161,13 +161,16 @@ get_header();
                                 $news_card_items = get_field( 'news_cards' );
                             }
                             if ( ! empty( $news_card_items ) && is_array( $news_card_items ) ) :
+                                $news_idx = 0;
                                 foreach ( $news_card_items as $item ) :
                                     $img  = isset( $item['image'] ) ? $item['image'] : ( isset( $item['image']['url'] ) ? $item['image']['url'] : '' );
                                     $link = isset( $item['link'] ) ? $item['link'] : ( isset( $item['link']['url'] ) ? $item['link']['url'] : '#' );
                                     $title = isset( $item['title'] ) ? $item['title'] : '';
                                     $date  = isset( $item['date'] ) ? $item['date'] : '';
                                     if ( ! $img ) { $img = get_template_directory_uri() . '/assets/images/news1.png'; }
-                                    echo '<li>';
+                                    $n_delay = 150 + ( $news_idx * 80 );
+                                    echo '<li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="' . esc_attr( $n_delay ) . '" data-aos-once="true">';
+                                    $news_idx++;
                                     set_query_var( 'news_card_image', $img );
                                     set_query_var( 'news_card_link', $link );
                                     set_query_var( 'news_card_title', $title );
@@ -183,9 +186,12 @@ get_header();
                                     'post_status'    => 'publish',
                                 ) );
                                 if ( $news_query->have_posts() ) :
+                                    $news_idx = 0;
                                     while ( $news_query->have_posts() ) :
                                         $news_query->the_post();
-                                        echo '<li>';
+                                        $n_delay = 150 + ( $news_idx * 80 );
+                                        echo '<li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="' . esc_attr( $n_delay ) . '" data-aos-once="true">';
+                                        $news_idx++;
                                         get_template_part( 'template-parts/news-card' );
                                         echo '</li>';
                                     endwhile;
@@ -212,8 +218,9 @@ get_header();
                                             'date'  => '15 July 2025',
                                         ),
                                     );
-                                    foreach ( $news_card_items as $item ) :
-                                        echo '<li>';
+                                    foreach ( $news_card_items as $idx => $item ) :
+                                        $n_delay = 150 + ( $idx * 80 );
+                                        echo '<li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="' . esc_attr( $n_delay ) . '" data-aos-once="true">';
                                         set_query_var( 'news_card_image', $item['image'] );
                                         set_query_var( 'news_card_link', $item['link'] );
                                         set_query_var( 'news_card_title', $item['title'] );
@@ -233,9 +240,9 @@ get_header();
 
        <section class="events_listing">
             <div class="container">
-                     <h2 class="second_title">Events & Appearances</h2>
+                     <h2 class="second_title" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Events & Appearances</h2>
 
-                     <div class="events_listing_wrap">
+                     <div class="events_listing_wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true">
                                  <ul class="event-card-list">
                                     <?php
                                     $event_card_items = get_query_var( 'event_card_items' );
@@ -243,6 +250,7 @@ get_header();
                                         $event_card_items = get_field( 'event_cards' );
                                     }
                                     if ( ! empty( $event_card_items ) && is_array( $event_card_items ) ) :
+                                        $event_idx = 0;
                                         foreach ( $event_card_items as $item ) :
                                             $img   = isset( $item['image'] ) ? $item['image'] : ( isset( $item['image']['url'] ) ? $item['image']['url'] : '' );
                                             $link  = isset( $item['link'] ) ? $item['link'] : ( isset( $item['link']['url'] ) ? $item['link']['url'] : '#' );
@@ -252,7 +260,9 @@ get_header();
                                             $title = isset( $item['title'] ) ? $item['title'] : '';
                                             $time  = isset( $item['time'] ) ? $item['time'] : '';
                                             if ( ! $img ) { $img = get_template_directory_uri() . '/assets/images/news1.png'; }
-                                            echo '<li>';
+                                            $e_delay = 150 + ( $event_idx * 80 );
+                                            echo '<li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="' . esc_attr( $e_delay ) . '" data-aos-once="true">';
+                                            $event_idx++;
                                             set_query_var( 'event_card_image', $img );
                                             set_query_var( 'event_card_link', $link );
                                             set_query_var( 'event_card_date_day', $day );

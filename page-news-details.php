@@ -74,7 +74,7 @@ get_header();
                  </ul>
             </div>
 
-            <div class="news_detail_main">
+            <div class="news_detail_main" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
             <h2 class="second_title">MIDU Announces New Mixed-Use Development in Riyadh</h2>
             <div class="news_date">September 03, 2020</div>
 
@@ -85,7 +85,7 @@ get_header();
             </div>
 
             <div class="news_details_content">
-                   <div class="news_details_left">
+                   <div class="news_details_left" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true">
                    <a href="#" class="btn-primary">
 									<span class="button-text">Update</span>
 									<span class="button-icon">
@@ -111,7 +111,7 @@ get_header();
 						</a>
 					</div>
                    </div> 
-                   <div class="news_details_right">
+                   <div class="news_details_right" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150" data-aos-once="true">
                        <h3>Dubai, UAE, 25 August 2020</h3>
                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum justo quis tempor elementum. Cras dapibus, ante non egestas viverra, mi ante venenatis est, non feugiat sem elit eu nisl. Vivamus efficitur luctus rutrum. Nulla nisi turpis, elementum in cursus venenatis, vehicula non ante. Maecenas fermentum odio ut nisi tempus interdum. Sed posuere, mi eu tempor accumsan, mi sem consectetur quam, vel ultrices sapien enim sit amet felis. Phasellus mattis nulla ac condimentum scelerisque. Etiam accumsan non neque eget mattis. Vestibulum luctus fermentum sodales. Vivamus finibus cursus mollis. Integer condimentum finibus nibh id egestas. Curabitur efficitur nibh eros, in interdum risus ultrices at. Mauris neque lorem, fringilla sit amet elementum vitae, posuere a velit. Proin ac neque non nisi bibendum tincidunt id et neque.
                        </p>
@@ -135,10 +135,10 @@ get_header();
             
 
                 <div class="news_listing-main">
-                         <h2>Related News</h2>
+                         <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">Related News</h2>
 
                          
-                         <div class="swiper relatedSwiper ">
+                         <div class="swiper relatedSwiper " data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true">
                             <div class="swiper-wrapper news-card-list">
                             <?php
                             // Repeater: array of items with image, link, title, date (from ACF or set here)

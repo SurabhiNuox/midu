@@ -420,3 +420,19 @@ margin-bottom: 14px;
            }
       }
 }
+
+// AOS — news details & event details pages (breadcrumb excluded)
+.news_details_section,
+.related_news_listing {
+	[data-aos] {
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		[data-aos] {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+	}
+}

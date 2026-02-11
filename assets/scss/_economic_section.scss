@@ -157,6 +157,21 @@ width: 100px;
 	  }
 }
 
+// AOS — economic section (sustainability page)
+.ecnomic-section {
+	[data-aos] {
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		[data-aos] {
+			opacity: 1;
+			transform: none;
+			transition: none;
+		}
+	}
+}
+
   
 
 

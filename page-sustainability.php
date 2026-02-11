@@ -121,7 +121,7 @@ set_query_var( 'social_card_list', $social_card_list );
 
 		   <section class="dark_blue_section_without_curve">
 		   <div class="container">
-		   <div class="title_main">
+		   <div class="title_main" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
 			<h2 class="second_title">Social Responsibility</h2>
 			<p>MIDU’s projects are designed to uplift communities and enhance quality of life:</p>
 
@@ -133,12 +133,15 @@ set_query_var( 'social_card_list', $social_card_list );
 						$social_card_list = get_field( 'social_card_list' );
 					}
 					if ( ! empty( $social_card_list ) && is_array( $social_card_list ) ) :
+						$social_idx = 0;
 						foreach ( $social_card_list as $item ) :
 							$img  = isset( $item['image'] ) ? $item['image'] : ( isset( $item['image']['url'] ) ? $item['image']['url'] : '' );
 							$link = isset( $item['link'] ) ? $item['link'] : ( isset( $item['link']['url'] ) ? $item['link']['url'] : '#' );
 							$title = isset( $item['title'] ) ? $item['title'] : '';
 							$desc  = isset( $item['description'] ) ? $item['description'] : '';
-							echo '<li>';
+							$social_delay = 100 + ( $social_idx * 120 );
+							echo '<li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="' . esc_attr( $social_delay ) . '" data-aos-once="true">';
+							$social_idx++;
 							set_query_var( 'social_card_link', $link );
 							set_query_var( 'social_card_image', $img );
 							set_query_var( 'social_card_title', $title );

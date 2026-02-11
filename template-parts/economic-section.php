@@ -14,24 +14,24 @@
 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ecnomic-img.png">
 	<div class="container">
 		        <div class="ecnomic-section-inner">
-			<div class="title_main">
+			<div class="title_main" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
 			<h2 class="second_title">Economic Contribution</h2>
 			<p>We believe sustainability and economic prosperity go hand in hand:</p>
 			
 			
 			<ul>
-				<li>
+				<li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true">
 				<h4>End-to-end project planning and scheduling</h4>
 				<p>Developing assets that remain resilient, efficient, and investment-attractive for decades.</p>
 				</li>
 
-				<li>
+				<li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-once="true">
 				<h4>Supporting national transformation goals</h4>
 				<p>Delivering projects that strengthen key sectors and stimulate sustainable economic growth.</p>
 				</li>
 
 
-				<li>
+				<li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" data-aos-once="true">
 				<h4>Innovative and future-ready solutions</h4>
 				<p>Leveraging new technologies and smart systems to optimize performance and reduce long-term operating costs.</p>
 				</li>

@@ -39,12 +39,12 @@ if ( function_exists( 'get_field' ) && get_field( 'career_stories' ) ) {
 	<div class="career_bg"></div>
 	<div class="career_story_inner">
 		<div class="container">
-			<div class="title_main text-center career_story_title">
+			<div class="title_main text-center career_story_title" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
 				<h2 class="second_title">Employee Stories</h2>
 				<p>Explore available roles across our departments and sectors.</p>
 			</div>
 
-			<div class="career_story_swiper_wrap">
+			<div class="career_story_swiper_wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true">
 			
 				<div class="swiper career_story_swiper">
 					<div class="swiper-wrapper">

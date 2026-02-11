@@ -22,17 +22,17 @@
 
   .career_details_wrap{
 	    width: 100%;
-		padding: 100px 0;
+		padding: 60px 0 100px;
 		display: flex;
 		flex-wrap: wrap;
 
 		  @media #{$media-1600}{
-padding: 80px 0;
+padding: 50px 0 80px;
 
 	   }
 
 	     @media #{$media-1024}{
-padding: 60px 0;
+padding: 40px 0 60px;
 
 	   }
 
@@ -224,7 +224,7 @@ gap: 20px;
 
 					   .career_form_group{
 						    width: 100%;
-							margin-bottom: 10px;
+							margin-bottom: 15px;
 							display: inline-block;
 
 							input,
@@ -392,4 +392,25 @@ gap: 20px;
 
   }
 	
+}
+
+// ---------------------------------------------------------------------------
+// AOS (Animate On Scroll) — career details page
+// ---------------------------------------------------------------------------
+.career_details_section {
+	[data-aos] {
+		backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+	}
+}
+
+.career_details_section .breadcrumb[data-aos],
+.career_details_section .career_details_left [data-aos],
+.career_details_section .career_details_box[data-aos],
+.career_details_section .career_details_right[data-aos] {
+	@media (prefers-reduced-motion: reduce) {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
 }
