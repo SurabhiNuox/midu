@@ -29,11 +29,7 @@
 		<div class="container">
 				
 			<div class="header-content">
-				<!-- Logo -->
-				<div class="header-shape_right">
 					
-				 </div>
-				
 				<div class="site-logo">
 					<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
 						<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/logo.png'); ?>" alt="<?php bloginfo('name'); ?>" class="logo-image">
@@ -82,6 +78,11 @@
 	<!-- Mobile menu (outside header so not affected by header transform) -->
 	<div class="mobile-menu-overlay" aria-hidden="true"></div>
 	<div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
+		<button type="button" class="mobile-menu-drawer__close" aria-label="<?php esc_attr_e( 'Close menu', 'midu' ); ?>">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+				<path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</button>
 		<nav class="mobile-menu-drawer__nav" aria-label="<?php esc_attr_e( 'Mobile menu', 'midu' ); ?>">
 			<?php
 			wp_nav_menu(

@@ -9,6 +9,7 @@
 	var hamburger = document.querySelector('.hamburger-btn');
 	var overlay = document.querySelector('.mobile-menu-overlay');
 	var drawer = document.getElementById('mobile-menu-drawer');
+	var closeBtn = document.querySelector('.mobile-menu-drawer__close');
 
 	if (!header || !hamburger) return;
 
@@ -47,6 +48,10 @@
 
 	if (overlay) {
 		overlay.addEventListener('click', closeMenu);
+	}
+
+	if (closeBtn) {
+		closeBtn.addEventListener('click', closeMenu);
 	}
 
 	// Close on escape key

@@ -41,21 +41,60 @@
 		background-repeat: no-repeat;
 		padding: 20px 45px 20px 55px;
 		position: relative;
-		overflow: hidden; 
-		backdrop-filter:blur(10px);
+		overflow: hidden;
+		backdrop-filter: blur(10px);
 		background-color: rgba(255, 255, 255, 0.2);
-		padding: 20px 45px 20px 55px;
+		// Cut out top-right + bottom-left (same shape, bottom-left mirrored); add then subtract so both cut
+		mask-image: linear-gradient(white, white), url("data:image/svg+xml,%3Csvg%20width%3D%2250%22%20height%3D%2247%22%20viewBox%3D%220%200%2050%2047%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M50%200H0C4%200%206.1667%202.1667%207%203C7%203%2033.5%2029.5%2048%2044C50%2046%2050%2047%2050%2047V0Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E"), url("data:image/svg+xml,%3Csvg%20width%3D%2250%22%20height%3D%2247%22%20viewBox%3D%220%200%2050%2047%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%2047H50C46%2047%2043.8333%2044.3333%2043%2044C16.5%2017.5%202%203%202%203C0%201%200%200%200%200V47Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E");
+		-webkit-mask-image: linear-gradient(white, white), url("data:image/svg+xml,%3Csvg%20width%3D%2250%22%20height%3D%2247%22%20viewBox%3D%220%200%2050%2047%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M50%200H0C4%200%206.1667%202.1667%207%203C7%203%2033.5%2029.5%2048%2044C50%2046%2050%2047%2050%2047V0Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E"), url("data:image/svg+xml,%3Csvg%20width%3D%2250%22%20height%3D%2247%22%20viewBox%3D%220%200%2050%2047%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%2047H50C46%2047%2043.8333%2044.3333%2043%2044C16.5%2017.5%202%203%202%203C0%201%200%200%200%200V47Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E");
+		mask-size: 100% 100%, 50px 47px, 50px 47px;
+		-webkit-mask-size: 100% 100%, 50px 47px, 50px 47px;
+		mask-position: 0 0, 100% 0, 0 100%;
+		-webkit-mask-position: 0 0, 100% 0, 0 100%;
+		mask-repeat: no-repeat, no-repeat, no-repeat;
+		-webkit-mask-repeat: no-repeat, no-repeat, no-repeat;
+		mask-composite: subtract, add;
+		-webkit-mask-composite: source-out, source-over;
+		border-radius: 5px;
+		@include max(767) {
+			padding: 15px 20px;
+			-webkit-mask-size: 100% 100%, 20px 19px, 20px 19px;
+			mask-size: 100% 100%, 20px 19px, 20px 19px;
+		}
 	}
-	.header-shape_right{
+	.header-shape_right {
 		position: absolute;
 		right: 0;
 		top: 0;
-		mask-image: url(../images/header_mask_right.png);
-		mask-size: 100% 100%;
-		mask-repeat: no-repeat;
-		mask-position: center;
-		background-color: rgb(255 255 255);
-		backdrop-filter: blur(10px);
+		z-index: 1;
+		width: 50px;
+		height: 47px;
+		pointer-events: none;
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		path {
+			fill: transparent;
+		}
+	}
+	.header-shape_left {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 1;
+		width: 50px;
+		height: 47px;
+		pointer-events: none;
+		svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		path {
+			fill: transparent;
+		}
 	}
 	// Logo
 	.site-logo {
@@ -91,12 +130,12 @@
 		gap: 6px;
 		width: 44px;
 		height: 44px;
-		padding: 8px;
 		background: transparent;
 		border: none;
 		cursor: pointer;
 		z-index: 10002;
-		position: relative;
+		position: fixed;
+		right: 25%;
 		transition: opacity 0.2s ease;
 
 		@media #{$media-1060} {
@@ -126,6 +165,10 @@
 			.hamburger-btn__line:nth-child(3) {
 				transform: translateY(-8px) rotate(-45deg);
 			}
+		}
+		@include max(767) {
+			top: 10px;
+			right: 15px;
 		}
 	}
 
@@ -261,6 +304,9 @@
 				}
 			}
 		}
+		@include max(767) {
+			display: none;
+		}
 	}
 }
 
@@ -308,7 +354,7 @@
 	right: 0;
 	bottom: 0;
 	width: 100%;
-	max-width: 320px;
+	max-width: 460px;
 	background: rgba(21, 134, 138, 0.98);
 	backdrop-filter: blur(12px);
 	z-index: 10001;
@@ -320,6 +366,38 @@
 
 	@media #{$media-1060} {
 		display: block;
+	}
+}
+
+.mobile-menu-drawer__close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	padding: 0;
+	background: transparent;
+	border: none;
+	color: $white;
+	cursor: pointer;
+	transition: opacity 0.2s ease, color 0.2s ease;
+
+	&:hover {
+		opacity: 0.85;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $white;
+		outline-offset: 2px;
+	}
+
+	svg {
+		display: block;
+		width: 24px;
+		height: 24px;
 	}
 }
 
@@ -379,4 +457,9 @@ body.menu-open .mobile-menu-drawer {
 // Prevent body scroll when mobile menu is open
 body.menu-open {
 	overflow: hidden;
+}
+.header-shape_right {
+	position: absolute;
+	right: 0;
+	top: 0;
 }
