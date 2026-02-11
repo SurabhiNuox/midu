@@ -72,6 +72,15 @@ $career-card-icon: #e67e22;
 		line-height: 1.25;
 		font-weight: 400;
 		color: #000000;
+		margin-bottom: 5px;
+
+		@media screen and (max-width: 1024px) {
+font-size: size(26px);
+		}
+
+			@media screen and (max-width: 768px) {
+font-size: size(22px);
+		}
 	}
 
 	&__date {
@@ -80,6 +89,10 @@ $career-card-icon: #e67e22;
 		line-height: 1.35;
 		color: #353535;
 		font-weight: 400;
+
+		@media screen and (max-width: 768px) {
+font-size: 15px;
+		}
 	}
 
 	&__location,
@@ -92,6 +105,11 @@ $career-card-icon: #e67e22;
 		font-weight: 300;
 		line-height: 1.35;
 		color: #353535;
+
+			@media screen and (max-width: 1024px) {
+				gap: 10px;
+	font-size: 15px;
+			}
 	}
 
 	&__icon {

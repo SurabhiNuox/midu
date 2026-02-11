@@ -112,7 +112,7 @@ set_query_var( 'social_card_list', $social_card_list );
 			set_query_var( 'image_text_acf_list_field', 'image_text_list' );
 			set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph' );
 			set_query_var( 'image_text_image', 'sus2.png' );
-			set_query_var( 'image_text_section_class', 'white_text' );
+			set_query_var( 'image_text_section_class', 'white_text off_blue' );
 			get_template_part( 'template-parts/image-text-block' );
 			?>
            </div>
@@ -170,7 +170,7 @@ set_query_var( 'social_card_list', $social_card_list );
 		   set_query_var( 'image_text_acf_list_field', 'image_text_list_third' );
 		   set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph_third' );
 		   set_query_var( 'image_text_image', 'sustainability03.png' );
-		   set_query_var( 'image_text_section_class', 'white_text reverse_direction' );
+		   set_query_var( 'image_text_section_class', 'white_text reverse_direction dark_blue' );
 		   get_template_part( 'template-parts/image-text-block' );
 		   ?>
 				</section>
@@ -205,7 +205,7 @@ set_query_var( 'social_card_list', $social_card_list );
 		          set_query_var( 'image_text_acf_list_field', 'image_text_list_second' );
 		          set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph_second' );
 		          set_query_var( 'image_text_image', 'impact.png' );
-		          set_query_var( 'image_text_section_class', '' );
+		          set_query_var( 'image_text_section_class', 'light_blue' );
 		          get_template_part( 'template-parts/image-text-block' );
 		          ?>
 
