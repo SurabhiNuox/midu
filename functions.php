@@ -199,6 +199,9 @@ function addarah_scripts()
 	// Show sticky header when user scrolls (up or down)
 	wp_enqueue_script('header-show-on-scroll', get_template_directory_uri() . '/assets/js/header-show-on-scroll.js', array(), _S_VERSION, true);
 
+	// Hamburger menu toggle (below 1060px)
+	wp_enqueue_script('hamburger-menu', get_template_directory_uri() . '/assets/js/hamburger-menu.js', array(), _S_VERSION, true);
+
 	// Enqueue Footer component script (loaded on all pages)
 	wp_enqueue_script('footer-script', get_template_directory_uri() . '/assets/js/Footer.js', array(), _S_VERSION, true);
 

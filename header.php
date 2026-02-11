@@ -27,16 +27,28 @@
 
 	<header id="masthead" class="site-header">
 		<div class="container">
+				
 			<div class="header-content">
 				<!-- Logo -->
+				<div class="header-shape_right">
+					
+				 </div>
+				
 				<div class="site-logo">
 					<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
 						<img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/logo.png'); ?>" alt="<?php bloginfo('name'); ?>" class="logo-image">
 					</a>
 				</div>
 
-				<!-- Navigation Menu -->
-				<nav id="site-navigation" class="main-navigation">
+				<!-- Hamburger (visible below 1060px) -->
+				<button type="button" class="hamburger-btn" aria-label="<?php esc_attr_e( 'Open menu', 'midu' ); ?>" aria-expanded="false">
+					<span class="hamburger-btn__line"></span>
+					<span class="hamburger-btn__line"></span>
+					<span class="hamburger-btn__line"></span>
+				</button>
+
+				<!-- Navigation Menu (desktop: visible above 1060px) -->
+				<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary menu', 'midu' ); ?>">
 					<?php
 					wp_nav_menu(
 						array(
@@ -66,5 +78,22 @@
 			</div>
 		</div>
 	</header><!-- #masthead -->
+
+	<!-- Mobile menu (outside header so not affected by header transform) -->
+	<div class="mobile-menu-overlay" aria-hidden="true"></div>
+	<div class="mobile-menu-drawer" id="mobile-menu-drawer" aria-hidden="true">
+		<nav class="mobile-menu-drawer__nav" aria-label="<?php esc_attr_e( 'Mobile menu', 'midu' ); ?>">
+			<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'mobile-menu',
+					'container'      => false,
+					'menu_class'     => 'nav-menu mobile-nav-menu',
+				)
+			);
+			?>
+		</nav>
+	</div>
 
 	<div id="content" class="site-content">
