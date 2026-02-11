@@ -177,23 +177,14 @@ font-size: size(16px);
 			height: 555px;
 			position: relative;
 			z-index: 1;
-			mask-image: url(../images/overview_img_bg.svg);
-			-webkit-mask-image: url(../images/overview_img_bg.svg);
-			mask-repeat: no-repeat;
-			-webkit-mask-repeat: no-repeat;
-			-webkit-mask-size: 100% auto;
-			mask-size: 100% auto;
-			background-color: #1B273D;
-			display: block;
 			overflow: hidden;
 			height: auto;
-    position: relative;
-	border-radius: 20px;
-	border-bottom-right-radius: 0;
-    z-index: 1;
-  overflow: hidden;
-    
-    display: block;
+			position: relative;
+			border-radius: 20px;
+			border-bottom-right-radius: 0;
+			z-index: 1;
+			overflow: hidden;
+    		display: block;
 
 	@media screen and (max-width: 1024px) {
 	border-radius: 10px;

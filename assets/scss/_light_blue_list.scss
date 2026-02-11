@@ -78,19 +78,19 @@
 		background-position: top right;
 		z-index: 3;
 
-			@media screen and (max-width: 1440px) {
-width: 100px;
-    height: 88px;
+		@media screen and (max-width: 1440px) {
+			width: 100px;
+			height: 88px;
 		}
 
 		@media screen and (max-width: 768px) {
-    width: 70px;
-    height: 60px;
+			width: 70px;
+			height: 60px;
 		}
 
 		@media screen and (max-width: 500px) {
-           width: 55px;
-        height: 45px;
+            width: 55px;
+        	height: 45px;
 		}
 	}
 	&::after {
@@ -106,9 +106,9 @@ width: 100px;
 		background-position: bottom left;
 		z-index: 3;
 
-			@media screen and (max-width: 1440px) {
-width: 100px;
-    height: 88px;
+		@media screen and (max-width: 1440px) {
+			width: 100px;
+			height: 88px;
 		}
 
 		@media screen and (max-width: 768px) {
@@ -233,9 +233,9 @@ border-radius: 10px;
     transform: rotate(90deg);
 
 	  @media #{$media-1024}{ 
-        width: 55px;
-        height: 44px;
-        bottom: 4px;
+		width: 53px;
+        height: 45px;
+        bottom: 3px;
         right: -6px;
 			
 	  }

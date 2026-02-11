@@ -28,7 +28,7 @@ unset( $item );
 <section class="key-details-section" aria-label="<?php echo esc_attr( $title ); ?>">
 	<div class="container">
 		<?php if ( $title || $subtitle ) : ?>
-			<header class="key-details-section__header" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+			<header class="key-details-section__header">
 				<?php if ( $title ) : ?>
 					<h2 class="key-details-section__title"><?php echo esc_html( $title ); ?></h2>
 				<?php endif; ?>
@@ -38,8 +38,8 @@ unset( $item );
 			</header>
 		<?php endif; ?>
 		<div class="key-details-section__grid">
-			<?php foreach ( $items as $index => $item ) : ?>
-				<div class="key-details-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="<?php echo esc_attr( 100 + ( $index * 100 ) ); ?>" data-aos-once="true">
+			<?php foreach ( $items as $item ) : ?>
+				<div class="key-details-card">
 					<div class="key-details-card__inner">
 						<?php if ( ! empty( $item['icon'] ) ) : ?>
 							<div class="key-details-card__icon">

@@ -19,7 +19,7 @@ get_header();
 	<div class="main_content">
 		<div class="container project_breadcrumb_sec">
 			<div class="breadcrumb breadcrumb-white">
-				<ul>
+				<ul data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
 					<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/home.svg' ); ?>" alt="Home"></a></li>
 					<li><a href="<?php echo esc_url( home_url( '/projects' ) ); ?>">Projects</a></li>
 					<li><span>A concise introduction capturing the project’s essence.</span></li>
@@ -30,6 +30,7 @@ get_header();
 			?>
 		</div>
 		<div class="project_detail_top_sec">
+			
 			<?php
 			set_query_var( 'key_details_title', 'Key Details' );
 			set_query_var( 'key_details_subtitle', 'Lorem ipsum dolor consectetur adipiscing elit tortor' );
@@ -74,7 +75,7 @@ get_header();
 				'End-to-end delivery and operational readiness',
 			) );
 			set_query_var( 'image_text_image', 'scope_pic.jpg' );
-			set_query_var( 'image_text_section_class', ' white_text' );
+			set_query_var( 'image_text_section_class', ' white_text dark_blue' );
 			get_template_part( 'template-parts/image-text-block' );
 			?>
 			<?php
@@ -93,7 +94,7 @@ get_header();
 				'Flexible spaces adaptable for future demand',
 			) );
 			set_query_var( 'image_text_image', 'design_feature.jpg' );
-			set_query_var( 'image_text_section_class', ' white_text reverse_direction' );
+			set_query_var( 'image_text_section_class', ' white_text reverse_direction dark_blue' );
 			get_template_part( 'template-parts/image-text-block' );
 			?>
 
@@ -113,12 +114,12 @@ get_header();
 				'Acts as a catalyst for future sector growth',
 			) );
 			set_query_var( 'image_text_image', 'impact_and_value.jpg' );
-			set_query_var( 'image_text_section_class', ' white_text' );
+			set_query_var( 'image_text_section_class', ' white_text dark_blue' );
 			get_template_part( 'template-parts/image-text-block' );
 			?>
 			<?php
 			set_query_var( 'photo_gallery_title', 'Photo Gallery' );
-			set_query_var( 'photo_gallery_images', array( 'gal_1.jpg', 'gal_2.jpg', 'gal_3.jpg' ) );
+			set_query_var( 'photo_gallery_images', array( 'gal_1.jpg', 'gal_2.jpg', 'gal_3.jpg', 'gal_4.jpg' ) );
 			get_template_part( 'template-parts/photo-gallery-section' );
 			?>
 	

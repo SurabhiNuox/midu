@@ -30,10 +30,10 @@ if ( ! $title ) {
 	<div class="container">
 		<div class="project-detail-banner__content">
 			<?php if ( $title ) : ?>
-				<h1 class="project-detail-banner__title"><?php echo esc_html( $title ); ?></h1>
+				<h1 class="project-detail-banner__title" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"><?php echo esc_html( $title ); ?></h1>
 			<?php endif; ?>
 			<?php if ( $description ) : ?>
-				<p class="project-detail-banner__description"><?php echo wp_kses_post( $description ); ?></p>
+				<p class="project-detail-banner__description" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true"><?php echo wp_kses_post( $description ); ?></p>
 			<?php endif; ?>
 		</div>
 	</div>

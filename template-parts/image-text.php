@@ -43,7 +43,7 @@ $wrapper_class = 'right_text_image' . ( ! empty( $image_text_section_class ) ? '
 ?>
 
 <div class="<?php echo esc_attr( $wrapper_class ); ?>">
-	<div class="right_text_main">
+	<div class="right_text_main" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
 		<?php if ( $image_text_title ) : ?>
 			<h2 class="second_title"><?php echo esc_html( $image_text_title ); ?></h2>
 		<?php endif; ?>
@@ -82,7 +82,7 @@ $wrapper_class = 'right_text_image' . ( ! empty( $image_text_section_class ) ? '
 		<?php endif; ?>
 	</div>
 	<?php if ( $image_text_image ) : ?>
-		<div class="right_text_img">
+		<div class="right_text_img" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="150" data-aos-once="true">
 			<img src="<?php echo esc_url( $image_text_image ); ?>" alt="<?php echo esc_attr( $image_text_image_alt ); ?>">
 		</div>
 	<?php endif; ?>

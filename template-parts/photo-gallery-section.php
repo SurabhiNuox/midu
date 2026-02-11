@@ -27,10 +27,10 @@ unset( $img );
 <section class="photo-gallery-section" aria-label="<?php echo esc_attr( $title ); ?>">
 	<div class="container">
 		<?php if ( $title ) : ?>
-			<h2 class="photo-gallery-section__title"><?php echo esc_html( $title ); ?></h2>
+			<h2 class="photo-gallery-section__title" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true"><?php echo esc_html( $title ); ?></h2>
 		<?php endif; ?>
 		</div>
-		<div class="photo-gallery-section__slider-wrap">
+		<div class="photo-gallery-section__slider-wrap" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true">
 			<div class="swiper photo-gallery-swiper">
 				<div class="swiper-wrapper">
 					<?php foreach ( $images as $image ) : ?>

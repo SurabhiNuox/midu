@@ -19,7 +19,7 @@ if ( ! is_array( $items ) || empty( $items ) ) {
 
 <section class="featured-projects-section" aria-label="<?php echo esc_attr( $title ); ?>">
 	<div class="container">
-		<header class="featured-projects-section__header">
+		<header class="featured-projects-section__header" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
 			<?php if ( $title ) : ?>
 				<h2 class="featured-projects-section__title"><?php echo esc_html( $title ); ?></h2>
 			<?php endif; ?>

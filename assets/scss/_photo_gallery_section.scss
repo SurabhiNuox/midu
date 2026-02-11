@@ -6,8 +6,41 @@
 	width: 100%;
 	padding: 60px 0 80px;
 	background-color: $white;
+	border-radius: 10px;
 	position: relative;
-
+	&::before{
+		content: "";
+		position: absolute;
+		top: -2px;
+		right: -1px;
+		width: 128px;
+		height: 111px;
+		background-image: url(../images/top_mask.svg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: top right;
+		z-index: 3;
+		@include max(1024){
+			top: -5px;
+		}
+	}
+	&::after{
+		content: "";
+		position: absolute;
+		bottom: -1px;
+		left: -7px;
+		width: 100px;
+		height: 85px;
+		background-color: #35435a;
+		mask-image: url(../images/top_mask.svg);
+		-webkit-mask-image: url(../images/top_mask.svg);
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-size: 100% 100%;
+		mask-size: 100% 100%;
+		z-index: 3;
+		transform: rotate(180deg);
+	}
 	@include max(992) {
 		padding: 50px 0 60px;
 	}
@@ -68,7 +101,7 @@
 		object-fit: cover;
 		display: block;
 	}
-
+	
 	@include max(767) {
 		border-radius: 12px;
 		aspect-ratio: 16 / 10;
