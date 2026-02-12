@@ -174,8 +174,6 @@ function addarah_scripts()
 	wp_enqueue_style('footer-style', get_template_directory_uri() . '/assets/scss/main.css', array(), _S_VERSION);
 	
 	wp_enqueue_style('nice', get_template_directory_uri() . '/assets/css/nice-select.css', array(), _S_VERSION);
-	// Enqueue WhatsApp button styles (separate file until SCSS is compiled)
-	wp_enqueue_style('whatsapp-button-style', get_template_directory_uri() . '/assets/css/whatsapp-button.css', array(), _S_VERSION);
 
 	// Enqueue Lenis Smooth Scroll library (CDN) - loaded on all pages
 	wp_enqueue_script('lenis', 'https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js', array(), '1.0.42', false);

@@ -108,6 +108,12 @@
 		</div>
 	</footer><!-- #colophon -->
 
+	<?php if ( is_front_page() ) : ?>
+		<a href="https://wa.me/966500000000" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="<?php esc_attr_e( 'Chat on WhatsApp', 'midu' ); ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/whatsapp.png' ); ?>" alt="WhatsApp" width="56" height="56">
+		</a>
+	<?php endif; ?>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
