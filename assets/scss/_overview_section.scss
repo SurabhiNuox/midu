@@ -120,6 +120,7 @@
 		border-radius: 20px;
 		border-bottom-right-radius: 0;
 
+		// Soft fade on right edge so image doesn’t end in a hard vertical line
 		   &::before{
                   content: "";
     position: absolute;

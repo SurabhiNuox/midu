@@ -1,208 +1,95 @@
 <?php
 /**
- * The about template file
+ * Template Name: About
+ * About page — inner banner only.
+ * Use page slug: about-midu (set in WP Admin → Edit Page → Permalink).
  *
- * 
- *
- * @package addarah
+ * @package midu
  */
 
 get_header();
 ?>
 
-<main id="primary" class="site-main">
-	<div class="home-page">
+<div class="about_page">
+	<?php
+	// Optional: set custom banner title (leave empty to use page title or slug)
+	set_query_var( 'banner_title', 'About Us' );
+	set_query_var( 'banner_bg_image', get_template_directory_uri() . '/assets/images/about_banner.jpg' );
+	get_template_part( 'template-parts/inner-banner' );
+	?>
+	<div class="main_content">
 		<?php
-		// Banner Section
-		set_query_var('banner_title', 'About Us');
-		set_query_var('banner_bg_image', get_template_directory_uri() . '/assets/images/about-banner.png');
-		get_template_part('template-parts/Banner');
-		?>
-
-		<?php
-		// Overview Section
-		get_template_part('template-parts/overview-section');
-		?>
-
-		<?php
-		$image_text_image = get_template_directory_uri() . '/assets/images/about_pic.jpg';
-		$image_text_headline_1 = 'Discover the Story Behind';
-		$image_text_headline_2 = 'AD-DARAH';
-		$image_text_paragraphs = array(
-			'AD-DARAH is Riyadh\'s premier destination for iconic events, built on a strong Saudi heritage while embracing modern innovation. From corporate summits to royal weddings, our venue represents elegance, excellence, and cultural pride.',
-			'AD-DARAH is a world-class events venue located in the heart of Riyadh, designed to host corporate, cultural, and social gatherings of all scales. Combining architectural excellence with modern amenities, we provide an unmatched setting for experiences that leave a lasting impression.'
-		);
-
-		include locate_template('template-parts/ImageTextSection.php'); ?>
-		<?php
-		// Statistics Section
-		?>
-		<section class="pb_100">
-			<?php get_template_part('template-parts/Statistics'); ?>
-		</section>
-		<?php
-		// Partners/Logos Marquee Section
-		get_template_part('template-parts/Partners');
-		// Venue At A Glance Section
-		$venue_title = 'VENUE AT A GLANCE';
-		$venue_slides = array(
-			array(
-				'image' => get_template_directory_uri() . '/assets/images/venue_1.jpg',
-				'capacity_label' => 'Total Capacity',
-				'capacity_value' => 'Up to 2,500 Guests',
-				'button_text' => 'Download Venue Floor Plan',
-				'button_url' => '#'
-			),
-			array(
-				'image' => get_template_directory_uri() . '/assets/images/venue_2.jpg',
-				'capacity_label' => 'Total Capacity',
-				'capacity_value' => '1,500 Guests',
-				'button_text' => 'View Details',
-				'button_url' => '#'
-			),
-			array(
-				'image' => get_template_directory_uri() . '/assets/images/venue_3.jpg',
-				'capacity_label' => 'Total Capacity',
-				'capacity_value' => '500 Guests',
-				'button_text' => 'Learn More',
-				'button_url' => '#'
-			),
-			array(
-				'image' => get_template_directory_uri() . '/assets/images/venue_4.jpg',
-				'capacity_label' => 'Total Capacity',
-				'capacity_value' => '800 Guests',
-				'button_text' => 'Explore',
-				'button_url' => '#'
-			),
-			array(
-				'image' => get_template_directory_uri() . '/assets/images/venue_5.jpg',
-				'capacity_label' => 'Total Capacity',
-				'capacity_value' => '2,000 Guests',
-				'button_text' => 'View Floor Plan',
-				'button_url' => '#'
-			),
-			array(
-				'image' => get_template_directory_uri() . '/assets/images/venue_6.jpg',
-				'capacity_label' => 'Welcome Area',
-				'capacity_value' => 'Spacious Lobby',
-				'button_text' => 'Take Tour',
-				'button_url' => '#'
-			)
-		);
-		include locate_template('template-parts/VenueAtAGlance.php'); ?>
-		<?php
-		// Timeline Slider Section
-		$timeline_headline = 'Rooted in Saudi Identity';
-		$timeline_description = 'Inspired by the Kingdom\'s heritage and values, AD-DARAH was envisioned as more than just a venue—it is a cultural landmark. Every detail, from the architectural design to the hospitality experience, reflects the richness of Saudi tradition while offering the sophistication of modern luxury.';
-		$timeline_slides = array(
-			array(
-				'year' => '2024',
-				'image' => get_template_directory_uri() . '/assets/images/root_1.jpg',
-				'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-			),
-			array(
-				'year' => '2023',
-				'image' => get_template_directory_uri() . '/assets/images/root_2.jpg',
-				'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-			),
-			array(
-				'year' => '2022',
-				'image' => get_template_directory_uri() . '/assets/images/root_3.jpg',
-				'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-			),
-			array(
-				'year' => '2021',
-				'image' => get_template_directory_uri() . '/assets/images/root_1.jpg',
-				'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-			),
-			array(
-				'year' => '2020',
-				'image' => get_template_directory_uri() . '/assets/images/root_2.jpg',
-				'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.'
-			),
-
-		);
-		include locate_template('template-parts/TimelineSlider.php'); ?>
-		<div class="about-page-services-stack-wrapper">
-			<?php
-			// Vision Mission Stack Section
-			$services_stack_services = array(
-				array(
-					'title' => 'Our Vision',
-					'description' => 'To be the Kingdom\'s leading venue for prestigious events, setting new benchmarks in hospitality and excellence.',
-					'image' => get_template_directory_uri() . '/assets/images/vision.jpg',
-				),
-				array(
-					'title' => 'Our Mission',
-					'description' => 'To deliver exceptional experiences that honor Saudi heritage while embracing innovation, creating unforgettable moments for every event we host.',
-					'image' => get_template_directory_uri() . '/assets/images/mision.jpg',
-				),
-			);
-			set_query_var('services_stack_services', $services_stack_services);
-			get_template_part('template-parts/ServicesStack');
+			set_query_var('overview_title', 'Crafting Spaces That Inspire. Building Experiences That Last.');
+			set_query_var('overview_image', get_template_directory_uri() . '/assets/images/about_pic.jpg');
+			set_query_var('overview_graphic', get_template_directory_uri() . '/assets/images/blue-bg-left-service.svg');
+			set_query_var('overview_content', array(
+				'MIDU is a forward-thinking interior design and build company dedicated to transforming everyday environments into meaningful, functional, and aesthetically elevated spaces. With a commitment to innovation, craftsmanship, and client-centered design, MIDU delivers turnkey interior solutions that merge creativity with technical excellence.',
+				'Founded on the belief that great spaces shape better living and working experiences, MIDU blends contemporary design thinking with meticulous execution. Every project—residential, commercial, hospitality, or retail—is approached with a deep understanding of the client’s vision, lifestyle, and long-term needs.',
+			));
+			get_template_part('template-parts/overview-section');
 			?>
-		</div>
+
 		<?php
-		// Dual Slider Section
-		$dual_slider_heading = 'Our Values';
-		$dual_slider_items = array(
+		// Mission & Vision cards (reusable card template)
+		$theme_img = get_template_directory_uri() . '/assets/images/';
+		set_query_var( 'mission_vision_items', array(
 			array(
-				'subheading' => 'Heritage & Identity',
-				'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-				'image' => get_template_directory_uri() . '/assets/images/dual_01.png',
+				'image'   => $theme_img . 'our_vision.jpg',
+				'title'   => 'Our Mission',
+				'content' => "To deliver high-impact, sustainable developments that enhance the Kingdom's economic and social landscape. Through strategic investment, innovative planning, and trusted partnerships, we transform opportunities into enduring value—building projects that empower communities and support Saudi Arabia's long-term vision.",
 			),
 			array(
-				'subheading' => 'Excellence in Service',
-				'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-				'image' => get_template_directory_uri() . '/assets/images/dual_02.png',
+				'image'   => $theme_img . 'our_mission.jpg',
+				'title'   => 'Our Vision',
+				'content' => "To be a leading Saudi-born development company recognized for shaping transformative projects that drive national progress, inspire innovation, and set new standards of excellence across multiple sectors.",
 			),
-			array(
-				'subheading' => 'Innovation & Modernity',
-				'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-				'image' => get_template_directory_uri() . '/assets/images/dual_03.png',
-			),
-		);
-		set_query_var('dual_slider_heading', $dual_slider_heading);
-		set_query_var('dual_slider_items', $dual_slider_items);
-		get_template_part('template-parts/DualSlider');
+		) );
+		get_template_part( 'template-parts/mission-vision-section' );
 		?>
+
 		<?php
-		// Sustainability Section
-		$sustainability_tag = 'Sustainability & Vision 2030';
-		$sustainability_heading = 'Our Commitment to the Future';
-		$sustainability_paragraph = 'At AD-DARAH, sustainability is not an option—it is our responsibility. In alignment with Saudi Arabia\'s Vision 2030, we have integrated eco-conscious practices and innovative solutions that reduce environmental impact while elevating guest experiences.';
-		$sustainability_image = get_template_directory_uri() . '/assets/images/future.png';
-		$sustainability_items = array(
-			array(
-				'icon' => get_template_directory_uri() . '/assets/images/energy.svg',
-				'text' => 'Smart energy management system',
-			),
-			array(
-				'icon' => get_template_directory_uri() . '/assets/images/catering.svg',
-				'text' => 'Sustainable catering solutions',
-			),
-			array(
-				'icon' => get_template_directory_uri() . '/assets/images/food.svg',
-				'text' => 'Locally sourced materials and food',
-			),
-			array(
-				'icon' => get_template_directory_uri() . '/assets/images/recycle.svg',
-				'text' => 'Waste reduction & recycling initiatives',
-			),
-		);
-		set_query_var('sustainability_tag', $sustainability_tag);
-		set_query_var('sustainability_heading', $sustainability_heading);
-		set_query_var('sustainability_paragraph', $sustainability_paragraph);
-		set_query_var('sustainability_image', $sustainability_image);
-		set_query_var('sustainability_items', $sustainability_items);
-		get_template_part('template-parts/Sustainability');
+		// Our Philosophy — text + list (icons) left, image right
+		$theme_img = get_template_directory_uri() . '/assets/images/';
+		set_query_var( 'philosophy_title', 'Our Philosophy' );
+		set_query_var( 'philosophy_intro', "At MIDU, design is more than what meets the eye—it's a purposeful process. We aim to create spaces that not only look beautiful but also feel intuitive, enhance usability, and improve overall wellbeing. Our philosophy is grounded in:" );
+		set_query_var( 'philosophy_items', array(
+			array( 'icon' => 'ph_icon_1.png', 'text' => 'Human-centered design' ),
+			array( 'icon' => 'ph_icon_2.png', 'text' => 'Sustainable material choices' ),
+			array( 'icon' => 'ph_icon_3.png', 'text' => 'Precision-led engineering' ),
+			array( 'icon' => 'ph_icon_4.png', 'text' => 'Adaptive, future-ready solutions' ),
+		) );
+		set_query_var( 'philosophy_outro', 'Each environment we create carries our signature blend of simplicity, sophistication, and functionality.' );
+		set_query_var( 'philosophy_image', $theme_img . 'philosopy_pic.jpg' );
+		get_template_part( 'template-parts/philosophy-section' );
 		?>
+
 		<?php
-		// Contact Us Section
-		get_template_part('template-parts/ContactUs');
+		// What We Do — 5 service cards (reusable card template)
+		$theme_img = get_template_directory_uri() . '/assets/images/';
+		set_query_var( 'wwd_title', 'What We Do' );
+		set_query_var( 'wwd_intro', 'MIDU provides end-to-end interior design and build services, ensuring seamless coordination from concept to completion. Our services include:' );
+		set_query_var( 'wwd_items', array(
+			array( 'icon' => 'we_1.png', 'title' => 'Interior Design & Concept Development' ),
+			array( 'icon' => 'we_2.png', 'title' => 'Technical Drawings & Space Planning' ),
+			array( 'icon' => 'we_3.png', 'title' => 'Fit-Out Execution & Project Management' ),
+			array( 'icon' => 'we_4.png', 'title' => 'Joinery, Furniture & Custom Fabrication' ),
+			array( 'icon' => 'we_5.png', 'title' => 'Material Sourcing & On-Site Supervision' ),
+		) );
+		set_query_var( 'wwd_outro', 'By combining design, engineering, and execution under one roof, we ensure efficiency, quality, and complete project transparency.' );
+		get_template_part( 'template-parts/what-we-do-section' );
+		?>
+
+		<?php
+		// Our Commitment — teal diagonal section with commitment_pic.jpg
+		set_query_var( 'commitment_title', 'Our Commitment' );
+		set_query_var( 'commitment_content', array(
+			'MIDU stands for integrity, quality, and innovation. Every project is an opportunity to create lasting value—spaces that age gracefully, perform efficiently, and elevate everyday experiences..',
+		) );
+		set_query_var( 'commitment_image', get_template_directory_uri() . '/assets/images/abt_commitment.jpg' );
+		get_template_part( 'template-parts/commitment-section' );
 		?>
 	</div>
-</main><!-- #main -->
+</div>
 
-<?php
+<?php	
 get_footer();
