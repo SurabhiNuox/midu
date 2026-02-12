@@ -29,10 +29,10 @@ $total    = count( $items );
 $show_btn = $total > $initial;
 ?>
 
-<section class="project-cards-section" aria-label="Our Projects" data-initial="<?php echo (int) $initial; ?>" data-per-page="<?php echo (int) $per_page; ?>">
+<section class="project-cards-section">
 	<div class="container">
 		<?php if ( $section_title || $section_subtitle ) : ?>
-			<div class="project-cards-section__header">
+			<div class="project-cards-section__header" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0" data-aos-once="true">
 				<?php if ( $section_title ) : ?>
 					<h2 class="project-cards-section__title"><?php echo esc_html( $section_title ); ?></h2>
 				<?php endif; ?>
@@ -52,7 +52,7 @@ $show_btn = $total > $initial;
 				set_query_var( 'project_card_link', isset( $item['link'] ) ? $item['link'] : '#' );
 				set_query_var( 'project_card_show_button', ! empty( $item['show_button'] ) );
 				?>
-				<div class="project-card-wrap<?php echo $is_hidden ? ' project-card--hidden' : ''; ?>">
+				<div class="project-card-wrap<?php echo $is_hidden ? ' project-card--hidden' : ''; ?>" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="<?php echo 300 + ( (int) $i * 100 ); ?>" data-aos-once="true">
 					<?php get_template_part( 'template-parts/project-card' ); ?>
 				</div>
 			<?php endforeach; ?>

@@ -32,6 +32,9 @@
 						actions.style.display = 'none';
 					}
 				}
+				if ( typeof window.AOS !== 'undefined' && typeof window.AOS.refresh === 'function' ) {
+					window.AOS.refresh();
+				}
 			}
 
 			btn.addEventListener( 'click', revealNext );

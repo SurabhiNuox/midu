@@ -14,6 +14,9 @@ $commitment-teal: #16888C;
 	@include max(1060) {
 		margin-bottom: -125px;
 	}
+	@include max(767) {
+		border-top-left-radius: 15px;
+	}
 }
 
 .commitment-section__inner {
@@ -21,7 +24,10 @@ $commitment-teal: #16888C;
   	align-items: center;
     position: relative;
     // top: -100px;
-
+	@include max(992) {
+		flex-direction: column;
+		background-color: #126D70;
+	}
 
 }
 .commitment-section__bg{
@@ -53,7 +59,9 @@ $commitment-teal: #16888C;
     -webkit-mask-size: 100%;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-position: top right;
-
+	@include max(992) {
+		display: none;
+	}
 }
 
 .commitment-section__content {
@@ -74,7 +82,12 @@ $commitment-teal: #16888C;
 		max-width: 40%;
 	}
 	@include max(992) {
-		padding-left: calc((100% - (767px - 1.5rem))/2);
+		max-width: 100%;
+        margin-left: 0;
+        padding: 45px;
+	}
+	@include max(767) {
+		padding: 25px;
 	}
 	p{
 		color: $white;
@@ -82,6 +95,9 @@ $commitment-teal: #16888C;
 		margin-bottom: 25px;
 		&:last-child {
 			margin-bottom: 0;
+		}
+		@include max(1060) {
+			margin-bottom: 10px;
 		}
 	}
 }
@@ -103,8 +119,8 @@ $commitment-teal: #16888C;
 		margin-bottom: 16px;
 	}
 	@include max(767) {
-		font-size: size(28px);
-		margin-bottom: 14px;
+		font-size: size(27px);
+		margin-bottom: 5px;
 	}
 }
 
@@ -138,6 +154,11 @@ $commitment-teal: #16888C;
 	@include max(1060) {
 		height: 400px;
 	}
+	@include max(992) {
+		height: 300px;
+		flex: initial;
+		order: 2;
+	}
 	&::before{
 		content: '';
 		position: absolute;
@@ -160,9 +181,15 @@ $commitment-teal: #16888C;
 		background-repeat: no-repeat;
 		background-position: top right;
 		z-index: 3;
+		@include max(767) {
+			top: -1px;
+			right: 0;
+			width: 55px;
+			height: 48px;
+		}
 	}
 	@include max(992) {
-
+		
 	}
 	@include max(767) {
 
@@ -178,4 +205,7 @@ $commitment-teal: #16888C;
 	object-fit: cover;
 	object-position:top right;
 	display: block;
+	@include max(992) {
+		position: initial;
+	}
 }

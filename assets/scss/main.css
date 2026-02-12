@@ -5719,8 +5719,8 @@ body.menu-open {
   position: absolute;
   bottom: 5px;
   right: -6px;
-  width: 122px;
-  height: 111px;
+  width: 170px;
+  height: 158px;
   background-color: #1b273d;
   mask-image: url(../images/top_mask.svg);
   -webkit-mask-image: url(../images/top_mask.svg);
@@ -5877,7 +5877,7 @@ body.menu-open {
   position: absolute;
   bottom: -135px;
   right: 0;
-  z-index: 1;
+  z-index: 0;
 }
 @media screen and (max-width: 1060px) {
   .light-blue-list-section .light-blue-list-inner-bg {
@@ -6064,8 +6064,8 @@ body.menu-open {
   position: absolute;
   bottom: 4px;
   right: -7px;
-  width: 66px;
-  height: 55px;
+  width: 84px;
+  height: 76px;
   background-color: #96B7E3;
   mask-image: url(../images/top_mask.svg);
   -webkit-mask-image: url(../images/top_mask.svg);
@@ -11151,13 +11151,12 @@ body.menu-open {
 }
 @media screen and (max-width: 992px) {
   .sectors_page {
-    margin-bottom: -90px;
+    margin-bottom: 0;
   }
 }
 
 .sectors-grid {
   width: 100%;
-  margin-top: -130px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -11335,7 +11334,7 @@ body.menu-open {
 }
 @media screen and (max-width: 992px) {
   .sector-card {
-    border-radius: 15px;
+    border-radius: 20px;
   }
 }
 
@@ -11372,7 +11371,7 @@ body.menu-open {
 }
 @media screen and (max-width: 992px) {
   .sector-card__image-wrap {
-    height: 195px;
+    height: 214px;
   }
 }
 
@@ -11421,8 +11420,8 @@ body.menu-open {
   font-family: "REM", sans-serif;
   font-size: 1.75rem;
   font-weight: 400;
-  line-height: 1.3;
-  margin: 0 0 10px 0;
+  line-height: 1.2;
+  margin: 0 0 8px 0;
   color: #fff;
 }
 @media screen and (max-width: 1500px) {
@@ -12161,11 +12160,22 @@ body.menu-open {
     margin-bottom: -125px;
   }
 }
+@media screen and (max-width: 767px) {
+  .commitment-section {
+    border-top-left-radius: 15px;
+  }
+}
 
 .commitment-section__inner {
   display: flex;
   align-items: center;
   position: relative;
+}
+@media screen and (max-width: 992px) {
+  .commitment-section__inner {
+    flex-direction: column;
+    background-color: #126D70;
+  }
 }
 
 .commitment-section__bg {
@@ -12200,6 +12210,11 @@ body.menu-open {
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: top right;
 }
+@media screen and (max-width: 992px) {
+  .commitment-section__teal {
+    display: none;
+  }
+}
 
 .commitment-section__content {
   padding-left: calc((100% - (1400px - 1.5rem)) / 2);
@@ -12227,7 +12242,14 @@ body.menu-open {
 }
 @media screen and (max-width: 992px) {
   .commitment-section__content {
-    padding-left: calc((100% - (767px - 1.5rem)) / 2);
+    max-width: 100%;
+    margin-left: 0;
+    padding: 45px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .commitment-section__content {
+    padding: 25px;
   }
 }
 .commitment-section__content p {
@@ -12237,6 +12259,11 @@ body.menu-open {
 }
 .commitment-section__content p:last-child {
   margin-bottom: 0;
+}
+@media screen and (max-width: 1060px) {
+  .commitment-section__content p {
+    margin-bottom: 10px;
+  }
 }
 
 .commitment-section__title {
@@ -12261,8 +12288,8 @@ body.menu-open {
 }
 @media screen and (max-width: 767px) {
   .commitment-section__title {
-    font-size: 1.75rem;
-    margin-bottom: 14px;
+    font-size: 1.6875rem;
+    margin-bottom: 5px;
   }
 }
 
@@ -12303,6 +12330,13 @@ body.menu-open {
     height: 400px;
   }
 }
+@media screen and (max-width: 992px) {
+  .commitment-section__image-wrap {
+    height: 300px;
+    flex: initial;
+    order: 2;
+  }
+}
 .commitment-section__image-wrap::before {
   content: "";
   position: absolute;
@@ -12326,6 +12360,14 @@ body.menu-open {
   background-position: top right;
   z-index: 3;
 }
+@media screen and (max-width: 767px) {
+  .commitment-section__image-wrap:after {
+    top: -1px;
+    right: 0;
+    width: 55px;
+    height: 48px;
+  }
+}
 .commitment-section__image {
   position: absolute;
   top: 0;
@@ -12337,6 +12379,11 @@ body.menu-open {
   -o-object-position: top right;
      object-position: top right;
   display: block;
+}
+@media screen and (max-width: 992px) {
+  .commitment-section__image {
+    position: initial;
+  }
 }
 
 @keyframes projectPageReveal {
@@ -12378,6 +12425,10 @@ body.menu-open {
     opacity: 1;
   }
 }
+.projects_page .light-blue-list-section .light-blue-list-inner h2 {
+  margin-bottom: 0;
+}
+
 .mission-vision-section {
   width: 100%;
   padding: 100px 0;

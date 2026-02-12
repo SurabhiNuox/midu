@@ -23,7 +23,7 @@
 		position: absolute;
 		bottom:-135px;
 		right: 0;
-		z-index: 1;
+		z-index: 0;
 		@include max(1060) {
 			width: 40%;
 		}
@@ -221,8 +221,8 @@
 				position: absolute;
 				bottom: 4px;
 				right: -7px;
-				width: 66px;
-				height: 55px;
+				width: 84px;
+				height: 76px;
 				background-color: #96B7E3;
 				mask-image: url(../images/top_mask.svg);
 				-webkit-mask-image: url(../images/top_mask.svg);

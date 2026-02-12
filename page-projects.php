@@ -18,7 +18,7 @@ get_header();
 	?>
 	   <div class="main_content">
 		<?php
-			set_query_var('overview_title', 'Services Overview');
+			set_query_var('overview_title', 'Overview');
 			set_query_var('overview_image', get_template_directory_uri() . '/assets/images/project_overview.jpg');
 			set_query_var('overview_graphic', get_template_directory_uri() . '/assets/images/blue-bg-left-service.svg');
 			set_query_var('overview_content', array(
