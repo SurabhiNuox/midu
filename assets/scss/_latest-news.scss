@@ -43,6 +43,9 @@ $latest-news-title-clr: #1a1a1a;
 			top: -25px;
 		}
 	}
+	.news-card__image-wrap::before{
+		background-color: #d9d9d9;
+	}
 }
 
 // Decorative teal shape top-left
@@ -89,7 +92,8 @@ $latest-news-title-clr: #1a1a1a;
 	text-align: left;
 
 	@include max(992) {
-		font-size: size(26px);
+		font-size: size(35px);
+		line-height: size(40px);
 	}
 	@include max(767) {
 		font-size: 30px;

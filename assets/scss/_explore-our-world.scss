@@ -210,7 +210,9 @@
 				transform: translateY(-5px);
 			}
 		}
-
+		@include max(767) {
+			border-radius: 10px;
+		}
 
 		.card-title {
 			font-family: "REM", sans-serif;
@@ -225,13 +227,11 @@
 			}
 
 			@include max(992) {
-				font-size: 22px;
 				margin-bottom: 10px;
 			}
 
 			@include max(767) {
-				font-size: 22px;
-				margin-bottom: 15px;
+				margin-bottom: 5px;
 			}
 		}
 
@@ -271,6 +271,7 @@
 			position: relative;
 
 
+
 			@media #{$media-1024} {
 				height: 250px;
 			}
@@ -279,8 +280,11 @@
 				height: 280px;
 			}
 
-			@media #{$media-600} {
-				height: 220px;
+			@include max(767) {
+				height: 304px;
+				mask-image: url(../images/abt_mob_mask.svg);
+				-webkit-mask-image: url(../images/abt_mob_mask.svg);
+				
 			}
 
 			.card-image {
@@ -312,11 +316,11 @@
 			transition: all 0.3s ease-in-out;
 			clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.6rem), calc(100% - 0.6rem) 100%, 0 100%);
 
-			@media #{$media-600} {
-				width: 44px;
-				height: 44px;
-				bottom: 15px;
-				right: 15px;
+			@include max(767) {
+				width: 30px;
+				height: 30px;
+				bottom: 30px;
+				right: 20px;
 			}
 
 			svg {

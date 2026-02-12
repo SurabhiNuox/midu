@@ -270,6 +270,14 @@ $journey-dot-grid: rgba(255, 255, 255, 0.06);
 		font-size: size(40px);
 		line-height: size(42px);
 	}
+	@include max(992) {
+		font-size: size(35px);
+		line-height: size(35px);
+	}
+	@include max(767) {
+		font-size: size(30px);
+		line-height: size(35px);
+	}
 }
 // Content cards — two-column: image left, text right (aligned below timeline)
 .journey-legacy__cards-wrap {
@@ -347,7 +355,7 @@ $journey-dot-grid: rgba(255, 255, 255, 0.06);
 			min-height: auto;
 		}
 		@include max(992) {
-			width: 75%;
+			width: 90%;
 		}
 		@include max(767) {
 			width: 100%;

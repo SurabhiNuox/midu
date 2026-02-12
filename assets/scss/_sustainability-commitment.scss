@@ -25,6 +25,13 @@
 		-webkit-mask-position: top;
 		mask-position: top;
 		z-index: 99;
+		@include max(1060) {
+			top: -30px;
+		}
+		@include max(767) {
+			top: 0;
+			height: 90px;
+		}
 	}
 }
 
@@ -111,6 +118,9 @@
 		flex-direction: column;
 		align-items: flex-start;
 	}
+	@include max(767) {
+		padding-top: 70px;
+	}
 }
 
 // Fade-up on scroll (AOS-style, works with Lenis)
@@ -159,8 +169,13 @@
 		line-height: size(42px);
 		margin-bottom: 10px;
 	}
-	@media #{$media-768} {
+	@include max(992) {
 		margin-bottom: 12px;
+	}
+	@include max(767) {
+		font-size:30px;
+		line-height: 35px;
+		margin-bottom: 10px;
 	}
 }
 

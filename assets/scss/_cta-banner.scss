@@ -15,12 +15,18 @@ $cta-banner-btn: #1F2E3E;
 	@include max(992) {
 		padding: 25px 0 100px;
 	}
+	@include max(767) {
+		padding: 10px 0 80px;
+	}
 	.btn-primary{
 		padding: 13px 30px;
 		background-color: #1B273D;
 		gap: 10px;
 		&:hover{
 			background-color: #F47B47;
+		}
+		@include max(767) {	
+			padding: 10px 20px;
 		}
 	}
 	p{
@@ -53,17 +59,46 @@ $cta-banner-btn: #1F2E3E;
 	justify-content: space-between;
 	gap: 32px;
 	padding: 45px 115px 45px 80px;
-	background-image: url(../images/cta_banner_mask.png);
+	// background-image: url(../images/cta_banner_mask.png);
+	background: #126d70;
     min-height: 185px;
     box-sizing: border-box;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+	position: relative;
+	border-radius: 20px;
+	&::before{
+		content: "";
+		position: absolute;
+		top: -1px;
+		right: -6px;
+		width: 125px;
+		height: 115px;
+		background-color: #d9d9d9;
+		mask-image: url(../images/cta_mask_img.svg);
+		-webkit-mask-image: url(../images/cta_mask_img.svg);
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-size: 100% 100%;
+		mask-size: 100% 100%;
+		z-index: 3;
+		@include max(1060) {
+			width: 80px;
+			height: 70px;
+		}
+		@include max(767) {		
+			width: 60px;
+			height: 50px;
+		}
+	}
 	@include max(1060) {
 		padding: 30px 80px 30px 50px;
+		min-height: 145px;
 	}
 	@include max(992) {
-		min-height: 150px;
+		padding: 30px 50px 30px 40px;
+		border-radius: 10px;
 	}
 	@include max(767) {
 		padding: 20px;
@@ -71,7 +106,7 @@ $cta-banner-btn: #1F2E3E;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-		gap: 20px;
+		gap: 10px;
 
 	}
 }

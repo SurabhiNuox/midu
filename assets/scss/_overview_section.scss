@@ -62,6 +62,9 @@
 		@media (prefers-reduced-motion: reduce) {
 			animation: none;
 		}
+		@include max(1060) {	
+			display: none;
+		}
 	}
 
 // 	&::after{
