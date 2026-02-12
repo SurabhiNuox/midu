@@ -3792,6 +3792,11 @@ body.menu-open {
   max-width: 730px;
   padding-top: 2%;
 }
+@media screen and (max-width: 767px) {
+  .main-banner .banner-content {
+    padding-top: 30%;
+  }
+}
 .main-banner .banner-content .banner-title {
   font-family: "REM", sans-serif;
   font-size: 3.4375rem;
@@ -3814,6 +3819,7 @@ body.menu-open {
 @media screen and (max-width: 767px) {
   .main-banner .banner-content .banner-title {
     font-size: 30px;
+    line-height: 35px;
     margin-bottom: 16px;
   }
 }
@@ -4171,6 +4177,7 @@ body.menu-open {
   mask-repeat: no-repeat;
   -webkit-mask-position: top;
   mask-position: top;
+  position: relative;
 }
 @media only screen and (max-width: 1024px) {
   .explore-our-world .explore-card .card-image-wrapper {
@@ -6901,7 +6908,7 @@ body.menu-open {
   padding: 30px;
   max-width: 420px;
   width: 100%;
-  min-height: 420px;
+  min-height: 480px;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
   position: relative;
 }
@@ -6976,8 +6983,8 @@ body.menu-open {
 
 .sustainability-commitment__card-link {
   position: absolute;
-  bottom: 30px;
-  right: 30px;
+  bottom: 0px;
+  right: 0px;
   transition: all 0.3s ease-in-out;
   z-index: 99;
 }
@@ -7020,7 +7027,7 @@ body.menu-open {
   overflow: hidden;
   background-color: #1B273D;
   height: 120vh;
-  z-index: 1;
+  z-index: 100;
 }
 @media screen and (max-width: 1060px) {
   .our-sectors {
@@ -7448,7 +7455,7 @@ body.menu-open {
           mask-position: top;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
-  z-index: 9;
+  z-index: 101;
   background-color: #126d70;
 }
 @media screen and (max-width: 1060px) {

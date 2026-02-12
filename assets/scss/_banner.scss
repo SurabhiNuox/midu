@@ -93,7 +93,9 @@
 		max-width: 730px;
 		padding-top:2%;
 		
-
+		@include max(767) {
+			padding-top: 30%;
+		}
 		.banner-title {
 			font-family: "REM", sans-serif;
 			font-size: size(55px);
@@ -113,6 +115,7 @@
 
 			@include max(767) {
 				font-size: 30px;
+				line-height: 35px;
 				margin-bottom: 16px;
 			}
 		}

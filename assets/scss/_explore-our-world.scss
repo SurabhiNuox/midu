@@ -268,6 +268,8 @@
 			mask-repeat: no-repeat;
 			-webkit-mask-position: top;
 			mask-position: top;
+			position: relative;
+
 
 			@media #{$media-1024} {
 				height: 250px;

@@ -7,9 +7,6 @@
 (function () {
 	'use strict';
 
-	var hasRunInnerAnimation = false;
-	var runInnerAnimation = function () {};
-
 	function getScrollTop() {
 		if (window.lenis && typeof window.lenis.scroll === 'number') {
 			return window.lenis.scroll;
@@ -60,12 +57,18 @@
 		if (!sticky || bgSlides.length === 0) return;
 
 		var totalSlides = bgSlides.length;
+		var intendedHeight = totalSlides * 0.5 * window.innerHeight;
+		// Ensure section is at least N×50vh so next section starts only after animation ends
+		var minH = Math.round(intendedHeight);
+		if (section.style.minHeight !== minH + 'px') {
+			section.style.minHeight = minH + 'px';
+		}
+
 		var scrollY = getScrollTop();
 		var rect = section.getBoundingClientRect();
 		var sectionTop = scrollY + rect.top;
-		// Use intended scroll distance (N × 50vh) so progress and unpin match last slide; avoids empty space
-		var intendedHeight = totalSlides * 0.5 * window.innerHeight;
-		var sectionHeight = Math.min(section.offsetHeight, Math.round(intendedHeight));
+		// Use intended scroll distance (N × 50vh) for animation progress so pin ends after last slide
+		var sectionHeight = Math.round(intendedHeight);
 		var scrollInto = scrollY - sectionTop;
 		var progress = Math.max(0, Math.min(1, scrollInto / sectionHeight));
 		var index = Math.min(totalSlides - 1, Math.max(0, Math.floor(progress * totalSlides)));
@@ -95,7 +98,6 @@
 		if (scrollInto >= sectionHeight) {
 			if (shouldPin) {
 				sticky.classList.add('is-pinned');
-				if (!hasRunInnerAnimation) runInnerAnimation();
 			} else {
 				sticky.classList.remove('is-pinned');
 			}
@@ -106,7 +108,6 @@
 
 		if (shouldPin) {
 			sticky.classList.add('is-pinned');
-			if (!hasRunInnerAnimation) runInnerAnimation();
 		} else {
 			sticky.classList.remove('is-pinned');
 		}
@@ -114,53 +115,38 @@
 		setVerticalWipe(cardBlocks, index, subProgress);
 	}
 
-	function initInnerAnimation() {
-		if (typeof gsap === 'undefined') return;
+	function initFadeUp() {
 		var section = document.querySelector('.sustainability-commitment-section');
 		if (!section) return;
 		var inner = section.querySelector('.sustainability-commitment__inner');
-		if (!inner) return;
+		var left = section.querySelector('.sustainability-commitment__left');
+		var card = section.querySelector('.sustainability-commitment__card');
+		if (!inner || (!left && !card)) return;
 
-		var left = inner.querySelector('.sustainability-commitment__left');
-		var title = inner.querySelector('.sustainability-commitment__title');
-		var desc = left ? left.querySelector('p') : null;
-		var btn = left ? left.querySelector('.btn-primary') : null;
-		var card = inner.querySelector('.sustainability-commitment__card');
-		var elements = [title, desc, btn, card].filter(Boolean);
-		if (elements.length === 0) return;
-
-		var ease = 'power3.out';
-		var yStart = 26;
-		var duration = 0.7;
-		var stagger = 0.12;
-
-		gsap.set(elements, { opacity: 0, y: yStart });
-
-		runInnerAnimation = function () {
-			if (hasRunInnerAnimation) return;
-			hasRunInnerAnimation = true;
-			gsap.to(elements, {
-				opacity: 1,
-				y: 0,
-				duration: duration,
-				ease: ease,
-				stagger: stagger,
-				overwrite: true
-			});
-		};
-
-		// If section is already pinned on load (e.g. refresh on this section), run immediately
-		var sticky = section.querySelector('.sustainability-commitment-section__sticky');
-		if (sticky && sticky.classList.contains('is-pinned')) {
-			runInnerAnimation();
-		}
+		var animated = [left, card].filter(Boolean);
+		var observer = new IntersectionObserver(
+			function (entries) {
+				entries.forEach(function (entry) {
+					if (!entry.isIntersecting) return;
+					animated.forEach(function (el, i) {
+						if (!el) return;
+						setTimeout(function () {
+							el.classList.add('is-visible');
+						}, i * 100);
+					});
+					observer.disconnect();
+				});
+			},
+			{ root: null, rootMargin: '0px', threshold: 0.15 }
+		);
+		observer.observe(inner);
 	}
 
 	function init() {
 		var section = document.querySelector('.sustainability-commitment-section');
 		if (!section) return;
 
-		initInnerAnimation();
+		initFadeUp();
 
 		var bgSlides = section.querySelectorAll('.sustainability-commitment__bg-slide');
 		var cardBlocks = section.querySelectorAll('.sustainability-commitment__card-block');

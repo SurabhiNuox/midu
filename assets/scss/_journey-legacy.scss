@@ -33,7 +33,7 @@ $journey-dot-grid: rgba(255, 255, 255, 0.06);
 		mask-size: 100%;
 		mask-position: top;
 		mask-repeat: no-repeat;
-		z-index:9;
+		z-index:101;
 		background-color: #126d70;
 		@include max(1060) {
 			top: -70px;

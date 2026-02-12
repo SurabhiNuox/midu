@@ -113,6 +113,18 @@
 	}
 }
 
+// Fade-up on scroll (AOS-style, works with Lenis)
+.sustainability-commitment__animate-in {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+	&.is-visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 .sustainability-commitment__left {
 	max-width: 520px;
 	@include max(1060) {
@@ -159,7 +171,7 @@
 	padding: 30px;
 	max-width: 420px;
 	width: 100%;
-	min-height: 420px;
+	min-height: 480px;
 	box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
 	position: relative;
 	@include max(1500) {
@@ -225,8 +237,8 @@
 
 .sustainability-commitment__card-link {
 	position: absolute;
-	bottom: 30px;
-	right: 30px;
+	bottom: 0px;
+    right: 0px;
 	transition: all 0.3s ease-in-out;
 	z-index: 99;
 

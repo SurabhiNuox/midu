@@ -31,6 +31,14 @@ $slides = array(
 		'link'       => home_url( '/sustainability' ),
 		'link_label' => 'Explore Governance',
 	),
+	array(
+		'bg_image'   => get_template_directory_uri() . '/assets/images/sus_big_3.jpg',
+		'card_image' => get_template_directory_uri() . '/assets/images/sus_small_3.jpg',
+		'title'      => 'Environmental.',
+		'description' => 'Minimizing environmental impact through smart, efficient solutions.',
+		'link'       => home_url( '/sustainability' ),
+		'link_label' => 'Explore Governance',
+	),
 );
 
 $slide_count = count( $slides );
@@ -45,7 +53,7 @@ $slide_count = count( $slides );
 				<?php endforeach; ?>
 				<div class="sustainability-commitment__overlay" aria-hidden="true"></div>
 				<div class="container sustainability-commitment__inner">
-					<div class="sustainability-commitment__left">
+					<div class="sustainability-commitment__left sustainability-commitment__animate-in">
 						<h2 class="second_title sustainability-commitment__title">Our Sustainability Commitment</h2>
 						<p>Responsible development at the core of everything we build.</p>
 						<a href="<?php echo esc_url( home_url( '/sustainability' ) ); ?>" class="btn-primary">
@@ -55,7 +63,7 @@ $slide_count = count( $slides );
 							</span>
 						</a>
 					</div>
-					<div class="sustainability-commitment__card">
+					<div class="sustainability-commitment__card sustainability-commitment__animate-in">
 						<?php foreach ( $slides as $i => $slide ) : ?>
 						<div class="sustainability-commitment__card-block<?php echo $i === 0 ? ' is-active' : ''; ?>" data-card-index="<?php echo (int) $i; ?>">
 							<h3 class="sustainability-commitment__card-title"><?php echo esc_html( $slide['title'] ); ?></h3>

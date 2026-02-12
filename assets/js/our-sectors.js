@@ -1,8 +1,10 @@
 /**
  * Our Sectors — GSAP animation when section enters view
- * 1. Center circle (with rings and label) scales up and fades in
- * 2. Lines fade in with the circle
- * 3. Sector cards scale up and fade in one by one with stagger
+ * 1. Title fades up
+ * 2. Center circle (with rings and label) scales up and fades in
+ * 3. Lines fade in with the circle
+ * 4. Sector cards scale up and fade in one by one with stagger
+ * 5. CTA button fades up
  * Fallback: if observer never fires (e.g. smooth scroll), run animation after 2.5s so elements are always visible.
  */
 
@@ -15,9 +17,11 @@
 		var section = document.querySelector('.our-sectors');
 		if (!section) return;
 
+		var titleEl = section.querySelector('.our-sectors__title');
 		var center = section.querySelector('.our-sectors__center');
 		var lines = section.querySelectorAll('.our-sectors__line');
 		var cardInners = section.querySelectorAll('.our-sectors__card-inner');
+		var ctaWrap = section.querySelector('.our-sectors__cta-wrap');
 		if (!center || !cardInners.length) return;
 
 		var ease = 'power3.out';
@@ -31,11 +35,17 @@
 			hasRun = true;
 
 			// Ensure initial state (in case fallback runs before observer)
+			if (titleEl) gsap.set(titleEl, { opacity: 0, y: 24 });
 			gsap.set(center, { opacity: 0, scale: 0.65, xPercent: -50, yPercent: -50 });
 			gsap.set(lines, { opacity: 0 });
 			gsap.set(cardInners, { opacity: 0, scale: 0.88 });
+			if (ctaWrap) gsap.set(ctaWrap, { opacity: 0, y: 20 });
 
 			var tl = gsap.timeline({ ease: ease });
+
+			if (titleEl) {
+				tl.to(titleEl, { opacity: 1, y: 0, duration: 0.7, ease: ease });
+			}
 
 			tl.to(center, {
 				opacity: 1,
@@ -46,7 +56,7 @@
 				ease: ease,
 				force3D: true,
 				overwrite: true
-			});
+			}, titleEl ? 0.15 : 0);
 
 			if (lines.length) {
 				tl.to(lines, { opacity: 1, duration: 0.5, ease: ease }, '-=0.35');
@@ -60,12 +70,18 @@
 				ease: ease,
 				force3D: true
 			}, 0.4);
+
+			if (ctaWrap) {
+				tl.to(ctaWrap, { opacity: 1, y: 0, duration: 0.6, ease: ease }, 1.35);
+			}
 		}
 
 		// Hide elements until animation runs (so they are visible after runAnimation)
+		if (titleEl) gsap.set(titleEl, { opacity: 0, y: 24 });
 		gsap.set(center, { opacity: 0, scale: 0.65, xPercent: -50, yPercent: -50 });
 		gsap.set(lines, { opacity: 0 });
 		gsap.set(cardInners, { opacity: 0, scale: 0.88 });
+		if (ctaWrap) gsap.set(ctaWrap, { opacity: 0, y: 20 });
 
 		// Only run when section is actually visible (not covered by sustainability sticky)
 		function isSustainabilityPinned() {
@@ -86,6 +102,7 @@
 			runAnimation();
 		}
 
+		// Run animation when section enters viewport (e.g. 10% visible = "entering" the section)
 		var observer = new IntersectionObserver(
 			function (entries) {
 				entries.forEach(function (entry) {
@@ -93,7 +110,7 @@
 					tryRunAnimation();
 				});
 			},
-			{ rootMargin: '0px', threshold: 0 }
+			{ rootMargin: '0px', threshold: 0.1 }
 		);
 		observer.observe(section);
 
@@ -102,9 +119,10 @@
 			tryRunAnimation();
 		});
 
-		// Fallback: always show elements after 2.5s so they are never stuck hidden (e.g. if observer never fires with Lenis/smooth scroll)
+		// Fallback: only when section is in view (e.g. Lenis/smooth scroll may not fire observer)
 		setTimeout(function () {
 			if (hasRun) return;
+			if (!isSectionInView() || isSustainabilityPinned()) return;
 			observer.unobserve(section);
 			runAnimation();
 		}, 2500);
