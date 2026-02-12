@@ -167,7 +167,7 @@
 			
 		}
 
-		@include max(180) {
+		@include max(480) {
 			grid-template-columns: repeat(1, 1fr);
 			gap: 15px;
 

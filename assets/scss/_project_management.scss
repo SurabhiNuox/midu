@@ -125,10 +125,12 @@ grid-template-columns: repeat(3, 1fr);
 
 				 	@media #{$media-768}{
 grid-template-columns: repeat(3, 1fr);
+
 				}
 
 					@media #{$media-480}{
 grid-template-columns: repeat(2, 1fr);
+
 				}
 
 			   li{
@@ -138,10 +140,50 @@ grid-template-columns: repeat(2, 1fr);
 				   min-height: 155px;
 				   padding: 20px;
 				   transition: all 0.3s ease;
+				   position: relative;
+
+				    	@media #{$media-768}{
+
+							&:hover{
+                             background-image: none !important;
+							}
+				     &::before{
+	        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background: #79B2BE;
+        background: linear-gradient(142deg, rgb(121, 178, 190) 0%, rgb(176, 97, 67) 100%);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 0;
+		    opacity: 0.5;
+}
+
+&::after{
+	content: "";
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+        border-radius: 10px;
+        background: #79B2BE;
+        background: linear-gradient(123deg, rgb(56, 76, 99) 0%, rgb(53, 67, 90) 100%);
+        position: absolute;
+        left: 1px;
+        top: 1px;
+        z-index: 0;
+		    opacity: 0.5;
+}
+
+						}
+
+				 
 
 				   	@media #{$media-768}{
 min-height: 140px;
 				   padding: 15px;
+				   background-image: none;
+
 					}
 
 				   &:hover{
@@ -151,6 +193,8 @@ min-height: 140px;
 				   .project-management_icon{
 					   width: 100%;
 					   height: 28px;
+					   position: relative;
+					   z-index: 4;
 
 					   img{
 						    width: auto;
@@ -165,9 +209,14 @@ min-height: 140px;
 					  margin: 0;
 					  margin-top: 10px;
 					  color: $white;
+					     position: relative;
+					   z-index: 4;
 
 					    	@media #{$media-768}{
 font-size: 16px;
+
+
+
 							}
 				   }
 			   }

@@ -2510,8 +2510,7 @@ a,
   padding: 14px 32px;
   border: 2px solid #fff;
   border-radius: 0 0 0 15px;
-  -webkit-clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
-          clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -2520,8 +2519,7 @@ a,
     padding: 12px 26px;
     font-size: 15px;
     border-radius: 0 0 0 12px;
-    -webkit-clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
   }
 }
 @media only screen and (max-width: 600px) {
@@ -2529,8 +2527,7 @@ a,
     padding: 10px 22px;
     font-size: 14px;
     border-radius: 0 0 0 10px;
-    -webkit-clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
   }
 }
 .btn-secondary:hover {
@@ -2552,8 +2549,7 @@ a,
   font-weight: 500;
   padding: 14px 32px;
   border: 2px solid #20b2aa;
-  -webkit-clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
-          clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -2562,8 +2558,7 @@ a,
     padding: 12px 26px;
     font-size: 15px;
     border-radius: 0 0 0 12px;
-    -webkit-clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
   }
 }
 @media only screen and (max-width: 600px) {
@@ -2571,8 +2566,7 @@ a,
     padding: 10px 22px;
     font-size: 14px;
     border-radius: 0 0 0 10px;
-    -webkit-clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
   }
 }
 .btn-outline:hover {
@@ -3868,8 +3862,7 @@ body.menu-open {
   font-weight: 500;
   padding: 16px 36px;
   border-radius: 0 0 0 15px;
-  -webkit-clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
-          clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(32, 178, 170, 0.3);
 }
@@ -3878,8 +3871,7 @@ body.menu-open {
     padding: 14px 30px;
     font-size: 16px;
     border-radius: 0 0 0 12px;
-    -webkit-clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
   }
 }
 @media only screen and (max-width: 600px) {
@@ -3887,8 +3879,7 @@ body.menu-open {
     padding: 12px 26px;
     font-size: 15px;
     border-radius: 0 0 0 10px;
-    -webkit-clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
   }
 }
 .main-banner .banner-content .banner-button:hover {
@@ -4227,8 +4218,7 @@ body.menu-open {
   color: #fff;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.6rem), calc(100% - 0.6rem) 100%, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.6rem), calc(100% - 0.6rem) 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.6rem), calc(100% - 0.6rem) 100%, 0 100%);
 }
 @media screen and (max-width: 767px) {
   .explore-our-world .explore-card .card-cta-button {
@@ -6016,7 +6006,7 @@ body.menu-open {
     gap: 20px;
   }
 }
-@media screen and (max-width: 180px) {
+@media screen and (max-width: 480px) {
   .light-blue-list-section .light-blue-list ul {
     grid-template-columns: repeat(1, 1fr);
     gap: 15px;
@@ -6242,8 +6232,42 @@ body.menu-open {
 }
 @media only screen and (max-width: 768px) {
   .invest-development_right .invest-development_list .invest-development_item {
-    padding: 5px 10px;
+    padding: 10px 10px;
     min-height: 40px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .invest-development_right .invest-development_list .invest-development_item {
+    padding: 10px 10px;
+    min-height: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-image: none;
+  }
+  .invest-development_right .invest-development_list .invest-development_item::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: #79B2BE;
+    background: linear-gradient(142deg, rgb(121, 178, 190) 0%, rgb(176, 97, 67) 100%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+  }
+  .invest-development_right .invest-development_list .invest-development_item::after {
+    content: "";
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    border-radius: 10px;
+    background: #384C63;
+    background: linear-gradient(123deg, rgb(56, 76, 99) 0%, rgb(53, 67, 90) 100%);
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    z-index: 0;
   }
 }
 .invest-development_right .invest-development_list .invest-development_item:hover {
@@ -6456,11 +6480,44 @@ body.menu-open {
   min-height: 155px;
   padding: 20px;
   transition: all 0.3s ease;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  .project-management-section .project-management_inner ul li:hover {
+    background-image: none !important;
+  }
+  .project-management-section .project-management_inner ul li::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: #79B2BE;
+    background: linear-gradient(142deg, rgb(121, 178, 190) 0%, rgb(176, 97, 67) 100%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    opacity: 0.5;
+  }
+  .project-management-section .project-management_inner ul li::after {
+    content: "";
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    border-radius: 10px;
+    background: #79B2BE;
+    background: linear-gradient(123deg, rgb(56, 76, 99) 0%, rgb(53, 67, 90) 100%);
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    z-index: 0;
+    opacity: 0.5;
+  }
 }
 @media only screen and (max-width: 768px) {
   .project-management-section .project-management_inner ul li {
     min-height: 140px;
     padding: 15px;
+    background-image: none;
   }
 }
 .project-management-section .project-management_inner ul li:hover {
@@ -6469,6 +6526,8 @@ body.menu-open {
 .project-management-section .project-management_inner ul li .project-management_icon {
   width: 100%;
   height: 28px;
+  position: relative;
+  z-index: 4;
 }
 .project-management-section .project-management_inner ul li .project-management_icon img {
   width: auto;
@@ -6481,6 +6540,8 @@ body.menu-open {
   margin: 0;
   margin-top: 10px;
   color: #fff;
+  position: relative;
+  z-index: 4;
 }
 @media only screen and (max-width: 768px) {
   .project-management-section .project-management_inner ul li h4 {
@@ -6958,6 +7019,16 @@ body.menu-open {
   .sustainability-commitment__inner {
     padding-top: 70px;
   }
+}
+
+.sustainability-commitment__animate-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.sustainability-commitment__animate-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .sustainability-commitment__animate-in {
@@ -11882,7 +11953,7 @@ body.menu-open {
   transition: background-color 0.25s ease, transform 0.2s ease;
 }
 .project-card__link:hover .project-card__btn {
-  background-color: #116c6f;
+  background-color: rgb(16.958490566, 108.2113207547, 111.441509434);
   transform: translateX(2px);
 }
 @media screen and (max-width: 767px) {
