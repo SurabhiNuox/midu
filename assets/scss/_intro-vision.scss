@@ -1,9 +1,11 @@
 .intro-vision{
 	background: #1B273D;
-	padding: 100px 0 0 0 !important;
+	padding: 100px 0 0 0;
 	position: relative;
 	min-height: 100vh;
 	z-index:999;
+	display: flex;
+	align-items: center;
 	&:before{
 		content: "";
 		position: absolute;
@@ -36,6 +38,9 @@
 		bottom: 0;
 		right: -200px;
 		animation: visionBgMoveRight 10s ease-in-out infinite;
+		@include max(1060) {
+			display: none;
+		}
 	}
 
 	@include max(1060) {

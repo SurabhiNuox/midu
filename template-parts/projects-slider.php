@@ -56,7 +56,8 @@ $slides = array(
 </div>
 <?php $slide_count = count( $slides ); ?>
 <div class="projects-slider-section" id="projects-slider" aria-label="Our story" data-slides="<?php echo (int) $slide_count; ?>" style="--projects-slides: <?php echo (int) $slide_count; ?>; --projects-slide-vh: 50;">
-	<div class="projects-slider-section__sticky">
+	<!-- Desktop: pinned scroll slider (hidden below 1060) -->
+	<div class="projects-slider-section__sticky projects-slider-section__sticky--desktop">
 		<div class="projects-slider__inner">
 			<?php foreach ( $slides as $i => $slide ) : ?>
 			<div class="projects-slider__slide<?php echo $i === 0 ? ' is-active' : ''; ?>" data-slide-index="<?php echo (int) $i; ?>">
@@ -88,5 +89,29 @@ $slides = array(
 		</div>
 	</div>
 	<div class="projects-slider-section__filler" aria-hidden="true"></div>
+
+	<!-- Mobile/tablet below 1060: stacked cards (image + text), no scroll/sticky -->
+	<div class="projects-slider-section__stack">
+		<?php foreach ( $slides as $i => $slide ) : ?>
+		<div class="projects-slider-section__stack-item">
+			<div class="projects-slider-section__stack-media">
+				<img src="<?php echo esc_url( $slide['image'] ); ?>" alt="" class="projects-slider-section__stack-img" loading="<?php echo $i === 0 ? 'eager' : 'lazy'; ?>">
+				<div class="projects-slider-section__stack-overlay" aria-hidden="true"></div>
+			</div>
+			<div class="projects-slider-section__stack-content">
+				<h2 class="projects-slider-section__stack-title"><?php echo esc_html( $slide['title'] ); ?></h2>
+				<p class="projects-slider-section__stack-desc"><?php echo esc_html( $slide['description'] ); ?></p>
+				<?php if ( ! empty( $slide['link'] ) && ! empty( $slide['link_text'] ) ) : ?>
+					<a href="<?php echo esc_url( $slide['link'] ); ?>" class="projects-slider__cta projects-slider-section__stack-cta">
+						<?php echo esc_html( $slide['link_text'] ); ?>
+						<span>
+							<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/shape_arw.svg'); ?>" alt="" class="projects-slider__cta-icon" width="16" height="16" aria-hidden="true">
+						</span>
+					</a>
+				<?php endif; ?>
+			</div>
+		</div>
+		<?php endforeach; ?>
+	</div>
 </div>
 </section>

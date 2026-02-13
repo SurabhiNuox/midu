@@ -58,7 +58,38 @@
 		var nextBtn = section.querySelector('.journey-legacy__nav-btn--next');
 		var yearBtns = section.querySelectorAll('.journey-legacy__year');
 		var swiperEl = section.querySelector('.journey-legacy-swiper');
+		var yearsSwiperEl = section.querySelector('.journey-legacy-years-swiper');
 		if (!swiperEl || !yearBtns.length) return;
+
+		var yearsSwiper = null;
+		if (yearsSwiperEl) {
+			yearsSwiper = new Swiper('.journey-legacy-years-swiper', {
+				slidesPerView: '4',
+				spaceBetween: 8,
+				centeredSlides: true,
+				loop: false,
+				speed: 300,
+				allowTouchMove: true,
+				slideToClickedSlide: true,
+				breakpoints: {
+					0: {
+						spaceBetween: 8,
+						slidesPerView: 2
+					},
+					768: {
+						slidesPerView: 4
+					}
+				},
+				on: {
+					slideChange: function () {
+						var idx = this.activeIndex;
+						if (swiper && idx !== swiper.activeIndex) {
+							swiper.slideTo(idx, 300);
+						}
+					}
+				}
+			});
+		}
 
 		var swiper = new Swiper('.journey-legacy-swiper', {
 			slidesPerView: 1,
@@ -89,10 +120,12 @@
 				init: function () {
 					updateYearActive(this.activeIndex);
 					updateNavDisabled(this);
+					if (yearsSwiper) yearsSwiper.slideTo(this.activeIndex, 0);
 				},
 				slideChange: function () {
 					updateYearActive(this.activeIndex);
 					updateNavDisabled(this);
+					if (yearsSwiper) yearsSwiper.slideTo(this.activeIndex, 300);
 				},
 			},
 		});
@@ -114,6 +147,7 @@
 			btn.addEventListener('click', function () {
 				if (swiper && i !== swiper.activeIndex) {
 					swiper.slideTo(i);
+					if (yearsSwiper) yearsSwiper.slideTo(i, 300);
 				}
 			});
 		});

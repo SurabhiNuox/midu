@@ -8,12 +8,122 @@
 	width: 100%;
 	height: calc(var(--projects-slides, 4) * var(--projects-slide-vh, 50) * 1vh);
 	background: #0a0a0a;
+	@include max(1060) {
+		height: auto;
+	}
 }
 
 .projects-slider-section__filler {
 	height: calc((var(--projects-slides, 4) - 1) * var(--projects-slide-vh, 50) * 1vh);
 	background: #0a0a0a;
 	pointer-events: none;
+	@include max(1060) {
+		display: none;
+	}
+}
+
+// Below 1060: hide desktop sticky/slider
+@include max(1060) {
+	.projects-slider-section__sticky--desktop {
+		display: none !important;
+	}
+}
+
+// Below 1060: stacked cards (image + text per project), no scroll/sticky
+.projects-slider-section__stack {
+	display: none;
+	@include max(1060) {
+		display: block;
+		width: 100%;
+	}
+}
+
+.projects-slider-section__stack-item {
+	position: relative;
+	width: 100%;
+	min-height: 70vh;
+	overflow: hidden;
+	@include max(767) {
+		min-height: 60vh;
+	}
+	&:last-child{
+		.projects-slider-section__stack-content{
+		 @include max(767) {
+			padding-bottom: 60px;
+		 }
+		}
+	}
+}
+
+.projects-slider-section__stack-media {
+	position: absolute;
+	inset: 0;
+}
+
+.projects-slider-section__stack-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.projects-slider-section__stack-overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+	pointer-events: none;
+}
+
+.projects-slider-section__stack-content {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 24px 5% 32px;
+	z-index: 2;
+	color: #fff;
+	@include max(767) {
+		padding: 20px 5% 24px;
+	}
+}
+
+.projects-slider-section__stack-title {
+	font-family: inherit;
+	font-size: size(32px);
+	line-height: 1.2;
+	font-weight: 500;
+	color: #fff;
+	margin: 0 0 12px 0;
+	@include max(767) {
+		font-size: size(24px);
+		margin-bottom: 8px;
+	}
+}
+
+.projects-slider-section__stack-desc {
+	font-size: size(16px);
+	font-weight: 300;
+	line-height: 1.5;
+	color: #fff;
+	margin: 0 0 16px 0;
+	max-width: 520px;
+	@include max(767) {
+		font-size: size(14px);
+		margin-bottom: 12px;
+	}
+}
+
+.projects-slider-section__stack-cta {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: size(14px);
+	&:hover {
+		color: rgba(255, 255, 255, 0.9);
+	}
 }
 
 // Viewport: 100vh block; when .is-pinned (JS) it becomes fixed = CEER-style pin
@@ -37,6 +147,11 @@
 		max-height: 100vh;
 		z-index: 10;
 		pointer-events: auto;
+	}
+	@include max(1060) {
+		&.is-pinned {
+			position: relative;
+		}
 	}
 }
 

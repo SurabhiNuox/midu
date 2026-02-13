@@ -56,13 +56,17 @@ $events = array(
 		</div>
 		<div class="journey-legacy__timeline-wrap">
 				<div class="journey-legacy__timeline-bar" aria-hidden="true"></div>
-				<div class="journey-legacy__years" role="tablist">
-					<?php foreach ( $events as $i => $event ) : ?>
-					<button type="button" class="journey-legacy__year<?php echo $i === 0 ? ' is-active' : ''; ?>" data-index="<?php echo (int) $i; ?>" role="tab" aria-selected="<?php echo $i === 0 ? 'true' : 'false'; ?>" aria-label="Year <?php echo esc_attr( $event['year'] ); ?>">
-						<span class="journey-legacy__year-dot" aria-hidden="true"></span>
-						<span class="journey-legacy__year-label"><?php echo esc_html( $event['year'] ); ?></span>
-					</button>
-					<?php endforeach; ?>
+				<div class="journey-legacy__years swiper journey-legacy-years-swiper">
+					<div class="swiper-wrapper" role="tablist">
+						<?php foreach ( $events as $i => $event ) : ?>
+						<div class="swiper-slide journey-legacy__year-slide">
+							<button type="button" class="journey-legacy__year<?php echo $i === 0 ? ' is-active' : ''; ?>" data-index="<?php echo (int) $i; ?>" role="tab" aria-selected="<?php echo $i === 0 ? 'true' : 'false'; ?>" aria-label="Year <?php echo esc_attr( $event['year'] ); ?>">
+								<span class="journey-legacy__year-dot" aria-hidden="true"></span>
+								<span class="journey-legacy__year-label"><?php echo esc_html( $event['year'] ); ?></span>
+							</button>
+						</div>
+						<?php endforeach; ?>
+					</div>
 				</div>
 			</div>
 		<div class="journey-legacy__timeline">

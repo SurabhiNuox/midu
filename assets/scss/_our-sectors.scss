@@ -17,7 +17,10 @@ $journey-dot-grid: rgba(255, 255, 255, 0.18);
 	}
 	@include max(992) {
 		padding: 100px 0 80px;
-		height: 90vh;
+		height: 80vh;
+	}
+	@include max(800) {
+		height: 92vh;
 	}
 	@include max(767) {
 		padding:50px 0 80px;

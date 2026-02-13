@@ -23,7 +23,7 @@
     );
     // animation: bg-animation 15s infinite;
 	position: relative;
-	padding: 100px 0 0px 0;
+	padding: 100px 0;
 	z-index: 9;
 	&::before{
 		content: "";
@@ -161,7 +161,7 @@
 		grid-template-columns: repeat(4, 1fr);
 		gap: 20px;
 		align-items: start; // Default to top alignment
-		min-height: 780px;
+		min-height: 600px;
 		overflow: visible; // allow odd cards to slide down from above without clipping
 
 		@include max(1060) {
@@ -181,13 +181,13 @@
 		// First and third cards: top-aligned (default)
 		.explore-card:nth-child(1),
 		.explore-card:nth-child(3) {
-			align-self: start;
+			align-self: flex-start;
 		}
 
 		// Second and fourth cards: center-aligned
 		.explore-card:nth-child(2),
 		.explore-card:nth-child(4) {
-			align-self: center;
+			align-self: flex-end;
 		}
 	}
 
@@ -273,7 +273,7 @@
 
 
 			@media #{$media-1024} {
-				height: 250px;
+				height: 325px;
 			}
 
 			@media #{$media-768} {
@@ -315,6 +315,9 @@
 			text-decoration: none;
 			transition: all 0.3s ease-in-out;
 			clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.6rem), calc(100% - 0.6rem) 100%, 0 100%);
+			@include max(1024) {
+				bottom: 34px;
+			}
 
 			@include max(767) {
 				width: 30px;

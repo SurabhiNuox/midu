@@ -111,6 +111,13 @@ set_query_var( 'image_text_list_third', $image_text_list_third );
 		set_query_var( 'image_text_paragraphs', array(
 			'Our work within the {Sector Name} sector creates measurable impact through:',
 		) );
+		set_query_var( 'image_text_list', array(
+			'Strengthening economic diversification',
+			'Enhancing quality of life and community engagement',
+			'Driving innovation within the sector',
+			'Attracting investment and long-term partnerships',
+			'Supporting Vision 2030 goals',
+		) );
 
 		set_query_var( 'image_text_list_paragraph', array() );
 		set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph_third' );
