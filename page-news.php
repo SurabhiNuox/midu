@@ -19,33 +19,33 @@ get_header();
 	$news_card_items = array(
 		array(
 			'image' => get_template_directory_uri() . '/assets/images/news1.png',
-			'link'  => '#',
+			'link'  => esc_url( home_url( '/news-detail' ) ),
 			'title' => 'MIDU announces new strategic partnership',
 			'date'  => '05 August 2025',
 		),
 		array(
 			'image' => get_template_directory_uri() . '/assets/images/news2.png',
-			'link'  => '#',
+			'link'  => esc_url( home_url( '/news-detail' ) ),
 			'title' => 'New development project in the Kingdom',
 			'date'  => '28 July 2025',
 		),
 		array(
 			'image' => get_template_directory_uri() . '/assets/images/news3.png',
-			'link'  => '#',
+			'link'  => esc_url( home_url( '/news-detail' ) ),
 			'title' => 'Sustainability initiatives update',
 			'date'  => '15 July 2025',
 		),
 
         array(
 			'image' => get_template_directory_uri() . '/assets/images/news4.png',
-			'link'  => '#',
+			'link'  => esc_url( home_url( '/news-detail' ) ),
 			'title' => 'Sustainability initiatives update',
 			'date'  => '15 July 2025',
 		),
 
         array(
 			'image' => get_template_directory_uri() . '/assets/images/news1.png',
-			'link'  => '#',
+			'link'  => esc_url( home_url( '/news-detail' ) ),
 			'title' => 'Sustainability initiatives update',
 			'date'  => '15 July 2025',
 		),
@@ -53,7 +53,7 @@ get_header();
 
         array(
 			'image' => get_template_directory_uri() . '/assets/images/news2.png',
-			'link'  => '#',
+			'link'  => esc_url( home_url( '/news-detail' ) ),
 			'title' => 'Sustainability initiatives update',
 			'date'  => '15 July 2025',
 		),
@@ -64,7 +64,7 @@ get_header();
 	$event_card_items = array(
 		array(
 			'image'      => get_template_directory_uri() . '/assets/images/event1.png',
-			'link'       => '#',
+			'link'       => esc_url( home_url( '/news-detail' ) ),
 			'date_day'   => '30',
 			'date_month' => 'Jun',
 			'location'   => 'Riyadh, KSA',
@@ -73,7 +73,7 @@ get_header();
 		),
 		array(
 			'image'      => get_template_directory_uri() . '/assets/images/event2.png',
-			'link'       => '#',
+			'link'       => esc_url( home_url( '/news-detail' ) ),
 			'date_day'   => '15',
 			'date_month' => 'Jul',
 			'location'   => 'Jeddah, KSA',
@@ -82,7 +82,7 @@ get_header();
 		),
 		array(
 			'image'      => get_template_directory_uri() . '/assets/images/event3.png',
-			'link'       => '#',
+			'link'       => esc_url( home_url( '/news-detail' ) ),
 			'date_day'   => '22',
 			'date_month' => 'Aug',
 			'location'   => 'Riyadh, KSA',
@@ -92,7 +92,7 @@ get_header();
 
         array(
 			'image'      => get_template_directory_uri() . '/assets/images/event4.png',
-			'link'       => '#',
+			'link'       => esc_url( home_url( '/news-detail' ) ),
 			'date_day'   => '22',
 			'date_month' => 'Aug',
 			'location'   => 'Riyadh, KSA',
@@ -103,7 +103,7 @@ get_header();
 
         array(
 			'image'      => get_template_directory_uri() . '/assets/images/event5.png',
-			'link'       => '#',
+			'link'       => esc_url( home_url( '/news-detail' ) ),
 			'date_day'   => '22',
 			'date_month' => 'Aug',
 			'location'   => 'Riyadh, KSA',
@@ -114,7 +114,7 @@ get_header();
 
         array(
 			'image'      => get_template_directory_uri() . '/assets/images/event6.png',
-			'link'       => '#',
+			'link'       => esc_url( home_url( '/news-detail' ) ),
 			'date_day'   => '22',
 			'date_month' => 'Aug',
 			'location'   => 'Riyadh, KSA',

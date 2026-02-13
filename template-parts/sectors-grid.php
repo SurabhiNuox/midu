@@ -17,37 +17,37 @@ if ( ! $sectors_items || ! is_array( $sectors_items ) || empty( $sectors_items )
 			'image' => get_template_directory_uri() . '/assets/images/sector_1.jpg',
 			'title' => 'Mining',
 			'description' => 'Developing strategic natural resource opportunities.',
-			'link' => '#',
+			'link' => esc_url( home_url( '/sector-detail' ) ),
 		),
 		array(
 			'image' => get_template_directory_uri() . '/assets/images/sector_2.jpg',
 			'title' => 'Industrial',
 			'description' => 'Enhancing manufacturing and logistics ecosystems.',
-			'link' => '#',
+			'link' => esc_url( home_url( '/sector-detail' ) ),
 		),
 		array(
 			'image' => get_template_directory_uri() . '/assets/images/sector_3.jpg',
 			'title' => 'Contracting',
 			'description' => 'Delivering critical infrastructure and construction solutions.',
-			'link' => '#',
+			'link' => esc_url( home_url( '/sector-detail' ) ),
 		),
 		array(
 			'image' => get_template_directory_uri() . '/assets/images/sector_4.jpg',
 			'title' => 'Water Solutions',
 			'description' => 'Supporting sustainable water management systems.',
-			'link' => '#',
+			'link' => esc_url( home_url( '/sector-detail' ) ),
 		),
 		array(
 			'image' => get_template_directory_uri() . '/assets/images/sector_5.jpg',
 			'title' => 'Real Estate Development',
 			'description' => 'Creating vibrant, future-ready communities.',
-			'link' => '#',
+			'link' => esc_url( home_url( '/sector-detail' ) ),
 		),
 		array(
 			'image' => get_template_directory_uri() . '/assets/images/sector_6.jpg',
 			'title' => 'Utilities & Energy',
 			'description' => 'Enabling essential services for long-term growth.',
-			'link' => '#',
+			'link' => esc_url( home_url( '/sector-detail' ) ),
 		),
 	);
 }

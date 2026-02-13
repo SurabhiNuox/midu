@@ -1,0 +1,53 @@
+// Sitemap page
+@import "./variable";
+@import "./mixins";
+
+.sitemap-page {
+	padding-bottom: 80px;
+}
+
+.sitemap-content {
+	display: grid;
+	gap: 40px;
+	max-width: 800px;
+	padding: 100px 0;
+}
+
+.sitemap-section__title {
+	font-size: 1.5rem;
+	margin: 0 0 16px 0;
+	padding-bottom: 8px;
+	border-bottom: 2px solid #15868A;
+	color: #1B273D;
+}
+
+.sitemap-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		margin-bottom: 8px;
+	}
+
+	a {
+		color: #1B273D;
+		text-decoration: none;
+		transition: color 0.2s ease;
+
+		&:hover {
+			color: #15868A;
+			text-decoration: underline;
+		}
+	}
+}
+
+.sitemap-list--all {
+	columns: 1;
+	@include min(600) {
+		columns: 2;
+	}
+	li {
+		break-inside: avoid;
+	}
+}
