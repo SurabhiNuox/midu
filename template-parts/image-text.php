@@ -45,7 +45,7 @@ $wrapper_class = 'right_text_image' . ( ! empty( $image_text_section_class ) ? '
 <div class="<?php echo esc_attr( $wrapper_class ); ?>">
 	<div class="right_text_main" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
 		<?php if ( $image_text_title ) : ?>
-			<h2 class="second_title"><?php echo esc_html( $image_text_title ); ?></h2>
+			<h2 class="second_title"><?php echo wp_kses( $image_text_title, array( 'br' => array() ) ); ?></h2>
 		<?php endif; ?>
 		<?php if ( ! empty( $image_text_paragraphs ) ) : ?>
 		<div>

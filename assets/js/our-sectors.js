@@ -83,12 +83,6 @@
 		gsap.set(cardInners, { opacity: 0, scale: 0.88 });
 		if (ctaWrap) gsap.set(ctaWrap, { opacity: 0, y: 20 });
 
-		// Only run when section is actually visible (not covered by sustainability sticky)
-		function isSustainabilityPinned() {
-			var sticky = document.querySelector('.sustainability-commitment-section__sticky.is-pinned');
-			return !!sticky;
-		}
-
 		function isSectionInView() {
 			var r = section.getBoundingClientRect();
 			return r.top < window.innerHeight && r.bottom > 0;
@@ -97,7 +91,6 @@
 		function tryRunAnimation() {
 			if (hasRun) return;
 			if (!isSectionInView()) return;
-			if (isSustainabilityPinned()) return;
 			observer.unobserve(section);
 			runAnimation();
 		}
@@ -122,7 +115,7 @@
 		// Fallback: only when section is in view (e.g. Lenis/smooth scroll may not fire observer)
 		setTimeout(function () {
 			if (hasRun) return;
-			if (!isSectionInView() || isSustainabilityPinned()) return;
+			if (!isSectionInView()) return;
 			observer.unobserve(section);
 			runAnimation();
 		}, 2500);

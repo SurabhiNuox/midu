@@ -7,13 +7,7 @@
  */
 
 get_header();
-$image_text_list_third = array(
-	'Strengthening economic diversification',
-	'Enhancing quality of life and community engagement',
-	'Driving innovation within the sector',
-	'Attracting investment and long-term partnerships',
-	'Supporting Vision 2030 goals',
-);
+$image_text_list_third = array();
 set_query_var( 'image_text_list_third', $image_text_list_third );
 ?>
 
@@ -55,7 +49,7 @@ set_query_var( 'image_text_list_third', $image_text_list_third );
 				set_query_var( 'image_text_acf_list_field', 'image_text_list' );
 				set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph' );
 				set_query_var( 'image_text_image', 'mining_pic.jpg' );
-				set_query_var( 'image_text_section_class', '' );
+				set_query_var( 'image_text_section_class', 'light_blue' );
 				get_template_part( 'template-parts/image-text-block' );
 				?>
 			<div class="bg_img">
@@ -117,18 +111,12 @@ set_query_var( 'image_text_list_third', $image_text_list_third );
 		set_query_var( 'image_text_paragraphs', array(
 			'Our work within the {Sector Name} sector creates measurable impact through:',
 		) );
-		set_query_var( 'image_text_list', array(
-			'Strengthening economic diversification',
-			'Enhancing quality of life and community engagement',
-			'Driving innovation within the sector',
-			'Attracting investment and long-term partnerships',
-			'Supporting Vision 2030 goals',
-		) );
+
 		set_query_var( 'image_text_list_paragraph', array() );
 		set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph_third' );
 		set_query_var( 'image_text_acf_list_field', 'image_text_list_third' );
 		set_query_var( 'image_text_image', 'value_img.jpg' );
-		set_query_var( 'image_text_section_class', 'white_text' );
+		set_query_var( 'image_text_section_class', 'white_text dark_blue' );
 		get_template_part( 'template-parts/image-text-block' );
 		?>
 	<?php
@@ -166,24 +154,28 @@ set_query_var( 'image_text_list_third', $image_text_list_third );
 		?>
 		
 	</div><!-- .main_content -->
-	<?php
-		set_query_var( 'image_text_block_wrapper_class', 'why_chosse_section' );
-		set_query_var( 'image_text_title', 'Why Choose MIDU for This Sector' );
-		set_query_var( 'image_text_paragraphs', array() );
-		set_query_var( 'image_text_list_paragraph', array() );
-		// Why Choose list — change the text below; no paragraphs for this section
-		set_query_var( 'image_text_list', array(
-			'Proven expertise in sector-specific development',
-			'Strong alignment with national priorities',
-			'Robust partnerships with leading industry players',
-			'Comprehensive understanding of market trends',
-			'Commitment to sustainability and long-term value creation',
-		) );
-		set_query_var( 'image_text_image', 'why_choose_pic.jpg' );
-		set_query_var( 'image_text_section_class', ' reverse_direction' );
-		get_template_part( 'template-parts/image-text-block' );
-		?>
-</div>
+	<div class="position_relative">
+		<?php
+			set_query_var( 'image_text_block_wrapper_class', 'why_chosse_section' );
+			set_query_var( 'image_text_title', 'Why Choose MIDU <br> for This Sector' );
+			set_query_var( 'image_text_paragraphs', array() );
+			set_query_var( 'image_text_list_paragraph', array() );
+			// Why Choose list — change the text below; no paragraphs for this section
+			set_query_var( 'image_text_list', array(
+				'Proven expertise in sector-specific development',
+				'Strong alignment with national priorities',
+				'Robust partnerships with leading industry players',
+				'Comprehensive understanding of market trends',
+				'Commitment to sustainability and long-term value creation',
+			) );
+			set_query_var( 'image_text_image', 'why_choose_pic.jpg' );
+			set_query_var( 'image_text_section_class', ' reverse_direction light_blue' );
+			get_template_part( 'template-parts/image-text-block' );
+			?>
+			<div class="right_frame_img">
+				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/philosophy_farme.png' ); ?>" alt="image"?>
+			</div>
+	</div>
 
 <?php
 get_footer();

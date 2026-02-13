@@ -1,6 +1,6 @@
 .intro-vision{
 	background: #1B273D;
-	padding: 100px 0;
+	padding: 100px 0 0 0 !important;
 	position: relative;
 	min-height: 100vh;
 	z-index:999;
@@ -25,6 +25,19 @@
 			top: -25px;
 		}
 	}
+	.intro_vision_bg{
+		position: absolute;
+		top: 0;
+		left: -490px;
+		animation: visionBgMove 10s ease-in-out infinite;
+	}
+	.intro_vision_bg_right{
+		position: absolute;
+		bottom: 0;
+		right: -200px;
+		animation: visionBgMoveRight 10s ease-in-out infinite;
+	}
+
 	@include max(1060) {
 		padding:10px 0 50px 0;
 		min-height: auto;

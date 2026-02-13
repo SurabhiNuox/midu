@@ -749,6 +749,10 @@ width: 100px;
 	background: #96B7E3;
 	padding: 100px 0 215px;
     margin-top: -150px;
+	// Keep section visible; AOS still runs transform animation on scroll
+	[data-aos] {
+		opacity: 1;
+	}
 }
 .project_detail_top_sec{
 	background: #1B273D;
@@ -874,4 +878,20 @@ width: 100px;
 		object-fit: contain;
 		display: block;
 	}
+}
+.position_relative{
+	position: relative;
+}
+.right_frame_img{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+@keyframes visionBgMove {
+	0% {left:  -490px; }
+	100% {left: 50%; }
+}
+@keyframes visionBgMoveRight {
+	0% {bottom:  0; }
+	100% {bottom: 50%; opacity: 0;}
 }

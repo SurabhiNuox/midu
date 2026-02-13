@@ -1,4 +1,10 @@
 <section class="intro-vision">
+	<div class="intro_vision_bg">
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/vision_gradient.png" alt="Intro Vision BG">
+	</div>
+	<div class="intro_vision_bg_right">
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/vision_gradient_right.png" alt="Intro Vision BG">
+	</div>
 	 <div class="container">
 		<div class="intro_video_container">
 			<video src="<?php echo get_template_directory_uri(); ?>/assets/videos/intro_video.mp4" autoplay muted loop playsinline></video>
