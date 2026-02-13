@@ -37,6 +37,8 @@ $mv-body-bg: #fff;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 35px;
+	position: relative;
+    z-index: 1;
 
 	@include max(992) {
 		grid-template-columns: 1fr;
@@ -99,7 +101,7 @@ $mv-body-bg: #fff;
 	p{
 		color: #1B273D;
 		line-height: size(23px);
-		font-weight:300;
+		font-weight:200;
 	}
 }
 

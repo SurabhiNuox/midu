@@ -5978,7 +5978,6 @@ body.menu-open {
   color: #fff;
   position: relative;
   z-index: 1;
-  padding-top: 30px;
 }
 @media screen and (max-width: 1060px) {
   .overview-section .overview-text {
@@ -5990,7 +5989,6 @@ body.menu-open {
   .overview-section .overview-text {
     width: 100%;
     padding-left: 0;
-    padding-top: 0;
   }
 }
 .overview-section .overview-title {
@@ -12740,6 +12738,8 @@ body.menu-open {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 35px;
+  position: relative;
+  z-index: 1;
 }
 @media screen and (max-width: 992px) {
   .mission-vision-section__grid {
@@ -12815,7 +12815,7 @@ body.menu-open {
 .mission-vision-card__body p {
   color: #1B273D;
   line-height: 1.4375rem;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .mission-vision-card__title {
@@ -12872,7 +12872,7 @@ body.menu-open {
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: 1;
+  z-index: 0;
 }
 .philosophy-section::after {
   content: "";
@@ -12998,8 +12998,8 @@ body.menu-open {
 
 .philosophy-section__icon {
   flex-shrink: 0;
-  width: 36px;
-  height: 36px;
+  width: 25px;
+  height: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13021,7 +13021,7 @@ body.menu-open {
 .philosophy-section__item-text {
   font-family: "REM", sans-serif;
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: 200;
   line-height: 2.3125rem;
   color: #1B273D;
 }
