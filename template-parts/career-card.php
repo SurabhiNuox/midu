@@ -34,13 +34,13 @@ $career_link     = $career_link ?: '#';
 		<div class="career-card__location_main">
 		<?php if ( $career_location ) : ?>
 			<p class="career-card__location">
-				<svg class="career-card__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="2"/></svg>
+				<span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/map_icon.png" alt="Arrow Right" class="career-card__icon"></span>
 				<?php echo esc_html( $career_location ); ?>
 			</p>
 		<?php endif; ?>
 		<?php if ( $career_time ) : ?>
 			<p class="career-card__time">
-				<svg class="career-card__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+				<span><img src="<?php echo get_template_directory_uri(); ?>/assets/images/time_icon.png" alt="Arrow Right" class="career-card__icon"></span>
 				<?php echo esc_html( $career_time ); ?>
 			</p>
 		<?php endif; ?>

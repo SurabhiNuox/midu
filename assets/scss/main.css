@@ -2514,8 +2514,7 @@ a,
   padding: 14px 32px;
   border: 2px solid #fff;
   border-radius: 0 0 0 15px;
-  -webkit-clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
-          clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -2524,8 +2523,7 @@ a,
     padding: 12px 26px;
     font-size: 15px;
     border-radius: 0 0 0 12px;
-    -webkit-clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
   }
 }
 @media only screen and (max-width: 600px) {
@@ -2533,8 +2531,7 @@ a,
     padding: 10px 22px;
     font-size: 14px;
     border-radius: 0 0 0 10px;
-    -webkit-clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
   }
 }
 .btn-secondary:hover {
@@ -2556,8 +2553,7 @@ a,
   font-weight: 500;
   padding: 14px 32px;
   border: 2px solid #20b2aa;
-  -webkit-clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
-          clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -2566,8 +2562,7 @@ a,
     padding: 12px 26px;
     font-size: 15px;
     border-radius: 0 0 0 12px;
-    -webkit-clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
   }
 }
 @media only screen and (max-width: 600px) {
@@ -2575,8 +2570,7 @@ a,
     padding: 10px 22px;
     font-size: 14px;
     border-radius: 0 0 0 10px;
-    -webkit-clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
   }
 }
 .btn-outline:hover {
@@ -2778,7 +2772,7 @@ a,
   font-family: "REM", sans-serif;
   font-size: 3.125rem;
   line-height: 3.4375rem;
-  font-weight: 400;
+  font-weight: 300;
   color: #fff;
   letter-spacing: 0px;
   margin: 0;
@@ -3385,8 +3379,7 @@ p {
   padding: 20px 45px 20px 55px;
   position: relative;
   overflow: hidden;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.2);
   mask-image: linear-gradient(white, white), url("data:image/svg+xml,%3Csvg%20width%3D%2250%22%20height%3D%2247%22%20viewBox%3D%220%200%2050%2047%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M50%200H0C4%200%206.1667%202.1667%207%203C7%203%2033.5%2029.5%2048%2044C50%2046%2050%2047%2050%2047V0Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E"), url("data:image/svg+xml,%3Csvg%20width%3D%2250%22%20height%3D%2247%22%20viewBox%3D%220%200%2050%2047%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%2047H50C46%2047%2043.8333%2044.3333%2043%2044C16.5%2017.5%202%203%202%203C0%201%200%200%200%200V47Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E");
   -webkit-mask-image: linear-gradient(white, white), url("data:image/svg+xml,%3Csvg%20width%3D%2250%22%20height%3D%2247%22%20viewBox%3D%220%200%2050%2047%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M50%200H0C4%200%206.1667%202.1667%207%203C7%203%2033.5%2029.5%2048%2044C50%2046%2050%2047%2050%2047V0Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E"), url("data:image/svg+xml,%3Csvg%20width%3D%2250%22%20height%3D%2247%22%20viewBox%3D%220%200%2050%2047%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%2047H50C46%2047%2043.8333%2044.3333%2043%2044C16.5%2017.5%202%203%202%203C0%201%200%200%200%200V47Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E");
@@ -3672,8 +3665,7 @@ p {
   width: 100%;
   max-width: 460px;
   background: rgba(21, 134, 138, 0.98);
-  -webkit-backdrop-filter: blur(12px);
-          backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   z-index: 10001;
   padding: 80px 24px 24px;
   transform: translateX(100%);
@@ -3928,8 +3920,7 @@ body.menu-open {
   font-weight: 500;
   padding: 16px 36px;
   border-radius: 0 0 0 15px;
-  -webkit-clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
-          clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 100%, 0 100%);
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(32, 178, 170, 0.3);
 }
@@ -3938,8 +3929,7 @@ body.menu-open {
     padding: 14px 30px;
     font-size: 16px;
     border-radius: 0 0 0 12px;
-    -webkit-clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 0 100%);
   }
 }
 @media only screen and (max-width: 600px) {
@@ -3947,8 +3937,7 @@ body.menu-open {
     padding: 12px 26px;
     font-size: 15px;
     border-radius: 0 0 0 10px;
-    -webkit-clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%);
   }
 }
 .main-banner .banner-content .banner-button:hover {
@@ -4287,8 +4276,7 @@ body.menu-open {
   color: #fff;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.6rem), calc(100% - 0.6rem) 100%, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.6rem), calc(100% - 0.6rem) 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 0.6rem), calc(100% - 0.6rem) 100%, 0 100%);
 }
 @media screen and (max-width: 1024px) {
   .explore-our-world .explore-card .card-cta-button {
@@ -6421,7 +6409,6 @@ body.menu-open {
   background-repeat: no-repeat;
   background-position: bottom;
   overflow: hidden;
-  /* Mask only the background so inner content stays full opacity */
 }
 @media only screen and (max-width: 1024px) {
   .invest-development_right .invest-development_list .invest-development_item {
@@ -6468,6 +6455,9 @@ body.menu-open {
     top: 1px;
     z-index: 0;
   }
+}
+.invest-development_right .invest-development_list .invest-development_item {
+  /* Mask only the background so inner content stays full opacity */
 }
 .invest-development_right .invest-development_list .invest-development_item:hover {
   background-image: url(../images/invest-list-bg-hover.svg);
@@ -8986,7 +8976,6 @@ body.menu-open {
   background-repeat: no-repeat;
   background-position: top;
   overflow: hidden;
-  /* Mask only the background so inner content stays full opacity */
 }
 .construction-section .construction-section_inner .construction-section-list .invest-development_list .invest-development_item::before {
   content: "";
@@ -9015,6 +9004,9 @@ body.menu-open {
 .construction-section .construction-section_inner .construction-section-list .invest-development_list .invest-development_item:hover::after {
   background: #83BCC8;
   background: linear-gradient(123deg, rgb(131, 188, 200) 0%, rgb(53, 67, 90) 77%);
+}
+.construction-section .construction-section_inner .construction-section-list .invest-development_list .invest-development_item {
+  /* Mask only the background so inner content stays full opacity */
 }
 .construction-section .construction-section_inner .construction-section-list .invest-development_list .invest-development_item .invest-development_item_icon {
   flex-shrink: 0;
@@ -10254,7 +10246,7 @@ body.menu-open {
 }
 .career-card__inner {
   position: relative;
-  padding: 50px 45px;
+  padding: 50px 45px 60px 45px;
   background: #fff;
   z-index: 1;
   width: 100%;
@@ -10268,6 +10260,9 @@ body.menu-open {
     padding: 30px 20px;
     min-height: 190px;
   }
+}
+.career-card__inner .btn-primary .button-text {
+  font-size: 14px;
 }
 .career-card__title {
   margin: 0 0 0;
@@ -10303,17 +10298,27 @@ body.menu-open {
   display: flex;
   align-items: center;
   gap: 15px;
-  margin: 0 0 10px;
+  margin: 0 0 18px;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.35;
   color: #353535;
+  font-family: "REM", sans-serif;
 }
 @media screen and (max-width: 1024px) {
   .career-card__location, .career-card__time {
     gap: 10px;
     font-size: 15px;
   }
+}
+.career-card__location span, .career-card__time span {
+  width: 22px;
+}
+.career-card__time {
+  margin-bottom: 0;
+}
+.career-card__time span img {
+  width: 20px;
 }
 .career-card__icon {
   flex-shrink: 0;
@@ -10413,7 +10418,7 @@ body.menu-open {
   color: #fff;
   font-size: 1.125rem;
   line-height: 1.6875rem;
-  font-weight: 300;
+  font-weight: 100;
   margin-bottom: 20px;
 }
 @media screen and (max-width: 992px) {
@@ -10618,14 +10623,27 @@ body.menu-open {
     padding: 80px 0 40px;
   }
 }
+.career_life_section .career_life_bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+@keyframes careerBgMove {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: 50%;
+  }
+}
 .career_life_section .career_life_title {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .career_life_section .career_life_title .career_life_title_left {
   width: 50%;
-  padding-right: 10%;
 }
 @media only screen and (max-width: 768px) {
   .career_life_section .career_life_title .career_life_title_left {
@@ -10634,7 +10652,7 @@ body.menu-open {
   }
 }
 .career_life_section .career_life_title .career_life_title_right {
-  width: 50%;
+  width: 48%;
 }
 @media only screen and (max-width: 768px) {
   .career_life_section .career_life_title .career_life_title_right {
@@ -10748,6 +10766,7 @@ body.menu-open {
   -o-object-position: top center;
      object-position: top center;
   z-index: 1;
+  filter: grayscale(1);
 }
 .career_life_section .career_life_list {
   width: 100%;
@@ -10795,8 +10814,8 @@ body.menu-open {
 }
 .career_life_section .career_life_list ul li .career_life_item h3 {
   font-size: 1.875rem;
-  line-height: 2.1875rem;
-  font-weight: 400;
+  line-height: 1.875rem;
+  font-weight: 300;
   color: #fff;
   margin-bottom: 15px;
 }
@@ -10830,9 +10849,9 @@ body.menu-open {
   position: relative;
   transition: all 0.3s ease;
   position: relative;
-  padding: 100px 0;
+  padding: 100px 0 150px 0;
   margin-top: 0;
-  background: #16888c;
+  background: #126d70;
   border-radius: 20px;
   margin-top: -20px;
 }
@@ -10844,6 +10863,16 @@ body.menu-open {
 @media screen and (max-width: 768px) {
   .career_story_section {
     padding: 50px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .career_story_section {
+    padding: 50px 0;
+  }
+}
+@media screen and (max-width: 500px) {
+  .career_story_section {
+    padding: 30px 0;
   }
 }
 .career_story_section::before {
@@ -10910,7 +10939,7 @@ body.menu-open {
 }
 .career_story_section .career_story_inner {
   width: 100%;
-  background-color: #16888C;
+  background-color: #126d70;
   min-height: 510px;
   position: relative;
 }
@@ -10924,7 +10953,7 @@ body.menu-open {
   height: 100%;
   position: absolute;
   top: 0;
-  background-color: #16888C;
+  background-color: #126d70;
 }
 .career_story_section .career_bg {
   width: 100%;
@@ -10972,7 +11001,7 @@ body.menu-open {
 .career_story_pagination {
   position: absolute;
   top: inherit !important;
-  bottom: 10px !important;
+  bottom: -25px !important;
   gap: 5px;
   width: 100%;
   left: 0;
@@ -11013,13 +11042,17 @@ body.menu-open {
 }
 
 .career_story_card {
-  padding: 80px 65px 10px;
+  padding: 115px 65px 10px;
   min-height: 300px;
   position: relative;
   text-align: left;
   width: 100%;
   border-radius: 20px;
-  background-color: #fff;
+  background-image: url(../images/story_slider_bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 330px;
 }
 @media only screen and (max-width: 1024px) {
   .career_story_card {
@@ -11033,45 +11066,9 @@ body.menu-open {
     padding: 50px 15px 10px;
   }
 }
-.career_story_card * {
+.career_story_card .career_story_card_inner {
   position: relative;
   z-index: 5;
-}
-.career_story_card::after {
-  content: "";
-  position: absolute;
-  bottom: 5px;
-  right: -6px;
-  width: 122px;
-  height: 111px;
-  background-color: #16888c;
-  mask-image: url(../images/top_mask.svg);
-  -webkit-mask-image: url(../images/top_mask.svg);
-  mask-repeat: no-repeat;
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-size: 100% auto;
-  mask-size: 100% auto;
-  z-index: 3;
-  transform: rotate(90deg);
-}
-@media only screen and (max-width: 1024px) {
-  .career_story_card::after {
-    width: 95px;
-    height: 85px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  .career_story_card::after {
-    width: 76px;
-    height: 64px;
-    right: -7px;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .career_story_card::after {
-    width: 76px;
-    height: 64px;
-  }
 }
 
 .career_story_quote_icon {
@@ -11079,8 +11076,8 @@ body.menu-open {
   font-size: 44px;
   height: 37px;
   position: absolute;
-  left: 65px;
-  top: 30px;
+  left: 0;
+  top: -55px;
 }
 @media only screen and (max-width: 768px) {
   .career_story_quote_icon {
@@ -12226,7 +12223,7 @@ body.menu-open {
   transition: background-color 0.25s ease, transform 0.2s ease;
 }
 .project-card__link:hover .project-card__btn {
-  background-color: #116c6f;
+  background-color: rgb(16.958490566, 108.2113207547, 111.441509434);
   transform: translateX(2px);
 }
 @media screen and (max-width: 767px) {
@@ -12404,11 +12401,6 @@ body.menu-open {
   .featured-projects-section__nav {
     width: 30px;
     height: 30px;
-    top: auto;
-    bottom: -70px;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
   }
   .featured-projects-section__nav--prev {
     left: -45px;
@@ -12419,6 +12411,13 @@ body.menu-open {
   .featured-projects-section__nav svg {
     width: 20px;
     height: 20px;
+  }
+  .featured-projects-section__nav {
+    top: auto;
+    bottom: -70px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
   }
 }
 
@@ -12986,8 +12985,7 @@ body.menu-open {
   background-repeat: no-repeat;
   background-position: top;
   opacity: 0.8;
-  -webkit-backdrop-filter: blur(40px);
-          backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
 }
 @media screen and (max-width: 767px) {
   .philosophy-section__item {

@@ -63,16 +63,18 @@ if ( function_exists( 'get_field' ) && get_field( 'career_stories' ) ) {
 							?>
 							<div class="swiper-slide">
 								<div class="career_story_card">
-									<span class="career_story_quote_icon">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/quote.svg" alt="Quote Icon">
-									</span>
-									<p class="career_story_quote_text"><?php echo esc_html( $quote ); ?></p>
-									<div class="career_story_author">
-										<img src="<?php echo esc_url( $avatar ); ?>" alt="<?php echo esc_attr( $name ); ?>" class="career_story_avatar" width="56" height="56" loading="lazy">
-										<div class="career_story_author_info">
-											<strong class="career_story_name"><?php echo esc_html( $name ); ?></strong>
-											<span class="career_story_role"><?php echo esc_html( $title ); ?></span>
-										</div>
+									<div class="career_story_card_inner">
+										<span class="career_story_quote_icon">
+											<img src="<?php echo get_template_directory_uri(); ?>/assets/images/quote.svg" alt="Quote Icon">
+										</span>
+										<p class="career_story_quote_text"><?php echo esc_html( $quote ); ?></p>
+										<div class="career_story_author">
+											<img src="<?php echo esc_url( $avatar ); ?>" alt="<?php echo esc_attr( $name ); ?>" class="career_story_avatar" width="56" height="56" loading="lazy">
+											<div class="career_story_author_info">
+												<strong class="career_story_name"><?php echo esc_html( $name ); ?></strong>
+												<span class="career_story_role"><?php echo esc_html( $title ); ?></span>
+												</div>
+											</div>
 									</div>
 								</div>
 							</div>

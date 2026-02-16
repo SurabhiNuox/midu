@@ -27,7 +27,7 @@
 			padding: 60px 0;
 	}
 	@media screen and (max-width: 768px) {
-	padding: 50px 0;
+		padding: 50px 0;
 	}
 
 	&::after{
@@ -73,7 +73,7 @@
 			color: #fff;
 			font-size: size(18px);
 			line-height: size(27px);
-			font-weight: 300;
+			font-weight: 100;
 			margin-bottom: 20px;
 
 			@media screen and (max-width: 992px) {
@@ -81,12 +81,10 @@
 				line-height: size(24px);
 				margin-bottom: 10px;
 			}
+			
 		}
- }
+      }
 	}
-
-
-
 	
 }
 
@@ -117,59 +115,59 @@
 
 	&::before {
 		    content: "";
-    position: absolute;
-    top: -2px;
-    right: -1px;
-    width: 128px;
-    height: 111px;
-    background-image: url(../images/top_mask.svg);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: top right;
-    z-index: 3;
+			position: absolute;
+			top: -2px;
+			right: -1px;
+			width: 128px;
+			height: 111px;
+			background-image: url(../images/top_mask.svg);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-position: top right;
+			z-index: 3;
 
 		@media screen and (max-width: 1440px) {
-width: 100px;
-    height: 88px;
+			width: 100px;
+    		height: 88px;
 		}
 
 		@media screen and (max-width: 768px) {
-    width: 70px;
-    height: 60px;
+			width: 70px;
+			height: 60px;
 		}
 
 		@media screen and (max-width: 500px) {
            width: 55px;
-        height: 45px;
+        	height: 45px;
 		}
 	}
 
 	&::after {
-		    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: -6px;
-    width: 128px;
-    height: 111px;
-    background-image: url(../images/bottom_mask.svg);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    z-index: 3;
+		content: "";
+		position: absolute;
+		bottom: -2px;
+		left: -6px;
+		width: 128px;
+		height: 111px;
+		background-image: url(../images/bottom_mask.svg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: bottom left;
+    	z-index: 3;
 
 		@media screen and (max-width: 1440px) {
-width: 100px;
-    height: 88px;
+			width: 100px;
+    		height: 88px;
 		}
 
 		@media screen and (max-width: 768px) {
-    width: 70px;
-    height: 60px;
+			width: 70px;
+			height: 60px;
 		}
 
 		@media screen and (max-width: 500px) {
            width: 55px;
-        height: 45px;
+        	height: 45px;
 		}
 	}
 

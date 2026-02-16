@@ -51,7 +51,7 @@ $career-card-icon: #e67e22;
 
 	&__inner {
 		position: relative;
-		padding: 50px 45px;
+		padding: 50px 45px 60px 45px;
 		background: $white;
 		z-index: 1;
 		width: 100%;
@@ -64,6 +64,9 @@ $career-card-icon: #e67e22;
 			padding: 30px 20px;
 			min-height: 190px;
 		}
+		.btn-primary .button-text {
+			font-size: 14px;
+		}
 	}
 
 	&__title {
@@ -75,11 +78,11 @@ $career-card-icon: #e67e22;
 		margin-bottom: 5px;
 
 		@media screen and (max-width: 1024px) {
-font-size: size(26px);
+			font-size: size(26px);
 		}
 
-			@media screen and (max-width: 768px) {
-font-size: size(22px);
+		@media screen and (max-width: 768px) {
+				font-size: size(22px);
 		}
 	}
 
@@ -91,7 +94,7 @@ font-size: size(22px);
 		font-weight: 400;
 
 		@media screen and (max-width: 768px) {
-font-size: 15px;
+			font-size: 15px;
 		}
 	}
 
@@ -100,16 +103,28 @@ font-size: 15px;
 		display: flex;
 		align-items: center;
 		gap: 15px;
-		margin: 0 0 10px;
+		margin: 0 0 18px;
 		font-size: 16px;
-		font-weight: 300;
+		font-weight: 400;
 		line-height: 1.35;
 		color: #353535;
+		font-family: "REM", sans-serif;
 
-			@media screen and (max-width: 1024px) {
-				gap: 10px;
-	font-size: 15px;
+		@media screen and (max-width: 1024px) {
+			gap: 10px;
+			font-size: 15px;
+		}
+		span{
+			width: 22px;
+		}
+	}
+	&__time {
+		margin-bottom: 0;
+		span{
+			img{
+				width: 20px;
 			}
+		}
 	}
 
 	&__icon {
@@ -132,11 +147,13 @@ font-size: 15px;
 
 	.career-card__title_main{
 		    width: 100%;
+		
 	}
 
 	.career-card__location_main{
 		   margin-top: auto;
 		   width: 100%;
+		  
 	}
 
 	
