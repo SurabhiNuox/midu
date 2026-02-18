@@ -77,25 +77,6 @@ $journey-dot-grid: rgba(255, 255, 255, 0.18);
 	transform: translateZ(0);
 }
 
-// Keep bg-layer animation but use only transform (no background-position) so it doesn't repaint during scroll.
-.our-sectors .bg-layer {
-	animation: our-sectors-bg-float 20s ease-in-out infinite alternate;
-	transform: translateZ(0);
-	backface-visibility: hidden;
-	pointer-events: none;
-}
-@keyframes our-sectors-bg-float {
-	0% {
-		background-position: 0% 50%;
-	  }
-	  50% {
-		background-position: 100% 40%;
-	  }
-	  100% {
-		background-position: 50% 100%;
-	  }
-}
-
 .our-sectors__inner {
 	position: relative;
 	z-index: 1;

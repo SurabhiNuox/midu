@@ -39,7 +39,9 @@ $cards = array(
 ?>
 
 
-
+ <div class="explore-our-world-wrapper position_relative">
+	<div class="bg-layer">
+	</div>
 	<div class="container">
 		<!-- Heading and Description -->
 		<div class="explore-header">
@@ -71,4 +73,4 @@ $cards = array(
 			<?php endforeach; ?>
 		</div>
 	</div>
-
+</div>

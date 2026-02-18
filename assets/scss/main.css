@@ -3438,7 +3438,7 @@ p {
   filter: blur(60px) saturate(120%);
   opacity: 0.9;
   height: 100%;
-  animation: drift 22s ease-in-out infinite alternate;
+  animation: drift 15s ease-in-out infinite alternate;
   z-index: 0;
 }
 
@@ -3537,6 +3537,10 @@ p {
   .sustainability_page .ecnomic-section {
     margin-top: -60px;
   }
+}
+
+.explore-our-world-wrapper .bg-layer {
+  bottom: 50px;
 }
 
 .site-header {
@@ -4524,7 +4528,7 @@ body.menu-open {
 .projects-slider-section {
   position: relative;
   width: 100%;
-  height: calc(100vh + (var(--projects-slides, 4) + 2) * var(--projects-slide-vh, 50) * 1vh);
+  height: calc(100vh + (var(--projects-slides, 4) + 2) * var(--projects-slide-vh, 38) * 1vh);
   background: #0a0a0a;
 }
 @media screen and (max-width: 1060px) {
@@ -4534,7 +4538,7 @@ body.menu-open {
 }
 
 .projects-slider-section__filler {
-  height: calc((var(--projects-slides, 4) + 2) * var(--projects-slide-vh, 50) * 1vh);
+  height: calc((var(--projects-slides, 4) + 2) * var(--projects-slide-vh, 38) * 1vh);
   background: #0a0a0a;
   pointer-events: none;
 }
@@ -4769,7 +4773,9 @@ body.menu-open {
   justify-content: center;
   padding: 24px 0 24px 20px;
   opacity: 0.1;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: scale(0.8, 0.8);
+  transform-origin: 0;
   color: #fff;
   text-align: left;
 }
@@ -4778,6 +4784,12 @@ body.menu-open {
 }
 .projects-slider__content-block.is-active {
   opacity: 1;
+  transform: scale(1, 1);
+}
+@media screen and (max-width: 1060px) {
+  .projects-slider__content-block {
+    transform-origin: left center;
+  }
 }
 @media screen and (max-width: 992px) {
   .projects-slider__content-block {
@@ -4788,6 +4800,7 @@ body.menu-open {
 @media screen and (max-width: 767px) {
   .projects-slider__content-block {
     padding: 0;
+    transform-origin: center center;
   }
 }
 .projects-slider__content-block p {
@@ -7645,24 +7658,6 @@ body.menu-open {
   transform: translateZ(0);
 }
 
-.our-sectors .bg-layer {
-  animation: our-sectors-bg-float 20s ease-in-out infinite alternate;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  pointer-events: none;
-}
-
-@keyframes our-sectors-bg-float {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 40%;
-  }
-  100% {
-    background-position: 50% 100%;
-  }
-}
 .our-sectors__inner {
   position: relative;
   z-index: 1;

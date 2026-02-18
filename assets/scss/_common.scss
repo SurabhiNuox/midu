@@ -1004,10 +1004,7 @@ width: 100px;
 	background: url("../images/hrad.svg") center / 140% no-repeat;
 	filter: blur(60px) saturate(120%);
 	opacity: 0.9;
-  
-	animation:
-	  drift 22s ease-in-out infinite alternate;
-  
+	animation: drift 22s ease-in-out infinite alternate;
 	z-index: 0;
   }
   .bg-layer-two{
@@ -1017,14 +1014,10 @@ width: 100px;
 	filter: blur(60px) saturate(120%);
 	opacity: 0.9;
 	height: 100%;
-  
-	animation:
-	  drift 22s ease-in-out infinite alternate;
-  
+	animation: drift 15s ease-in-out infinite alternate;
 	z-index: 0;
   }
   /* Smooth cinematic drift */
-  
   @keyframes drift {
 	0% {
 	  background-position: 0% 50%;
@@ -1113,5 +1106,10 @@ width: 100px;
 		@include max(767) {
 			margin-top: -60px;
 		}
+	}
+  }
+  .explore-our-world-wrapper {
+	.bg-layer{
+		bottom: 50px;
 	}
   }

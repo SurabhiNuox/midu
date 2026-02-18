@@ -2,11 +2,11 @@
 @import "./variable";
 @import "./mixins";
 
-// Section height: sticky (100vh) + filler ((N+2) × 50vh) — more scroll so last slide gets active then section ends
+// Section height: sticky (100vh) + filler ((N+2) × 38vh) — slightly faster scroll through slides
 .projects-slider-section {
 	position: relative;
 	width: 100%;
-	height: calc(100vh + (var(--projects-slides, 4) + 2) * var(--projects-slide-vh, 50) * 1vh);
+	height: calc(100vh + (var(--projects-slides, 4) + 2) * var(--projects-slide-vh, 38) * 1vh);
 	background: #0a0a0a;
 	@include max(1060) {
 		height: auto;
@@ -14,7 +14,7 @@
 }
 
 .projects-slider-section__filler {
-	height: calc((var(--projects-slides, 4) + 2) * var(--projects-slide-vh, 50) * 1vh);
+	height: calc((var(--projects-slides, 4) + 2) * var(--projects-slide-vh, 38) * 1vh);
 	background: #0a0a0a;
 	pointer-events: none;
 	@include max(1060) {
@@ -237,7 +237,9 @@
 	justify-content: center;
 	padding: 24px 0 24px 20px;
 	opacity: 0.1;
-	transition: opacity 0.4s ease;
+	transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	transform: scale(0.8, 0.8);
+	transform-origin: 0;
 	color: #fff;
 	text-align: left;
 
@@ -247,14 +249,19 @@
 
 	&.is-active {
 		opacity: 1;
+		transform: scale(1, 1);
 	}
 
+	@include max(1060) {
+		transform-origin: left center;
+	}
 	@include max(992) {
 		min-height: 28vh;
 		padding: 16px 24px;
 	}
 	@include max(767) {
 		padding: 0;
+		transform-origin: center center;
 	}
 	p{
 		font-size: size(14px);
