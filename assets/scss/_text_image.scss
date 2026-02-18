@@ -10,7 +10,7 @@
 	   flex-wrap: wrap;
 	   align-items: center;
 
-	   @include max(992) {
+	   @include max(800) {
         flex-direction: column-reverse;
 		gap: 30px;
 
@@ -23,7 +23,7 @@
 	    &.off_blue{
 			.right_text_img{
 				&::after{
-background-color: #35435a;
+					background-color: #35435a;
 				}
 			}
 		 }
@@ -31,7 +31,7 @@ background-color: #35435a;
 		 &.light_blue{
 			.right_text_img{
 				&::after{
-background-color: #96B7E3;
+					background-color: #96B7E3;
 				}
 			}
 		 }
@@ -39,7 +39,7 @@ background-color: #96B7E3;
 		  &.dark_blue{
 			.right_text_img{
 				&::after{
-background-color: #1B273D;
+					background-color: #1B273D;
 				}
 			}
 		 }
@@ -49,7 +49,7 @@ background-color: #1B273D;
 	&.reverse_direction{
 		flex-direction: row-reverse;
 
-		@include max(992) {
+		@include max(800) {
 			flex-direction: column-reverse;
 		}
 
@@ -57,19 +57,19 @@ background-color: #1B273D;
       .right_text_img{
 		border-bottom-right-radius: 20px;
 		border-bottom-left-radius: 0;
- @media #{$media-1024}{
-	border-radius: 10px;
-border-bottom-right-radius: 10px;
+ 	@media #{$media-1024}{
+		border-radius: 10px;
+		border-bottom-right-radius: 10px;
 		border-bottom-left-radius: 0;
- }
+ 	}
 		 
-&::after{
+	&::after{
 	    top: unset;
-    left: 0px;
-    bottom: -4px;
-    -webkit-mask-image: url(../images/bottom_mask.svg);
-    mask-image: url(../images/bottom_mask.svg);
-    transform: rotate(0deg);
+		left: 0px;
+		bottom: -4px;
+		-webkit-mask-image: url(../images/bottom_mask.svg);
+		mask-image: url(../images/bottom_mask.svg);
+		transform: rotate(0deg);
    
 		}
 	  }
@@ -77,8 +77,11 @@ border-bottom-right-radius: 10px;
 
 		.right_text_main{
 			  padding-right: 0;
-			  padding-left: 5%;
-			  @include max(992) {
+			  padding-left: 10%;
+			  @include max(1060) {
+				padding-left: 5%;
+			  }
+			  @include max(800) {
 				padding-left: 0;
 			  }
 		}
@@ -108,11 +111,14 @@ border-bottom-right-radius: 10px;
 
 	   .right_text_main{
 		     width: 55%;
-			 padding-right: 5%;
+			 padding-right: 10%;
 
+			@include max(1060) {
+				padding-right: 5%;
+			  }
 			@media screen and (max-width: 768px) {
- width: 100%;
-			 padding-right: 0%;
+				width: 100%;
+				padding-right: 0%;
 			}
 			
 
@@ -131,10 +137,10 @@ border-bottom-right-radius: 10px;
 			 }
 
 			 ul{
-				  margin: 15px 0;
+				  margin:15px 0 25px;
 				  display: flex;
 				  flex-wrap: wrap;
-				  row-gap: 10px;
+				  row-gap: 18px;
 
 				  li{
 					font-size: size(20px);
@@ -146,21 +152,20 @@ border-bottom-right-radius: 10px;
 					width: 100%;
 
 					@media #{$media-1024}{
-font-size: size(18px);
-					line-height: size(28px);
+						font-size: size(18px);
+						line-height: size(28px);
 					}
 
-				@media #{$media-768}{
-font-size: size(16px);
-					line-height: size(24px);
-				}
+					@media #{$media-768}{
+						font-size: size(16px);
+						line-height: size(24px);
+					}
 
 					&.list_with_title{
 						font-weight: bold;
 					}
 
-					
-
+				
 					 &::after{
 						  content: "";
 						  width: 16px;
@@ -195,54 +200,47 @@ font-size: size(16px);
     		display: block;
 
 	@media screen and (max-width: 1024px) {
-	border-radius: 10px;
-	border-bottom-right-radius: 0;
+		border-radius: 10px;
+		border-bottom-right-radius: 0;
 	}
 
 	&::after{
 		content: "";
-		    content: "";
-    position: absolute;
-    bottom: 5px;
-    right: -6px;
-    width: 122px;
-    height: 111px;
- background-color: #dfdfdf;
-    mask-image: url(../images/top_mask.svg);
-    mask-repeat: no-repeat;
-    mask-size: 100%;
-    z-index: 3;
-    transform: rotate(90deg);
+		position: absolute;
+		bottom: 5px;
+		right: -6px;
+		width: 160px;
+		height: 150px;
+		background-color: #dfdfdf;
+		mask-image: url(../images/top_mask.svg);
+		mask-repeat: no-repeat;
+		mask-size: 100%;
+		z-index: 3;
+		transform: rotate(90deg);
 
 		@media screen and (max-width: 1440px) {
-width: 100px;
-    height: 88px;
+			width: 100px;
+			height: 88px;
 		}
 
 
 @media screen and (max-width: 768px) {
     width: 70px;
     height: 60px;
-		}
+}
 
 
 @media screen and (max-width: 480px) {
         width: 44px;
         height: 34px;
 }
-
-
-      
+ 
 	}
 
-
-		@media screen and (max-width: 768px) {
- width: 100%;
-			
-			}
-
-			
+@media screen and (max-width: 768px) {
+		width: 100%;
 	
+}
 
 	img{
 		width: 100%;
@@ -253,18 +251,18 @@ width: 100px;
 		position: static;
 
 		@media screen and (max-width: 1200px) {
-height: 400px;
+           height: 400px;
 		}
 
 		@media screen and (max-width: 1000px) {
-height: 350px;
+           height: 350px;
 		}
 
 			@media screen and (max-width: 768px) {
-height: 300px;
-		}
+               height: 300px;
+		   }
 	}
-	   }
+}
 }
 
 

@@ -24,7 +24,7 @@
 			padding: 50px 0;
 		}
          @media screen and (max-width: 500px) {
-			padding: 30px 0;
+			padding: 40px 0 30px 0;
 		}
          &::before {
 			content: "";
@@ -76,7 +76,7 @@
 		}
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
 		width: 70px;
 		height: 60px;
 		}
@@ -94,8 +94,8 @@
 	   position: relative;
 
 	   .container{
-		position: relative;
-		z-index: 5;
+			position: relative;
+			z-index: 5;
 	   }
 
 	   &::after{
@@ -105,6 +105,9 @@
 		   position: absolute;
 		   top: 0;
 		   background-color: #126d70;
+	   }
+	   @media screen and (max-width: 767px) {
+			min-height: 425px;
 	   }
 }
 
@@ -143,8 +146,12 @@
 	overflow: hidden;
 	box-sizing: border-box;
 
-		 @media #{$media-768}{
+		@media screen and (max-width: 992px) {
             padding: 45px 0 20px;
+		 }
+		 @media screen and (max-width: 767px) {
+			height: 100%;
+			padding-top: 0;
 		 }
 }
 
@@ -175,6 +182,14 @@
 		height: 10px;
 		background: #fff;
 	}
+	@media screen and (max-width: 767px) {
+		bottom: 0 !important;
+	}
+	.swiper-pagination-bullet{
+		@media screen and (max-width: 767px) {
+			margin: 0 !important;
+		}
+	}
 }
 
 .career_story_swiper {
@@ -191,7 +206,9 @@
 		transition: opacity 0.35s ease, transform 0.35s ease;
 	}
 
-
+	@media screen and (max-width: 767px) {
+		height: auto;
+	}
 }
 
 // Card: rounded top/left/bottom-left; angled cut bottom-right (speech-bubble style)
@@ -210,16 +227,15 @@
 	background-position: center;
 	min-height: 330px;
 
-	@media #{$media-1024}{
-		border-radius: 15px;
-		padding: 80px 55px 10px;
-	}
 
-	@media #{$media-768}{
+	@media screen and (max-width: 992px) {
 		border-radius: 15px;
-		padding: 50px 15px 10px;
+		padding: 100px 55px 10px;
 	}
-
+	@media screen and (max-width: 767px) {
+		padding: 70px 35px 50px;
+        min-height: auto;
+	}
 	.career_story_card_inner{
        position: relative;
 	   z-index: 5;
@@ -272,12 +288,17 @@
     left: 0;
     top: -55px;
 
-		@media #{$media-768}{
-			height: 25px;
-			left: 15px;
-			top: 20px;
-	        width: 28px;
-		}
+	@media screen and (max-width: 992px) {
+		height: 25px;
+		left: 0;
+		top: -45px;
+		width: 35px;
+	}
+
+	@media screen and (max-width: 767px) {
+		top: -25px;
+        width: 22px;
+	}
 
 	img{
 		  width: 100%;
@@ -293,8 +314,8 @@
 	font-weight: 300;
 
 	@media #{$media-1024}{
-font-size: size(14px);
-	line-height: size(24px);
+     font-size: size(14px);
+	line-height: size(20px);
 	}
 }
 
@@ -310,6 +331,10 @@ font-size: size(14px);
 	border-radius: 50%;
 	object-fit: cover;
 	flex-shrink: 0;
+	@media screen and (max-width: 767px) {
+		width: 45px;
+		height: 45px;
+	}
 }
 
 .career_story_author_info {
@@ -328,6 +353,10 @@ font-size: size(14px);
 	@media #{$media-1024}{
 	font-size: size(16px);
 	}
+	@media screen and (max-width: 767px) {
+		font-size: size(14px);
+		line-height: size(18px);
+	}
 }
 
 .career_story_role {
@@ -337,7 +366,11 @@ font-size: size(14px);
 	font-weight: 400;
 
 	@media #{$media-1024}{
-	font-size: size(14px);
+		font-size: size(14px);
+	}
+	@media screen and (max-width: 767px) {
+		font-size: size(13px);
+		line-height: size(16px);
 	}
 }
 

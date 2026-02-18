@@ -29,8 +29,9 @@
 		margin-bottom: 16px;
 	}
 	@include max(767) {
-		font-size: size(28px);
-		margin-bottom: 14px;
+		font-size: size(30px);
+		line-height: size(34px);
+		margin-bottom: 10px;
 	}
 }
 
@@ -45,8 +46,9 @@
 	margin:0 auto 25px;
 
 	@include max(767) {
-		font-size: size(15px);
-		margin-bottom: 32px;
+		font-size: size(14px);
+		line-height: size(20px);
+		margin-bottom: 30px;
 	}
 }
 
@@ -64,11 +66,7 @@
 		grid-template-columns: repeat(2, 1fr);
 		margin-bottom: 36px;
 	}
-	@include max(600) {
-		grid-template-columns: 1fr;
-		gap: 16px;
-		margin-bottom: 32px;
-	}
+	
 }
 
 .what-we-do-card {
@@ -78,13 +76,15 @@
 	 background-position: top;
 	 padding: 25px 40px 35px;
 	 transition: background 0.25s ease, border-color 0.25s ease;
-	 min-height: 216px;
+	//  min-height: 216px;
+	aspect-ratio: 255/215;
 	 display: flex;
 	 align-items: center;
 
+
 	@include max(767) {
-		padding: 28px 18px 24px;
-		border-radius: 14px;
+		padding:15px 15px 20px;
+		border-radius:7px;
 	}
 }
 
@@ -97,6 +97,7 @@
 	@include max(767) {
 		margin-bottom: 14px;
 		min-height: 48px;
+		width: 30px;
 	}
 }
 
@@ -123,10 +124,12 @@
 	letter-spacing: 0.01em;
 
 	@include max(1200) {
-		font-size: size(14px);
+		font-size: size(15px);
+		line-height: size(20px);
 	}
 	@include max(767) {
 		font-size: size(14px);
+		line-height: size(18px);
 	}
 }
 

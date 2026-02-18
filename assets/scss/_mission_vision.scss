@@ -23,13 +23,23 @@ $mv-body-bg: #fff;
 		background-repeat: no-repeat;
 		background-position: top right;
 		z-index: 3;
+		@include max(992) {
+			width: 76px;
+   			height: 67px;
+		}
+		@include max(767) {
+			width: 49px;
+			height: 46px;
+			top: -3px;
+			right: 0px;
+		}
 	}
 
 	@include max(992) {
-		padding: 60px 0 80px;
+		padding: 60px 0 0px;
 	}
 	@include max(767) {
-		padding: 40px 0 60px;
+		padding: 40px 0 0px;
 	}
 }
 
@@ -40,7 +50,7 @@ $mv-body-bg: #fff;
 	position: relative;
     z-index: 1;
 
-	@include max(992) {
+	@include max(767) {
 		grid-template-columns: 1fr;
 		gap: 28px;
 	}
@@ -62,7 +72,7 @@ $mv-body-bg: #fff;
 .mission-vision-card__image-wrap {
 	position: relative;
 	width: 100%;
-	padding-top: 62%;
+	height: 385px;
 	overflow: hidden;
 	border-radius: 16px 16px 0 0;
 
@@ -85,24 +95,59 @@ $mv-body-bg: #fff;
 .mission-vision-card__body {
 	position: relative;
 	margin-top:-110px;
-	padding:60px 65px 70px 65px;
-	background: $mv-body-bg;
-	border-radius: 20px;
+	padding:57px 65px;
 	z-index: 2;
-    mask-image: url(../images/mision_mask.svg);
-    mask-size: 100%;
-    mask-repeat: no-repeat;
-    mask-position: top;
-	min-height: 310px;
-	@include max(767) {
-		padding: 22px 20px 28px;
-		border-radius: 12px 12px 0 0;
+	background-color: $mv-body-bg;
+	background-image: none;
+	// Lock aspect ratio to mask proportions so shape stays identical on all screen sizes
+	aspect-ratio: 663 / 293;
+	width: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+	// Inline SVG mask (same method as .header-content)
+	-webkit-mask-image: url("data:image/svg+xml,%3Csvg%20width%3D%22663%22%20height%3D%22293%22%20viewBox%3D%220%200%20663%20293%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M25.0001%20292.5L638%20292.5C651.807%20292.5%20663%20281.307%20663%20267.5L663%20114.427C663%20106.47%20659.839%2098.8394%20654.213%2093.2133L569.787%208.78691C564.161%203.16081%20556.53%200.000103455%20548.574%200.000102063L25.0001%201.05189e-05C11.193%208.10476e-06%200.000120113%2011.1929%200.000117699%2025L7.52991e-05%20267.5C7.2885e-05%20281.307%2011.1929%20292.5%2025.0001%20292.5Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E");
+	mask-image: url("data:image/svg+xml,%3Csvg%20width%3D%22663%22%20height%3D%22293%22%20viewBox%3D%220%200%20663%20293%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M25.0001%20292.5L638%20292.5C651.807%20292.5%20663%20281.307%20663%20267.5L663%20114.427C663%20106.47%20659.839%2098.8394%20654.213%2093.2133L569.787%208.78691C564.161%203.16081%20556.53%200.000103455%20548.574%200.000102063L25.0001%201.05189e-05C11.193%208.10476e-06%200.000120113%2011.1929%200.000117699%2025L7.52991e-05%20267.5C7.2885e-05%20281.307%2011.1929%20292.5%2025.0001%20292.5Z%22%20fill%3D%22white%22%2F%3E%3C%2Fsvg%3E");
+	-webkit-mask-size: 100% 100%;
+	mask-size: 100% 100%;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-position: top center;
+	mask-position: top center;
+	// Inner scrollable area: when content is long it scrolls instead of breaking the shape
+	.desc{
+	
+		@include max(992) {
+			overflow: hidden;
+			overflow-y: auto;
+			scrollbar-color: #e9ebeb #fff;
+			scrollbar-width: thin;
+			height: 70px;
+			padding-right: 20px;
+		}
+		@include max(767) {
+			height: 75px;
+		}
 	}
 	p{
 		color: #1B273D;
 		line-height: size(23px);
 		font-weight:200;
+		@include max(1060) {
+			font-size: size(14px);
+			line-height: size(20px);
+		}
 	}
+	@include max(1060) {
+		padding: 15px 30px;
+	}
+	@include max(992) {
+		padding: 30px 20px;
+		margin-top: -125px;
+	}
+	@include max(767) {
+        padding: 30px 25px;
+	}
+	
 }
 
 .mission-vision-card__title {
@@ -112,7 +157,11 @@ $mv-body-bg: #fff;
 	line-height: 1.3;
 	color: #1B273D;
 	margin: 0 0 12px 0;
-
+	@include max(1060) {
+		font-size: size(20px);
+		line-height: size(24px);
+		margin: 0 0 10px 0;
+	}
 	@include max(992) {
 		font-size: size(22px);
 	}

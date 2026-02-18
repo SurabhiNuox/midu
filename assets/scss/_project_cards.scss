@@ -64,7 +64,7 @@ $project-card-btn: #15868A;
 	}
 	@include max(767) {
 		grid-template-columns: 1fr;
-		gap: 16px;
+		gap: 20px;
 	}
 }
 

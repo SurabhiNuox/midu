@@ -91,7 +91,7 @@
 		var header = document.querySelector('.projects_section .project-header');
 		var headerHeight = header ? header.offsetHeight : 0;
 		var sliderHeight = window.innerHeight - headerHeight;
-		var blockHeight = sliderHeight * 0.33; // Match the calculation in setContentColumn
+		var blockHeight = sliderHeight * 0.43; // Match the calculation in setContentColumn
 		var totalBlocks = blocks.length;
 		
 		// Calculate progress needed for last block's top to reach viewport top
@@ -108,11 +108,15 @@
 		var maxProgress = progressForLastAtTop;
 		var adjustedProgress = Math.max(0, Math.min(maxProgress, scrollInto / sectionHeight));
 		
-		// Active = block whose center is at viewport center (not top)
-		var index = Math.min(
-			totalSlides - 1,
-			Math.max(0, Math.round(Math.min(1, adjustedProgress) * (totalSlides - 1)))
-		);
+		// Active slide: last slide activates at 60% progress so it’s visible before next section
+		var progressClamped = Math.max(0, Math.min(1, adjustedProgress));
+		var lastSlideThreshold = 0.6;
+		var index;
+		if (progressClamped >= lastSlideThreshold) {
+			index = totalSlides - 1;
+		} else {
+			index = Math.min(totalSlides - 2, Math.max(0, Math.floor(progressClamped / lastSlideThreshold * (totalSlides - 1))));
+		}
 
 		// Before section reaches viewport top: no pin, show first slide
 		if (rect.top > 0) {

@@ -117,14 +117,14 @@ width: 100px;
 
 			li{
 				   width: 100%;
-				   min-height: 111px;
-				   padding: 15px 25px 15px 35px; 
+				   padding: 15px 25px 15px 55px; 
 				   position: relative;
 				   background-image: url(../images/bg-ec-box.png);
 				   background-repeat: no-repeat;
 				   background-position: center;
 				   background-size: cover;
 				   width:100%;
+				   aspect-ratio: 608 / 111;
 
 				   &::after{
 					content: "";
@@ -135,7 +135,7 @@ width: 100px;
 					background-repeat: no-repeat;
 					background-position: center;
 					position: absolute;
-					left: 10px;
+					left: 25px;
 					top: 20px;
 
 				   }
@@ -151,6 +151,9 @@ width: 100px;
 
 					p{
 						color: #fff;
+						line-height: 22px;
+						margin-bottom: 0;
+						font-weight: 200;
 					}
 			}
 		}

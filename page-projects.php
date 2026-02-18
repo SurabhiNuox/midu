@@ -37,7 +37,7 @@ get_header();
 			  array( 'icon' => 'ph_icon_1.svg', 'title' => 'Strategic Purpose', 'description' => 'Projects are selected and developed based on clear market demand and high-value potential.' ),
 			  array( 'icon' => 'ph_icon_2.svg', 'title' => 'Quality Execution', 'description' => 'We follow meticulous standards across planning, engineering, and delivery.' ),
 			  array( 'icon' => 'ph_icon_3.svg', 'title' => 'Sustainable Design', 'description' => 'Each project incorporates environmentally responsible principles and long-term viability.' ),
-			  array( 'icon' => 'ph_icon_4.svg', 'title' => 'nnovation & Technology', 'description' => 'Leveraging modern tools, smart systems, and future-ready approaches.' ),
+			  array( 'icon' => 'ph_icon_4.svg', 'title' => 'Innovation & Technology', 'description' => 'Leveraging modern tools, smart systems, and future-ready approaches.' ),
 			  array( 'icon' => 'ph_icon_5.svg', 'title' => 'Community Impact', 'description' => 'Creating developments that enhance quality of life and contribute to Vision 2030 goals.' ),
 		  ));
 		  get_template_part('template-parts/light-blue-list');

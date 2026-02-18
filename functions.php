@@ -280,11 +280,12 @@ function addarah_scripts()
 	}
 
 
-	// Contact page — Leaflet map with dark theme
-	if ($is_contact_page) {
-		wp_enqueue_style('leaflet-css', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css', array(), '1.9.4');
-		wp_enqueue_script('leaflet-js', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', array(), '1.9.4', true);
-		wp_enqueue_script('contact-map-script', get_template_directory_uri() . '/assets/js/contact-map.js', array('leaflet-js'), _S_VERSION, true);
+	// Contact page — Google Maps with Snazzy Maps styles
+	if ( $is_contact_page ) {
+		wp_enqueue_script( 'contact-map-script', get_template_directory_uri() . '/assets/js/contact-map.js', array(), _S_VERSION, true );
+		wp_localize_script( 'contact-map-script', 'miduContactMap', array(
+			'apiKey' => apply_filters( 'midu_google_maps_api_key', 'AIzaSyAZY9WW5ucJZLvBYxY4cAeZYY8AvmjZygg' ),
+		) );
 	}
 
 	// Load Swiper and CompanyServices script on Company Detail pages

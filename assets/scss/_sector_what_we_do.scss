@@ -13,12 +13,20 @@ $sector-wwd-desc: #b0b8c4;
 	background-repeat: no-repeat;
 	background-position: left top;
 	background-size: 100% 100%;
+	background-color: #1b273d;
 
 	@include max(992) {
 		padding: 60px 0 80px;
 	}
 	@include max(767) {
 		padding: 40px 0 60px;
+	}
+	.sector-what-we-do__bg{
+		position: absolute;
+		bottom: 0;
+		z-index: 0;
+		left: -490px;
+		animation: visionBgMove 10s ease-in-out infinite;
 	}
 }
 
@@ -129,7 +137,7 @@ $sector-wwd-desc: #b0b8c4;
 }
 
 .sector-what-we-do-card__icon {
-	height: 48px;
+	height: 55px;
 	object-fit: contain;
 	display: block;
 	max-width: 100%;

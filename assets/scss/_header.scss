@@ -43,7 +43,8 @@
 		position: relative;
 		overflow: hidden;
 		backdrop-filter: blur(10px);
-		background-color: rgba(255, 255, 255, 0.2);
+		background-color: rgb(122 119 119 / 20%);
+		// background-color: rgba(255, 255, 255, 0.2);
 		// Cut out top-right + bottom-left (same shape, bottom-left mirrored); add then subtract so both cut
 		mask-image: linear-gradient(white, white), url("data:image/svg+xml,%3Csvg%20width%3D%2250%22%20height%3D%2247%22%20viewBox%3D%220%200%2050%2047%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M50%200H0C4%200%206.1667%202.1667%207%203C7%203%2033.5%2029.5%2048%2044C50%2046%2050%2047%2050%2047V0Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E"), url("data:image/svg+xml,%3Csvg%20width%3D%2250%22%20height%3D%2247%22%20viewBox%3D%220%200%2050%2047%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%2047H50C46%2047%2043.8333%2044.3333%2043%2044C16.5%2017.5%202%203%202%203C0%201%200%200%200%200V47Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E");
 		-webkit-mask-image: linear-gradient(white, white), url("data:image/svg+xml,%3Csvg%20width%3D%2250%22%20height%3D%2247%22%20viewBox%3D%220%200%2050%2047%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M50%200H0C4%200%206.1667%202.1667%207%203C7%203%2033.5%2029.5%2048%2044C50%2046%2050%2047%2050%2047V0Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E"), url("data:image/svg+xml,%3Csvg%20width%3D%2250%22%20height%3D%2247%22%20viewBox%3D%220%200%2050%2047%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%2047H50C46%2047%2043.8333%2044.3333%2043%2044C16.5%2017.5%202%203%202%203C0%201%200%200%200%200V47Z%22%20fill%3D%22black%22%2F%3E%3C%2Fsvg%3E");
@@ -199,7 +200,7 @@
 			margin: 0;
 
 			&.current_page_item a {
-				color: #15868A;
+				color: #F47B47;
 			}
 		}
 
@@ -213,7 +214,7 @@
 			position: relative;
 
 			&:hover {
-				color: #15868A;
+				color: #F47B47;
 			}
 		}
 	}
@@ -235,7 +236,7 @@
 			transition: color 0.3s ease;
 
 			&:hover {
-				color: #15868A;
+				color: #F47B47;
 			}
 		}
 	}
@@ -306,6 +307,11 @@
 		}
 		@include max(767) {
 			display: none;
+		}
+	}
+	&.is-sticky {
+		.header-content{
+			background-color: rgb(143 139 139 / 20%);
 		}
 	}
 }

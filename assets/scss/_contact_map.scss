@@ -3,10 +3,10 @@
 @import "./mixins";
 
 // Map default colour (section, canvas, tile tint, controls); overridable via JS --contact-map-color
-$contact-map-bg: #273445;
+$contact-map-bg: #202031;
 $contact-map-label: rgba(255, 255, 255, 0.9);
 $contact-map-pin-white: #ffffff;
-$contact-map-pin-dot: #273445;
+$contact-map-pin-dot: #202031;
 
 .contact-map {
 	--contact-map-color: #{$contact-map-bg};
@@ -21,6 +21,9 @@ $contact-map-pin-dot: #273445;
 		width: 100%;
 		height: 740px;
 		min-height: 320px;
+		@include max(992) {
+			height: 510px;
+		}
 	}
 
 	&__canvas {
@@ -30,6 +33,12 @@ $contact-map-pin-dot: #273445;
 		width: 100%;
 		height: 100%;
 		background-color: var(--contact-map-color);
+
+		// Hide Google Maps "Use ctrl + scroll to zoom" overlay; zoom only via +/− controls
+		.gm-style-pbc {
+			opacity: 0 !important;
+			pointer-events: none !important;
+		}
 
 		// Leaflet tile layer: default map colour #273445 via overlay
 		.leaflet-tile-pane {

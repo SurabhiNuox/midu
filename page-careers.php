@@ -22,14 +22,14 @@ get_header();
 			'date'     => 'Posted 18 Hours Ago',
 			'location' => 'Riyadh, Saudi Arabia',
 			'time'     => 'Full-Time',
-			'link'     => '#',
+			'link'     => esc_url( home_url( '/career-detail' ) ),
 		),
 		array(
 			'title'    => 'Senior Project Manager',
 			'date'     => 'Posted 2 Days Ago',
 			'location' => 'Jeddah, Saudi Arabia',
 			'time'     => 'Full-Time',
-			'link'     => '#',
+			'link'     => esc_url( home_url( '/career-detail' ) ),
 		),
 
         array(
@@ -37,14 +37,14 @@ get_header();
 			'date'     => 'Posted 18 Hours Ago',
 			'location' => 'Riyadh, Saudi Arabia',
 			'time'     => 'Full-Time',
-			'link'     => '#',
+			'link'     => esc_url( home_url( '/career-detail' ) ),
 		),
 		array(
 			'title'    => 'Senior Project Manager',
 			'date'     => 'Posted 2 Days Ago',
 			'location' => 'Jeddah, Saudi Arabia',
 			'time'     => 'Full-Time',
-			'link'     => '#',
+			'link'     => esc_url( home_url( '/career-detail' ) ),
 		),
 
         array(
@@ -52,14 +52,14 @@ get_header();
 			'date'     => 'Posted 18 Hours Ago',
 			'location' => 'Riyadh, Saudi Arabia',
 			'time'     => 'Full-Time',
-			'link'     => '#',
+			'link'     => esc_url( home_url( '/career-detail' ) ),
 		),
 		array(
 			'title'    => 'Senior Project Manager',
 			'date'     => 'Posted 2 Days Ago',
 			'location' => 'Jeddah, Saudi Arabia',
 			'time'     => 'Full-Time',
-			'link'     => '#',
+			'link'     => esc_url( home_url( '/career-detail' ) ),
 		),
 		
 	);

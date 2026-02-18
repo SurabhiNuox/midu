@@ -28,6 +28,22 @@
 		return rect.bottom > 0 && rect.top < viewHeight;
 	}
 
+	function isBannerEnded() {
+		var banner = document.querySelector('.main-banner') || document.querySelector('.inner-banner');
+		if (!banner) return true;
+		var rect = banner.getBoundingClientRect();
+		return rect.bottom <= 0;
+	}
+
+	function updateStickyClass() {
+		if (!header) return;
+		if (isBannerEnded()) {
+			header.classList.add('is-sticky');
+		} else {
+			header.classList.remove('is-sticky');
+		}
+	}
+
 	function isInOurSectorsSection() {
 		var section = document.querySelector('.our-sectors');
 		if (!section) return false;
@@ -55,6 +71,7 @@
 		timeoutId = setTimeout(function () {
 			header.classList.remove('is-visible');
 		}, delay);
+		updateStickyClass();
 	}
 
 	function init() {
@@ -65,6 +82,7 @@
 		window.addEventListener('scroll', updateHeaderForScroll, { passive: true });
 
 		updateHeaderForScroll();
+		updateStickyClass();
 	}
 
 	if (document.readyState === 'loading') {

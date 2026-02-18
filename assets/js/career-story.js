@@ -18,23 +18,29 @@
 		if (!swiperEl || !paginationEl) return;
 
 		new Swiper(swiperEl, {
-			direction: 'vertical',
+			direction: 'horizontal',
 			slidesPerView: 1,
 			spaceBetween: 0,
 			loop: true,
 			speed: 500,
-			effect: 'cards',
-			cardsEffect: {
-				perSlideOffset: 12,
-				perSlideRotate: 0,
-				rotate: false,
-				slideShadows: false,
-			},
+			effect: 'slide',
 			grabCursor: true,
 			allowTouchMove: true,
 			pagination: {
 				el: paginationEl,
 				clickable: true,
+			},
+			breakpoints: {
+				767: {
+					direction: 'vertical',
+					effect: 'cards',
+					cardsEffect: {
+						perSlideOffset: 12,
+						perSlideRotate: 0,
+						rotate: false,
+						slideShadows: false,
+					},
+				},
 			},
 		});
 	}

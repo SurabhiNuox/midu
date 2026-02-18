@@ -80,7 +80,7 @@ $contact-social-bg: #273445;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.5;
-	margin: 0 0 32px;
+	margin: 0 0 35px;
 	max-width: 480px;
 }
 
@@ -90,13 +90,17 @@ $contact-social-bg: #273445;
 	padding: 0;
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 30px;
+	@include max(992) {
+		gap: 20px;
+	}
 }
 
 .contact_top_section_item {
 	display: flex;
 	align-items: center;
 	gap: 30px;
+	width: 50%;
 
 	@media screen and (max-width: 768px) {
 		gap: 20px;
@@ -122,7 +126,7 @@ $contact-social-bg: #273445;
 	a.contact_top_section_item_text {
 		color: #011334;
 		font-size: 16px;
-		font-weight: 200;
+		font-weight:300;
 		line-height: 1.45;
 		text-decoration: none;
 		margin: 0;
@@ -137,8 +141,8 @@ a.contact_top_section_item_text:hover{
 .contact_top_section_social {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 12px;
-	margin-top: 8px;
+	gap: 15px;
+	margin-top: 40px;
 }
 
 .contact_top_section_social_icon {
@@ -147,7 +151,7 @@ a.contact_top_section_item_text:hover{
     justify-content: center;
     width: 38px;
     height: 38px;
-    background-color: #1B273D;
+    background-color: #414e62;
     border-radius: 6px;
     color: #fff;
     font-size: 14px;
@@ -184,17 +188,33 @@ a.contact_top_section_item_text:hover{
 	flex-direction: column;
 	gap: 20px;
 }
-
-.contact_top_section_form_row {
+.contact_top_section_form_inner{
 	display: flex;
 	flex-wrap: wrap;
-	gap: 20px;
+	row-gap: 20px;
+	justify-content: space-between;
+}
+.contact_top_section_form_row {
+	 width: 100%;
+	 &:first-child{
+		width:47.5%;
+	 }
+	 &:nth-child(2){
+		width:47.5%;
+	 }
 	&.contact_top_section_form_submit {
 		margin-top: 4px;
+		button{
+			font-family: "REM", sans-serif;
+			font-weight: 300;
+			min-width: 114px;
+			text-align: center;
+			justify-content: center;
+		}
 	}
 	input,
 	textarea {
-		flex: 1 1 100%;
+		 width: 100%;
 		min-width: 0;
 		background: $white;
 		border-radius: 7px;
@@ -205,14 +225,15 @@ a.contact_top_section_item_text:hover{
 		font-size: 16px;
 		font-weight: 200;
 		font-family: inherit;
-		color: #1a1a1a;
+		color: rgba(44, 44, 44, 0.7);
+		border: 1px solid transparent;
 		transition: border-color 0.2s ease;
 		&::placeholder {
-			color: $placeholder-gray;
+			color: rgba(44, 44, 44, 0.7);
 		}
 		&:focus {
 			outline: none;
-			border-color: $contact-teal;
+			border-color: #15868A;
 		}
 	}
 	textarea {
@@ -275,4 +296,16 @@ a.contact_top_section_item_text:hover{
 		transform: none;
 		transition: none;
 	}
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
 }

@@ -19,6 +19,9 @@ $theme_img = get_template_directory_uri() . '/assets/images/';
 ?>
 
 <section class="sector-what-we-do" aria-label="<?php echo esc_attr( $title ); ?>">
+	<div class="sector-what-we-do__bg">
+		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/vision_gradient.png" alt="Sector What We Do Background">
+	</div>
 	<div class="container">
 		<?php if ( $title ) : ?>
 			<h2 class="sector-what-we-do__title" data-aos="fade-up" data-aos-duration="600" data-aos-once="true"><?php echo esc_html( $title ); ?></h2>

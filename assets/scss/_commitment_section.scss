@@ -13,6 +13,7 @@ $commitment-teal: #16888C;
     overflow: hidden;
 	@include max(1060) {
 		margin-bottom: -125px;
+		border-top-left-radius: 20px;
 	}
 	@include max(767) {
 		border-top-left-radius: 15px;
@@ -87,7 +88,7 @@ $commitment-teal: #16888C;
         padding: 45px;
 	}
 	@include max(767) {
-		padding: 25px;
+		padding: 35px 30px;
 	}
 	p{
 		color: $white;
@@ -97,7 +98,7 @@ $commitment-teal: #16888C;
 			margin-bottom: 0;
 		}
 		@include max(1060) {
-			margin-bottom: 10px;
+			margin-bottom: 20px;
 		}
 	}
 }
@@ -116,10 +117,11 @@ $commitment-teal: #16888C;
 	}
 	@include max(992) {
 		font-size: size(32px);
-		margin-bottom: 16px;
+		margin-bottom: 10px;
 	}
 	@include max(767) {
-		font-size: size(27px);
+		font-size: size(25px);
+		line-height: size(30px);
 		margin-bottom: 5px;
 	}
 }
@@ -155,9 +157,10 @@ $commitment-teal: #16888C;
 		height: 400px;
 	}
 	@include max(992) {
-		height: 300px;
-		flex: initial;
-		order: 2;
+		height: auto;
+        flex: initial;
+        order: 2;
+        padding-bottom: 60px;
 	}
 	&::before{
 		content: '';
@@ -170,17 +173,21 @@ $commitment-teal: #16888C;
 		z-index: 2;
 	}
 	&:after{
-		content: '';
+		content: "";
 		position: absolute;
-		top: 0;
-		right: 0;
-		width: 128px;
-		height: 111px;
-		background-image: url(../images/pr_img_small.svg);
-		background-size: 100% 100%;
-		background-repeat: no-repeat;
-		background-position: top right;
+		top: 0px;
+		right: -1px;
+		width: 89px;
+		height: 73px;
+		background-color: #202031;
+		mask-image: url(../images/top_mask.svg);
+		-webkit-mask-image: url(../images/top_mask.svg);
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-size: 100% 100%;
+		mask-size: 100% 100%;
 		z-index: 3;
+		background-image: none;
 		@include max(767) {
 			top: -1px;
 			right: 0;

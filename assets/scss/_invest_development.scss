@@ -23,6 +23,12 @@
 		@media #{$media-768}{
 	padding: 55px 0;
 	}
+	.invest-development-section__bg{
+		position: absolute;
+		top: -60px;
+		left: 0;
+		z-index: 0;
+	}
 }
 
 .invest-development_inner {
@@ -40,9 +46,9 @@
 	align-self: flex-start; /* required for sticky: column height = content, not stretched */
 
 	@media #{$media-768}{
-width: 100%;
-	padding-right:0;
-	position: static;
+		width: 100%;
+		padding-right:0;
+		position: static;
 	}
 	p{
 		color: #fff;
@@ -54,9 +60,9 @@ width: 100%;
 	width: 55%;
 
 	@media #{$media-768}{
-width: 100%;
-margin-top: 30px;
-	padding-right:0;
+		width: 100%;
+		margin-top: 30px;
+		padding-right:0;
 	}
 
 	.invest-development_list {
@@ -83,50 +89,52 @@ margin-top: 30px;
 			background-position: bottom;
 			overflow: hidden;
 
-			 @media #{$media-1024}{
-padding: 5px 20px;
-gap: 10px;
-			 }
-
-			 @media #{$media-768}{
-padding: 10px 10px;
-min-height: 40px;
+			 @include max(1060) {
+				padding: 5px 20px;
+				gap: 10px;
+				min-height: 55px;
+				
+			}
+			
+			@include max(992) {
+				 min-height: 44px;
+				padding: 10px 10px;
 			 }
 
 			  @media #{$media-480}{
-padding: 10px 10px;
-min-height: 40px;
-	 background-size: cover;
-    background-repeat: no-repeat;
-    background-position: left bottom;
-	background-image: none;
+				padding: 10px 10px;
+				min-height: 40px;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: left bottom;
+				background-image: none;
 
 	&::before{
 		    content: "";
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-       background: #79B2BE;
-    background: linear-gradient(142deg, rgb(121, 178, 190) 0%, rgb(176, 97, 67) 100%);
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 10px;
+			background: #79B2BE;
+			background: linear-gradient(142deg, rgb(121, 178, 190) 0%, rgb(176, 97, 67) 100%);
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 0;
 	}
 
 	&::after{
 		    content: "";
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
-    border-radius: 10px;
-    background: #384C63;
-    background: linear-gradient(123deg, rgb(56, 76, 99) 0%, rgb(53, 67, 90) 100%);
-    position: absolute;
-    left: 1px;
-    top: 1px;
-    z-index: 0;
-	}
-			 }
+			width: calc(100% - 2px);
+			height: calc(100% - 2px);
+			border-radius: 10px;
+			background: #384C63;
+			background: linear-gradient(123deg, rgb(56, 76, 99) 0%, rgb(53, 67, 90) 100%);
+			position: absolute;
+			left: 1px;
+			top: 1px;
+			z-index: 0;
+			}
+		}
 
 		
 	
@@ -150,6 +158,10 @@ min-height: 40px;
 					height: auto;
 					max-height: 100%;
 				}
+				@include max(1060) {
+					width: 22px;
+					height: 22px;
+				}
 			}
 	
 			.invest-development_item_title {
@@ -160,19 +172,18 @@ min-height: 40px;
 				line-height: 1.4;
 				position: relative;
 				z-index: 1;
- @media #{$media-1024}{
-	font-size: 20px;
-		  }
+				@include max(1060) {
+					font-size: 20px;
+				}
 
-		  @media #{$media-768}{
-	font-size: 16px;
-		  
-		  }
+				@include max(992) {
+					font-size: 16px;
+		          }
 
-		   @media #{$media-480}{
-	font-size: 14px;
-		  
-		  }
+				  @include max(767) {
+						font-size: 14px;
+				
+					}
 			}
 		}
 	}
@@ -190,12 +201,12 @@ min-height: 40px;
 
 		
 		 @media #{$media-1024}{
-	font-size: 20px;
+			font-size: 20px;
 		  }
 
 		  @media #{$media-768}{
-	font-size: 18px;
-	margin-bottom: 10px;
+			font-size: 18px;
+			margin-bottom: 10px;
 		  }
 	}
 }

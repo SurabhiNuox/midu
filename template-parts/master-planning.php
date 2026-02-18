@@ -55,7 +55,7 @@ foreach ( $master_planning_items as $i => $item ) {
 						<?php if ( $icon_url !== '' ) : ?>
 						<div class="master-planning-icon"><img src="<?php echo esc_url( $icon_url ); ?>" alt="Master Planning"></div>
 						<?php endif; ?>
-						<h4><?php echo esc_html( $item_title ); ?></h4>
+						<h4><?php echo wp_kses( $item_title, array( 'br' => array() ) ); ?></h4>
 					</div>
 				</li>
 				<?php endforeach; ?>

@@ -5,19 +5,14 @@
  * @package addarah
  */
 
-// Ensure contact map scripts load when this template is used
-wp_enqueue_style('leaflet-css', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css', array(), '1.9.4');
-wp_enqueue_script('leaflet-js', 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js', array(), '1.9.4', true);
-wp_enqueue_script('contact-map-script', get_template_directory_uri() . '/assets/js/contact-map.js', array('leaflet-js'), _S_VERSION, true);
-
 get_header();
 ?>
 
 <main id="primary" class="site-main">
 	<?php
 	// Set banner variables
-	set_query_var('banner_title', get_the_title());
-	set_query_var('banner_bg_image', get_template_directory_uri() . '/assets/images/careers-banner.jpg');
+	set_query_var('banner_title', 'Contact Us');
+	set_query_var('banner_bg_image', get_template_directory_uri() . '/assets/images/contact_banner.jpg');
 	get_template_part('template-parts/inner-banner');
 
 	

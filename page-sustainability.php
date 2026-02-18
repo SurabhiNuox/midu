@@ -18,7 +18,7 @@ $image_text_list = array(
 set_query_var( 'image_text_list', $image_text_list );
 
 // Image-text list paragraphs (repeater): optional paragraphs in first list item, override from ACF "image_text_list_paragraph" when set
-$image_text_list_paragraph = array( 'Integrating modern systems that reduce consumption and enhance operational performance.', 
+$image_text_list_paragraph = array( 'Integrating modern systems that reduce consumption and enhance operational performance.',
 'Sourcing high-quality, low-impact materials that minimize carbon footprint.', 'Utilizing efficient irrigation systems, recycling processes, and optimized usage strategies.', 'Implementing environmentally conscious construction methods and long-term waste management solutions.' );
 set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph );
 
@@ -80,147 +80,143 @@ set_query_var( 'social_card_list', $social_card_list );
 <main id="primary" class="site-main">
 	<?php
 	// Set banner variables
-	set_query_var('banner_title', get_the_title());
-	set_query_var('banner_bg_image', get_template_directory_uri() . '/assets/images/sus-banner.jpg');
-	get_template_part('template-parts/inner-banner');
+	set_query_var( 'banner_title', get_the_title() );
+	set_query_var( 'banner_bg_image', get_template_directory_uri() . '/assets/images/sus-banner.jpg' );
+	get_template_part( 'template-parts/inner-banner' );
 	?>
 
-	   <div class="main_content">
-		  <?php
-		  // Set overview section variables
-		  set_query_var('overview_title', 'Our Commitment to a Sustainable Future');
-		  set_query_var('overview_image', get_template_directory_uri() . '/assets/images/sustainibility.png');
-		  set_query_var('overview_content', array(
-			  'At MIDU, sustainability is not an added feature—it is a foundational principle that shapes every project, decision, and long-term strategy. We are committed to developing spaces and solutions that balance economic growth with environmental responsibility and societal wellbeing.',
-               'Our approach aligns with Saudi Arabia’s Vision 2030 pillars, ensuring that our developments contribute to a more resilient, efficient, and sustainable future for generations to come.'
-		  ));
-		  get_template_part('template-parts/overview-section');
-		  ?>
+	<div class="main_content sustainability_page">
+		<?php
+		// Set overview section variables
+		set_query_var( 'overview_title', 'Our Commitment to a Sustainable Future' );
+		set_query_var( 'overview_image', get_template_directory_uri() . '/assets/images/sustainibility.png' );
+		set_query_var( 'overview_content', array(
+			'At MIDU, sustainability is not an added feature—it is a foundational principle that shapes every project, decision, and long-term strategy. We are committed to developing spaces and solutions that balance economic growth with environmental responsibility and societal wellbeing.',
+			'Our approach aligns with Saudi Arabia\'s Vision 2030 pillars, ensuring that our developments contribute to a more resilient, efficient, and sustainable future for generations to come.'
+		) );
+		get_template_part( 'template-parts/overview-section' );
+		?>
 
+		<div class="curve_top_bottom">
+			<div class="curve_top_bottom_inner">
+				<?php
+				set_query_var( 'image_text_block_wrapper_class', '' );
+				set_query_var( 'image_text_title', 'Environmental Stewardship' );
+				set_query_var( 'image_text_paragraphs', array(
+					'We prioritize responsible environmental practices across all stages of development:',
+				) );
+				set_query_var( 'image_text_list', $image_text_list );
+				set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph );
+				set_query_var( 'image_text_acf_list_field', 'image_text_list' );
+				set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph' );
+				set_query_var( 'image_text_image', 'sus2.png' );
+				set_query_var( 'image_text_section_class', 'white_text off_blue' );
+				get_template_part( 'template-parts/image-text-block' );
+				?>
+			</div>
+		</div>
 
+		<section class="dark_blue_section_without_curve">
+			<div class="container">
+				<div class="title_main" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+					<h2 class="second_title">Social Responsibility</h2>
+					<p>MIDU's projects are designed to uplift communities and enhance quality of life:</p>
 
-<div class="curve_top_bottom">
-          <div class="curve_top_bottom_inner">
+					<div class="social_card_list">
+						<ul>
+							<?php
+							$social_card_list = get_query_var( 'social_card_list' );
+							if ( function_exists( 'get_field' ) && get_field( 'social_card_list' ) ) {
+								$social_card_list = get_field( 'social_card_list' );
+							}
+							if ( ! empty( $social_card_list ) && is_array( $social_card_list ) ) :
+								$social_idx = 0;
+								foreach ( $social_card_list as $item ) :
+									$img   = isset( $item['image'] ) ? $item['image'] : ( isset( $item['image']['url'] ) ? $item['image']['url'] : '' );
+									$link  = isset( $item['link'] ) ? $item['link'] : ( isset( $item['link']['url'] ) ? $item['link']['url'] : '#' );
+									$title = isset( $item['title'] ) ? $item['title'] : '';
+									$desc  = isset( $item['description'] ) ? $item['description'] : '';
+									$social_delay = 100 + ( $social_idx * 120 );
+									echo '<li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="' . esc_attr( $social_delay ) . '" data-aos-once="true">';
+									$social_idx++;
+									set_query_var( 'social_card_link', $link );
+									set_query_var( 'social_card_image', $img );
+									set_query_var( 'social_card_title', $title );
+									set_query_var( 'social_card_description', $desc );
+									get_template_part( 'template-parts/social_card' );
+									echo '</li>';
+								endforeach;
+							endif;
+							?>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<?php
+		get_template_part( 'template-parts/economic-section' );
+		?>
+
+		<?php
+		set_query_var( 'image_text_block_wrapper_class', 'dark_blue_section_without_curve' );
+		set_query_var( 'image_text_title', 'Our Sustainability Framework' );
+		set_query_var( 'image_text_paragraphs', array(
+			'MIDU follows a structured, measurable framework that integrates global best practices:',
+		) );
+		set_query_var( 'image_text_list', $image_text_list_third );
+		set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_third );
+		set_query_var( 'image_text_acf_list_field', 'image_text_list_third' );
+		set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph_third' );
+		set_query_var( 'image_text_image', 'sustainability03.png' );
+		set_query_var( 'image_text_section_class', 'white_text reverse_direction dark_blue' );
+		get_template_part( 'template-parts/image-text-block' );
+		?>
+		</section>
+
+		<?php
+		// Light-blue-list: all content from page (title, intro, optional subtitle, list with icons)
+		set_query_var( 'light_blue_list_title', 'Key Focus Areas' );
+		set_query_var( 'light_blue_list_intro', '' );
+		set_query_var( 'light_blue_list_subtitle', '' );
+		set_query_var( 'light_blue_list_center', false );
+		set_query_var( 'light_blue_list_section_class', 'sustainability_orange_bg' );
+		set_query_var( 'light_blue_list_items', array(
+			array( 'icon' => 'kfa_1.svg', 'title' => 'Low-carbon <br/> development' ),
+			array( 'icon' => 'kfa_2.svg', 'title' => 'Green building <br/> design' ),
+			array( 'icon' => 'kfa_3.svg', 'title' => 'Smart technology <br/>  integration' ),
+			array( 'icon' => 'kfa_4.svg', 'title' => 'Climate resilience <br/> planning' ),
+			array( 'icon' => 'kfa_5.svg', 'title' => 'Community health & <br/> wellbeing' ),
+			array( 'icon' => 'kfa_6.svg', 'title' => 'Long-term economic <br/> sustainability' ),
+		) );
+		get_template_part( 'template-parts/light-blue-list' );
+		?>
+
+		<section class="light_blue_section">
 			<?php
 			set_query_var( 'image_text_block_wrapper_class', '' );
-			set_query_var( 'image_text_title', 'Environmental Stewardship' );
+			set_query_var( 'image_text_title', 'Our Impact' );
 			set_query_var( 'image_text_paragraphs', array(
-				'We prioritize responsible environmental practices across all stages of development:',
+				'Through sustainable thinking and execution, MIDU delivers developments that:',
 			) );
-			set_query_var( 'image_text_list', $image_text_list );
-			set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph );
-			set_query_var( 'image_text_acf_list_field', 'image_text_list' );
-			set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph' );
-			set_query_var( 'image_text_image', 'sus2.png' );
-			set_query_var( 'image_text_section_class', 'white_text off_blue' );
+			set_query_var( 'image_text_list', $image_text_list_second );
+			set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_second );
+			set_query_var( 'image_text_acf_list_field', 'image_text_list_second' );
+			set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph_second' );
+			set_query_var( 'image_text_image', 'impact.png' );
+			set_query_var( 'image_text_section_class', 'light_blue' );
 			get_template_part( 'template-parts/image-text-block' );
 			?>
-           </div>
 
-		   </div>
-
-		   <section class="dark_blue_section_without_curve">
-		   <div class="container">
-		   <div class="title_main" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
-			<h2 class="second_title">Social Responsibility</h2>
-			<p>MIDU’s projects are designed to uplift communities and enhance quality of life:</p>
-
-			<div class="social_card_list">
-				  <ul>
-					<?php
-					$social_card_list = get_query_var( 'social_card_list' );
-					if ( function_exists( 'get_field' ) && get_field( 'social_card_list' ) ) {
-						$social_card_list = get_field( 'social_card_list' );
-					}
-					if ( ! empty( $social_card_list ) && is_array( $social_card_list ) ) :
-						$social_idx = 0;
-						foreach ( $social_card_list as $item ) :
-							$img  = isset( $item['image'] ) ? $item['image'] : ( isset( $item['image']['url'] ) ? $item['image']['url'] : '' );
-							$link = isset( $item['link'] ) ? $item['link'] : ( isset( $item['link']['url'] ) ? $item['link']['url'] : '#' );
-							$title = isset( $item['title'] ) ? $item['title'] : '';
-							$desc  = isset( $item['description'] ) ? $item['description'] : '';
-							$social_delay = 100 + ( $social_idx * 120 );
-							echo '<li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="' . esc_attr( $social_delay ) . '" data-aos-once="true">';
-							$social_idx++;
-							set_query_var( 'social_card_link', $link );
-							set_query_var( 'social_card_image', $img );
-							set_query_var( 'social_card_title', $title );
-							set_query_var( 'social_card_description', $desc );
-							get_template_part( 'template-parts/social_card' );
-							echo '</li>';
-						endforeach;
-					endif;
-					?>
-				  </ul>
+			<div class="bg_img">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/light-blue-vector.svg" alt="Impact Background">
 			</div>
-			
-			</div>
-						</div>
-						</section>
+		</section>
 
-						<?php
-		  get_template_part('template-parts/economic-section');
-		  ?>
+	</div>
 
-		   <?php
-		   set_query_var( 'image_text_block_wrapper_class', 'dark_blue_section_without_curve' );
-		   set_query_var( 'image_text_title', 'Our Sustainability Framework' );
-		   set_query_var( 'image_text_paragraphs', array(
-			   'MIDU follows a structured, measurable framework that integrates global best practices:',
-		   ) );
-		   set_query_var( 'image_text_list', $image_text_list_third );
-		   set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_third );
-		   set_query_var( 'image_text_acf_list_field', 'image_text_list_third' );
-		   set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph_third' );
-		   set_query_var( 'image_text_image', 'sustainability03.png' );
-		   set_query_var( 'image_text_section_class', 'white_text reverse_direction dark_blue' );
-		   get_template_part( 'template-parts/image-text-block' );
-		   ?>
-				</section>
-
-		  <?php
-		  // Light-blue-list: all content from page (title, intro, optional subtitle, list with icons)
-		  set_query_var('light_blue_list_title', 'Key Focus Areas');
-		  set_query_var('light_blue_list_intro', '');
-		  set_query_var('light_blue_list_subtitle', '');
-		  set_query_var('light_blue_list_center', false);
-		  set_query_var('light_blue_list_section_class', 'sustainability_orange_bg');
-		  set_query_var('light_blue_list_items', array(
-			  array( 'icon' => 'ser-icon1.svg', 'title' => 'Low-carbon <br/> development' ),
-			  array( 'icon' => 'ser-icon2.svg', 'title' => 'Green building <br/> design' ),
-			  array( 'icon' => 'ser-icon3.svg', 'title' => 'Smart technology <br/>  integration' ),
-			  array( 'icon' => 'ser-icon4.svg', 'title' => 'Climate resilience <br/> planning' ),
-			  array( 'icon' => 'ser-icon5.svg', 'title' => 'Community health & <br/> wellbeing' ),
-			  array( 'icon' => 'ser-icon6.svg', 'title' => 'Long-term economic <br/> sustainability' ),
-		  ));
-		  get_template_part('template-parts/light-blue-list');
-		  ?>
-
-      <section class="light_blue_section">
-		          <?php
-		          set_query_var( 'image_text_block_wrapper_class', '' );
-		          set_query_var( 'image_text_title', 'Our Impact' );
-		          set_query_var( 'image_text_paragraphs', array(
-			          'Through sustainable thinking and execution, MIDU delivers developments that:',
-		          ) );
-		          set_query_var( 'image_text_list', $image_text_list_second );
-		          set_query_var( 'image_text_list_paragraph', $image_text_list_paragraph_second );
-		          set_query_var( 'image_text_acf_list_field', 'image_text_list_second' );
-		          set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph_second' );
-		          set_query_var( 'image_text_image', 'impact.png' );
-		          set_query_var( 'image_text_section_class', 'light_blue' );
-		          get_template_part( 'template-parts/image-text-block' );
-		          ?>
-
-				  <div class="bg_img">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/light-blue-vector.svg" alt="Impact Background">
-				  </div>
-	  </section>
-
-
-	   </div>
-
-	   </div>
+	</div>
 </main><!-- #main -->
 
 <?php

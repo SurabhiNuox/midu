@@ -21,7 +21,7 @@
 			
 			<ul>
 				<li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" data-aos-once="true">
-				<h4>End-to-end project planning and scheduling</h4>
+				<h4>Long-term value creation</h4>
 				<p>Developing assets that remain resilient, efficient, and investment-attractive for decades.</p>
 				</li>
 

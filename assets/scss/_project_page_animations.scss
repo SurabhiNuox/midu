@@ -19,11 +19,16 @@ $ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 .projects_page .overview-section {
 	opacity: 0;
 	animation: projectPageReveal 0.65s $ease-out 0.1s forwards;
+	
+
 }
 
 .projects_page .light-blue-list-section {
 	opacity: 0;
 	animation: projectPageReveal 0.65s $ease-out 0.2s forwards;
+	border-radius: 20px;
+	border-bottom-left-radius: 0;
+	border-top-right-radius: 0;
 }
 
 .projects_page .project-cards-section {

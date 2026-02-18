@@ -1,0 +1,6 @@
+<svg width="123" height="114" viewBox="0 0 123 114" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Luminance mask: #fff = visible, #000 = transparent. Shape in black = hole. -->
+  <rect width="123" height="114" fill="#FFFFFF"/>
+  <path d="M122.674 113.5L123 113.5H122.005C122.226 113.5 122.449 113.5 122.674 113.5Z" fill="#000000"/>
+  <path d="M123 113.5L122.674 113.5C122.449 113.5 122.226 113.5 122.005 113.5H0V0C0 10.8 4 16.8333 6 18.5C27.5 40 73.8 86.4 87 100C99.9049 113.296 107.649 113.498 122.005 113.5H123Z" fill="#000000"/>
+</svg>

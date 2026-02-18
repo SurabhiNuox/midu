@@ -19,11 +19,15 @@ $content = get_query_var( 'mv_card_content' ) ?: '';
 		</div>
 	<?php endif; ?>
 	<div class="mission-vision-card__body">
-		<?php if ( $title ) : ?>
-			<h3 class="mission-vision-card__title"><?php echo esc_html( $title ); ?></h3>
-		<?php endif; ?>
-		<?php if ( $content ) : ?>
-			<p><?php echo esc_html( $content ); ?></p>
-		<?php endif; ?>
+		<div class="mission-vision-card__body-inner">
+			<?php if ( $title ) : ?>
+				<h3 class="mission-vision-card__title"><?php echo esc_html( $title ); ?></h3>
+			<?php endif; ?>
+			<div class="desc">
+				<?php if ( $content ) : ?>
+					<p><?php echo esc_html( $content ); ?></p>
+				<?php endif; ?>
+			</div>
+		</div>
 	</div>
 </article>

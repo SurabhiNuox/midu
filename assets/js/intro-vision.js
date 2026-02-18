@@ -74,19 +74,23 @@
 
 		setTimeout(function () { ScrollTrigger.refresh(); }, 200);
 
-		// Only intro_video_mask zooms and disappears — follows scroll
+		// Only intro_video_mask zooms (no opacity change), then fades after max zoom
 		tl.to(mask, {
 			scale: 2.5,
-			opacity: 0,
 			duration: 1,
 			ease: 'none',
 			transformOrigin: 'center center'
 		}, 0);
+		tl.to(mask, {
+			opacity: 0,
+			duration: 0.25,
+			ease: 'none'
+		}, 1);
 
-		// When intro_video_mask zooms: video (container) zooms to normal at the same time
+		// intro_video_container zooms from zoomed out (1.2) to default (1) — runs while mask zooms and fades, ends when mask is gone
 		tl.to(container, {
 			scale: 1,
-			duration: 1,
+			duration: 1.25,
 			ease: 'none',
 			transformOrigin: 'center center'
 		}, 0);

@@ -6,32 +6,39 @@
 	position: relative;
 	overflow: hidden;
 	z-index: 99;
+	top: -130px;
 
-	&:before {
-		content: "";
-		position: absolute;
-		top: -60px;
-		left: 0;
-		width: 100%;
-		height: 150px;
-		background-color: #1B273D;
-		webkit-mask-image: url("../images/sus_shape.svg");
-		-webkit-mask-image: url(../images/sus_shape.svg);
-		mask-image: url(../images/sus_shape.svg);
-		-webkit-mask-size: 100%;
-		mask-size: 100%;
-		-webkit-mask-repeat: no-repeat;
-		mask-repeat: no-repeat;
-		-webkit-mask-position: top;
-		mask-position: top;
-		z-index: 99;
-		@include max(1060) {
-			top: -30px;
-		}
-		@include max(767) {
-			top: 0;
-			height: 90px;
-		}
+	// &:before {
+	// 	content: "";
+	// 	position: absolute;
+	// 	top: -60px;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	height: 150px;
+	// 	background-color: #1B273D;
+	// 	webkit-mask-image: url("../images/sus_shape.svg");
+	// 	-webkit-mask-image: url(../images/sus_shape.svg);
+	// 	mask-image: url(../images/sus_shape.svg);
+	// 	-webkit-mask-size: 100%;
+	// 	mask-size: 100%;
+	// 	-webkit-mask-repeat: no-repeat;
+	// 	mask-repeat: no-repeat;
+	// 	-webkit-mask-position: top;
+	// 	mask-position: top;
+	// 	z-index: 99;
+	// 	@include max(1060) {
+	// 		top: -30px;
+	// 	}
+	// 	@include max(767) {
+	// 		top: 0;
+	// 		height: 90px;
+	// 	}
+	// }
+	@include max(1060) {
+		top: -126px;
+	}
+	@include max(767) {
+		top: -40px;
 	}
 }
 
@@ -113,10 +120,12 @@
 	justify-content: space-between;
 	gap: 40px;
 	width: 100%;
+	padding-top: 80px;
 
 	@include max(1060) {
 		flex-direction: column;
 		align-items: flex-start;
+		padding-top: 0px;
 	}
 	@include max(767) {
 		padding-top: 70px;

@@ -104,28 +104,32 @@ set_query_var( 'image_text_list_third', $image_text_list_third );
 		set_query_var( 'pm_image_alt', 'Sector Management' );
 		get_template_part( 'template-parts/project-management' );
 		?>
+		<div class="impact_value_section__bg">
+			<div class="impact_value_section__bg_img">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/imapact_gradient-v2.png" alt="Impact & Value Background">
+			</div>
+			<?php
+			set_query_var( 'image_text_block_wrapper_class', 'impact_value_section' );
+			set_query_var( 'image_text_title', 'Impact & Value' );
+			set_query_var( 'image_text_paragraphs', array(
+				'Our work within the {Sector Name} sector creates measurable impact through:',
+			) );
+			set_query_var( 'image_text_list', array(
+				'Strengthening economic diversification',
+				'Enhancing quality of life and community engagement',
+				'Driving innovation within the sector',
+				'Attracting investment and long-term partnerships',
+				'Supporting Vision 2030 goals',
+			) );
 
-		<?php
-		set_query_var( 'image_text_block_wrapper_class', 'impact_value_section' );
-		set_query_var( 'image_text_title', 'Impact & Value' );
-		set_query_var( 'image_text_paragraphs', array(
-			'Our work within the {Sector Name} sector creates measurable impact through:',
-		) );
-		set_query_var( 'image_text_list', array(
-			'Strengthening economic diversification',
-			'Enhancing quality of life and community engagement',
-			'Driving innovation within the sector',
-			'Attracting investment and long-term partnerships',
-			'Supporting Vision 2030 goals',
-		) );
-
-		set_query_var( 'image_text_list_paragraph', array() );
-		set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph_third' );
-		set_query_var( 'image_text_acf_list_field', 'image_text_list_third' );
-		set_query_var( 'image_text_image', 'value_img.jpg' );
-		set_query_var( 'image_text_section_class', 'white_text dark_blue' );
-		get_template_part( 'template-parts/image-text-block' );
-		?>
+			set_query_var( 'image_text_list_paragraph', array() );
+			set_query_var( 'image_text_acf_list_paragraph_field', 'image_text_list_paragraph_third' );
+			set_query_var( 'image_text_acf_list_field', 'image_text_list_third' );
+			set_query_var( 'image_text_image', 'value_img.jpg' );
+			set_query_var( 'image_text_section_class', 'white_text dark_blue' );
+			get_template_part( 'template-parts/image-text-block' );
+			?>
+		</div>
 	<?php
 		// Featured Projects — Swiper slider of project cards
 		$theme_images = get_template_directory_uri() . '/assets/images/';

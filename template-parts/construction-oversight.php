@@ -76,7 +76,7 @@
 				<li class="invest-development_item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" data-aos-once="true">
 					
 					<div class="invest-development_item_icon">
-						
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/cs-icon6.svg" alt="">
 					</div>
 					<h4 class="invest-development_item_title">Issue resolution and change management</h4>
 					

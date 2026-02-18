@@ -10,7 +10,7 @@ $map_lat    = get_query_var( 'contact_map_lat' ) ?: 24.7136;
 $map_lng    = get_query_var( 'contact_map_lng' ) ?: 46.6753;
 $map_zoom   = get_query_var( 'contact_map_zoom' ) ?: 10;
 $map_label  = get_query_var( 'contact_map_label' ) ?: 'Riyadh';
-$map_color  = get_query_var( 'contact_map_color' ) ?: '#273445';
+$map_color  = get_query_var( 'contact_map_color' ) ?: '#202031';
 $marker_url = get_template_directory_uri() . '/assets/images/marker.svg';
 ?>
 

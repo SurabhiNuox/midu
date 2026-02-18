@@ -331,7 +331,7 @@ $journey-dot-grid: rgba(255, 255, 255, 0.18);
 	padding: 30px;
 	min-height: 227px;
 	text-decoration: none;
-	transition: border-color 0.25s ease, box-shadow 0.25s ease;
+	transition: all 0.3s ease-in-out;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -368,6 +368,15 @@ $journey-dot-grid: rgba(255, 255, 255, 0.18);
 			line-height: size(15px);
 		}
 	}
+	&:hover {
+		.our-sectors__card-title{
+			background:linear-gradient(to right, rgb(224, 106, 73) 48%, rgb(253 253 253) 100%);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
+		}
+	}
 }
 
 .our-sectors__card-icon {
@@ -386,10 +395,11 @@ $journey-dot-grid: rgba(255, 255, 255, 0.18);
 .our-sectors__card-title {
 	font-family: "REM", sans-serif;
 	font-size: size(28px);
-	font-weight: 100;
+	font-weight:200;
 	color: $white;
 	margin: 0 0 8px 0;
 	line-height: 1.2;
+	transition: all 0.3s ease-in-out;
 	@include max(1500) {
 		font-size: size(23px);
 		line-height: size(25px);
@@ -400,6 +410,7 @@ $journey-dot-grid: rgba(255, 255, 255, 0.18);
 		line-height:24px;
 		margin: 0 0 5px 0;
 	}
+
 }
 
 .our-sectors__card-desc {

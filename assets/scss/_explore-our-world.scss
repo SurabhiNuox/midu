@@ -281,7 +281,7 @@
 			}
 
 			@include max(767) {
-				height: 304px;
+				height: 355px;
 				mask-image: url(../images/abt_mob_mask.svg);
 				-webkit-mask-image: url(../images/abt_mob_mask.svg);
 				
@@ -324,6 +324,9 @@
 				height: 30px;
 				bottom: 30px;
 				right: 20px;
+			}
+			@include max(420) {
+				bottom: 48px;
 			}
 
 			svg {

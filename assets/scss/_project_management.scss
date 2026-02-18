@@ -7,24 +7,28 @@
 	position: relative;
 	padding: 50px 0;
 	min-height: 790px;
-    border-top-left-radius: 20px;
-    background: #1B273D;
+	border-top-left-radius: 20px;
+	background: #1b273d;
 	overflow: hidden;
 	display: flex;
 	align-items: flex-end;
 	z-index: 4;
 	margin-top: -20px;
-	.overlay{
+
+	.overlay {
 		width: 100%;
 		height: 100%;
 		position: absolute;
 		left: 0;
 		top: 0;
-		background: #1B273D;
 		background: linear-gradient(180deg, rgba(27, 39, 61, 0) 57%, rgba(27, 39, 61, 0.91) 100%);
 		z-index: 1;
+		@include max(1060) {
+			background: linear-gradient(180deg, rgb(27 39 61 / 33%) 57%, rgba(27, 39, 61, 0.91) 100%);
+		}
 	}
-	&:before{
+
+	&::before {
 		content: "";
 		position: absolute;
 		top: -2px;
@@ -36,27 +40,17 @@
 		background-repeat: no-repeat;
 		background-position: top right;
 		z-index: 3;
-
-		@media screen and (max-width: 1440px) {
+		@include max(1440) {
 			width: 100px;
 			height: 88px;
 		}
-
-
-@media screen and (max-width: 768px) {
-    width: 70px;
-    height: 60px;
-}
-
-
-@media screen and (max-width: 768px) {
-    .career_story_section::after {
-        width: 70px;
-        height: 60px;
-    }
-}
+		@include max(768) {
+			width: 70px;
+			height: 60px;
+		}
 	}
-	  &::after{
+
+	&::after {
 		content: "";
 		position: absolute;
 		bottom: -2px;
@@ -68,164 +62,105 @@
 		background-repeat: no-repeat;
 		background-position: bottom left;
 		z-index: 3;
-
-		@media screen and (max-width: 1440px) {
+		@include max(1440) {
 			width: 100px;
-    		height: 88px;
+			height: 88px;
 		}
-
-
-@media screen and (max-width: 768px) {
-    width: 70px;
-    height: 60px;
+		@include max(768) {
+			width: 70px;
+			height: 60px;
 		}
+	}
 
+	> img {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		object-fit: cover;
+		z-index: 1;
+	}
 
-@media screen and (max-width: 768px) {
-    .career_story_section::after {
-        width: 70px;
-        height: 60px;
-    }
-}
-		   
-	  }
-
-	  > img{
-		   width: 100%;
-		   height: 100%;
-		   position: absolute;
-		   left: 0;
-		   top: 0;
-		   object-fit: cover;
-		   z-index: 1;
-	  }
-
-	  .project-management_inner{
+	.project-management_inner {
 		position: relative;
 		z-index: 2;
-		
-		p{
-			   font-weight: 200;
-			   color: #fff;
-			   font-size: 16px;
-			
+
+		p {
+			font-weight: 200;
+			color: #fff;
+			font-size: 16px;
 		}
 
-		   ul{
-			   margin-top: 20px;
-			   margin-bottom: 10px;
-			   display: grid;
-			   grid-template-columns: repeat(6, 1fr);
-			   gap: 20px;
+		ul {
+			margin-top: 20px;
+			margin-bottom: 10px;
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			gap: 20px;
+			@include max(1060) {
+				grid-template-columns: repeat(3, 1fr);
+				gap: 15px;
+			}
+			@include max(992) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+			@include max(767) {
+				grid-template-columns: repeat(2, 1fr);
+			}
 
-			   	@media #{$media-1024}{
-grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+			li {
+				width: 100%;
+				background-image: url(../images/pm-bg-hover.svg);
+				background-repeat: no-repeat;
+				background-size: cover;
+				aspect-ratio: 208 / 155;
+				padding: 20px;
+				transition: all 0.3s ease;
+				position: relative;
+
+				
+
+				&:hover {
+					background-image: url(../images/pm-bg.svg);
 				}
-
-				 	@media #{$media-768}{
-grid-template-columns: repeat(3, 1fr);
-
+				@include max(767) {
+					padding: 15px;
 				}
-
-					@media #{$media-480}{
-grid-template-columns: repeat(2, 1fr);
-
-				}
-
-			   li{
-				   width: 100%;
-				   background-image: url(../images/pm-bg-hover.svg);
-				   background-repeat: no-repeat;
-				   min-height: 155px;
-				   padding: 20px;
-				   transition: all 0.3s ease;
-				   position: relative;
-
-				    	@media #{$media-768}{
-
-							&:hover{
-                             background-image: none !important;
-							}
-				     &::before{
-	        content: "";
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        background: #79B2BE;
-        background: linear-gradient(142deg, rgb(121, 178, 190) 0%, rgb(176, 97, 67) 100%);
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 0;
-		    opacity: 0.5;
-}
-
-&::after{
-	content: "";
-        width: calc(100% - 2px);
-        height: calc(100% - 2px);
-        border-radius: 10px;
-        background: #79B2BE;
-        background: linear-gradient(123deg, rgb(56, 76, 99) 0%, rgb(53, 67, 90) 100%);
-        position: absolute;
-        left: 1px;
-        top: 1px;
-        z-index: 0;
-		    opacity: 0.5;
-}
-
-						}
-
-				 
-
-				   	@media #{$media-768}{
-min-height: 140px;
-				   padding: 15px;
-				   background-image: none;
-
+				.project-management_icon {
+					width: 100%;
+					height: 28px;
+					position: relative;
+					z-index: 4;
+					img {
+						width: auto;
+						max-height: 100%;
 					}
+				}
 
-				   &:hover{
-					   background-image: url(../images/pm-bg.svg);
-				   }
+				h4 {
+					font-size: 18px;
+					font-weight: 200;
+					line-height: 21px;
+					margin: 0;
+					margin-top: 10px;
+					color: $white;
+					position: relative;
+					z-index: 4;
+					@include max(992) {
+						font-size: 16px;
+						line-height:20px;
+					}
+					@include max(767) {
+						font-size: 15px;
+						line-height: 18px;
+					}
+				}
+			}
+		}
+	}
 
-				   .project-management_icon{
-					   width: 100%;
-					   height: 28px;
-					   position: relative;
-					   z-index: 4;
-
-					   img{
-						    width: auto;
-							max-height: 100%;
-					   }
-				   }
-
-				   h4{
-					  font-size: 18px;
-					  font-weight: 200;
-					  line-height: 21px;
-					  margin: 0;
-					  margin-top: 10px;
-					  color: $white;
-					     position: relative;
-					   z-index: 4;
-
-					    	@media #{$media-768}{
-font-size: 16px;
-
-
-
-							}
-				   }
-			   }
-		   }
-	  }
-}
-
-// AOS — project-management section (services page)
-.project-management-section {
+	// AOS — project-management section (services page)
 	[data-aos] {
 		backface-visibility: hidden;
 		-webkit-backface-visibility: hidden;
@@ -238,9 +173,3 @@ font-size: 16px;
 		}
 	}
 }
-
-  
-
-
-	
- 

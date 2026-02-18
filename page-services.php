@@ -47,7 +47,7 @@ get_header();
 		  get_template_part('template-parts/light-blue-list');
 		  ?>
 
-<?php
+		<?php
 		  // Investment & Development: left (title + intro), right (heading + capability list)
 		  set_query_var('invest_title_line1', 'Investment <br/> Development');
 		  set_query_var('invest_intro', 'We lead investments through a structured, disciplined approach that maximizes returns and minimizes risks.');
@@ -57,14 +57,31 @@ get_header();
 			  array( 'icon' => 'cap-icon2.svg', 'title' => 'Asset and portfolio development' ),
 			  array( 'icon' => 'cap-icon3.svg', 'title' => 'Investor relations and partnership facilitation' ),
 			  array( 'icon' => 'cap-icon4.svg', 'title' => 'Risk assessment and mitigation strategies' ),
-			  array( 'icon' => '', 'title' => 'Business models and financial frameworks' ),
+			  array( 'icon' => 'cs-icon6.svg', 'title' => 'Business models and financial frameworks' ),
 		  ));
 		  get_template_part('template-parts/invest-development');
 		  ?>
 
-<?php
-		  get_template_part('template-parts/project-management');
-		  ?>
+
+		  		<?php
+		// Project Management section — sector-specific content (no overlay)
+		set_query_var( 'pm_show_overlay', true );
+		set_query_var( 'pm_title', 'Project Management' );
+		set_query_var( 'pm_intro', 'From concept to completion, we ensure every project is delivered with efficiency, transparency, and excellence.' );
+		set_query_var( 'pm_heading', 'Key project management services' );
+		set_query_var( 'pm_items', array(
+			array( 'icon' => 'pm-icon1.svg', 'title' => 'End-to-end project planning and scheduling' ),
+			array( 'icon' => 'pm-icon2.svg', 'title' => 'Contractor and consultant coordination' ),
+			array( 'icon' => 'pm-icon3.svg', 'title' => 'Procurement and tender management' ),
+			array( 'icon' => 'pm-icon4.svg', 'title' => 'Quality control and compliance' ),
+			array( 'icon' => 'pm-icon5.svg', 'title' => 'Budget oversight and cost management' ),
+			array( 'icon' => 'pm-icon6.svg', 'title' => 'Progress reporting and performance monitoring' ),
+		) );
+		set_query_var( 'pm_outro', 'MIDU’s project management approach prioritizes clarity, accountability, and seamless execution across all stages.' );
+		set_query_var( 'pm_image', 'pm-img.jpg' );
+		set_query_var( 'pm_image_alt', 'Sector Management' );
+		get_template_part( 'template-parts/project-management' );
+		?>
 
 <?php
 		  // Master Planning: all content from page (h2, p, h5, list items); title_main text-center true/false
@@ -73,12 +90,12 @@ get_header();
 		  set_query_var('master_planning_p', 'We create master plans and design frameworks that shape distinctive, sustainable, and future-ready developments.');
 		  set_query_var('master_planning_h5', 'Our expertise covers');
 		  set_query_var('master_planning_items', array(
-			  array( 'icon' => 'mas-icon1.svg', 'title' => 'Master plan concepts and zoning strategies' ),
-			  array( 'icon' => 'mas-icon2.svg', 'title' => 'Urban design guidelines and spatial planning' ),
-			  array( 'icon' => 'mas-icon3.svg', 'title' => 'Infrastructure coordination' ),
-			  array( 'icon' => 'mas-icon4.svg', 'title' => 'Architectural design direction' ),
-			  array( 'icon' => 'mas-icon5.svg', 'title' => 'Sustainable design principles' ),
-			  array( 'icon' => 'mas-icon6.svg', 'title' => 'Integration of landscape, mobility, and community needs' ),
+			  array( 'icon' => 'mpd_1.svg', 'title' => 'Master plan concepts and zoning <br/> strategies' ),
+			  array( 'icon' => 'mpd_2.svg', 'title' => 'Urban design guidelines and spatial planning' ),
+			  array( 'icon' => 'mpd_3.svg', 'title' => 'Infrastructure coordination' ),
+			  array( 'icon' => 'mpd_4.svg', 'title' => 'Architectural design direction' ),
+			  array( 'icon' => 'mpd_5.svg', 'title' => 'Sustainable design principles' ),
+			  array( 'icon' => 'mpd_6.svg', 'title' => 'Integration of landscape, mobility, and community needs' ),
 		  ));
 		  get_template_part('template-parts/master-planning');
 		  ?>

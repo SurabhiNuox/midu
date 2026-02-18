@@ -74,29 +74,34 @@ $icon_email   = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" 
 	<div class="contact_top_section_right" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150" data-aos-once="true">
 		<form class="contact_top_section_form" action="<?php echo esc_url( get_permalink() ); ?>" method="post" novalidate>
 			<?php wp_nonce_field( 'contact_top_form', 'contact_top_nonce' ); ?>
-			<div class="contact_top_section_form_row">
-				<label for="contact_first_name" class="screen-reader-text"><?php esc_html_e( 'First Name', 'midu' ); ?></label>
-				<input type="text" id="contact_first_name" name="contact_first_name" placeholder="<?php esc_attr_e( 'First Name*', 'midu' ); ?>" required>
+			<div class="contact_top_section_form_inner">
+				<div class="contact_top_section_form_row">
+					<label for="contact_first_name" class="screen-reader-text"><?php esc_html_e( 'First Name', 'midu' ); ?></label>
+					<input type="text" id="contact_first_name" name="contact_first_name" placeholder="<?php esc_attr_e( 'First Name*', 'midu' ); ?>" required>
+					
+				</div>
+				<div class="contact_top_section_form_row">
 				<label for="contact_last_name" class="screen-reader-text"><?php esc_html_e( 'Last Name', 'midu' ); ?></label>
 				<input type="text" id="contact_last_name" name="contact_last_name" placeholder="<?php esc_attr_e( 'Last Name*', 'midu' ); ?>" required>
-			</div>
-			<div class="contact_top_section_form_row">
-				<label for="contact_email" class="screen-reader-text"><?php esc_html_e( 'Email', 'midu' ); ?></label>
-				<input type="email" id="contact_email" name="contact_email" placeholder="<?php esc_attr_e( 'Email*', 'midu' ); ?>" required>
-			</div>
-			<div class="contact_top_section_form_row">
-				<label for="contact_phone" class="screen-reader-text"><?php esc_html_e( 'Phone Number', 'midu' ); ?></label>
-				<input type="tel" id="contact_phone" name="contact_phone" placeholder="<?php esc_attr_e( 'Phone Number*', 'midu' ); ?>" required>
-			</div>
-			<div class="contact_top_section_form_row">
-				<label for="contact_message" class="screen-reader-text"><?php esc_html_e( 'Message', 'midu' ); ?></label>
-				<textarea id="contact_message" name="contact_message" rows="5" placeholder="<?php esc_attr_e( 'Message', 'midu' ); ?>"></textarea>
-			</div>
-			<div class="contact_top_section_form_row contact_top_section_form_submit">
-				<button type="submit" class="btn-primary contact_top_submit_btn">
-					<span class="button-text"><?php esc_html_e( 'Submit', 'midu' ); ?></span>
-					<span class="button-icon"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/arrow.svg' ); ?>" alt="" width="10" height="10" aria-hidden="true"></span>
-				</button>
+				</div>
+				<div class="contact_top_section_form_row">
+					<label for="contact_email" class="screen-reader-text"><?php esc_html_e( 'Email', 'midu' ); ?></label>
+					<input type="email" id="contact_email" name="contact_email" placeholder="<?php esc_attr_e( 'Email*', 'midu' ); ?>" required>
+				</div>
+				<div class="contact_top_section_form_row">
+					<label for="contact_phone" class="screen-reader-text"><?php esc_html_e( 'Phone Number', 'midu' ); ?></label>
+					<input type="number" id="contact_phone" name="contact_phone" placeholder="<?php esc_attr_e( 'Phone Number*', 'midu' ); ?>" required>
+				</div>
+				<div class="contact_top_section_form_row">
+					<label for="contact_message" class="screen-reader-text"><?php esc_html_e( 'Message', 'midu' ); ?></label>
+					<textarea id="contact_message" name="contact_message" rows="5" placeholder="<?php esc_attr_e( 'Message', 'midu' ); ?>"></textarea>
+				</div>
+				<div class="contact_top_section_form_row contact_top_section_form_submit">
+					<button type="submit" class="btn-primary contact_top_submit_btn">
+						<span class="button-text"><?php esc_html_e( 'Submit', 'midu' ); ?></span>
+						<span class="button-icon"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/arrow.svg' ); ?>" alt="" width="10" height="10" aria-hidden="true"></span>
+					</button>
+				</div>
 			</div>
 		</form>
 	</div>

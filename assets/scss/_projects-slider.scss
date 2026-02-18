@@ -2,11 +2,11 @@
 @import "./variable";
 @import "./mixins";
 
-// Section height: N × 50vh so one scroll advances one slide (image + text together)
+// Section height: sticky (100vh) + filler ((N+2) × 50vh) — more scroll so last slide gets active then section ends
 .projects-slider-section {
 	position: relative;
 	width: 100%;
-	height: calc(var(--projects-slides, 4) * var(--projects-slide-vh, 50) * 1vh);
+	height: calc(100vh + (var(--projects-slides, 4) + 2) * var(--projects-slide-vh, 50) * 1vh);
 	background: #0a0a0a;
 	@include max(1060) {
 		height: auto;
@@ -14,7 +14,7 @@
 }
 
 .projects-slider-section__filler {
-	height: calc((var(--projects-slides, 4) - 1) * var(--projects-slide-vh, 50) * 1vh);
+	height: calc((var(--projects-slides, 4) + 2) * var(--projects-slide-vh, 50) * 1vh);
 	background: #0a0a0a;
 	pointer-events: none;
 	@include max(1060) {
@@ -48,6 +48,9 @@
 	}
 	&:last-child{
 		.projects-slider-section__stack-content{
+		 @include max(1060) {
+			padding-bottom: 100px;
+		 }
 		 @include max(767) {
 			padding-bottom: 60px;
 		 }
@@ -202,8 +205,10 @@
 	z-index: 3;
 	overflow: hidden;
 	pointer-events: none;
-	@include max(1500) {
+	@include max(1600) {
 		padding-right: calc((100% - (1240px - 1.5rem))/2);
+		max-width: 700px;
+
 	}
 	@include max(1060) {
 		padding-right: 4%;

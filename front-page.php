@@ -21,7 +21,9 @@ get_header();
 </section>
 
 <?php get_template_part('template-parts/projects-slider'); ?>
-<?php get_template_part('template-parts/intro-vision'); ?>
+<div class="intro_vision_wraper">
+	<?php get_template_part('template-parts/intro-vision'); ?>
+</div>
 <?php get_template_part('template-parts/sustainability-commitment'); ?>
 <?php get_template_part('template-parts/our-sectors'); ?>
 <?php get_template_part('template-parts/journey-legacy'); ?>

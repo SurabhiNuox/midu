@@ -35,6 +35,7 @@ $slides = array(
 		'link' => home_url('/sustainability'),
 		'link_text' => 'Explore Project',
 	),
+
 );
 ?>
 
