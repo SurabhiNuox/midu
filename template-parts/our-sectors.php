@@ -38,14 +38,16 @@ $sectors = array(
 );
 ?>
 
-<section class="our-sectors" aria-label="Our Sectors">
+<section class="our-sectors">
 	<div class="our-sectors__bg" aria-hidden="true"></div>
-	<div class="sectors__gradient_left">
+	<div class="bg-layer">
+	</div>
+	<!-- <div class="sectors__gradient_left">
 		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/sectore_gradient_left.png" alt="Our Sectors BG">
 	</div>
 	<div class="sectors__gradient_right">
 		<img src="<?php echo get_template_directory_uri(); ?>/assets/images/sectore_gradient_right.png" alt="Our Sectors BG">
-	</div>
+	</div> -->
 	<div class="container our-sectors__inner">
 		<h2 class="second_title our-sectors__title">A Diversified Portfolio That Contributes To National Growth And Resilience.</h2>
 

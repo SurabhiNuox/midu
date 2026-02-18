@@ -11,6 +11,8 @@ $commitment-teal: #16888C;
     margin-bottom: -145px;
     border-top-left-radius: 30px;
     overflow: hidden;
+	contain: layout style paint;
+    
 	@include max(1060) {
 		margin-bottom: -125px;
 		border-top-left-radius: 20px;
@@ -25,6 +27,16 @@ $commitment-teal: #16888C;
   	align-items: center;
     position: relative;
     // top: -100px;
+	-webkit-mask-image: linear-gradient(#000, #000), url(../images/sectors_top_right_hole.svg);
+    mask-image: linear-gradient(#000, #000), url(../images/sectors_top_right_hole.svg);
+    -webkit-mask-size: 100% 100%, 130px 109px;
+    mask-size: 100% 100%, 130px 109px;
+    -webkit-mask-position: 0 0, 100% 0;
+    mask-position: 0 0, 100% 0;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-composite: source-out;
+    mask-composite: subtract;
 	@include max(992) {
 		flex-direction: column;
 		background-color: #126D70;
@@ -147,6 +159,7 @@ $commitment-teal: #16888C;
 .commitment-section__image-wrap {
 	flex: 1 1 42%;
 	height: 700px;
+	
 	@include max(1600) {
 		height: 640px;
 	}
@@ -172,29 +185,29 @@ $commitment-teal: #16888C;
 		background-color:rgba(21, 134, 138,.2);
 		z-index: 2;
 	}
-	&:after{
-		content: "";
-		position: absolute;
-		top: 0px;
-		right: -1px;
-		width: 89px;
-		height: 73px;
-		background-color: #202031;
-		mask-image: url(../images/top_mask.svg);
-		-webkit-mask-image: url(../images/top_mask.svg);
-		mask-repeat: no-repeat;
-		-webkit-mask-repeat: no-repeat;
-		-webkit-mask-size: 100% 100%;
-		mask-size: 100% 100%;
-		z-index: 3;
-		background-image: none;
-		@include max(767) {
-			top: -1px;
-			right: 0;
-			width: 55px;
-			height: 48px;
-		}
-	}
+	// &:after{
+	// 	content: "";
+	// 	position: absolute;
+	// 	top: 0px;
+	// 	right: -1px;
+	// 	width: 89px;
+	// 	height: 73px;
+	// 	background-color: #202031;
+	// 	mask-image: url(../images/top_mask.svg);
+	// 	-webkit-mask-image: url(../images/top_mask.svg);
+	// 	mask-repeat: no-repeat;
+	// 	-webkit-mask-repeat: no-repeat;
+	// 	-webkit-mask-size: 100% 100%;
+	// 	mask-size: 100% 100%;
+	// 	z-index: 3;
+	// 	background-image: none;
+	// 	@include max(767) {
+	// 		top: -1px;
+	// 		right: 0;
+	// 		width: 55px;
+	// 		height: 48px;
+	// 	}
+	// }
 	@include max(992) {
 		
 	}

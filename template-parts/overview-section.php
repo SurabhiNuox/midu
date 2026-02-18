@@ -22,6 +22,8 @@ if (!is_array($overview_content) || empty($overview_content)) {
 ?>
 
 <section class="overview-section">
+	<div class="bg-layer-two">
+	</div>
 	<div class="overview_ghraphic">
 		<img src="<?php echo esc_url($overview_graphic); ?>" alt="image">
 	</div>

@@ -26,6 +26,8 @@ unset( $item );
 ?>
 
 <section class="key-details-section" aria-label="<?php echo esc_attr( $title ); ?>">
+<div class="bg-layer">
+</div>
 	<div class="container">
 		<?php if ( $title || $subtitle ) : ?>
 			<header class="key-details-section__header">

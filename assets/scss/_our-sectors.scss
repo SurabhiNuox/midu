@@ -9,15 +9,35 @@ $journey-dot-grid: rgba(255, 255, 255, 0.18);
     padding: 80px 0 100px;
     overflow: hidden;
     background-color: #1B273D;
+	// Smooth scroll: single compositor layer + contain paint so mask isn't repainted every frame
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	contain: layout style paint;
+	// Top-right corner cutout (shape area = transparent)
+	-webkit-mask-image: linear-gradient(#000, #000), url(../images/sectors_top_right_hole.svg);
+	mask-image: linear-gradient(#000, #000), url(../images/sectors_top_right_hole.svg);
+	-webkit-mask-size: 100% 100%, 130px 109px;
+	mask-size: 100% 100%, 130px 109px;
+	-webkit-mask-position: 0 0, 100% 0;
+	mask-position: 0 0, 100% 0;
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-composite: source-out;
+	mask-composite: subtract;
     height: 120vh;
 	z-index: 100;
+	margin-top: -160px;
 	@include max(1060) {
 		height:80vh;
 		padding: 115px 0 100px;
+		-webkit-mask-size: 100% 100%, 106px 89px;
+		mask-size: 100% 100%, 106px 89px;
 	}
 	@include max(992) {
 		padding: 100px 0 80px;
 		height: 80vh;
+		-webkit-mask-size: 100% 100%, 65px 55px;
+		mask-size: 100% 100%, 65px 55px;
 	}
 	@include max(800) {
 		height: 92vh;
@@ -25,6 +45,8 @@ $journey-dot-grid: rgba(255, 255, 255, 0.18);
 	@include max(767) {
 		padding:50px 0 80px;
 		height: auto;
+		-webkit-mask-size: 100% 100%, 46px 39px;
+		mask-size: 100% 100%, 46px 39px;
 	}
 	.sectors__gradient_left{
 		position: absolute;
@@ -43,20 +65,35 @@ $journey-dot-grid: rgba(255, 255, 255, 0.18);
 	0% {left:  -145px; }
 	100% {left:70%; opacity: 0;}
 }
-// Dark background with subtle dot grid and soft gradients
+// Dark background with subtle dot grid; section mask clips this (one mask = less scroll jank)
 .our-sectors__bg {
-	// position: absolute;
-	// inset: 0;
-	// background-image: url("../images/dot_bg.svg");
-	// background-size: cover;
-	// background-position: center;
-	// background-repeat: no-repeat;
-	// z-index: 0;
 	position: absolute;
 	inset: 0;
 	background-image: radial-gradient(circle, $journey-dot-grid 1px, transparent 1px);
 	background-size: 50px 50px;
 	z-index: 0;
+	pointer-events: none;
+	z-index: 9;
+	transform: translateZ(0);
+}
+
+// Keep bg-layer animation but use only transform (no background-position) so it doesn't repaint during scroll.
+.our-sectors .bg-layer {
+	animation: our-sectors-bg-float 20s ease-in-out infinite alternate;
+	transform: translateZ(0);
+	backface-visibility: hidden;
+	pointer-events: none;
+}
+@keyframes our-sectors-bg-float {
+	0% {
+		background-position: 0% 50%;
+	  }
+	  50% {
+		background-position: 100% 40%;
+	  }
+	  100% {
+		background-position: 50% 100%;
+	  }
 }
 
 .our-sectors__inner {

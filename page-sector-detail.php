@@ -105,9 +105,8 @@ set_query_var( 'image_text_list_third', $image_text_list_third );
 		get_template_part( 'template-parts/project-management' );
 		?>
 		<div class="impact_value_section__bg">
-			<div class="impact_value_section__bg_img">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/imapact_gradient-v2.png" alt="Impact & Value Background">
-			</div>
+		<div class="bg-layer">
+		</div>
 			<?php
 			set_query_var( 'image_text_block_wrapper_class', 'impact_value_section' );
 			set_query_var( 'image_text_title', 'Impact & Value' );

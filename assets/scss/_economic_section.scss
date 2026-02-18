@@ -18,35 +18,39 @@
 	z-index: 4;
 
 	@media screen and (max-width: 1024px) {
-padding: 80px 0;
-min-height: auto;
+		padding: 80px 0;
+		min-height: auto;
 	}
-&::before {
+	@include max(767) {
+		padding: 50px 0 80px 0;
+	}
+		&::before {
 		    content: "";
-    position: absolute;
-    top: -2px;
-    right: -1px;
-    width: 128px;
-    height: 111px;
-    background-image: url(../images/top_mask.svg);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: top right;
-    z-index: 3;
+			position: absolute;
+			top: -2px;
+			right: -1px;
+			width: 128px;
+			height: 111px;
+			background-image: url(../images/top_mask.svg);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-position: top right;
+			z-index: 3;
 
 		@media screen and (max-width: 1440px) {
-width: 100px;
-    height: 88px;
+			width: 100px;
+			height: 88px;
 		}
 
 		@media screen and (max-width: 768px) {
-    width: 70px;
-    height: 60px;
+			width: 70px;
+			height: 60px;
 		}
 
 		@media screen and (max-width: 500px) {
-           width: 55px;
-        height: 45px;
+			width: 50px;
+			height: 45px;
+			right: 0px;
 		}
 	}
 
@@ -64,18 +68,19 @@ width: 100px;
     z-index: 3;
 
 		@media screen and (max-width: 1440px) {
-width: 100px;
-    height: 88px;
+		    width: 100px;
+			height: 88px;
 		}
 
 		@media screen and (max-width: 768px) {
-    width: 70px;
-    height: 60px;
+			width: 70px;
+			height: 60px;
 		}
 
 		@media screen and (max-width: 500px) {
-           width: 55px;
-        height: 45px;
+			width: 64px;
+			height: 53px;
+			left: -4px;
 		}
 	}
 

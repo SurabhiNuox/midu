@@ -21,6 +21,8 @@ $theme_img = get_template_directory_uri() . '/assets/images/';
 ?>
 
 <section class="what-we-do-section" aria-label="<?php echo esc_attr( $title ); ?>">
+<div class="bg-layer">
+</div>
 	<div class="container">
 		<div data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
 		<?php if ( $title ) : ?>

@@ -53,6 +53,21 @@ $ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
     position: relative;
     overflow: hidden;
 	padding: 130px 0;
+	background-color: #96B7E3;
+	animation: sectorsGridReveal 0.65s $ease-out-smooth forwards;
+	-webkit-mask-image: linear-gradient(#000, #000), url(../images/sectors_top_right_hole.svg);
+    mask-image: linear-gradient(#000, #000), url(../images/sectors_top_right_hole.svg);
+    -webkit-mask-size: 100% 100%, 130px 109px;
+    mask-size: 100% 100%, 130px 109px;
+    -webkit-mask-position: 0 0, 100% 0;
+    mask-position: 0 0, 100% 0;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-composite: source-out;
+    mask-composite: subtract;
+	border-radius: 25px;
+	border-top-right-radius: 0;
+	border-bottom-left-radius: 0;
 	@include max(1060) {
 		margin-top: -100px;
 		padding: 100px 0;
@@ -64,42 +79,36 @@ $ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
 	@include max(767) {
 		padding: 38px 0;
 	}
-	&:before{
-		content: "";
-		width: 100%;
-		height: 180px;
-		position: absolute;
-		right: 0;
-		top: 0;
-		mask-image: url(../images/light-blue-top.svg);
-		-webkit-mask-image: url(../images/light-blue-top.svg);
-		mask-size: 100% auto;
-		background-color: #96B7E3;
-		-webkit-mask-size: 100% auto;
-		mask-repeat: no-repeat;
-		-webkit-mask-repeat: no-repeat;
-		mask-position: top;
-		-webkit-mask-position: top;
-		z-index: 1;
-	}
+	// &:before{
+	// 	content: "";
+	// 	width: 100%;
+	// 	height: 180px;
+	// 	position: absolute;
+	// 	right: 0;
+	// 	top: 0;
+	// 	mask-image: url(../images/light-blue-top.svg);
+	// 	-webkit-mask-image: url(../images/light-blue-top.svg);
+	// 	mask-size: 100% auto;
+	// 	background-color: #96B7E3;
+	// 	-webkit-mask-size: 100% auto;
+	// 	mask-repeat: no-repeat;
+	// 	-webkit-mask-repeat: no-repeat;
+	// 	mask-position: top;
+	// 	-webkit-mask-position: top;
+	// 	z-index: 1;
+	// }
 	&::after{
 		content: "";
-		width: 100%;
-		height: 180px;
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		mask-image: url(../images/light-blue-bottom.svg);
-		-webkit-mask-image: url(../images/light-blue-bottom.svg);
-		mask-size: 100% auto;
-		background-color: #96B7E3;
-		-webkit-mask-size: 100% auto;
-		mask-repeat: no-repeat;
-		-webkit-mask-repeat: no-repeat;
-		mask-position: bottom;
-		-webkit-mask-position: bottom;
-		z-index: 1;
-		
+    position: absolute;
+    bottom: -2px;
+    left: -6px;
+    width: 128px;
+    height: 111px;
+    background-image: url(../images/bottom_mask.svg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    z-index: 3;
 	}
 	.sectors-grid__graphic{
 		position: absolute;

@@ -8,16 +8,29 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-	padding: 100px 0;
+	padding: 100px 0 120px 0;
 	background-color: #96B7E3;
+	-webkit-mask-image: linear-gradient(#000, #000), url(../images/sectors_top_right_hole.svg);
+    mask-image: linear-gradient(#000, #000), url(../images/sectors_top_right_hole.svg);
+    -webkit-mask-size: 100% 100%, 130px 109px;
+    mask-size: 100% 100%, 130px 109px;
+    -webkit-mask-position: 0 0, 100% 0;
+    mask-position: 0 0, 100% 0;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-composite: source-out;
+    mask-composite: subtract;
+	border-top-left-radius: 25px;
+	border-bottom-right-radius: 25px;
 	@include max(1060) {
 		padding: 75px 0;
 	}
 	@include max(992) {
-		padding: 50px 0 110px 0;
+		padding:50px 0 80px 0;
 	}
 	@include max(767) {
 		padding: 50px 0;
+		mask-size: 100% 100%, 63px 53px;
 	}
 	.light-blue-list-inner-bg{		
 		position: absolute;
@@ -32,6 +45,8 @@
 
 	&.sustainability_orange_bg{
 		background-color: #F47C48;
+		margin-top: -106px;
+		z-index: 9;
 		&::after{
            background-color: #F47C48;
 		}
@@ -46,15 +61,26 @@
 		h2{
 			color: #fff !important;
 		}
-	&::after{
-    background-color: #96b7e3;
-    -webkit-mask-image: url(../images/bottom_mask.svg);
-    mask-image: url(../images/bottom_mask.svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100%;
-    mask-size: 100%;
-	background-image: none;
+			&::after{
+			background-color: #96b7e3;
+			-webkit-mask-image: url(../images/bottom_mask.svg);
+			mask-image: url(../images/bottom_mask.svg);
+			-webkit-mask-repeat: no-repeat;
+			mask-repeat: no-repeat;
+			-webkit-mask-size: 100%;
+			mask-size: 100%;
+			background-image: none;
+			height: 138px;
+			@include max(1060) {
+				height: 102px;
+			}
+			@include max(992) {
+				height: 73px;
+			}
+			@include max(767) {
+				height: 60px;
+			}
+
 	}
 
 	.light-blue-list-item{
@@ -65,41 +91,41 @@
 		    
 	}
 
-&::before {
-		content: "";
-		position: absolute;
-		top: -2px;
-    	right: -1px;
-		width: 128px;
-		height: 111px;
-		background-image: url(../images/top_mask.svg);
-		background-size: 100% 100%;
-		background-repeat: no-repeat;
-		background-position: top right;
-		z-index: 3;
+// &::before {
+// 		content: "";
+// 		position: absolute;
+// 		top: -2px;
+//     	right: -1px;
+// 		width: 128px;
+// 		height: 111px;
+// 		background-image: url(../images/top_mask.svg);
+// 		background-size: 100% 100%;
+// 		background-repeat: no-repeat;
+// 		background-position: top right;
+// 		z-index: 3;
 
-		@media screen and (max-width: 1440px) {
-			width: 100px;
-			height: 88px;
-		}
+// 		@media screen and (max-width: 1440px) {
+// 			width: 100px;
+// 			height: 88px;
+// 		}
 
-		@media screen and (max-width: 768px) {
-			width: 70px;
-			height: 60px;
-		}
+// 		@media screen and (max-width: 768px) {
+// 			width: 70px;
+// 			height: 60px;
+// 		}
 
-		@media screen and (max-width: 500px) {
-            width: 55px;
-        	height: 45px;
-		}
-	}
+// 		@media screen and (max-width: 500px) {
+//             width: 55px;
+//         	height: 45px;
+// 		}
+// 	}
 	&::after {
 		content: "";
 		position: absolute;
 		bottom: -10px;
 		left: 0;
 		width: 140px;
-		height: 139px;
+		height: 187px;
 		background-image: url(../images/bottom_mask.svg);
 		background-size: 100% 100%;
 		background-repeat: no-repeat;

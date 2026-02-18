@@ -8,10 +8,12 @@
 	padding: 120px 0;
 	margin-top: -20px;
 	background-color: #1B273D;
-	background-image: url(../images/invest-bg.svg);
-	background-repeat: no-repeat;
-	background-position: left center;
-
+	.invest_graphic{
+		position: absolute;
+		bottom:0;
+		left: 0;
+  
+	}
 		@media #{$media-1440}{
 	padding: 100px 0;
 	}
@@ -25,11 +27,29 @@
 	}
 	.invest-development-section__bg{
 		position: absolute;
-		top: -60px;
-		left: 0;
+		inset: -10%;
+		top: 20px;
+		background: url("../images/hrad.svg") center / 140% no-repeat;
+		filter: blur(60px) saturate(120%);
+		opacity: 0.9;
+	
+		animation:
+		invest 22s ease-in-out infinite alternate;
+	
 		z-index: 0;
 	}
 }
+@keyframes invest {
+	0% {
+	  background-position: 0% 20%;
+	}
+	50% {
+	  background-position: 0% 30%;
+	}
+	100% {
+	  background-position: 0% 80%;
+	}
+  }
 
 .invest-development_inner {
 	width: 100%;

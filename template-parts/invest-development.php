@@ -27,9 +27,10 @@ $has_right = ( $invest_right_heading !== '' && $invest_right_heading !== false )
 
 <section class="invest-development-section">
 		<div class="invest-development-section__bg">
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/services_bg_gradiet.png" alt="Investment & Development Background">
 		</div>
-	
+	 <div class="invest_graphic">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/invest-bg.svg" alt="Investment & Development Background">
+	 </div>
 	  <div class="container">
          <div class="invest-development_inner">
 		 <?php if ( $has_left ) : ?>

@@ -60,7 +60,6 @@ get_header();
 	);
 	set_query_var( 'news_card_items', $news_card_items );
 
-	// Repeater: event cards (image, link, date_day, date_month, location, title, time)
 	$event_card_items = array(
 		array(
 			'image'      => get_template_directory_uri() . '/assets/images/event1.png',

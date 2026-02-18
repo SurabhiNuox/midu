@@ -21,6 +21,7 @@ $journey-dot-grid: rgba(255, 255, 255, 0.06);
 	}
 	@include max(767) {
 		padding: 10px 0 80px;
+		z-index: 101;
 	}
 	&:before{
 		content: '';

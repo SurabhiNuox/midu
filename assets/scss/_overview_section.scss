@@ -29,7 +29,6 @@
     -webkit-mask-position: top;
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
 
 	@media screen and (max-width: 1024px) {
    
@@ -43,45 +42,10 @@
   
 }
 
-	// Green–blue flowing gradient bottom-right (animated like CodePen gradient flow)
-	&::after {
-		content: "";
-		position: absolute;
-		right: 0;
-		bottom: -120px;
-		width: 56%;
-		height: 929px;
-		pointer-events: none;
-		z-index: 0;
-		background-image: url(../images/over_view_gradient.png);
-		background-size: 200% 80%;
-		background-position: 0% 50%;
-		background-repeat: no-repeat;
-		animation: overviewGradientFlow 7s linear infinite;
-
-		@media (prefers-reduced-motion: reduce) {
-			animation: none;
-		}
-		@include max(1060) {	
-			display: none;
-		}
-	}
-
-// 	&::after{
-// 		content: "";
-// 		width: 500px;
-//     	height: 500px;
-// 		background-image: url(../images/blue-bg-left-service.svg);
-// 		position: absolute;
-		
-// 		left: 0;
-// 		top: 0;
-// 		background-size: 100% 100%;
-// 		background-repeat: no-repeat;
-// 		background-position: center;
-		
-	
-//  }
+.bg-layer-two{
+	inset: 3%;
+	bottom: 60px;
+}
 .overview_ghraphic{
 	position: absolute;
 	left: 0;

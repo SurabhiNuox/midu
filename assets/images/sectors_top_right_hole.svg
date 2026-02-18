@@ -1,4 +1,4 @@
 <svg width="130" height="109" viewBox="0 0 130 109" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Shape in white: area to subtract (transparent hole) at top-right -->
+  <!-- Top-right corner: white = transparent hole for mask-composite subtract -->
   <path d="M0 0.0290466C5.15577 0.0290339 9.37188 -0.0362973 12.9817 0.0290466H130V108.029C130 101.629 122.333 92.6957 118.5 89.029C99.5 70.029 57.7 28.329 42.5 13.529C30.7073 2.04667 25.4755 0.255203 12.9817 0.0290466H0Z" fill="#FFFFFF"/>
 </svg>

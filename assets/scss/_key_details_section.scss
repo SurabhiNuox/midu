@@ -13,13 +13,16 @@ $key-details-border-to: #7ec8e3;
 	width: 100%;
 	padding: 50px 0 80px;
 	position: relative;
-	overflow: hidden;
 
 	@include max(992) {
 		padding: 50px 0 60px;
 	}
 	@include max(767) {
 		padding: 40px 0 50px;
+	}
+	.container{
+		position: relative;
+		z-index: 5;
 	}
 }
 

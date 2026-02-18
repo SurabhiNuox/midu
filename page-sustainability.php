@@ -85,7 +85,8 @@ set_query_var( 'social_card_list', $social_card_list );
 	get_template_part( 'template-parts/inner-banner' );
 	?>
 
-	<div class="main_content sustainability_page">
+	<div class="main_content">
+		<div class="sustainability_page">
 		<?php
 		// Set overview section variables
 		set_query_var( 'overview_title', 'Our Commitment to a Sustainable Future' );
@@ -213,7 +214,7 @@ set_query_var( 'social_card_list', $social_card_list );
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/light-blue-vector.svg" alt="Impact Background">
 			</div>
 		</section>
-
+		</div>
 	</div>
 
 	</div>

@@ -16,7 +16,7 @@ get_header();
 	get_template_part('template-parts/inner-banner');
 	?>
 
-	   <div class="main_content">
+	   <div class="main_content services_page">
 		  <?php
 		  // Set overview section variables
 		  set_query_var('overview_title', 'Services Overview');
@@ -82,24 +82,25 @@ get_header();
 		set_query_var( 'pm_image_alt', 'Sector Management' );
 		get_template_part( 'template-parts/project-management' );
 		?>
-
-<?php
-		  // Master Planning: all content from page (h2, p, h5, list items); title_main text-center true/false
-		  set_query_var('master_planning_title_center', true);
-		  set_query_var('master_planning_h2', 'Master Planning & Design');
-		  set_query_var('master_planning_p', 'We create master plans and design frameworks that shape distinctive, sustainable, and future-ready developments.');
-		  set_query_var('master_planning_h5', 'Our expertise covers');
-		  set_query_var('master_planning_items', array(
-			  array( 'icon' => 'mpd_1.svg', 'title' => 'Master plan concepts and zoning <br/> strategies' ),
-			  array( 'icon' => 'mpd_2.svg', 'title' => 'Urban design guidelines and spatial planning' ),
-			  array( 'icon' => 'mpd_3.svg', 'title' => 'Infrastructure coordination' ),
-			  array( 'icon' => 'mpd_4.svg', 'title' => 'Architectural design direction' ),
-			  array( 'icon' => 'mpd_5.svg', 'title' => 'Sustainable design principles' ),
-			  array( 'icon' => 'mpd_6.svg', 'title' => 'Integration of landscape, mobility, and community needs' ),
-		  ));
-		  get_template_part('template-parts/master-planning');
-		  ?>
-
+	    <div class="position_relative master-planning-section-wrapper">
+			<div class="bg-layer-two"></div>
+				<?php
+			// Master Planning: all content from page (h2, p, h5, list items); title_main text-center true/false
+			set_query_var('master_planning_title_center', true);
+			set_query_var('master_planning_h2', 'Master Planning & Design');
+			set_query_var('master_planning_p', 'We create master plans and design frameworks that shape distinctive, sustainable, and future-ready developments.');
+			set_query_var('master_planning_h5', 'Our expertise covers');
+			set_query_var('master_planning_items', array(
+				array( 'icon' => 'mpd_1.svg', 'title' => 'Master plan concepts and zoning <br/> strategies' ),
+				array( 'icon' => 'mpd_2.svg', 'title' => 'Urban design guidelines and spatial planning' ),
+				array( 'icon' => 'mpd_3.svg', 'title' => 'Infrastructure coordination' ),
+				array( 'icon' => 'mpd_4.svg', 'title' => 'Architectural design direction' ),
+				array( 'icon' => 'mpd_5.svg', 'title' => 'Sustainable design principles' ),
+				array( 'icon' => 'mpd_6.svg', 'title' => 'Integration of landscape, mobility, and community needs' ),
+			));
+			get_template_part('template-parts/master-planning');
+			?>
+		</div>
 <?php
 		  get_template_part('template-parts/construction-oversight');
 		  ?>
