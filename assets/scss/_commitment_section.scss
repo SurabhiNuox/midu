@@ -40,6 +40,12 @@ $commitment-teal: #16888C;
 	@include max(992) {
 		flex-direction: column;
 		background-color: #126D70;
+		-webkit-mask-size: 100% 100%, 100px 84px;
+		mask-size: 100% 100%, 100px 84px;
+	}
+	@include max(767) {
+		-webkit-mask-size:100% 100%, 75px 63px;
+		mask-size: 100% 100%, 75px 63px;
 	}
 
 }
@@ -174,6 +180,9 @@ $commitment-teal: #16888C;
         flex: initial;
         order: 2;
         padding-bottom: 60px;
+	}
+	@include max(767) {
+		padding-bottom: 50px;
 	}
 	&::before{
 		content: '';

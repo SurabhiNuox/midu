@@ -32,6 +32,12 @@
         @include max(767) {
 			height: 165px;
 		}
+        @include max(480) {
+			height: 164px;
+		}
+        @include max(370) {
+			height: 155px;
+		}
 	}
 
 }

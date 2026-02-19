@@ -45,9 +45,10 @@
 			width: 100px;
 			height: 88px;
 		}
-		@include max(768) {
+		@include max(992) {
 			width: 70px;
 			height: 60px;
+			top: -1px;
 		}
 	}
 
@@ -67,9 +68,16 @@
 			width: 100px;
 			height: 88px;
 		}
-		@include max(768) {
+		@include max(992) {
 			width: 70px;
 			height: 60px;
+			bottom: -1px;
+			left: -3px;
+		}
+		@include max(767) {
+			width: 55px;
+			height: 52px;
+			left: 0px;
 		}
 	}
 

@@ -24,13 +24,20 @@
 	border-bottom-right-radius: 25px;
 	@include max(1060) {
 		padding: 75px 0;
+		border-top-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+		-webkit-mask-size: 100% 100%, 69px 58px;
+		mask-size: 100% 100%, 69px 58px;
 	}
 	@include max(992) {
 		padding:50px 0 80px 0;
+		
 	}
 	@include max(767) {
 		padding: 50px 0;
 		mask-size: 100% 100%, 63px 53px;
+		border-top-left-radius: 25px;
+		border-bottom-right-radius: 25px;
 	}
 	.light-blue-list-inner-bg{		
 		position: absolute;
@@ -125,7 +132,7 @@
 		bottom: -10px;
 		left: 0;
 		width: 140px;
-		height: 187px;
+		height: 148px;
 		background-image: url(../images/bottom_mask.svg);
 		background-size: 100% 100%;
 		background-repeat: no-repeat;
@@ -136,14 +143,18 @@
 			width: 100px;
 			height: 88px;
 		}
-
+		@include max(1060) {
+			width: 64px;
+			height: 60px;
+			bottom: -1px;
+		}
 		@media screen and (max-width: 992px) {
 			width: 70px;
-			height: 60px;
+			height: 66px;
 		}
 
-		@media screen and (max-width: 500px) {
-           width: 55px;
+		@media screen and (max-width: 767px) {
+           width: 48px;
            height: 45px;
 		}
 	}
@@ -326,6 +337,25 @@
 		}
 }
 
+ }
+ .services_page{
+	.light-blue-list-section{
+		&::after{
+		height: 187px;
+		@include max(1366) {
+			height: 152px;
+		}
+		@include max(992) {
+			height: 106px;
+		}
+		@include max(767) {
+			height: 86px;
+		}
+	}
+	@include max(767) {
+		padding: 50px 0 80px 0;
+	}
+  }
  }
 
 	

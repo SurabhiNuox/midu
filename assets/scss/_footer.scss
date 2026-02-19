@@ -50,7 +50,13 @@
 			top: -60px;
 		}
 		@include max(767) {
-			top: -30px;
+			top: -28px;
+			border-top-right-radius: 10px;
+			left: -1px;
+			width: 101%;
+		}
+		@include max(330) {
+			top: -27px;
 		}
 	}
 

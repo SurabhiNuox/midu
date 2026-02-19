@@ -45,7 +45,8 @@ $sector-wwd-desc: #b0b8c4;
 	}
 	@include max(767) {
 		font-size: size(24px);
-		margin-bottom: 28px;
+		line-height: size(30px);
+		margin-bottom: 15px;
 	}
 }
 

@@ -38,6 +38,10 @@ $project-card-btn: #15868A;
 		font-size: size(28px);
 		margin-bottom: 8px;
 	}
+	@include max(330) {
+		font-size: size(25px);
+		line-height: size(28px);
+	}
 }
 
 .project-cards-section__subtitle {
@@ -140,7 +144,7 @@ $project-card-btn: #15868A;
 	}
 
 	@include max(767) {
-		border-radius: 18px;
+		border-radius: 10px;
 	}
 	.project-card__content-bottom{
 		opacity: 0;

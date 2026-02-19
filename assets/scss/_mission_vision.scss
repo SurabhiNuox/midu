@@ -37,9 +37,11 @@ $mv-body-bg: #fff;
 
 	@include max(992) {
 		padding: 60px 0 0px;
+		border-top-left-radius: 15px;
 	}
 	@include max(767) {
-		padding: 40px 0 0px;
+		padding: 50px 0 0px;
+		
 	}
 }
 
@@ -127,6 +129,9 @@ $mv-body-bg: #fff;
 		@include max(767) {
 			height: 75px;
 		}
+		@include max(350) {
+			height: 52px;
+		}
 	}
 	p{
 		color: #1B273D;
@@ -146,6 +151,9 @@ $mv-body-bg: #fff;
 	}
 	@include max(767) {
         padding: 30px 25px;
+		
+		border-radius: 15px;
+		border-top-right-radius: 0;
 	}
 	
 }

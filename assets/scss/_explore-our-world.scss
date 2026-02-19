@@ -50,6 +50,9 @@
 		@include max(767) {
 			top: -28px;
 		}
+		@include max(480) {
+			top: -24px;
+		}
 	}
    
     .frame{
@@ -67,6 +70,9 @@
 		@include max(767) {
 			width: 40%;
 			top: -27px;
+		}
+		@include max(480) {
+			top: -23px;
 		}
 	}
     .container{
@@ -272,11 +278,11 @@
 
 
 
-			@media #{$media-1024} {
+			@include max(1060) {
 				height: 325px;
 			}
 
-			@media #{$media-768} {
+			@include max(992) {
 				height: 280px;
 			}
 
@@ -285,6 +291,15 @@
 				mask-image: url(../images/abt_mob_mask.svg);
 				-webkit-mask-image: url(../images/abt_mob_mask.svg);
 				
+			}
+			@include max(420) {
+				height: 338px;
+			}
+			@include max(380) {
+				height: 303px;
+			}
+			@include max(330) {
+				height: 260px;
 			}
 
 			.card-image {
@@ -328,7 +343,9 @@
 			@include max(420) {
 				bottom: 48px;
 			}
-
+			@include max(380) {
+				bottom: 32px;
+			}
 			svg {
 				width: 20px;
 				height: 20px;

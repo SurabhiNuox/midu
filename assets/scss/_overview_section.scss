@@ -45,6 +45,9 @@
 .bg-layer-two{
 	inset: 3%;
 	bottom: 60px;
+	@include max(1060) {
+		display: none;
+	}
 }
 .overview_ghraphic{
 	position: absolute;
@@ -102,16 +105,21 @@
 			z-index: 3;
 			transform: rotate(90deg);
 
-	  @media #{$media-1024}{
-		width: 100px;
-		height: 88px;
-	  }
+			@include max(1060) {
+				width: 100px;
+				height: 88px;
+			}
 
-	  @media #{$media-768}{
-		width: 54px;
-		height: 44px;
-	  }
-	}
+			@include max(992) {
+				width: 68px;
+				height: 57px;
+			}
+			@include max(767) {
+				width: 69px;
+				height: 59px;
+				bottom: 4px;
+			}
+		}
 
 		&::after{
 			   width: 473px;

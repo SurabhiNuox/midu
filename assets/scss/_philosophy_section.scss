@@ -13,6 +13,7 @@ $philosophy-bg: #96B7E3;
 	z-index: 9;
 	@include max(992) {
 		padding: 60px 0 80px;
+		border-bottom-right-radius: 15px;
 	}
 	@include max(767) {
 		padding: 40px 0 60px;
@@ -76,6 +77,9 @@ $philosophy-bg: #96B7E3;
 		color: #1B273D;
 		line-height: size(25px);
 		font-weight:300;
+		@include max(767) {
+			line-height: size(20px);
+		}
 	}
 }
 

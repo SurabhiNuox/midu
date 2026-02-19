@@ -66,8 +66,8 @@ $ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
     -webkit-mask-composite: source-out;
     mask-composite: subtract;
 	border-radius: 25px;
-	border-top-right-radius: 0;
-	border-bottom-left-radius: 0;
+	border-top-right-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
 	@include max(1060) {
 		margin-top: -100px;
 		padding: 100px 0;
@@ -75,9 +75,12 @@ $ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
 	@include max(992) {
 		padding: 60px 0;
 		margin-top: -60px;
+		mask-size: 100% 100%, 87px 73px;
+		border-radius: 15px;
 	}
 	@include max(767) {
 		padding: 38px 0;
+		mask-size: 100% 100%, 43px 36px;
 	}
 	// &:before{
 	// 	content: "";
@@ -99,16 +102,27 @@ $ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
 	// }
 	&::after{
 		content: "";
-    position: absolute;
-    bottom: -2px;
-    left: -6px;
-    width: 128px;
-    height: 111px;
-    background-image: url(../images/bottom_mask.svg);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    z-index: 3;
+		position: absolute;
+		bottom: -2px;
+		left: -6px;
+		width: 128px;
+		height: 111px;
+		background-image: url(../images/bottom_mask.svg);
+		background-size: 100% 100%;
+		background-repeat: no-repeat;
+		background-position: bottom left;
+		z-index: 3;
+		@include max(992) {
+			bottom: -2px;
+			width: 70px;
+			height: 68px;
+		}
+		@include max(767) {
+			bottom: -2px;
+			width: 45px;
+			height: 45px;
+			left: 0px;
+		}
 	}
 	.sectors-grid__graphic{
 		position: absolute;
